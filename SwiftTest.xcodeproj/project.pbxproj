@@ -14,6 +14,11 @@
 		89E73E011DFA832900058FB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFF1DFA832900058FB0 /* LaunchScreen.storyboard */; };
 		89E73E0C1DFA832A00058FB0 /* SwiftTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E0B1DFA832A00058FB0 /* SwiftTestTests.swift */; };
 		89E73E171DFA832A00058FB0 /* SwiftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E161DFA832A00058FB0 /* SwiftTestUITests.swift */; };
+		89E73E321DFBEA6A00058FB0 /* UI_tableable_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E311DFBEA6A00058FB0 /* UI_tableable_VC.swift */; };
+		89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E341DFBEABE00058FB0 /* OneCell.swift */; };
+		89E73E371DFBEAD800058FB0 /* OneModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E361DFBEAD800058FB0 /* OneModal.swift */; };
+		89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E381DFE463300058FB0 /* XLP_UI_ViewController.swift */; };
+		89E73E3B1DFE46AD00058FB0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 		89E73E121DFA832A00058FB0 /* SwiftTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E73E161DFA832A00058FB0 /* SwiftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestUITests.swift; sourceTree = "<group>"; };
 		89E73E181DFA832A00058FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E73E311DFBEA6A00058FB0 /* UI_tableable_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI_tableable_VC.swift; sourceTree = "<group>"; };
+		89E73E341DFBEABE00058FB0 /* OneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCell.swift; sourceTree = "<group>"; };
+		89E73E361DFBEAD800058FB0 /* OneModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneModal.swift; sourceTree = "<group>"; };
+		89E73E381DFE463300058FB0 /* XLP_UI_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_UI_ViewController.swift; sourceTree = "<group>"; };
+		89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		89E73E3D1DFE47C400058FB0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +110,14 @@
 			children = (
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				89E73DF81DFA832900058FB0 /* ViewController.swift */,
+				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
+				89E73E381DFE463300058FB0 /* XLP_UI_ViewController.swift */,
+				89E73E331DFBEA9200058FB0 /* tableview */,
 				89E73DFA1DFA832900058FB0 /* Main.storyboard */,
 				89E73DFD1DFA832900058FB0 /* Assets.xcassets */,
 				89E73DFF1DFA832900058FB0 /* LaunchScreen.storyboard */,
 				89E73E021DFA832900058FB0 /* Info.plist */,
+				89E73E3D1DFE47C400058FB0 /* PrefixHeader.pch */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -123,6 +138,16 @@
 				89E73E181DFA832A00058FB0 /* Info.plist */,
 			);
 			path = SwiftTestUITests;
+			sourceTree = "<group>";
+		};
+		89E73E331DFBEA9200058FB0 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				89E73E311DFBEA6A00058FB0 /* UI_tableable_VC.swift */,
+				89E73E341DFBEABE00058FB0 /* OneCell.swift */,
+				89E73E361DFBEAD800058FB0 /* OneModal.swift */,
+			);
+			name = tableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E73E371DFBEAD800058FB0 /* OneModal.swift in Sources */,
 				89E73DF91DFA832900058FB0 /* ViewController.swift in Sources */,
+				89E73E321DFBEA6A00058FB0 /* UI_tableable_VC.swift in Sources */,
+				89E73E3B1DFE46AD00058FB0 /* RootViewController.swift in Sources */,
+				89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */,
+				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +446,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R7FLL89AQ2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftTest",
+				);
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
@@ -429,6 +463,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R7FLL89AQ2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftTest",
+				);
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
