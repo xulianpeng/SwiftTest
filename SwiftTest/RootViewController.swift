@@ -38,8 +38,8 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func obtainDataArr() -> Void {
 
-       dataArr = NSMutableArray.init(array: ["UI控件Test","数据类型Tset","TableView自定义Test"])
-        vcArr = NSMutableArray.init(array: [XLP_UI_ViewController(),UI_tableable_VC(),UI_tableable_VC()])
+       dataArr = NSMutableArray.init(array: ["UI控件/数据类型Test","基本运算符Tset","TableView自定义Test","对象/属性"])
+        vcArr = NSMutableArray.init(array: [XLP_UI_ViewController(),XLP_OperatorsVController(),UI_tableable_VC(),TestClassViewController()])
     }
     
     //tableview的代理方法
@@ -78,14 +78,17 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
             
         }
         if indexPath.row == 1 {
-            let jumpToVC = XLP_UI_ViewController()
+            let jumpToVC = XLP_OperatorsVController()
             self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 2 {
             let jumpToVC = UI_tableable_VC()
             self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
-
+        if indexPath.row == 3 {
+            let jumpToVC = TestClassViewController()
+            self.navigationController?.pushViewController(jumpToVC, animated: true)
+        }
         
        
     }

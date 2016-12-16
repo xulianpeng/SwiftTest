@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class OneCell: UITableViewCell {
 
@@ -38,19 +39,39 @@ class OneCell: UITableViewCell {
     func layoutTheSubviews() {
         
         nameLabel = UILabel.init()
-        nameLabel.frame = CGRect(x:10,y:5,width:100,height:30)
+//        nameLabel.frame = CGRect(x:10,y:5,width:100,height:30)
+        
         nameLabel.font = UIFont.systemFont(ofSize: 16)
         nameLabel.textColor = UIColor.brown
         addSubview(nameLabel)
         
+        nameLabel.snp.makeConstraints { (make) in
+            make.left.top.equalTo(10)
+            make.width.equalTo(100)
+            
+        }
+        
         classLabel = UILabel.init()
-        classLabel.frame = CGRect(x:10,y:40,width:100,height:30)
+//        classLabel.frame = CGRect(x:10,y:40,width:100,height:30)
         classLabel.font = UIFont.systemFont(ofSize: 12)
         classLabel.textColor = UIColor.green
         addSubview(classLabel)
+        classLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(nameLabel)
+            make.bottom.equalTo(-10)
+            make.width.equalTo(100)
+        }
         
-        clickBt.frame = CGRect(x:screenWidth - 10 - 50,y:15,width:50,height:50)
+        
+//        clickBt.frame = CGRect(x:screenWidth - 10 - 50,y:15,width:50,height:50)
+        
         contentView.addSubview(clickBt)
+        
+        clickBt.snp.makeConstraints { (make) in
+            make.top.equalTo(nameLabel.snp.top)
+            make.right.equalTo(-20)
+            make.width.height.equalTo(60)
+        }
         clickBt.backgroundColor = UIColor.yellow
         clickBt .setTitle("点击", for: .normal)
         clickBt .setTitleColor(UIColor.purple, for:UIControlState.normal)
