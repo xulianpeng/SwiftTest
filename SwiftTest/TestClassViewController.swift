@@ -11,11 +11,11 @@ import UIKit
 class TestClassViewController: UIViewController {
 
     
-    struct Range11 {  // 结构体定义存储属性
+    struct Range11 {  // 结构体 定义 存储属性
         let first:Int
         var length:Int
     }
-    class Student{  // 类定义存储属性
+    class Student{  // 类 定义 存储属性
         var name:String!
         var score:String!
     }
@@ -46,6 +46,7 @@ class TestClassViewController: UIViewController {
         self.view.backgroundColor = UIColor.green
         
         let range1 = Range11(first:6,length:3)
+        //MARK:小结1:
         //如果一个结构体被实例化为 一个常量结构体 则其不能被修改 即是其内部是变量存储属性
         //说明 结构体 是一个值类型 当值类型的实例 被声明为 常量的时候,他的所有属性也就成了常量
         //相对 若是 应用类型 的 类 ,把一个引用类型的 实例 赋给 一个常量 后,仍然可以修改该实例的变量属性
@@ -95,16 +96,16 @@ class TestClassViewController: UIViewController {
         
         var square = Rect(origin:Point(x:0.0,y:0.0),size:Size(width:20.0,height:20.0))
         
-        let newCenter = square.center//访问 结构体中 计算属性 center ,该计算属性是由 该机构提中的 其他两个存储属性 计算得来的
+        let newCenter = square.center//访问 结构体中 计算属性 center ,该计算属性是由 该机构体中的 其他两个存储属性 计算得来的
         
         print(newCenter)
-        //小结 对于计算属性有个初步的了解和认识
+        //MARK: 小结2 计算属性之初步的了解和认识
         //只有getter的计算属性是只读属性 只读属性总是返回一个值,可以通过点运算符访问,但不能设置为新值
-        //只读计算属性的声明 可以 去掉 get 关键字 和 花括号
+        //只读计算属性的声明 可以 去掉 get 关键字 和 花括号==>这个在实际开发中经常是这样做的,切记
         //setter方法 新值默认为 newValue ,也可以自定义
         
         //****************华丽分割线*************************
-        //MARK:属性观察器  听上去 有点像 OC上的观察者模式
+        //MARK: 属性观察器  听上去 有点像 OC上的观察者模式
         
         //属性观察器 监控 和  响应值的变化,每次属性被设置值的时候都会调用属性观察器,即是新值和当前值相等
         //可以为除了延迟存储属性之外的其他存储属性添加属性观察器
@@ -135,7 +136,7 @@ class TestClassViewController: UIViewController {
         
         stepNums.totalSteps = 320
         
-        //与结构体作比较, 实例化一个 类 为 常量,其属性值 可以改变
+        //MARK: 与结构体作比较, 实例化一个 类 为 常量,其属性值 可以改变
         
         //全局变量 局部变量 和OC一样  在函数 方法 闭包 或任何类型 之外定义的变量 是全局变量
         //计算型变量 和 计算属性一样 返回一个计算结果而不是存储值,声明格式完全一样
@@ -144,9 +145,11 @@ class TestClassViewController: UIViewController {
         
         //MARK: 类型变量
         
-        //实例属性属于一个特定类型的实例,没创建一个实例,实例都有属于自己的一套属性值,实例之间的属性相互独立
+        //MARK:实例属性:实例的属性就是实例属性.
+        //每创建一个实例,实例都有属于自己的一套属性值,即实例属性,实例之间的属性相互独立
         
-        //若无论创建多少个该类型的实例,某一属性都只有唯一的一份,则 该属性即为 类型属性 ,由这句话 我们应该会想到 static这个关键字,正如我们所想 若用 static修饰 该属性即为 类型属性
+        //MARK:类型属性:若无论创建多少个该类型的实例,某一属性都只有唯一的一份,则 该属性即为 类型属性.
+        //由这句话 我们应该会想到 static这个关键字,正如我们所想 若用 static修饰 该属性即为 类型属性
         
         struct AudioChannel {
             static let soundLevel = 10
