@@ -57,3 +57,37 @@ func obtainTimeWith(timestamp:Int) -> String {
     return dateformatter.string(from: date as Date)
     
 }
+
+func XLPRandomColor() -> UIColor {
+    
+    let red = CGFloat(arc4random()%256)/255.0
+    let green = CGFloat(arc4random()%256)/255.0
+    let blue = CGFloat(arc4random()%256)/255.0
+    return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+}
+
+//func XLPRandomText() -> String {
+//    
+//    let  length =  (arc4random() % 50 + 5) as? Int;
+//    
+//      var str : String = "";
+//    for i  in length {
+//        
+//        i += 1
+//        str.append("测试数据很长，")
+//        
+//    }
+//    
+//    return str as String;
+//}
+/*
+    - (NSString *)randomText {
+        CGFloat length = arc4random() % 50 + 5;
+        
+        NSMutableString *str = [[NSMutableString alloc] init];
+        for (NSUInteger i = 0; i < length; ++i) {
+            [str appendString:@"测试数据很长，"];
+        }
+        
+        return str;
+}*/

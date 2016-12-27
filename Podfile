@@ -10,6 +10,8 @@ pod 'SnapKit', '>= 3.0.2'
 pod 'SQLite.swift', '>= 0.11.1'
 pod 'AsyncSwift'
 pod 'SVProgressHUD'
+pod 'AlamofireNetworkActivityIndicator', '~> 2.1.0'
+pod 'AlamofireImage', '~> 3.2.0'
 use_frameworks!
 end
 

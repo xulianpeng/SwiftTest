@@ -69,7 +69,7 @@ class EassyCell: UITableViewCell {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(newsImage)
-            make.left.equalTo(newsImage.snp.right)
+            make.left.equalTo(newsImage.snp.right).offset(10)
             make.right.equalTo(-10)
             
         }

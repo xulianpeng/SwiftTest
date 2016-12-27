@@ -93,7 +93,7 @@ class XLP_UI_ViewController: UIViewController {
         
         let stringNum = "1245"
         let num = Int(stringNum)
-        print(num)
+        print(num ?? 0)
         
 //        if num! == nil {
 //            print(<#T##items: Any...##Any#>)
@@ -166,16 +166,15 @@ class XLP_UI_ViewController: UIViewController {
      }
      
      func initButton2() -> Void {
-     button2.frame = CGRect(x:screenWidth/2,y:70,width:button1.frame.width,height:button1.frame.height)
-     button2.addTarget(self, action: #selector(handleAction2(btn:)), for: .touchUpInside)
-     button2 .setTitle("按钮222", for: .normal)
-     button2 .setTitleColor(UIColor.green, for: .normal)
-     button2.tag = tag2
-     button2.backgroundColor = UIColor.darkGray
-     button2.layer.cornerRadius = 4;
-     button2.layer.masksToBounds = true
-     view.addSubview(button2)
+        
+        button2.frame = CGRect(x:screenWidth/2,y:70,width:button1.frame.width,height:button1.frame.height)
+        WMUIMaker.creatButton(button: button2, title: "按钮222", titleColor: .green, imageStr:"" , backgroundImageStr: "", cornerRedius: 4, superView: view)
+        button2.tag = tag2
+        button2.addTarget(self, action: #selector(handleAction2(btn:)), for: .touchUpInside)
+
      }
+    
+    
     
      /// 按钮的点击事件
      ///

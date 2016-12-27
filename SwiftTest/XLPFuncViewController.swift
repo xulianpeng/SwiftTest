@@ -187,7 +187,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
         //逃逸闭包 关键字 @escaping ,闭包在函数返回之后才被执行,我们称该闭包从函数中逃逸.
         
         
-        
+//        var functionInstance = Curry
        
         
         
