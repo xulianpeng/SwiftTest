@@ -88,7 +88,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
         //MARK: 二 闭包
         
         //闭包之余 swift,与block之余 OC 是一样的 ,所以我们可以类比着学习
-        //闭包(closure) 的 声明方式:
+        //MARK:2.1 闭包(closure) 的 声明方式:
         // 声明一个闭包(有两个整形参数，且返回值为整形的闭包)
         var sumClosure:((_ mm: Int, _ nn: Int) -> Int)
         
@@ -104,18 +104,19 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
         //由API得知:
         //1.闭包 是自包含的 函数代码块,与C 和 OC中的 block代码块和其他一些编程语言中的匿名函数比较类似.
         //2.闭包可以捕获和存储其所在上下文中任意常量和变量的引用.被称为 包裹常量和变量.且 swift会为你管理捕获过程中涉及到的所有内存操作.
-        //3.在函数章节中介绍的全局和嵌套函数 实际上也是特殊的闭包.
+        //MARK: 3.在函数章节中介绍的全局和嵌套函数 实际上也是特殊的闭包,他们的区别如下:
         //他们的区别如下:
         /*
          1 全局函数是一个有名字但不会捕获任何值的闭包.
-        2.嵌套函数是一个有名字并可以捕获其封闭函数域内值的闭包.
-        3.闭包表达式是一个利用轻量级语法所写的可以捕获其上下文中变量或常量值的匿名闭包.
+         2.嵌套函数是一个有名字并可以捕获其封闭函数域内值的闭包.
+         3.闭包表达式是一个利用轻量级语法所写的可以捕获其上下文中变量或常量值的匿名闭包.
         */
         //4.闭包表达式风格简洁,鼓励在常见场景中进行语法优化,主要优化如下:
         /*
          @1利用上下文推断参数和返回值类型,
          @2隐式返回单表达式闭包,即单表达式闭包可以省略 return 关键字,
-         @3参数名称缩写,@4尾随闭包语法
+         @3参数名称缩写,
+         @4尾随闭包语法
        */
         
         //举例：数组的排序方法 ,最终实现 使用 sorted(by:)方法对一个String类型数组 进行按字母逆序排序。
@@ -195,7 +196,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
     
 //MARK:外部函数的具体实现方法
     
-    //MARK: 函数的分类:
+    //MARK: 三 函数的分类:
     //有参有返回值
     //@discardableResult
     func sayHello(paraStr:String) -> String {
@@ -223,7 +224,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
         return "Hello \(person), today is \(day)."
     }
     
-    //MARK:函数进阶
+    //MARK:四 函数进阶
     
     //参数的类型:对象,数组,字典,元组,可变数量的参数,函数,闭包函数,协议,结构体,枚举值
     
@@ -355,7 +356,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
     }
     
     /******************协议**********************/
-    //MARK: 协议语法
+    //MARK: 五 协议语法
     //定义:定义了一个蓝图,规定了用来实现某一特定任务或者功能的 方法 或 属性 ,以及其他需要的东西.->协议可以是 方法 ,也可以是 属性  ,这与OC不一样,OC一般是代理方法
     
     //类 结构体 枚举都可以遵循协议 这与OC不一样 ,OC是只有 类可以 遵循协议
@@ -415,7 +416,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
     
     //MARK: 闭包 
     
-    //MARK: 先回忆下 ,block函数的用法
+    //MARK: 六 先回忆下 ,block函数的用法
     //匿名函数 自动获取变量
     //可做属性变量 
     /*

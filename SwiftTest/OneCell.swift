@@ -11,7 +11,6 @@ import SnapKit
 
 class OneCell: UITableViewCell {
 
-    let screenWidth = UIScreen.main.bounds.width
     
     //类似OC的属性变量的声明 在外部可被调用
     var nameLabel : UILabel!

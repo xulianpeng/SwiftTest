@@ -12,6 +12,17 @@ import UIKit
 let SCREENWIDTH = UIScreen.main.bounds.width
 let SCREENHEIGHT = UIScreen.main.bounds.height
 
+//MARK: UIButton 相关的默认属性
+
+let kBtFontSize:CGFloat = 14
+let kBtCornerRadius:CGFloat = 5
+
+//MARK: UILabel 相关的默认属性
+let kLabelTextColor = UIColor.lightGray
+let kLabelFontSize:CGFloat = 14.0
+
+//MARK: UILabel 相关的默认属性
+let kTFPlaceholderColor = UIColor.lightGray
 /*
 +(NSString *)obtainAllDateNowWithTimestamp:(NSNumber *)timestamp
 {

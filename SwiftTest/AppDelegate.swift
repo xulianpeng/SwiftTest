@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootVC = RootViewController()
         let naVC = UINavigationController.init(rootViewController: rootVC)
         window?.rootViewController = naVC
+        
+        let keyBoardManager = IQKeyboardManager.sharedManager()
+        keyBoardManager.enable = true
+        keyBoardManager.keyboardDistanceFromTextField = 20
         
         return true
     }

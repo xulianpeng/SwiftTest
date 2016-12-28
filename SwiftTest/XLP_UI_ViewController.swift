@@ -7,15 +7,14 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 class XLP_UI_ViewController: UIViewController {
 
     //MARK: - ww
     //FIXME: qqq
     //TODO: 
 
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
+    
      //声明实例变量
      
      let tag1 = 100
@@ -31,6 +30,10 @@ class XLP_UI_ViewController: UIViewController {
      
      var text = "akfjskjfksjfkjfkjsdkfjSSJAFDSJFKJ假的就分手就放开手的说的是交房卡萨就放开手的FSDKJFS大姐夫发几十块地方是使肌肤 的设计费水电费是打飞机 ;束带结发;说多了几分;是打飞机;了圣诞节饭;是打飞机;胜多负少;来得及发两款;阿萨德分类的设计费啥的放假洛杉矶的附件为符合你怎么能重新买,  放假;啥的方式;方式;打飞机;"
 
+    //MARK: textfieldDemo
+    
+    var testTextfield = UITextField()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,6 +126,16 @@ class XLP_UI_ViewController: UIViewController {
         initButton3()
         initButton4()
         
+        //MARK: textfielddemo
+        
+        testTextfield.initTextfield(.red, fontSize: 14, placeholder: "什么情况", delegate: self, superView: view) { (make) in
+            make.left.equalTo(30)
+            make.top.equalTo(titleLabel.snp.bottom).offset(30)
+            make.right.equalTo(-30)
+            make.height.equalTo(30)
+        }
+       
+        
         
     }
 
@@ -133,7 +146,7 @@ class XLP_UI_ViewController: UIViewController {
     
     
      func initLabel(_: UILabel) -> Void {
-     titleLabel2.frame = CGRect(x:10,y:130,width:screenWidth - 20,height: 0);
+     titleLabel2.frame = CGRect(x:10,y:130,width:SCREENWIDTH - 20,height: 0);
      self.view.addSubview(titleLabel2)
      titleLabel2.backgroundColor = UIColor.green
      titleLabel2.text = text
@@ -169,7 +182,7 @@ class XLP_UI_ViewController: UIViewController {
     }
      func initLabel2() -> Void {
      
-     titleLabel.frame = CGRect(x:10,y:screenHeight - 200,width:screenWidth - 20,height: 0);
+     titleLabel.frame = CGRect(x:10,y:SCREENHEIGHT - 200,width:SCREENWIDTH - 20,height: 0);
      view.addSubview(titleLabel)
      titleLabel.backgroundColor = UIColor.blue
      titleLabel.text = text
@@ -209,8 +222,8 @@ class XLP_UI_ViewController: UIViewController {
         button1.creatButton("按钮333", titleColor: .red, imageStr: "", backgroundImageStr: "", cornerRedius: 5, superView: view) { (bt) in
             
            
-            button1.addTarget(self, action: #selector(handleAction1(btn:)), for: .touchUpInside)
         }
+        button1.addTarget(self, action: #selector(handleAction1(btn:)), for: .touchUpInside)
         button1.tag = tag1
         button1.snp.makeConstraints({ (make) in
             make.top.equalTo(70)
@@ -221,22 +234,66 @@ class XLP_UI_ViewController: UIViewController {
     }
 
     func initButton4() -> Void {
-        button2.creatButton("按钮444", titleColor: .green, imageStr: "", backgroundImageStr: "", cornerRedius: 5, superView: view) { (bt) in
-            bt.snp.makeConstraints({ (make) in
-                make.top.equalTo(70)
-                make.right.equalTo(-20)
-                make.width.equalTo(100)
-                make.height.equalTo(30)
-            })
-            bt.addTarget(self, action: #selector(handleAction2(btn:)), for: .touchUpInside)
+//        button2.creatButton("按钮444", titleColor: .green, imageStr: "", backgroundImageStr: "", cornerRedius: 5, superView: view) { (bt) in
+////            bt.snp.makeConstraints({ (make) in
+////                make.top.equalTo(70)
+////                make.right.equalTo(-20)
+////                make.width.equalTo(100)
+////                make.height.equalTo(30)
+////            })
+////            bt.addTarget(self, action: #selector(handleAction2(btn:)), for: .touchUpInside)
+//        }
+        
+        /*
+        button2.creatButton("按钮444", titleColor: .gray, imageStr: "", backgroundImageStr: "", cornerRedius: 6, superView: view, myAction: #selector(handleAction2(btn:)))
+        button2.tag = tag2
+        button2.snp.makeConstraints({ (make) in
+                            make.top.equalTo(70)
+                            make.right.equalTo(-20)
+                            make.width.equalTo(100)
+                            make.height.equalTo(30)
+                        })
+        
+        */
+        
+        /*
+        button2.creatButton("按钮444", titleColor: .gray, imageStr:nil, backgroundImageStr: "", cornerRedius: 6, target:self, myAction: #selector(handleAction2(btn:)))
+        button2.tag = tag2
+        button2.snp.makeConstraints({ (make) in
+            make.top.equalTo(70)
+            make.right.equalTo(-20)
+            make.width.equalTo(100)
+            make.height.equalTo(30)
+        })
+        */
+        /*
+        button2.xlpInit("按钮555", titleColor: .red, fontSize: 13, imageStr: nil, backgroundImageStr: nil, cornerRedius: 4, target: self, myAction: #selector(handleAction2(btn:)) , snpMaker: { (make) in
+            make.top.equalTo(70)
+            make.right.equalTo(-20)
+            make.width.equalTo(100)
+            make.height.equalTo(30)
+        })
+        */
+        button2.initButton("按钮666", titleColor: .blue, target: self, myAction: #selector(handleAction2(btn:))) { (make) in
+            make.top.equalTo(70)
+            make.right.equalTo(-20)
+            make.width.equalTo(100)
+            make.height.equalTo(30)
         }
+        button2.tag = tag2
+        
+               
     }
+    
+    
+    //MARK: button runtime 测试
+    
+    let button3 = UIButton.init()
     
     
     
     
      /// 按钮的点击事件
-     ///
      /// - Parameter btn: 按钮1
      func handleAction1(btn:UIButton) -> Void {
      if btn.tag == tag1{
@@ -255,6 +312,12 @@ class XLP_UI_ViewController: UIViewController {
      }
  
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let keyBoardManager = IQKeyboardManager.sharedManager()
+//        keyBoardManager.enable = false
+//        keyBoardManager.keyboardDistanceFromTextField = -20
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -7,19 +7,14 @@
 //
 
 import UIKit
-//import OneCell
-//import OneModal
 
 class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
     
-//    let cell1 = OneCell()
-//    var modal12 = OneModal()
     
     var dataArr = NSMutableArray()
-    var myTableView = UITableView.init(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height), style:UITableViewStyle.plain)
+    var myTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style:UITableViewStyle.plain)
+    
     
     
     override func viewDidLoad() {
@@ -44,13 +39,17 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         }
     }
     func initUI() {
+        /*
         myTableView.backgroundColor = UIColor.white
         myTableView.delegate = self
         myTableView.dataSource = self
         myTableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         view.addSubview(myTableView)
         myTableView .reloadData()
-//        myTableView .register(OneCell.self, forCellReuseIdentifier: "mmcell")//可舍弃
+        */
+        myTableView.initTableView(delegate: self, superView: view)
+        myTableView .register(OneCell.self, forCellReuseIdentifier: "mmcell")//可舍弃
+        
         
     }
     
@@ -85,9 +84,6 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
 
     func handleAction1(btn:UIButton) -> Void {
-        
-//        let alert:UIAlertAction = UIAlertAction.init(title: "提示", style: UIAlertActionStyle.default, handler: ((UIAlertAction) -> Void)?)
-        
         myTableView.backgroundColor = randomColor()
         
     }

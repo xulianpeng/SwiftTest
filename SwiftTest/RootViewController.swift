@@ -10,8 +10,7 @@ import UIKit
 
 class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
 
-    let screenWidth = UIScreen.main.bounds.width
-    let screenHeight = UIScreen.main.bounds.height
+    
     
     var rootTableView : UITableView?
     
@@ -28,7 +27,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         
     }
     func layoutUI() -> Void {
-        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:screenWidth,height:screenHeight), style: .plain)
+        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
         rootTableView?.delegate = self
         rootTableView?.dataSource = self
         rootTableView?.separatorStyle = UITableViewCellSeparatorStyle.singleLine
