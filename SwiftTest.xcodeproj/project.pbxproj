@@ -14,6 +14,7 @@
 		079FE4301E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */; };
 		079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */; };
 		079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */; };
+		07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F631E12732B00DCB71D /* WMUIExtension.swift */; };
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
@@ -72,6 +73,7 @@
 		079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPBaseNavigationVController.swift; sourceTree = "<group>"; };
 		079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewSnapKitVController.swift; sourceTree = "<group>"; };
 		079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIMaker.swift; sourceTree = "<group>"; };
+		07C31F631E12732B00DCB71D /* WMUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIExtension.swift; sourceTree = "<group>"; };
 		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				079FE42D1E0BAAB3007DF3DE /* XLPBaseViewController.swift */,
 				079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */,
 				079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */,
+				07C31F631E12732B00DCB71D /* WMUIExtension.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */,
 				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,
 				079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */,
+				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
 			);

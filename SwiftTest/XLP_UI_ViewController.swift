@@ -24,7 +24,7 @@ class XLP_UI_ViewController: UIViewController {
     let tag3:Int = 300 
     var tag4:Double = 12.3
      
-    
+     var titleLabel2 = UILabel()
      var titleLabel = UILabel()
      var button1 = UIButton.init(type:.custom)
      var button2 = UIButton.init(type: UIButtonType.custom)
@@ -110,11 +110,18 @@ class XLP_UI_ViewController: UIViewController {
         
         
         
-         //        initLabel(titleLabel)
-         initLabel2()
-         initButton1()
-         initButton2()
- 
+//         initLabel(titleLabel)
+//         initLabel2()
+        //使用扩展来创建UILabel
+        initLabel3()
+        initLabel4()
+        
+        
+//         initButton1()
+//         initButton2()
+         //使用扩展创建 UIButton
+        initButton3()
+        initButton4()
         
         
     }
@@ -126,20 +133,43 @@ class XLP_UI_ViewController: UIViewController {
     
     
      func initLabel(_: UILabel) -> Void {
-     titleLabel.frame = CGRect(x:10,y:100,width:screenWidth - 20,height: 0);
-     self.view.addSubview(titleLabel)
-     titleLabel.backgroundColor = UIColor.blue
-     titleLabel.text = text
-     titleLabel.numberOfLines = 0
-     titleLabel.textColor = UIColor.magenta
-     titleLabel.sizeToFit()
+     titleLabel2.frame = CGRect(x:10,y:130,width:screenWidth - 20,height: 0);
+     self.view.addSubview(titleLabel2)
+     titleLabel2.backgroundColor = UIColor.green
+     titleLabel2.text = text
+     titleLabel2.numberOfLines = 0
+     titleLabel2.textColor = UIColor.cyan
+     titleLabel2.sizeToFit()
      //坑点:若自适应高度的话 必须先赋值 再设置自适应高度,否则无效
-     
+        
+        //方法2 使用扩展
+        
      }
-     
+    
+    func initLabel3() {
+        titleLabel2.creatLabel(text, aligenment: .left, fontSize: 16, textColor: .black, backgroundColor: .green, superView: self.view)
+        
+    }
+    func initLabel4() {
+        titleLabel.creatLabel(text, aligenment: .right, fontSize: 12, textColor: .red, backgroundColor: .gray, superView: view)
+        
+        titleLabel2.snp.makeConstraints { (make) in
+            make.left.equalTo(20)
+            make.top.equalTo(120)
+            make.right.equalTo(-20)
+            make.bottom.equalTo(titleLabel.snp.top).offset(-30)
+        }
+        
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(titleLabel2)
+            make.right.equalTo(titleLabel2)
+            make.top.equalTo(titleLabel2.snp.bottom).offset(30)
+            
+        }
+    }
      func initLabel2() -> Void {
      
-     titleLabel.frame = CGRect(x:10,y:150,width:screenWidth - 20,height: 0);
+     titleLabel.frame = CGRect(x:10,y:screenHeight - 200,width:screenWidth - 20,height: 0);
      view.addSubview(titleLabel)
      titleLabel.backgroundColor = UIColor.blue
      titleLabel.text = text
@@ -148,7 +178,7 @@ class XLP_UI_ViewController: UIViewController {
      titleLabel.sizeToFit()
      
      }
-     
+     /*
      func initButton1() -> Void {
      button1.frame = CGRect(x:20 ,y:70,width:(screenWidth - 40)/2,height:40)
      button1 .addTarget(self, action:#selector(handleAction1(btn:)), for:.touchUpInside)
@@ -172,7 +202,36 @@ class XLP_UI_ViewController: UIViewController {
         button2.tag = tag2
         button2.addTarget(self, action: #selector(handleAction2(btn:)), for: .touchUpInside)
 
+        
      }
+    */
+    func initButton3() -> Void {
+        button1.creatButton("按钮333", titleColor: .red, imageStr: "", backgroundImageStr: "", cornerRedius: 5, superView: view) { (bt) in
+            
+           
+            button1.addTarget(self, action: #selector(handleAction1(btn:)), for: .touchUpInside)
+        }
+        button1.tag = tag1
+        button1.snp.makeConstraints({ (make) in
+            make.top.equalTo(70)
+            make.left.equalTo(20)
+            make.width.equalTo(100)
+            make.height.equalTo(30)
+        })
+    }
+
+    func initButton4() -> Void {
+        button2.creatButton("按钮444", titleColor: .green, imageStr: "", backgroundImageStr: "", cornerRedius: 5, superView: view) { (bt) in
+            bt.snp.makeConstraints({ (make) in
+                make.top.equalTo(70)
+                make.right.equalTo(-20)
+                make.width.equalTo(100)
+                make.height.equalTo(30)
+            })
+            bt.addTarget(self, action: #selector(handleAction2(btn:)), for: .touchUpInside)
+        }
+    }
+    
     
     
     

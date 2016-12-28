@@ -8,7 +8,7 @@
 
 import UIKit
 
-//MARK:函数语法
+//MARK:一 函数语法
 //主要介绍 swift 函数相关语法,主要内容包括 1:函数的定义和使用 2:函数参数与返回值 3:函数参数标签和参数名称 4:函数类型 5:嵌套函数
 
 
@@ -85,7 +85,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
         
        getFunctionName()
         
-        //MARK: ****闭包*****
+        //MARK: 二 闭包
         
         //闭包之余 swift,与block之余 OC 是一样的 ,所以我们可以类比着学习
         //闭包(closure) 的 声明方式:
