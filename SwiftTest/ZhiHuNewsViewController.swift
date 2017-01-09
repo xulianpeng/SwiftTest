@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -38,6 +40,29 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
             let  homeModel = zhiHuControllerModal(json)
             self.zhiHuTopCellModelArr = homeModel.top_stroies
             self.zhiHuCellModelArr = homeModel.stroies
+         
+            
+            
+//            xlpCoredataManager.obtainContext()
+//            
+//            let top_stroies = json["top_stroies"].array
+//            let stories = json["stories"].array
+//            
+//            
+//            for dic in stories!{
+//                
+//                let theDic:Dictionary =  dic.dictionary!
+//                
+//                xlpCoredataManager.insertData(entyName: "ZhiHuEntity", dic: theDic as NSDictionary)
+//                
+//            }
+//            
+//          
+//            xlpCoredataManager.fetchData()
+            
+            
+            
+            
             
             self.rootTableView.reloadData()
         }

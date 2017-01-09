@@ -181,11 +181,32 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
             
                 while resulstSet.next() {
                     
-                    let dic = resulstSet.resultDictionary()
+                    //可以直接获取字典
+//                    let dic = resulstSet.resultDictionary()
+//                    dicArr.append(dic ?? [:])
+                    //也可以 单个获取
+                    let articleID = resulstSet.int(forColumn: "articleID")
+                    let moduleID = resulstSet.int(forColumn: "moduleID")
+                    let replyNum = resulstSet.int(forColumn: "replyNum")
+                    let subClass = resulstSet.string(forColumn: "subClass")
+                    let thumbnail = resulstSet.string(forColumn: "thumbnail")
+                    let timestamp = resulstSet.int(forColumn: "timestamp")
+                    let title = resulstSet.string(forColumn: "title")
+                    let topFlag = resulstSet.int(forColumn: "topFlag")
+                    let author = resulstSet.string(forColumn: "author")
+                    let visitNum = resulstSet.int(forColumn: "visitNum")
+                    let canRead = resulstSet.int(forColumn: "canRead")
+                    let type = resulstSet.int(forColumn: "type")
                     
-                    dicArr.append(dic ?? [:])
+                    let modal = EassyModal.init(articleID: Int(articleID), moduleID: Int(moduleID), replyNum: Int(replyNum), subClass: subClass!, thumbnail: thumbnail!, timestamp: Int(timestamp), title: title!, topFlag: Int(topFlag), author: author!, visitNum: Int(visitNum), canRead: Int(canRead), type: Int(type))
+                    
+                    
+                    dicArr.append(modal)
+                    
                 }
-                
+                self.subNoNetView?.removeFromSuperview()
+                setupUI()
+                self.rootTableView.reloadData()
                 print(dicArr)
             }else {
                 print("select failed: \(dataBase.lastErrorMessage())")
@@ -238,7 +259,7 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
                     
                     print("创建表成功*******************")
                 }else{
-                    print("创建表失败===================")
+                    print("表已存在,创建表失败===================")
                 }
             }
             
@@ -257,7 +278,9 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
         if dataBase.open() {
             
             
+            
             if dataBase.executeUpdate("insert into articleList(articleID ,moduleID ,replyNum ,subClass ,thumbnail ,timestamp ,title ,topFlag ,author ,visitNum ,canRead ,type ) values (?,?,?,?,?,?,?,?,?,?,?,?)", withArgumentsIn: [modal.articleID,modal.moduleID,modal.replyNum,modal.subClass,modal.thumbnail,modal.timestamp,modal.title,modal.topFlag,modal.author,modal.visitNum,modal.canRead,modal.type]){
+                
                 
                 print("****************数据插入成功====================")
             }else{
@@ -307,6 +330,20 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
         }
         
     }
+    
+    //MARK: 断网时 从数据库中获取数据
+    
+//    func obtainDataFromDB() {
+//        
+//        if dataBase.open() {
+//        
+//        
+//            if dataBase.executeQuery(<#T##sql: String!##String!#>, withArgumentsIn: <#T##[Any]!#>) {
+//                <#code#>
+//            }
+//        
+//        }
+//    }
     
     
     //MARK:头部刷新

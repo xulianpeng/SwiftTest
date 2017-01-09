@@ -29,6 +29,9 @@ let kTFPlaceholderColor = UIColor.lightGray
 
 let kToken = "E1BB0782CF8E65F29356A8DE7D86A28B"
 
+
+let xlpCoredataManager = XLPCoreDataManager.shareInstance
+
 /*
 +(NSString *)obtainAllDateNowWithTimestamp:(NSNumber *)timestamp
 {

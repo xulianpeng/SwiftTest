@@ -138,7 +138,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLPClosuresViewController.swift"
-                  timestampString = "505389492.498044"
+                  timestampString = "505649226.953991"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "246"
@@ -153,7 +153,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLPClosuresViewController.swift"
-                  timestampString = "505389492.499574"
+                  timestampString = "505649226.958171"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "246"
@@ -168,7 +168,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLPClosuresViewController.swift"
-                  timestampString = "505389492.503805"
+                  timestampString = "505649226.9607"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "246"
@@ -201,7 +201,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLP_UI_ViewController.swift"
-                  timestampString = "505389492.513403"
+                  timestampString = "505649226.965772"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -216,7 +216,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLP_UI_ViewController.swift"
-                  timestampString = "505389492.51517"
+                  timestampString = "505649226.967537"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "165"
@@ -249,7 +249,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLP_UI_ViewController.swift"
-                  timestampString = "505389492.519314"
+                  timestampString = "505649226.972256"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -264,7 +264,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLP_UI_ViewController.swift"
-                  timestampString = "505389492.520693"
+                  timestampString = "505649226.974339"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "165"
@@ -313,7 +313,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/WMNetManager.swift"
-                  timestampString = "505389492.526655"
+                  timestampString = "505649226.983543"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -328,7 +328,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/WMNetManager.swift"
-                  timestampString = "505389492.528518"
+                  timestampString = "505649226.985518"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -425,11 +425,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/RefreshViewController.swift"
-            timestampString = "505389349.178722"
+            timestampString = "505648517.35742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "354"
-            endingLineNumber = "354"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
             landmarkName = "headerRefreshAction(header:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -441,11 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/ZhiHuNewsViewController.swift"
-            timestampString = "505221146.436531"
+            timestampString = "505643274.662983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -457,11 +457,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/ZhiHuNewsViewController.swift"
-            timestampString = "505218819.192452"
+            timestampString = "505636180.58914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "obtainData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -569,7 +569,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLPBaseViewController.swift"
-                  timestampString = "505389492.578301"
+                  timestampString = "505649227.045609"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "55"
@@ -584,11 +584,11 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/XLPBaseViewController.swift"
-                  timestampString = "505389492.579939"
+                  timestampString = "505649227.047028"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
                   offsetFromSymbolStart = "23">
                </Location>
             </Locations>
@@ -633,11 +633,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/RefreshViewController.swift"
-            timestampString = "505389349.178722"
+            timestampString = "505648517.35742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "initDB()"
             landmarkType = "7">
          </BreakpointContent>
@@ -649,11 +649,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/RefreshViewController.swift"
-            timestampString = "505389349.178722"
+            timestampString = "505648517.35742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "initDB()"
             landmarkType = "7">
          </BreakpointContent>
@@ -665,11 +665,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/RefreshViewController.swift"
-            timestampString = "505389349.178722"
+            timestampString = "505648517.35742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "SQL_insertTableWithModal(modal:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -681,11 +681,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/RefreshViewController.swift"
-            timestampString = "505389349.178722"
+            timestampString = "505648517.35742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "SQL_insertTableWithModal(modal:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -697,11 +697,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/RefreshViewController.swift"
-            timestampString = "505389349.178722"
+            timestampString = "505648517.35742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "reloadHandle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -719,6 +719,198 @@
             startingLineNumber = "176"
             endingLineNumber = "176"
             landmarkName = "reloadHandle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/RefreshViewController.swift"
+            timestampString = "505648517.35742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "reloadHandle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLPCoreDataManager.swift"
+            timestampString = "505643695.015159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "fetchData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLPCoreDataManager.swift"
+            timestampString = "505643695.015159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "fetchData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLPCoreDataManager.swift"
+            timestampString = "505643695.015159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "fetchData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLPCoreDataManager.swift"
+            timestampString = "505639613.816254"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "obtainContext()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLPCoreDataManager.swift"
+            timestampString = "505639484.056473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "obtainContext()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLPCoreDataManager.swift"
+            timestampString = "505643695.015159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "insertData(entyName:dic:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLPCoreDataManager.swift"
+            timestampString = "505639554.891349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "obtainContext()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/ZhiHuNewsViewController.swift"
+            timestampString = "505643285.205644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "obtainData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLP_RealViewController.swift"
+            timestampString = "505648493.999214"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "Matrix"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLP_RealViewController.swift"
+            timestampString = "505648494.897738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "Matrix"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/XLP_RealViewController.swift"
+            timestampString = "505648503.734764"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

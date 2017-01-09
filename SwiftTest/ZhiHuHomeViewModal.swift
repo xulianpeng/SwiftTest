@@ -22,6 +22,20 @@ class zhiHuCellModel{
         self.type = json["type"].string
         self.imageURL =  json["images"][0].string
     }
+    
+    func setValuesWithDictionary(dic:NSDictionary) -> Void {
+        
+        for i in 0 ..< dic.allKeys.count {
+            
+            let key = dic.allKeys[i];
+            let value = dic.object(forKey: key);
+//            self.setValue(value, forKey: key as! String);
+        
+            
+            
+        }
+    }
+    
 }
 
 //首页顶部banner数据模型

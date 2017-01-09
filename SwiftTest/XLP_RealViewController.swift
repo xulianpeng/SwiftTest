@@ -174,6 +174,27 @@ extension Int{
     }
     
 }
+
+
+
+struct Matrix {
+    var rows: Int, columns: Int
+    subscript(row: Int, column: Int) -> Int {
+        // 二维下标 
+        get {
+            return rows + columns
+        }
+        set (mm){
+            // 默认参数newValue
+            rows += mm    // 2+= 8  -> rows = 10
+            columns += mm // 3+= 8  -> colums = 11
+            rows += row         //  10 + = 6 == 16
+            columns += column   //   11 += 5 == 16
+        }
+    }
+}
+
+
 /// swift 进阶例子
 class XLP_RealViewController: UIViewController {
 
@@ -181,6 +202,13 @@ class XLP_RealViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var matrix = Matrix(rows: 2, columns: 3) //这个是 初始化  这个 结构体
+        matrix[6, 5] = 8 //这个是下标语法  newvalue = 8
+        // 调用下标的set和get方法
+        print(matrix.columns)
+        // 13
+        print(matrix.rows)
+        
         //MARK: 进阶一: 函数式编程 初探
         //方法一 和方法二 达到的目的是一样 ,但是 使用的策略是两种,第一种是普通的命令式编程,会产生很多的中间变量,但是第二个是函数式编程,不产生中间变量
         //好好研究一下 函数式编程 的思想 和用法 是swift开发进阶的必备之路
