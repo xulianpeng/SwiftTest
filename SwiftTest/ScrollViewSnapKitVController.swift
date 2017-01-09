@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ScrollViewSnapKitVController: XLPBaseViewController {
+import MJRefresh
+class ScrollViewSnapKitVController: XLPBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     
     
@@ -20,6 +20,10 @@ class ScrollViewSnapKitVController: XLPBaseViewController {
     
     let labelStr = "上的非农数据开放的骄傲啥地方 水电Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboa. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullarum费圣诞节发顺丰快递是敬爱放水电费水电费水电费"
  
+    
+    var finalArr = NSMutableArray()
+    let rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -234,18 +238,83 @@ class ScrollViewSnapKitVController: XLPBaseViewController {
         label2.snp.makeConstraints { (make) in
             
             make.left.equalTo(10)
-            make.top.equalTo(label1.snp.bottom).offset(20)
+            make.top.equalTo(label.snp.bottom).offset(20)
             make.right.equalTo(-10)
-            make.bottom.equalTo(containerView).offset(-30)
+//            make.bottom.equalTo(containerView).offset(-30)
             
         }
         
         //////////////
         
+                
+        rootTableView.initTableView(delegate: self, superView: containerView)
+        rootTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(label2.snp.bottom).offset(20)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.height.equalTo(SCREENHEIGHT)
+            make.bottom.equalTo(containerView).offset(-20)
+        }
         
-
+        rootTableView.register(EassyCell.self, forCellReuseIdentifier: "cell")
+        obtainDataWithWMNet()
+        
+        
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return finalArr.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? EassyCell
+        let modal:EassyModal = finalArr[indexPath.row] as! EassyModal
+        cell?.showValueWithModal(modal: modal)
+        
+        return cell!
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return SCREENWIDTH/4 + 20
+    }
+
+   
+    func obtainDataWithWMNet(){
+        
+        let urlString2 :String = "http://www.iyingdi.com/article/list"
+        let paraDic2:[String:Any] = ["module":11,"size":20,"system":"ios","timestamp":0,"version":410]
+        WMNetManager.sharedInstance.SucceedGET(urlString2, parameters: paraDic2) { (jsonValue) in
+            
+            let articlesArr = jsonValue["articles"].array
+            for arr in articlesArr!   {
+                let modal = EassyModal.init(articleID:arr[0].int!,
+                                            moduleID: 11,
+                                            replyNum: arr[4].int!,
+                                            subClass: arr[17].string!,
+                                            thumbnail: arr[7].string!,
+                                            timestamp: arr[2].int!,
+                                            title: arr[1].string!,
+                                            topFlag: arr[9].int!,
+                                            author: arr[14].string!,
+                                            visitNum: arr[5].int!,
+                                            canRead: arr[10].int!,
+                                            type: arr[11].int!)
+                self.finalArr.add(modal)
+            }
+            
+            DispatchQueue.main.async {
+                
+                self.rootTableView.reloadData()
+            }
+            
+            
+        }
+
+    }
+    
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

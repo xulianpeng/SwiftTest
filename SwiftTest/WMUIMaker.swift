@@ -14,9 +14,7 @@ class WMUIMaker: NSObject {
 
     
     
-    /*
-     label2.snp.makeConstraints(<#T##closure: (ConstraintMaker) -> Void##(ConstraintMaker) -> Void#>)
-     */
+    
     
     class   func creatLabel(label:UILabel,text:String,aligenment:NSTextAlignment,fontSize:CGFloat,textColor:UIColor,backgroundColor:UIColor,superView:UIView) -> Void {
         
@@ -57,5 +55,43 @@ class WMUIMaker: NSObject {
         
     }
 
+    
+}
+
+typealias tapHandler1 = (_ sender:UIButton) -> () //Invalid redeclaration of
+
+
+class BaseUIButton: UIButton {
+    
+    var btnHandler: tapHandler1!
+
+    class func button(frame:CGRect,title:String?,fontFloat:CGFloat,image:UIImage?,color:UIColor?,target:Any,superVtew:UIView,handler:@escaping tapHandler1) -> UIButton {
+        
+        let bt = BaseUIButton()
+        bt.frame = frame
+        bt.titleLabel?.textAlignment = NSTextAlignment.center
+        bt.titleLabel?.font = UIFont.systemFont(ofSize: fontFloat)
+        bt.backgroundColor = color
+        
+        superVtew.addSubview(bt)
+        bt.setTitle(title, for: UIControlState.normal)
+        bt.setImage(image, for: UIControlState.normal)
+//        button.btnHandler = handler
+        ///点击
+        bt.addTarget(target, action: #selector(btnClick1(btn:)), for: .touchUpInside)
+        
+       return bt
+    }
+    
+    //把函数方法 包在 闭包里面
+    
+    @objc private func btnClick1(btn:UIButton){
+        
+        if btnHandler != nil {
+            btnHandler(btn)
+        }
+
+
+    }
     
 }

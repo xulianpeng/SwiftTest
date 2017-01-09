@@ -41,6 +41,15 @@ class XLP_UI_ViewController: UIViewController {
         //类比 viewdidload方法 可以调用函数
         
         
+        
+        var testArr = [Any]()
+        
+        testArr = ["C","ddd","asda2sd","asas123d","asdasqwd","asda12","umnlknjkk","asd8908767"]
+        
+        print(testArr.popLast() ?? "默认")
+        
+        
+        print(testArr.distance(from: 0, to: 3),testArr.endIndex,testArr.reserveCapacity(2))
         //生成马赛克背景
         
         let mskWidth = 10.0
@@ -135,6 +144,47 @@ class XLP_UI_ViewController: UIViewController {
             make.height.equalTo(30)
         }
        
+        
+        //MARK: button runtime 测试
+        /*
+        let button3 = UIButton.init(type:UIButtonType.custom)
+        button3.initButton5("按钮888", titleColor: .blue, fontSize: 14, imageStr: nil, backgroundImageStr: nil, cornerRedius: 6, target: self, snpMaker: { (make) in
+            
+//            make.left.equalTo(30)
+//            make.top.equalTo(testTextfield.snp.bottom).offset(30)
+//            make.right.equalTo(-30)
+//            make.height.equalTo(30)
+        }) {
+            
+//            self.testTextfield.text = "我爱你中国,亲爱的母亲"
+        }
+        
+        */
+//        @discardableResult
+        let myBt = BaseUIButton.button(frame: CGRect(x:100,y:400,width:100,height:30), title: "崴泥中国", fontFloat: 14, image: nil, color: nil,target:self,superVtew:view) { (bt) in
+            print("asdasdasd")
+        }
+        view.addSubview(myBt)
+        
+        let mybt1 = BaseUIButton.button(frame: CGRect(x:100,y:470,width:100,height:30), title: "请点我啊", fontFloat: 15, image: nil, color: .blue, target: self,superVtew:view) { (btn) in
+            
+            print("什么鬼啊啊啊啊 啊啊啊 啊啊啊啊啊啊啊 啊啊")
+        }
+       
+        
+        let myButton = UIButton()
+        myButton.xlpInitButton("点击重载", titleColor: .red, fontSize: 15, imageStr: nil, backgroundImageStr: nil, cornerRedius: 4, superView: view, snpMaker: { (make) in
+            make.left.equalTo(40)
+            make.right.equalTo(-40)
+            make.height.equalTo(40)
+            make.top.equalTo(testTextfield.snp.bottom).offset(100)
+        }) { (btn) in
+            
+            print("=======================点击重载=========================")
+        }
+        
+        
+        
         
         
     }
@@ -282,13 +332,15 @@ class XLP_UI_ViewController: UIViewController {
         }
         button2.tag = tag2
         
+        
+        
                
     }
     
     
-    //MARK: button runtime 测试
     
-    let button3 = UIButton.init()
+    
+    
     
     
     
@@ -296,10 +348,12 @@ class XLP_UI_ViewController: UIViewController {
      /// 按钮的点击事件
      /// - Parameter btn: 按钮1
      func handleAction1(btn:UIButton) -> Void {
+        
+        titleLabel.textColor = UIColor.yellow
+        titleLabel.backgroundColor = UIColor.black
+        titleLabel.transform = CGAffineTransform.init(rotationAngle: -0.5)
      if btn.tag == tag1{
-     titleLabel.textColor = UIColor.yellow
-     titleLabel.backgroundColor = UIColor.black
-     titleLabel.transform = CGAffineTransform.init(rotationAngle: -0.5)
+     
      }
      }
      
@@ -324,14 +378,5 @@ class XLP_UI_ViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
 }

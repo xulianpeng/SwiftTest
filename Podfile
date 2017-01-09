@@ -12,6 +12,8 @@ pod 'AsyncSwift'
 pod 'SVProgressHUD'
 pod 'AlamofireNetworkActivityIndicator', '~> 2.1.0'
 pod 'AlamofireImage', '~> 3.2.0'
+pod 'HandyJSON', '~> 1.4.0'
+pod 'MBProgressHUD', '~> 1.0.0'
 use_frameworks!
 end
 

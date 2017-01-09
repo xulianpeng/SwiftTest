@@ -22,11 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let naVC = UINavigationController.init(rootViewController: rootVC)
         window?.rootViewController = naVC
         
+        //FIXME:全局键盘管理 键盘收回,只有点击键盘上的 done,添加 touchview方法后,整个页面向上偏移的距离没有返回
         let keyBoardManager = IQKeyboardManager.sharedManager()
         keyBoardManager.enable = true
         keyBoardManager.keyboardDistanceFromTextField = 20
         
         return true
+        
+    
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -34,12 +34,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HandyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -77,11 +87,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0EE0F0645B23CDA775D9D5D7362CF6C0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>115FA0D867E07C04838493890DBD8D29</key>
 		<dict>
 			<key>primary</key>
@@ -92,12 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>36AF82337D97EBAB68D7E1AD50D12309</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5F48E5F054824481F201146754296303</key>
+		<key>5F63C22A46A4746F1FE3D13ADD1FDFF2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,17 +122,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>802E857C2B7E6DE6BBBC2DA935898A59</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8954F9694994467E5354D7C70F011142</key>
+		<key>9495FCD49594E2468183BAE1633696AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E959FE30B1CEB0EA11F13A558AE141F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +152,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D714303B764B132F54C04D595318A4A4</key>
+		<key>DD031D6E980A727E4D6198D1A8D2A806</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E14A62900910444707A5504D25EC98DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F49F4E637BD12451875145E3437825BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

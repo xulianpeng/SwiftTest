@@ -23,6 +23,12 @@ let kLabelFontSize:CGFloat = 14.0
 
 //MARK: UILabel 相关的默认属性
 let kTFPlaceholderColor = UIColor.lightGray
+
+
+//MARK: 营地token
+
+let kToken = "E1BB0782CF8E65F29356A8DE7D86A28B"
+
 /*
 +(NSString *)obtainAllDateNowWithTimestamp:(NSNumber *)timestamp
 {

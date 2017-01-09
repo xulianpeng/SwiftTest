@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 typealias snapMakerClosure = ((ConstraintMaker)->Void)
+
 //MARK: UILabel 的 extension
 extension UILabel{
     
@@ -275,7 +276,7 @@ extension UIButton{
                      imageStr:String?,
                      backgroundImageStr:String?,
                      cornerRedius:CGFloat?,
-                     target:UIViewController,
+                     target:Any,
                      myAction: Selector?,
                      snpMaker:snapMakerClosure) {
         
@@ -302,12 +303,20 @@ extension UIButton{
         if myAction != nil {
             self.addTarget(target, action: myAction!, for: .touchUpInside)
         }
-        target.view.addSubview(self)
+        if ((target as? UIViewController) != nil) {
+            
+            (target as AnyObject).view.addSubview(self)
+        }else if ((target as? UIView) != nil) {
+            (target as AnyObject).addSubview(self)
+        }
+        
+        
         
         self.snp.makeConstraints(snpMaker)
         
     }
 
+    
     func initButton(_ title:String?,
                  titleColor:UIColor?,
                  target:UIViewController,
@@ -324,7 +333,80 @@ extension UIButton{
                      snpMaker: snpMaker)
         
     }
+    
+//     clickAction:buttonClickClosure
+   /*
+    func initButton(_ title:String?,
+                    titleColor:UIColor?,
+                    fontSize:CGFloat?,
+                    imageStr:String?,
+                    backgroundImageStr:String?,
+                    cornerRedius:CGFloat?,
+                    target:UIViewController,
+                    myAction: Selector?,
+                    snpMaker:snapMakerClosure
+        
+        ) {
+        
+        if title != nil {
+            self.setTitle(title, for: .normal)
+        }
+        if titleColor != nil {
+            self.setTitleColor(titleColor, for: .normal)
+        }
+        if fontSize != nil {
+            
+            self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize!)
+        }
+        if imageStr != nil {
+            self.setImage(UIImage.init(named: imageStr!), for: .normal)
+        }
+        if backgroundImageStr != nil {
+            self.setBackgroundImage(UIImage.init(named: backgroundImageStr!), for: .normal)
+        }
+        if cornerRedius != nil {
+            self.layer.cornerRadius = cornerRedius!
+            self.layer.masksToBounds = true
+        }
+        if myAction != nil {
+            self.addTarget(target, action: myAction!, for: .touchUpInside)
+        }
+        target.view.addSubview(self)
+        
+        
+        
+        self.snp.makeConstraints(snpMaker)
+        
+        
+        
+    }
+    
+    
+    private struct xlp_associatedKeys{
+        
+        static  var s_XLPButtonTouchDownKey = "s_XLPButtonTouchDownKey";
+        
+    }
+    */
+//    private var toHandler: buttonObject?{
+//        
+//        get{
+//            if let newDataBlock = objc_getAssociatedObject(self, &xlp_associatedKeys.s_XLPButtonTouchDownKey) as? buttonObject
+//            {
+//                return newDataBlock
+//            }
+//            return nil
+//        }
+//        set(newValue){
+//            objc_setAssociatedObject(self, xlp_associatedKeys.s_XLPButtonTouchDownKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+//            
+//        }
+//    }
+    
+    
 }
+
+
 
 //MARK: UITextfield 的 extension
 extension UITextField {
@@ -389,6 +471,21 @@ extension UITextField {
         superView.addSubview(self)
         self.snp.makeConstraints(snpMaker)
         
+    }
+}
+
+//MARK:UIImageView 的 extension
+
+extension UIImageView {
+    
+    func initImageView(_ name:String?,superView:UIView,snpMaker:snapMakerClosure) {
+        
+        if name != nil {
+            
+            self.image = UIImage.init(named: name!)
+        }
+        superView.addSubview(self)
+        self.snp.makeConstraints(snpMaker)
     }
 }
 //MARK:UITableview 的 extension

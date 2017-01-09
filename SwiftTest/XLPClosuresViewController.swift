@@ -11,10 +11,11 @@ import AFNetworking
 import SVProgressHUD
 import Alamofire
 import SwiftyJSON
+import MJRefresh
 /// swift与oc混编->使用AF实现数据的请求与下载 最终展现出来
 class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    let wmHUD :SVProgressHUD = SVProgressHUD.init()
+
     var finalArr = NSMutableArray()
     var rootTableView = UITableView()
     
@@ -24,22 +25,20 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.white
-        view.addSubview(wmHUD)
-        wmHUD.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.width.height.equalTo(30)
-        }
+
         
-        wmHUD.isHidden = true
 //        obtainDataWithAF()
-        obtainDataWithAFire()
+//        obtainDataWithAFire()
+        
+//        obtainDataWithWMNet()
+        
+        obtainDataWithWMNet2()
         setupUI()
         
+//        view.bringSubview(toFront: wmHUD)
         
-        
-        
+        setupRefresh()
     }
     //MARK:布局tableview
     func setupUI() {
@@ -56,7 +55,7 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
      
         */
         
-        rootTableView = UITableView.init(frame: CGRect(x:0,y:64,width:SCREENWIDTH,height:SCREENHEIGHT-64), style: .plain)
+        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
         view.addSubview(rootTableView)
       
 
@@ -92,17 +91,16 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
         
         // 旅法师营地 "http://www.iyingdi.com/article/list?module=11&size=20&system=ios&timestamp=0&version=410"
         
-        wmHUD.isHidden = false
+//        wmHUD.isHidden = false
         let urlString :String = "http://www.iyingdi.com/article/list"
         let AFManager = AFHTTPSessionManager()
+        
         let paraDic:[String:Any] = ["module":11,"size":20,"system":"ios","timestamp":0,"version":410]
         let myTask :URLSessionDataTask = AFManager.get(urlString, parameters:paraDic, progress: {
             progress in
             //
             
         }, success: { task, response in
-            
-            self.wmHUD.isHidden = true
             let dic :Dictionary = response as! Dictionary<String, Any>
             
             
@@ -115,18 +113,6 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
             if  dic["success"] as! Bool {
                 
                 guard let bigArr:[[Any]] = dic["articles"] as? Array else {return}
-                
-                
-                /*
-                 let parsed = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
-                 let list = parsed["list"] as! [String:Any]?
-                 let resources = list?["resources"] as! [AnyObject]?
-                 let fields = resources?[0] as! [String:Any]?
-                 let resource = fields?["resource"] as! [String:Any]?
-                 let fields2 = resource?["fields"] as! [String:Any]?
-                 let price = fields2?["price"] as! String?
-                 */
-                
                 for arr in bigArr   {
                     
                     let modal = EassyModal.init(articleID:arr[0] as! Int,
@@ -158,9 +144,10 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
             
         }) { (task, error) in
             
-            self.wmHUD.isHidden = true
+
             print(error)
-            }!
+        }!
+        
         
         myTask.resume()
     }
@@ -173,26 +160,24 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
        
         //理解一下链式编程的特点:
         
-        ///*
+        
         //方法一:
         
-        Alamofire.request(URL.init(string: urlString)!, method: .get,parameters:paraDic).responseJSON(completionHandler: {
+        
+        
+        
+        let queue:DispatchQueue = DispatchQueue.global(qos: .utility)
+        
+        
+        Alamofire.request(URL.init(string: urlString)!, method: .get,parameters:paraDic).responseJSON(queue:queue,completionHandler: {
             response in
             
-            /*
-             let parsed = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
-             let list = parsed["list"] as! [String:Any]?
-             let resources = list?["resources"] as! [AnyObject]?
-             let fields = resources?[0] as! [String:Any]?
-             let resource = fields?["resource"] as! [String:Any]?
-             let fields2 = resource?["fields"] as! [String:Any]?
-             let price = fields2?["price"] as! String?
-             */
+           
             
 //   方法1         let dic :Dictionary = response.result.value as! Dictionary<String, Any>
             //方法2
             
-            
+            /*
             guard let dic:Dictionary = response.result.value as? Dictionary<String, Any> else { return }
             
             
@@ -230,21 +215,44 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
                 
             }
             
-
+            */
+         
             switch response.result {
             case .success(let value):
-                print("Value:\(value)")
-                print("------")
+                //这个方法得到的 swiftyJsonVar 就是和 OC同用的 json字符串 字典套数组 数组套字典 ,解析方式和 OC 一样
+                //上面的方法得到是 swift特点的 json字符串 包含 any类型
+                //推荐这个方法
                 let swiftyJsonVar = JSON(value)
-                print(swiftyJsonVar)
+                let articlesArr = swiftyJsonVar["articles"].array
+                for arr in articlesArr!   {
+                    let modal = EassyModal.init(articleID:arr[0].int!,
+                                                moduleID: 11,
+                                                replyNum: arr[4].int!,
+                                                subClass: arr[17].string!,
+                                                thumbnail: arr[7].string!,
+                                                timestamp: arr[2].int!,
+                                                title: arr[1].string!,
+                                                topFlag: arr[9].int!,
+                                                author: arr[14].string!,
+                                                visitNum: arr[5].int!,
+                                                canRead: arr[10].int!,
+                                                type: arr[11].int!)
+                    self.finalArr.add(modal)
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    self.rootTableView.reloadData()
+                }
             case .failure(let error):
                 print(error)
             }
 
             
         })
-        
  
+ 
+        //********************************
         /*
         //方法二:
         Alamofire.request(URL.init(string: urlString)!, method: .get, parameters: paraDic).response(completionHandler: { (dataResponse) in
@@ -255,7 +263,7 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
 //             let parsed = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
         })
         */
-        
+        //**********************************************
         /*
         //方法三
         Alamofire.request(URL.init(string: urlString)!, method: .get, parameters: paraDic).responseData { (data) in
@@ -275,10 +283,112 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
             
         }
         */
+        
+        //**********************************************
+
+        /*
+        Alamofire.request(URL.init(string: urlString)!, method: .get, parameters: paraDic).responseString { (response) in
+            print(response.result.value ?? "什么情况")
+            
+            switch response.result{
+                
+            case .success(let value):
+                
+                let myData :Data = value.data(using: .utf8)!
+//                var error :Error;
+                
+                let dic = try? JSONSerialization.data(withJSONObject: myData, options:JSONSerialization.WritingOptions.init(rawValue: 8))
+                print(dic as Any)
+                
+                print(value)
+            case .failure(let error):
+                
+                print(error)
+            }
+            
+        }
+        
+        */
         //小结: 以上关于Alamofire的三种相应方式 ,其返回值 data的内容是一样的,该对象是一个字典: 一共6个键值对{request:URLRequest,response:HTTPURLResponse,data:Data,error:Error,timeline:Alamofire.Timeline,_metrics:AnyObject},其中方法一 包括了一个新的 json, 其keY值为reuslt ,通过解析result.value即可获取要解析的数据
     
     
+        
+//        WMNetManager.sharedInstance.WMNetGET(<#T##urlString: String##String#>, parameters: <#T##Dictionary<String, Any>#>)
     }
+    //MARK: 获取数据 3 obtainDataWithWMNet()
+    func obtainDataWithWMNet() {
+        let urlString1 :String = "http://www.iyingdi.com/article/list"
+        let paraDic1:[String:Any] = ["module":11,"size":20,"system":"ios","timestamp":0,"version":410]
+ 
+        WMNetManager.sharedInstance.WMNetGET(urlString1, parameters: paraDic1, success: { (dic) in
+            
+            print(dic)
+            
+        }) { (error) in
+            
+            print(error)
+        }
+    }
+    
+    //MARK: 获取数据 4 obtainDataWithWMNet2
+    func obtainDataWithWMNet2(){
+    
+        
+        let urlString2 :String = "http://www.iyingdi.com/article/list"
+        let paraDic2:[String:Any] = ["module":11,"size":20,"system":"ios","timestamp":0,"version":410]
+         WMNetManager.sharedInstance.SucceedGET(urlString2, parameters: paraDic2) { (jsonValue) in
+            
+            let articlesArr = jsonValue["articles"].array
+            for arr in articlesArr!   {
+                let modal = EassyModal.init(articleID:arr[0].int!,
+                                            moduleID: 11,
+                                            replyNum: arr[4].int!,
+                                            subClass: arr[17].string!,
+                                            thumbnail: arr[7].string!,
+                                            timestamp: arr[2].int!,
+                                            title: arr[1].string!,
+                                            topFlag: arr[9].int!,
+                                            author: arr[14].string!,
+                                            visitNum: arr[5].int!,
+                                            canRead: arr[10].int!,
+                                            type: arr[11].int!)
+                self.finalArr.add(modal)
+            }
+            
+            DispatchQueue.main.async {
+                
+                self.rootTableView.reloadData()
+            }
+
+            
+        }
+    }
+    //MARK: mjrefsh 初始化
+    func setupRefresh(){
+        
+        let header:MJRefreshNormalHeader = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(headerRefreshAction))
+        self.rootTableView.mj_header = header
+        header.beginRefreshing()
+        
+        let footer:MJRefreshFooter = MJRefreshFooter.init(refreshingTarget: self, refreshingAction: #selector(footerRefreshAction))
+        self.rootTableView.mj_footer = footer
+        footer.beginRefreshing()
+        
+    }
+    
+    func headerRefreshAction(header:MJRefreshNormalHeader)  {
+        
+        
+        header.endRefreshing()
+    }
+        
+    func footerRefreshAction()  {
+        
+        
+        
+    }
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
