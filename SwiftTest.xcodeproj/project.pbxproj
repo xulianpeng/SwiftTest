@@ -28,6 +28,8 @@
 		07F39F121E1DE84900EE268B /* RefreshDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F111E1DE84900EE268B /* RefreshDetailViewController.swift */; };
 		07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F181E232DE700EE268B /* SwiftTest.xcdatamodeld */; };
 		07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */; };
+		07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F371E24F9E900EE268B /* videoRootViewController.swift */; };
+		07F39F3A1E24F9E900EE268B /* videoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F381E24F9E900EE268B /* videoPlayViewController.swift */; };
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
@@ -100,6 +102,8 @@
 		07F39F111E1DE84900EE268B /* RefreshDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshDetailViewController.swift; sourceTree = "<group>"; };
 		07F39F191E232DE700EE268B /* SwiftTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftTest.xcdatamodel; sourceTree = "<group>"; };
 		07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPCoreDataManager.swift; sourceTree = "<group>"; };
+		07F39F371E24F9E900EE268B /* videoRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoRootViewController.swift; sourceTree = "<group>"; };
+		07F39F381E24F9E900EE268B /* videoPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoPlayViewController.swift; sourceTree = "<group>"; };
 		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -226,6 +230,15 @@
 			name = Modal;
 			sourceTree = "<group>";
 		};
+		07F39F3B1E24F9ED00EE268B /* 视频相关 */ = {
+			isa = PBXGroup;
+			children = (
+				07F39F371E24F9E900EE268B /* videoRootViewController.swift */,
+				07F39F381E24F9E900EE268B /* videoPlayViewController.swift */,
+			);
+			name = "视频相关";
+			sourceTree = "<group>";
+		};
 		89E73DEA1DFA832900058FB0 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +273,7 @@
 				89E73E421E01294E00058FB0 /* TestClassViewController.swift */,
 				8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */,
 				8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */,
+				07F39F3B1E24F9ED00EE268B /* 视频相关 */,
 				07F39F141E232C0100EE268B /* CoreData */,
 				07F39F101E1DE80700EE268B /* refreshTest */,
 				07F39F091E1CEEF700EE268B /* 知乎日报 */,
@@ -533,6 +547,7 @@
 				89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */,
 				079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */,
 				07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */,
+				07F39F3A1E24F9E900EE268B /* videoPlayViewController.swift in Sources */,
 				071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */,
 				079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */,
 				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,
@@ -540,6 +555,7 @@
 				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
 				07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
+				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
