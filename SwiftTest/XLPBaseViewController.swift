@@ -34,7 +34,7 @@ class XLPBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        self.view.backgroundColor = UIColor.white
        
         
         
@@ -80,6 +80,11 @@ class XLPBaseViewController: UIViewController {
 
     func reloadHandle() {
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        SVProgressHUD.dismiss()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642871E1B38D000B21BF0 /* ButtonExtension.swift */; };
 		0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642891E1B931600B21BF0 /* RefreshViewController.swift */; };
+		075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -30,6 +31,8 @@
 		07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */; };
 		07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F371E24F9E900EE268B /* videoRootViewController.swift */; };
 		07F39F3A1E24F9E900EE268B /* videoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F381E24F9E900EE268B /* videoPlayViewController.swift */; };
+		07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */; };
+		07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F401E27690800EE268B /* RootTabBarViewController.swift */; };
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
@@ -83,6 +86,7 @@
 /* Begin PBXFileReference section */
 		071642871E1B38D000B21BF0 /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		071642891E1B931600B21BF0 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
+		075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCityViewController.swift; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPCoreDataManager.swift; sourceTree = "<group>"; };
 		07F39F371E24F9E900EE268B /* videoRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoRootViewController.swift; sourceTree = "<group>"; };
 		07F39F381E24F9E900EE268B /* videoPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoPlayViewController.swift; sourceTree = "<group>"; };
+		07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPBaseTabBarController.swift; sourceTree = "<group>"; };
+		07F39F401E27690800EE268B /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -159,6 +165,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075EEAA81E276C2F00D8E273 /* 旅法师 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "旅法师";
+			sourceTree = "<group>";
+		};
+		075EEAA91E276C4400D8E273 /* 商城 */ = {
+			isa = PBXGroup;
+			children = (
+				075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */,
+			);
+			name = "商城";
+			sourceTree = "<group>";
+		};
 		079FE39C1E094793007DF3DE /* Swift与OC混编 */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +204,7 @@
 			children = (
 				079FE42D1E0BAAB3007DF3DE /* XLPBaseViewController.swift */,
 				079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */,
+				07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */,
 				079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */,
 				07C31F631E12732B00DCB71D /* WMUIExtension.swift */,
 				07F290501E15F2AF00E94097 /* ExtensionTest.swift */,
@@ -266,6 +288,7 @@
 			children = (
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
+				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
 				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
 				89E73E381DFE463300058FB0 /* XLP_UI_ViewController.swift */,
 				89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */,
@@ -273,6 +296,8 @@
 				89E73E421E01294E00058FB0 /* TestClassViewController.swift */,
 				8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */,
 				8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */,
+				075EEAA91E276C4400D8E273 /* 商城 */,
+				075EEAA81E276C2F00D8E273 /* 旅法师 */,
 				07F39F3B1E24F9ED00EE268B /* 视频相关 */,
 				07F39F141E232C0100EE268B /* CoreData */,
 				07F39F101E1DE80700EE268B /* refreshTest */,
@@ -525,8 +550,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E73E411E01292900058FB0 /* TsetClass.swift in Sources */,
+				075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */,
 				079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */,
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
+				07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */,
 				89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */,
 				07F39F0F1E1CEF7400EE268B /* zhiHuTopCell.swift in Sources */,
 				07F39F081E1CEEE500EE268B /* ZhiHuHomeViewModal.swift in Sources */,
@@ -559,6 +586,7 @@
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
+				07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

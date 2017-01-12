@@ -38,7 +38,7 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
     }
 
     func setupUI() {
-        self.title = "refresh测试"
+//        self.navigationController?.title = "Refresh测试"
         rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
         rootTableView.initTableView(delegate: self, superView: view)
         rootTableView.register(EassyCell.self, forCellReuseIdentifier: "cell")

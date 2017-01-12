@@ -56,6 +56,9 @@ class videoRootViewController: XLPBaseViewController {
             make.height.equalTo(videoBt1.snp.height)
         }) { (bt) in
             
+            
+            self.navigationController?.pushViewController(videoPlayViewController(), animated: true)
+            /*
             // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
             self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
             self.playerVC1.view.frame = CGRect(x:0,y:300,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
@@ -79,6 +82,8 @@ class videoRootViewController: XLPBaseViewController {
            
             print("===============\(self.playerVC1.readyForDisplay)")
             self.playerVC1.play()
+            
+            */
         }
         
         videoBt3.xlpInitEassyButton("AVPlayerViewController", titleColor: .blue, fontSize: 14, backgroundColor: XLPRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
