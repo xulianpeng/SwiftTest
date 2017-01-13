@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-class RefreshDetailViewController: XLPBaseViewController,UIWebViewDelegate {
+class RefreshDetailViewController: XLPBaseViewController,UIWebViewDelegate,UIGestureRecognizerDelegate {
 
     var url = String()
     var detailWebView = UIWebView()
@@ -32,13 +32,14 @@ class RefreshDetailViewController: XLPBaseViewController,UIWebViewDelegate {
         view.isUserInteractionEnabled = true
         let tap:UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:#selector(tapGestureHandle))
         tap.numberOfTapsRequired = 1
-//        tap.delegate = self
+        tap.delegate = self
         view.addGestureRecognizer(tap)
     }
 
     func tapGestureHandle(tap:UITapGestureRecognizer) -> Void {
         print("==============点我点位我单啊啊啊啊啊")
-        self.navigationController?.popViewController(animated: true)
+        
+        self.navigationController!.popViewController(animated: true)
     }
     func webViewDidStartLoad(_ webView: UIWebView) {
         SVProgressHUD.show(withStatus: "正在加载")
@@ -49,20 +50,17 @@ class RefreshDetailViewController: XLPBaseViewController,UIWebViewDelegate {
         
         SVProgressHUD.dismiss()
     }
+    
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

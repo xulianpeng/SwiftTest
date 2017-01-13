@@ -16,19 +16,27 @@ class videoPlayViewController: XLPBaseViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.white
+        
+        self.navigationController?.navigationBar.isOpaque = true
         initMPMoviePlayer()
         //给palyer添加通知 监控其各种状态的变化
         addNoticeForPlayer()
         
-        //
+        //截图
         obtainThunailImage()
+        
+        //调节系统音量
+        
+        //调节系统亮度
+        
+        
     }
     
     func initMPMoviePlayer() {
         
         // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
         self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
-        self.playerVC1.view.frame = CGRect(x:0,y:100,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
+        self.playerVC1.view.frame = CGRect(x:0,y:64,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
         
         self.view.addSubview((self.playerVC1.view)!)
         
@@ -58,6 +66,18 @@ class videoPlayViewController: XLPBaseViewController {
         notificationCenter.addObserver(self, selector: #selector(mediaPlayerPlaybackFinished), name: NSNotification.Name.MPMoviePlayerPlaybackDidFinish, object: self.playerVC1)
         notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlayerThumbnailImageRequestDidFinish, object: self.playerVC1)
         
+        notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlayerDidEnterFullscreen, object: self.playerVC1)
+        /**
+         MPVolumeViewWirelessRouteActiveDidChange
+         MPVolumeViewWirelessRoutesAvailableDidChange
+         
+         MPMoviePlayerTimedMetadataUpdated
+         MPMoviePlayerNowPlayingMovieDidChange
+         MPMoviePlayerWillExitFullscreen
+         MPMoviePlayerWillEnterFullscreen
+         MPMoviePlayerDidExitFullscreen
+         MPMoviePlayerDidEnterFullscreen
+         **/
     }
     
     func mediaPlayerPlaybackStateChange(notification:Notification){
@@ -99,13 +119,7 @@ class videoPlayViewController: XLPBaseViewController {
 
     
     func obtainThunailImage()  {
-        //获取13.0s、21.5s的缩略图
-//        @objc [self.playerVC1 
-//        requestThumbnailImagesAtTimes:@[@13.0,@21.5] timeOption:MPMovieTimeOptionNearestKeyFrame];
-//        self.playerVC1.required
-        
-        //获取13.0s、21.5s的缩略图
-//        [self.moviePlayer requestThumbnailImagesAtTimes:@[@13.0,@21.5] timeOption:MPMovieTimeOptionNearestKeyFrame];
+      
         
         self.playerVC1.requestThumbnailImages(atTimes: [10,20], timeOption: MPMovieTimeOption.nearestKeyFrame)
         
@@ -113,6 +127,9 @@ class videoPlayViewController: XLPBaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         
+        
+        self.playerVC1.pause()
+        self.playerVC1.view.removeFromSuperview()
         notificationCenter.removeObserver(self)
     }
     

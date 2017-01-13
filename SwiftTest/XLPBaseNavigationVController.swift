@@ -1,5 +1,5 @@
 //
-//  XLPBaseNavigationVController.swift
+//  XLPBaseNavigationVController.swi ft
 //  SwiftTest
 //
 //  Created by lianpeng on 2016/12/22.
@@ -16,6 +16,14 @@ class XLPBaseNavigationVController: UINavigationController {
         // Do any additional setup after loading the view.
     }
 
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        
+        super.pushViewController(viewController, animated: animated)
+        self.hidesBottomBarWhenPushed = true
+        //FIXME:有问题 
+        self.tabBarController?.tabBar.isHidden = true//有问题
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
