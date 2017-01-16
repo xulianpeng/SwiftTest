@@ -135,7 +135,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             make.height.equalTo(SCREENWIDTH * 9 / 16)
         }
         
-        self.playerVC1.controlStyle = .embedded//embedded,fullscreen,none,default
+        self.playerVC1.controlStyle = .fullscreen//embedded,fullscreen,none,default
         //显示播放 按钮  快进 快退 全屏等
         //fullscreen  分上下两部分 上面是 完成按钮  进度条  下面是 快退 播放 快进 三个按钮 ,其中 点完成时 播放暂停 , 点快进或快退时,若无视频队列 则会黑屏
         //none时 相关的控制按钮 进度条 全部没有
@@ -150,6 +150,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         self.playerVC1.repeatMode = .one
         self.playerVC1.prepareToPlay()
         
+//        self.playerVC1.currentPlaybackRate
         print("===============\(self.playerVC1.readyForDisplay)")
         self.playerVC1.play()
         
@@ -157,6 +158,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         view.addSubview(topView)
         topView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.playerVC1.view)
+            make.bottom.equalTo(self.playerVC1.view.snp.bottom).offset(-100)
         }
         topView.backgroundColor = .red
         topView.alpha = 0.5
@@ -171,6 +173,9 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlayerThumbnailImageRequestDidFinish, object: self.playerVC1)
         
         notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlayerDidEnterFullscreen, object: self.playerVC1)
+        
+        
+//         notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlaybackStateSeekingBackward, object: self.playerVC1)
         /**
          MPVolumeViewWirelessRouteActiveDidChange
          MPVolumeViewWirelessRoutesAvailableDidChange
@@ -196,6 +201,12 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
          
         case .stopped:
             print("停止播放.");
+            
+        case .seekingForward:
+            print("快进")
+            
+        case.seekingBackward:
+            print("快退")
             
         default:
             print("播放状态:%li",self.playerVC1.playbackState);
@@ -260,6 +271,14 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         return true
     }
     
+    //MARK: 快进快退方法
+    
+    func beginSeekingForward() {
+        
+    }
+    func beginSeekingBackward() {
+        
+    }
     override func viewWillDisappear(_ animated: Bool) {
         
         
