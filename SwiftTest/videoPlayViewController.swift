@@ -8,11 +8,23 @@
 
 import UIKit
 import MediaPlayer
-class videoPlayViewController: XLPBaseViewController {
+class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate {
 
     let url = NSURL.init(string: "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4")
     var playerVC1 = MPMoviePlayerController()
-     let notificationCenter = NotificationCenter.default
+    let notificationCenter = NotificationCenter.default
+    
+    var topView = UIView()
+    
+    var swipBrightnessLeft = UISwipeGestureRecognizer()
+    var swipBrightnessRight = UISwipeGestureRecognizer()
+    
+    var swipVolumeUp = UISwipeGestureRecognizer()
+    var swipVolumeDown = UISwipeGestureRecognizer()
+    
+    var volumeView = MPVolumeView()
+    var volumeSlider = UISlider()
+    
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.white
@@ -27,7 +39,84 @@ class videoPlayViewController: XLPBaseViewController {
         
         //调节系统音量
         
+        //初始化音量条
+        
+        topView.addSubview(volumeView)
+        volumeView.snp.makeConstraints { (make) in
+            make.top.equalTo(10)
+            make.bottom.equalTo(-10)
+            make.width.equalTo(3)
+            make.centerX.equalTo(topView.snp.centerX)
+        }
+        volumeView.showsVolumeSlider = true
+        
+        for var aView in volumeView.subviews {
+            
+            if aView.description.contains("MPVolumeSlider") {
+                
+                self.volumeSlider = aView as! UISlider
+                break
+            }
+
+        }
+        
+        
+        let MySlider = UISlider()
+        topView.addSubview(MySlider)
+        MySlider.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.height.equalTo(10)
+            make.centerY.equalTo(topView.snp.centerY)
+        }
+        
+        (volumeView.subviews[0] as! UISlider).setValue(1.0, animated: false)
+//        self.volumeSlider.setValue(0.0, animated: true)
+//        MySlider.value = self.volumeSlider.value
+        
+        MySlider.minimumValue = 0.0
+        MySlider.maximumValue = 1.0
+        MySlider.backgroundColor = .blue
+//        MySlider.transform.rotated(by:CGFloat(-M_PI/2))
+        
+//        MySlider.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI/2))
+        
+        
+        
+        
+        
+        
+//        volumeView.userActivity
+        
+        swipVolumeUp = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustVolumeUp(gesture:)))
+        swipVolumeUp.direction = UISwipeGestureRecognizerDirection.left
+        swipVolumeUp.numberOfTouchesRequired = 1
+        swipVolumeUp.delegate = self
+        topView.addGestureRecognizer(swipVolumeUp)
+        
+        swipVolumeDown = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustVolumeDown(gesture:)))
+        swipVolumeDown.direction = UISwipeGestureRecognizerDirection.right
+        swipVolumeDown.numberOfTouchesRequired = 1
+        swipVolumeDown.delegate = self
+        topView.addGestureRecognizer(swipVolumeDown)
+        
+        
+        MySlider.addGestureRecognizer(swipVolumeUp)
+        MySlider.addGestureRecognizer(swipVolumeDown)
         //调节系统亮度
+        
+        swipBrightnessLeft = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustBrightnessLeft(gesture:)))
+        swipBrightnessLeft.direction = UISwipeGestureRecognizerDirection.left
+        swipBrightnessLeft.numberOfTouchesRequired = 1
+        swipBrightnessLeft.delegate = self
+        topView.addGestureRecognizer(swipBrightnessLeft)
+        
+        swipBrightnessRight = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustBrightnessRight(gesture:)))
+        swipBrightnessRight.direction = UISwipeGestureRecognizerDirection.right
+        swipBrightnessRight.numberOfTouchesRequired = 1
+        swipBrightnessRight.delegate = self
+        topView.addGestureRecognizer(swipBrightnessRight)
         
         
     }
@@ -36,9 +125,15 @@ class videoPlayViewController: XLPBaseViewController {
         
         // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
         self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
-        self.playerVC1.view.frame = CGRect(x:0,y:64,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
-        
         self.view.addSubview((self.playerVC1.view)!)
+//        self.playerVC1.view.frame = CGRect(x:0,y:64,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
+        self.playerVC1.view.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.top.equalTo(64)
+            make.height.equalTo(SCREENWIDTH * 9 / 16)
+        }
         
         self.playerVC1.controlStyle = .embedded//embedded,fullscreen,none,default
         //显示播放 按钮  快进 快退 全屏等
@@ -57,6 +152,15 @@ class videoPlayViewController: XLPBaseViewController {
         
         print("===============\(self.playerVC1.readyForDisplay)")
         self.playerVC1.play()
+        
+        //MARK: 在player上面 放一个view 然后对视频的各种控制 添加到 topView上面
+        view.addSubview(topView)
+        topView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.playerVC1.view)
+        }
+        topView.backgroundColor = .red
+        topView.alpha = 0.5
+        
     }
     
     func addNoticeForPlayer() {
@@ -123,6 +227,37 @@ class videoPlayViewController: XLPBaseViewController {
         
         self.playerVC1.requestThumbnailImages(atTimes: [10,20], timeOption: MPMovieTimeOption.nearestKeyFrame)
         
+    }
+    //MARK: 调节亮度  模拟机无效 在真机上才有效
+    func adjustBrightnessLeft(gesture:UIGestureRecognizer) {
+        
+        UIScreen.main.brightness -= 0.1
+        print("=====亮度的减少===\(UIScreen.main.brightness)")
+    }
+    func adjustBrightnessRight(gesture:UIGestureRecognizer) {
+        UIScreen.main.brightness += 0.1
+//        UIScreen.main.setValue(1.0, forKey: "brightness")
+        
+        print("=====亮度的增加===\(UIScreen.main.brightness)")
+    }
+    //MARK: 调节音量
+    func adjustVolumeUp(gesture:UIGestureRecognizer)  {
+        
+//        topView.alpha += 0.1
+        
+        self.volumeSlider.value += 0.05
+        print("======调节音量+++\(self.volumeSlider.value)")
+    }
+    func adjustVolumeDown(gesture:UIGestureRecognizer)  {
+//        topView.alpha -= 0.1
+        
+        self.volumeSlider.value -= 0.05
+        print("======调节音----\(self.volumeSlider.value)")
+    }
+    
+    //MARK:手势代理方法
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

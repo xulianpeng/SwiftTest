@@ -73,6 +73,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         if indexPath.row == 0 {
             
             let jumpToVC = XLP_UI_ViewController()
+            jumpToVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(jumpToVC, animated: true)
             
         }
@@ -115,6 +116,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
 
         if indexPath.row == 10 {
             let jumpToVC = videoRootViewController()
+            jumpToVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
        
