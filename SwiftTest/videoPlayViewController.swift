@@ -11,6 +11,11 @@ import MediaPlayer
 class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate {
 
     let url = NSURL.init(string: "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4")
+    
+    let backScrollView = UIScrollView()
+    let containView = UIView()
+    
+    
     var playerVC1 = MPMoviePlayerController()
     let notificationCenter = NotificationCenter.default
     
@@ -26,10 +31,22 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     var volumeSlider = UISlider()
     
     
+    //MARk: 坑点,若是使用系统手势平移返回  但是没返回 还是在这个页面的话 播放界面会消失  只走viewWillAppear
+    // 暂时的解决思路时  判断是否平移手势未成功  未成功时  则直接在 viewWillAppear里调用 初始化播放器的方法
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+ 
     override func viewDidLoad() {
         view.backgroundColor = UIColor.white
         
-        self.navigationController?.navigationBar.isOpaque = true
+        //MARK: 坑点 导航栏的透明度设置为0 时,返回功能失效
+        self.navigationController?.navigationBar.alpha = 0.0
+//        self.navigationController?.hidesBarsOnSwipe = true
+        //MARK: 模仿腾讯视频播放界面
+        initBackScrollView()
+        
         initMPMoviePlayer()
         //给palyer添加通知 监控其各种状态的变化
         addNoticeForPlayer()
@@ -121,21 +138,27 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
     }
     
+    func initBackScrollView() {
+        
+        
+    }
     func initMPMoviePlayer() {
         
         // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
         self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
         self.view.addSubview((self.playerVC1.view)!)
 //        self.playerVC1.view.frame = CGRect(x:0,y:64,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
+        let theHeight = (self.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height
+        print(theHeight)
         self.playerVC1.view.snp.makeConstraints { (make) in
             
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.top.equalTo(64)
+            make.top.equalTo(0)
             make.height.equalTo(SCREENWIDTH * 9 / 16)
         }
         
-        self.playerVC1.controlStyle = .fullscreen//embedded,fullscreen,none,default
+        self.playerVC1.controlStyle = .embedded//embedded,fullscreen,none,default
         //显示播放 按钮  快进 快退 全屏等
         //fullscreen  分上下两部分 上面是 完成按钮  进度条  下面是 快退 播放 快进 三个按钮 ,其中 点完成时 播放暂停 , 点快进或快退时,若无视频队列 则会黑屏
         //none时 相关的控制按钮 进度条 全部没有
@@ -150,8 +173,9 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         self.playerVC1.repeatMode = .one
         self.playerVC1.prepareToPlay()
         
-//        self.playerVC1.currentPlaybackRate
-        print("===============\(self.playerVC1.readyForDisplay)")
+        //MARK: 改变播放速率  float  0 暂停  1 正常播放  2 是2倍速率
+        self.playerVC1.currentPlaybackRate = 2.0
+        
         self.playerVC1.play()
         
         //MARK: 在player上面 放一个view 然后对视频的各种控制 添加到 topView上面
@@ -285,6 +309,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         self.playerVC1.pause()
         self.playerVC1.view.removeFromSuperview()
         notificationCenter.removeObserver(self)
+        self.navigationController?.navigationBar.alpha = 1.0
     }
     
 }
