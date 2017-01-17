@@ -113,6 +113,31 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailVC = ZhiHuDetailVController()
+        
+//        let baseUrl = "http://news-at.zhihu.com/api/4/news/"
+        let baseUrl = "http://daily.zhihu.com/story/"
+        
+        if self.zhiHuTopCellModelArr.count > 0 && indexPath.section == 0 {
+            
+//            var topModal:zhiHuTopCellModel = zhiHuTopCellModelArr[indexPath.row]
+            
+            
+            
+        }else{
+            
+            let modal:zhiHuCellModel = zhiHuCellModelArr[indexPath.row]
+            
+             detailVC.detailUrlString = (baseUrl + String(modal.articleId!))
+            
+        }
+        
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

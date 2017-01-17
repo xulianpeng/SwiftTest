@@ -33,6 +33,9 @@
 		07F39F3A1E24F9E900EE268B /* videoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F381E24F9E900EE268B /* videoPlayViewController.swift */; };
 		07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */; };
 		07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F401E27690800EE268B /* RootTabBarViewController.swift */; };
+		07F87C951E2DB5E700CE7178 /* RefreshWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F87C941E2DB5E700CE7178 /* RefreshWKWebViewController.swift */; };
+		07F87C9D1E2DC6BD00CE7178 /* SDK in Resources */ = {isa = PBXBuildFile; fileRef = 07F87C9C1E2DC6BD00CE7178 /* SDK */; };
+		07F87C9F1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F87C9E1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift */; };
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
@@ -110,6 +113,9 @@
 		07F39F381E24F9E900EE268B /* videoPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoPlayViewController.swift; sourceTree = "<group>"; };
 		07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPBaseTabBarController.swift; sourceTree = "<group>"; };
 		07F39F401E27690800EE268B /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		07F87C941E2DB5E700CE7178 /* RefreshWKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshWKWebViewController.swift; sourceTree = "<group>"; };
+		07F87C9C1E2DC6BD00CE7178 /* SDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SDK; sourceTree = "<group>"; };
+		07F87C9E1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZhiHuDetailVController.swift; sourceTree = "<group>"; };
 		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 			children = (
 				07F39F071E1CEEE500EE268B /* ZhiHuHomeViewModal.swift */,
 				07F39F0A1E1CEF3B00EE268B /* ZhiHuNewsViewController.swift */,
+				07F87C9E1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift */,
 				07F39F0C1E1CEF5200EE268B /* zhiHuCell.swift */,
 				07F39F0E1E1CEF7400EE268B /* zhiHuTopCell.swift */,
 			);
@@ -232,6 +239,7 @@
 			children = (
 				071642891E1B931600B21BF0 /* RefreshViewController.swift */,
 				07F39F111E1DE84900EE268B /* RefreshDetailViewController.swift */,
+				07F87C941E2DB5E700CE7178 /* RefreshWKWebViewController.swift */,
 			);
 			name = refreshTest;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				07F87C9C1E2DC6BD00CE7178 /* SDK */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
@@ -475,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E73E011DFA832900058FB0 /* LaunchScreen.storyboard in Resources */,
+				07F87C9D1E2DC6BD00CE7178 /* SDK in Resources */,
 				89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */,
 				89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */,
 			);
@@ -565,9 +575,11 @@
 				89E73E371DFBEAD800058FB0 /* OneModal.swift in Sources */,
 				07F290511E15F2AF00E94097 /* ExtensionTest.swift in Sources */,
 				8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */,
+				07F87C951E2DB5E700CE7178 /* RefreshWKWebViewController.swift in Sources */,
 				07F39F0B1E1CEF3B00EE268B /* ZhiHuNewsViewController.swift in Sources */,
 				8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */,
 				89E73E321DFBEA6A00058FB0 /* UI_tableable_VC.swift in Sources */,
+				07F87C9F1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift in Sources */,
 				07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */,
 				079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */,
 				89E73E3B1DFE46AD00058FB0 /* RootViewController.swift in Sources */,

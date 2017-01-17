@@ -10,14 +10,14 @@ import UIKit
 import SwiftyJSON
 
 class zhiHuCellModel{
-    var id : String?
+    var articleId : Int?
     var imageURL : String?
     var title : String?
     var type : String?
     
     init(_ json : JSON) {
         
-        self.id = json["id"].string
+        self.articleId = json["id"].int
         self.title = json["title"].string
         self.type = json["type"].string
         self.imageURL =  json["images"][0].string

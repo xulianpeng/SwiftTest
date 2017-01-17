@@ -8,6 +8,8 @@
 
 import UIKit
 import MediaPlayer
+//import DWMoviePlayerController
+
 class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate {
 
     let url = NSURL.init(string: "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4")
@@ -143,6 +145,11 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
     }
     func initMPMoviePlayer() {
+        
+        
+        
+        
+        
         
         // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
         self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)

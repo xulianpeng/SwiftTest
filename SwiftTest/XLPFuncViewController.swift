@@ -190,7 +190,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
         
 //        var functionInstance = Curry
        
-        
+//MARK: 手势练习
         
     }
     

@@ -103,7 +103,10 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        let detailVC = RefreshDetailViewController()
+//        let detailVC = RefreshDetailViewController()
+        
+        let detailVC = RefreshWKWebViewController()
+        
         let modal = finalArr[indexPath.row]
         
         let baseUrl = "http://www.iyingdi.com/article/"
@@ -413,47 +416,50 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
     override func footerRefreshAction(footer: MJRefreshBackNormalFooter) {
         super.footerRefreshAction(footer: footer)
         
-        let minModal : EassyModal = self.finalArr[self.finalArr.count - 1]
-        
-        minTimestamp = minModal.timestamp - 1
-        
-        paraDic2["timestamp"] = minTimestamp
-        
-        WMNetManager.sharedInstance.SucceedGET(urlString2, parameters: paraDic2) { (jsonValue) in
+        if self.finalArr.count > 0 {
             
-            footer.endRefreshing()
-            let articlesArr = jsonValue["articles"].array
+            let minModal : EassyModal = self.finalArr[self.finalArr.count - 1]
             
-            if (articlesArr?.count)! > 0{
+            minTimestamp = minModal.timestamp - 1
+            
+            paraDic2["timestamp"] = minTimestamp
+            
+            WMNetManager.sharedInstance.SucceedGET(urlString2, parameters: paraDic2) { (jsonValue) in
                 
-                var tempArr = [EassyModal]()
-                for arr in articlesArr!   {
-                    let modal = EassyModal.init(articleID:arr[0].int!,
-                                                moduleID: 19,
-                                                replyNum: arr[4].int!,
-                                                subClass: arr[17].string!,
-                                                thumbnail: arr[7].string!,
-                                                timestamp: arr[2].int!,
-                                                title: arr[1].string!,
-                                                topFlag: arr[9].int!,
-                                                author: arr[14].string!,
-                                                visitNum: arr[5].int!,
-                                                canRead: arr[10].int!,
-                                                type: arr[11].int!)
+                footer.endRefreshing()
+                let articlesArr = jsonValue["articles"].array
+                
+                if (articlesArr?.count)! > 0{
                     
-
+                    var tempArr = [EassyModal]()
+                    for arr in articlesArr!   {
+                        let modal = EassyModal.init(articleID:arr[0].int!,
+                                                    moduleID: 19,
+                                                    replyNum: arr[4].int!,
+                                                    subClass: arr[17].string!,
+                                                    thumbnail: arr[7].string!,
+                                                    timestamp: arr[2].int!,
+                                                    title: arr[1].string!,
+                                                    topFlag: arr[9].int!,
+                                                    author: arr[14].string!,
+                                                    visitNum: arr[5].int!,
+                                                    canRead: arr[10].int!,
+                                                    type: arr[11].int!)
+                        
+                        
+                        
+                        tempArr.append(modal)
+                        
+                    }
                     
-                    tempArr.append(modal)
-                    
+                    self.finalArr += tempArr
+                    DispatchQueue.main.async {
+                        
+                        self.rootTableView.reloadData()
+                    }
                 }
                 
-                 self.finalArr += tempArr
-                DispatchQueue.main.async {
-                    
-                    self.rootTableView.reloadData()
-                }
             }
-            
         }
         
 
