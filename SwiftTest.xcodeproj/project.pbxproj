@@ -34,8 +34,9 @@
 		07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */; };
 		07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F401E27690800EE268B /* RootTabBarViewController.swift */; };
 		07F87C951E2DB5E700CE7178 /* RefreshWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F87C941E2DB5E700CE7178 /* RefreshWKWebViewController.swift */; };
-		07F87C9D1E2DC6BD00CE7178 /* SDK in Resources */ = {isa = PBXBuildFile; fileRef = 07F87C9C1E2DC6BD00CE7178 /* SDK */; };
 		07F87C9F1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F87C9E1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift */; };
+		07F87CB31E2F102400CE7178 /* libCCSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F87CB21E2F102400CE7178 /* libCCSDK.a */; };
+		07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */; };
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
@@ -114,8 +115,17 @@
 		07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPBaseTabBarController.swift; sourceTree = "<group>"; };
 		07F39F401E27690800EE268B /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
 		07F87C941E2DB5E700CE7178 /* RefreshWKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshWKWebViewController.swift; sourceTree = "<group>"; };
-		07F87C9C1E2DC6BD00CE7178 /* SDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SDK; sourceTree = "<group>"; };
 		07F87C9E1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZhiHuDetailVController.swift; sourceTree = "<group>"; };
+		07F87CAA1E2F102400CE7178 /* DWAdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAdInfo.h; sourceTree = "<group>"; };
+		07F87CAB1E2F102400CE7178 /* DWDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWDownloader.h; sourceTree = "<group>"; };
+		07F87CAC1E2F102400CE7178 /* DWDrmServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWDrmServer.h; sourceTree = "<group>"; };
+		07F87CAD1E2F102400CE7178 /* DWLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWLog.h; sourceTree = "<group>"; };
+		07F87CAE1E2F102400CE7178 /* DWMoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMoviePlayerController.h; sourceTree = "<group>"; };
+		07F87CAF1E2F102400CE7178 /* DWSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSDK.h; sourceTree = "<group>"; };
+		07F87CB01E2F102400CE7178 /* DWUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWUploader.h; sourceTree = "<group>"; };
+		07F87CB11E2F102400CE7178 /* DWVideoCompressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWVideoCompressController.h; sourceTree = "<group>"; };
+		07F87CB21E2F102400CE7178 /* libCCSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCCSDK.a; sourceTree = "<group>"; };
+		07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDemoViewController.swift; sourceTree = "<group>"; };
 		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F87CB31E2F102400CE7178 /* libCCSDK.a in Frameworks */,
 				F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +276,7 @@
 			children = (
 				07F39F371E24F9E900EE268B /* videoRootViewController.swift */,
 				07F39F381E24F9E900EE268B /* videoPlayViewController.swift */,
+				07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */,
 			);
 			name = "视频相关";
 			sourceTree = "<group>";
@@ -294,7 +306,15 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				07F87C9C1E2DC6BD00CE7178 /* SDK */,
+				07F87CAA1E2F102400CE7178 /* DWAdInfo.h */,
+				07F87CAB1E2F102400CE7178 /* DWDownloader.h */,
+				07F87CAC1E2F102400CE7178 /* DWDrmServer.h */,
+				07F87CAD1E2F102400CE7178 /* DWLog.h */,
+				07F87CAE1E2F102400CE7178 /* DWMoviePlayerController.h */,
+				07F87CAF1E2F102400CE7178 /* DWSDK.h */,
+				07F87CB01E2F102400CE7178 /* DWUploader.h */,
+				07F87CB11E2F102400CE7178 /* DWVideoCompressController.h */,
+				07F87CB21E2F102400CE7178 /* libCCSDK.a */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
@@ -484,7 +504,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E73E011DFA832900058FB0 /* LaunchScreen.storyboard in Resources */,
-				07F87C9D1E2DC6BD00CE7178 /* SDK in Resources */,
 				89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */,
 				89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */,
 			);
@@ -599,6 +618,7 @@
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
 				07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */,
+				07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +782,11 @@
 				);
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftTest/SDK",
+					"$(PROJECT_DIR)/SwiftTest",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
@@ -784,6 +809,11 @@
 				);
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftTest/SDK",
+					"$(PROJECT_DIR)/SwiftTest",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";

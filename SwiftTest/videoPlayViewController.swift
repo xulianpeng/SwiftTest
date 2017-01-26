@@ -8,7 +8,7 @@
 
 import UIKit
 import MediaPlayer
-//import DWMoviePlayerController
+
 
 class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate {
 
@@ -317,6 +317,8 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         self.playerVC1.view.removeFromSuperview()
         notificationCenter.removeObserver(self)
         self.navigationController?.navigationBar.alpha = 1.0
+        
+        
     }
     
 }

@@ -42,8 +42,13 @@ protocol NewFuncProtocol {
     static func showMessage()
 }
 
-class XLPFuncViewController: UIViewController,IWillPlayMusic {
+class XLPFuncViewController: UIViewController,IWillPlayMusic,UIGestureRecognizerDelegate {
 
+    
+    var panGesture = UIPanGestureRecognizer()
+    var longPressGesture = UILongPressGestureRecognizer()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
@@ -191,7 +196,41 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic {
 //        var functionInstance = Curry
        
 //MARK: 手势练习
+        panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(panHandle))
+        panGesture.delegate = self
+        view.addGestureRecognizer(panGesture)
         
+        
+        longPressGesture = UILongPressGestureRecognizer.init(target: self, action: #selector(longPressHandle))
+        longPressGesture.numberOfTouchesRequired = 1
+        longPressGesture.minimumPressDuration = 1
+        longPressGesture.delegate = self
+        view.addGestureRecognizer(longPressGesture)
+        
+        
+        
+        
+        
+    }
+    
+//MARK: 手势添加的方法
+    
+    func panHandle() {
+        if self.view.alpha > 0.1 {
+            
+            self.view.alpha -= 0.1
+        }
+    }
+    func longPressHandle() {
+        
+        self.view.alpha += 0.1
+        self.view.backgroundColor = XLPRandomColor()
+    }
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
 //MARK:外部函数的具体实现方法

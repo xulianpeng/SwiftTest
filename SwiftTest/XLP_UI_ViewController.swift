@@ -39,10 +39,14 @@ class XLP_UI_ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGray
         //类比 viewdidload方法 可以调用函数
-        
+        //我们都是一个价  名字叫中国
+        //兄弟姐妹都很多景色也不错
         
         
         var testArr = [Any]()
+        var testBarr = [String]()
+        testBarr.append("123")
+        print(testBarr)
         
         testArr = ["C","ddd","asda2sd","asas123d","asdasqwd","asda12","umnlknjkk","asd8908767"]
         
@@ -116,7 +120,7 @@ class XLP_UI_ViewController: UIViewController {
         if let mmNumber = Int(nnNumber){
             print(mmNumber,nnNumber)
         }else{
-            print("\(nnNumber) can not be converted to an Integer")
+            print("\(nnNumber) can not be converted to an Integer多撒谎  swift要怎么转为image呢")
         }
         
         
@@ -331,20 +335,7 @@ class XLP_UI_ViewController: UIViewController {
             make.height.equalTo(30)
         }
         button2.tag = tag2
-        
-        
-        
-               
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
      /// 按钮的点击事件
      /// - Parameter btn: 按钮1
      func handleAction1(btn:UIButton) -> Void {
@@ -362,6 +353,8 @@ class XLP_UI_ViewController: UIViewController {
      titleLabel.backgroundColor = UIColor.purple
      titleLabel.textColor = UIColor.brown
      titleLabel.transform = CGAffineTransform.init(rotationAngle: 0.5)
+    
+    titleLabel.text = "sadkhsjhajkhjasjdf"
      }
      }
  
@@ -374,6 +367,7 @@ class XLP_UI_ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        //swift did uibutton hahaha you are my teacher  w will texach
         // Dispose of any resources that can be recreated.
     }
     

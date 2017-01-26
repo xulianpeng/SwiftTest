@@ -14,7 +14,7 @@ class zhiHuTopCell: UITableViewCell {
 
     
     var scrollView:UIScrollView = UIScrollView()
-    
+    //轮播图  加一个定时器 定时2s自动轮播 转到头 则往回轮播
     
     func showWithModals(modals:[zhiHuTopCellModel])  {
         
@@ -43,6 +43,15 @@ class zhiHuTopCell: UITableViewCell {
             scrollView.addSubview(imageView)
             i += 1
         }
+        
+        let timer = Timer.init(timeInterval: 2, repeats: false) { (aTimer) in
+            
+            print("定时器啦啦啦")
+            
+        }
+        
+        
+        
 
     }
     
@@ -65,13 +74,13 @@ class zhiHuTopCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
 
 }

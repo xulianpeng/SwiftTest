@@ -18,6 +18,8 @@ class videoRootViewController: XLPBaseViewController {
     let videoBt3 = UIButton.init(type: UIButtonType.custom)
     let videoBt4 = UIButton.init(type: UIButtonType.custom)
     
+    let videoBt5 = UIButton.init(type: UIButtonType.custom)
+    
     
     
     var playerVC1 = MPMoviePlayerController()
@@ -122,6 +124,19 @@ class videoRootViewController: XLPBaseViewController {
             self.view.layer.addSublayer(self.avPlayerLayer)
             self.avPlayer.volume  = 0.3
             
+        }
+        
+        videoBt5.xlpInitEassyButton("DWCC", titleColor: XLPRandomColor(), fontSize: 14, backgroundColor: XLPRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
+            
+            make.left.equalTo(videoBt1.snp.left)
+            make.right.equalTo(videoBt1.snp.right)
+            make.top.equalTo(videoBt4.snp.bottom).offset(20)
+            make.height.equalTo(videoBt1.snp.height)
+            
+        }) { (bt) in
+            
+            let ccDemoVC = CCDemoViewController()
+            self.navigationController?.pushViewController(ccDemoVC, animated: true)
         }
 
 
