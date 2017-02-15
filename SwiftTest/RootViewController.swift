@@ -70,55 +70,57 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
+        var jumpToVC = UIViewController()
         if indexPath.row == 0 {
             
-            let jumpToVC = XLP_UI_ViewController()
-            jumpToVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = XLP_UI_ViewController()
+//            jumpToVC.hidesBottomBarWhenPushed = true
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
             
         }
         if indexPath.row == 1 {
-            let jumpToVC = XLP_OperatorsVController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = XLP_OperatorsVController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 2 {
-            let jumpToVC = UI_tableable_VC()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = UI_tableable_VC()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 3 {
-            let jumpToVC = TestClassViewController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = TestClassViewController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 4 {
-            let jumpToVC = XLPFuncViewController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = XLPFuncViewController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 5 {
-            let jumpToVC = XLPClosuresViewController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = XLPClosuresViewController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 6 {
-            let jumpToVC = ScrollViewSnapKitVController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = ScrollViewSnapKitVController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 7 {
-            let jumpToVC = XLP_RealViewController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = XLP_RealViewController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 8 {
-            let jumpToVC = RefreshViewController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = RefreshViewController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
         if indexPath.row == 9 {
-            let jumpToVC = ZhiHuNewsViewController()
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = ZhiHuNewsViewController()
+//            self.navigationController?.pushViewController(jumpToVC, animated: true)
         }
 
+        
         if indexPath.row == 10 {
-            let jumpToVC = videoRootViewController()
-            jumpToVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(jumpToVC, animated: true)
+            jumpToVC = videoRootViewController()
         }
+        jumpToVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(jumpToVC, animated: true)
        
     }
     

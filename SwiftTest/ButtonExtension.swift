@@ -8,13 +8,11 @@
 
 import UIKit
 
-
-
-
 //最终要识别的 闭包  点击方法
 typealias xlpButtonClickHandler = (_ sender:UIButton) -> Void
 
-private var xlpAssociate:UInt8 = 0
+private var xlpAssociate:String = "xlpAssociate"
+
 
 
 extension UIButton{

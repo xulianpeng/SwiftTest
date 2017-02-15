@@ -10,6 +10,7 @@
 		071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642871E1B38D000B21BF0 /* ButtonExtension.swift */; };
 		0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642891E1B931600B21BF0 /* RefreshViewController.swift */; };
 		075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */; };
+		07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07708CD81E541C9300E30708 /* CarouselBanner.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -91,6 +92,8 @@
 		071642871E1B38D000B21BF0 /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		071642891E1B931600B21BF0 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
 		075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCityViewController.swift; sourceTree = "<group>"; };
+		07708CD81E541C9300E30708 /* CarouselBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselBanner.swift; sourceTree = "<group>"; };
+		07708CDA1E54350100E30708 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fqmjqktidlasnaamcmzpiogfmbpn/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -197,6 +200,22 @@
 			name = "商城";
 			sourceTree = "<group>";
 		};
+		07708CA81E53EB4E00E30708 /* CC视频 */ = {
+			isa = PBXGroup;
+			children = (
+				07F87CAB1E2F102400CE7178 /* DWDownloader.h */,
+				07F87CAA1E2F102400CE7178 /* DWAdInfo.h */,
+				07F87CAD1E2F102400CE7178 /* DWLog.h */,
+				07F87CAC1E2F102400CE7178 /* DWDrmServer.h */,
+				07F87CAE1E2F102400CE7178 /* DWMoviePlayerController.h */,
+				07F87CAF1E2F102400CE7178 /* DWSDK.h */,
+				07F87CB01E2F102400CE7178 /* DWUploader.h */,
+				07F87CB11E2F102400CE7178 /* DWVideoCompressController.h */,
+				07F87CB21E2F102400CE7178 /* libCCSDK.a */,
+			);
+			name = "CC视频";
+			sourceTree = "<group>";
+		};
 		079FE39C1E094793007DF3DE /* Swift与OC混编 */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +248,7 @@
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
 				07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */,
+				079FE3A41E0A56C7007DF3DE /* ConstFile.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -241,6 +261,7 @@
 				07F87C9E1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift */,
 				07F39F0C1E1CEF5200EE268B /* zhiHuCell.swift */,
 				07F39F0E1E1CEF7400EE268B /* zhiHuTopCell.swift */,
+				07708CD81E541C9300E30708 /* CarouselBanner.swift */,
 			);
 			name = "知乎日报";
 			sourceTree = "<group>";
@@ -306,15 +327,7 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				07F87CAA1E2F102400CE7178 /* DWAdInfo.h */,
-				07F87CAB1E2F102400CE7178 /* DWDownloader.h */,
-				07F87CAC1E2F102400CE7178 /* DWDrmServer.h */,
-				07F87CAD1E2F102400CE7178 /* DWLog.h */,
-				07F87CAE1E2F102400CE7178 /* DWMoviePlayerController.h */,
-				07F87CAF1E2F102400CE7178 /* DWSDK.h */,
-				07F87CB01E2F102400CE7178 /* DWUploader.h */,
-				07F87CB11E2F102400CE7178 /* DWVideoCompressController.h */,
-				07F87CB21E2F102400CE7178 /* libCCSDK.a */,
+				07708CA81E53EB4E00E30708 /* CC视频 */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
@@ -339,7 +352,6 @@
 				89E73DFF1DFA832900058FB0 /* LaunchScreen.storyboard */,
 				89E73E021DFA832900058FB0 /* Info.plist */,
 				8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */,
-				079FE3A41E0A56C7007DF3DE /* ConstFile.swift */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -375,6 +387,7 @@
 		D7B4330CCF80B14D18087C44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07708CDA1E54350100E30708 /* SDWebImage.framework */,
 				D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */,
 			);
 			name = Frameworks;
@@ -611,6 +624,7 @@
 				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,
 				079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */,
 				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
+				07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */,
 				07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
 				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,

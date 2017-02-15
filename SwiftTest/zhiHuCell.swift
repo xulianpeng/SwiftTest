@@ -15,7 +15,23 @@ class zhiHuCell: UITableViewCell {
 
     var titleLable:UILabel?
     var rightImage:UIImageView?
+    private var theModal :zhiHuCellModel?
     
+    var zhihuModel:zhiHuCellModel?{
+        
+        get {
+            
+            return theModal
+        }
+        
+        
+        set {
+            
+            theModal = newValue
+            
+            showWithCellModal(modal: theModal!)
+        }
+    }
     
     func showWithCellModal(modal:zhiHuCellModel)  {
         

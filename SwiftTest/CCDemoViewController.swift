@@ -41,7 +41,7 @@ class CCDemoViewController: XLPBaseViewController {
             make.height.equalTo(SCREENWIDTH * 9 / 16)
         })
         
-        self.DWPlayer?.videoId = "54005B679D6383B19C33DC5901307461";
+        self.DWPlayer?.videoId = "34981E63A3ECA2F69C33DC5901307461";
         self.DWPlayer?.timeoutSeconds = 10;
         
         self.DWPlayer?.getPlayUrlsBlock = {
@@ -92,7 +92,7 @@ class CCDemoViewController: XLPBaseViewController {
 //    if (!self.currentPlayUrl) {
 //    self.currentPlayUrl = [[self.playUrls objectForKey:@"qualities"] objectAtIndex:0];
 //    }
-    print("currentPlayUrl: %@", self.currentPlayUrl)
+    print("=====currentPlayUrl: %@", self.currentPlayUrl)
     
 //    if (self.videoId) {
 //    [self resetQualityView];
@@ -103,7 +103,7 @@ class CCDemoViewController: XLPBaseViewController {
     self.DWPlayer?.play()
     
     
-    print("play url: %@", self.DWPlayer?.originalContentURL);
+    print("play url: %@", self.DWPlayer?.originalContentURL ?? "什么鬼");
         
     }
     override func didReceiveMemoryWarning() {
@@ -112,14 +112,6 @@ class CCDemoViewController: XLPBaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

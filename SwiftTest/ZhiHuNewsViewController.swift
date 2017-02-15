@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import MBProgressHUD
 
 class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -36,11 +36,27 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
     }
     func obtainData() {
         
-        WMNetManager.sharedInstance.SucceedGET(urlStr, parameters: [:]) { (json) in
+        let hud = MBProgressHUD.init()
+//        hud.mode = MBProgressHUDMode.customView
+//        hud.customView = 
+//        hud.backgroundColor = UIColor.clear //默认是clear 且hud 是覆盖全屏幕的  则显示的过程中 交互失效
+        hud.color = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1.0)
+//        hud.isOpaque = true
+        hud.mode = MBProgressHUDMode.text
+    //TODO:有个限制 超出屏宽的话 则省略号显示
+        hud.label.text = "正在加asdajsdajsdkjk哈坚实的骄傲和发生地方的说法和骄傲啥地方就俺俩的身份是短发接快递发货就爱上的回复载..."
+        hud.animationType = MBProgressHUDAnimation.zoomOut
+        hud.frame = CGRect(x:SCREENWIDTH/2 - 20,y:SCREENHEIGHT/2 - 20,width:40,height:40)
+        self.view.addSubview(hud)
+        hud.show(animated: true)
+        hud.removeFromSuperViewOnHide = true
+        hud.hide(animated: true, afterDelay: 3.0)
+        
+        MyManager.sharedInstance.SucceedGET(urlStr, parameters: [:]) { (json) in
             let  homeModel = zhiHuControllerModal(json)
             self.zhiHuTopCellModelArr = homeModel.top_stroies
             self.zhiHuCellModelArr = homeModel.stroies
-         
+//            hud.hide(animated: true);
             
             
 //            xlpCoredataManager.obtainContext()
@@ -99,6 +115,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
             
             let cell:zhiHuTopCell = tableView.dequeueReusableCell(withIdentifier: "zhiHuTopCell") as! zhiHuTopCell
             cell.showWithModals(modals: self.zhiHuTopCellModelArr)
+//            cell.zhiHuTopCellModel = self.zhiHuTopCellModelArr
             return cell
             
         }
@@ -107,8 +124,8 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
         
         let modal:zhiHuCellModel = self.zhiHuCellModelArr[indexPath.row]
         
-        cell.showWithCellModal(modal: modal)
-        
+//        cell.showWithCellModal(modal: modal)
+        cell.zhihuModel = modal
         return cell
         
     }
@@ -131,13 +148,15 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
             let modal:zhiHuCellModel = zhiHuCellModelArr[indexPath.row]
             
              detailVC.detailUrlString = (baseUrl + String(modal.articleId!))
-            
         }
         
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import MBProgressHUD
+
 typealias successClosure = (_ response : [String:Any])->Void
 typealias failureClosure = (_ error : Error )->Void
 
@@ -151,18 +153,20 @@ class WMNetManager: NSObject {
 }
 
 
+
+/// 推荐 这个网络请求类
 class MyManager {
     static let sharedInstance = MyManager()
     private init(){}
     
     func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping succeedBlock) {
         
-        SVProgressHUD.setBackgroundColor(.red)
-        SVProgressHUD.show()
+//        SVProgressHUD.setBackgroundColor(.gray)
+//        SVProgressHUD.show()
         
         Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON(completionHandler: { (response) in
             
-            SVProgressHUD.dismiss()
+//            SVProgressHUD.dismiss()
             
             switch response.result {
             case .success(let value):

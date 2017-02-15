@@ -46,6 +46,9 @@ class XLPBaseViewController: UIViewController {
         if (netStatusManager?.isReachable)! {
             
             netStatus = true
+            if subNoNetView != nil && myWindow.subviews.contains(subNoNetView!) {
+                subNoNetView?.removeFromSuperview()
+            }
         }else{
             
             //MARK: 提示断网,检查网络连接,点击再次加载
@@ -79,7 +82,7 @@ class XLPBaseViewController: UIViewController {
     
 
     func reloadHandle() {
-        
+        viewDidLoad()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

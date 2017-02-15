@@ -9,19 +9,25 @@
 import UIKit
 import WebKit
 
-class ZhiHuDetailVController: XLPBaseViewController {
+class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
 
     var detailUrlString = String()
     
-    let webView:WKWebView =  WKWebView()
+    private let webView:WKWebView =  WKWebView()
     //http://daily.zhihu.com/story/9155883
     //http://news-at.zhihu.com/api/4/news/9154684"
 //    let webView = UIWebView()
+    
+    private var beginY :Float = 0.0
+    private var endY : Float = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(webView)
+        webView.scrollView.delegate = self
+        
         webView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
@@ -34,20 +40,32 @@ class ZhiHuDetailVController: XLPBaseViewController {
 //        webView.loadRequest(twoRequest)
     }
 
+    //mARK: 隐藏导航栏的代理方法
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        if velocity.y > 0.0 {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.navigationController?.navigationBar.barTintColor = UIColor.white
+                
+            })
+        }else{
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+
+            UIView.animate(withDuration: 1.0, animations: {
+                
+                self.navigationController?.navigationBar.barTintColor = UIColor.red
+            })
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -176,8 +176,7 @@ class XLP_UI_ViewController: UIViewController {
         }
        
         
-        let myButton = UIButton()
-        myButton.xlpInitButton("点击重载", titleColor: .red, fontSize: 15, imageStr: nil, backgroundImageStr: nil, cornerRedius: 4, superView: view, snpMaker: { (make) in
+        _ = UIButton().xlpInitButton("点击重载", titleColor: .red, fontSize: 15, imageStr: nil, backgroundImageStr: nil, cornerRedius: 4, superView: view, snpMaker: { (make) in
             make.left.equalTo(40)
             make.right.equalTo(-40)
             make.height.equalTo(40)
@@ -185,6 +184,7 @@ class XLP_UI_ViewController: UIViewController {
         }) { (btn) in
             
             print("=======================点击重载=========================")
+            self.view.backgroundColor = UIColor.yellow
         }
         
         
