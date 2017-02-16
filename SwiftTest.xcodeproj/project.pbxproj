@@ -20,6 +20,7 @@
 		079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */; };
 		07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F631E12732B00DCB71D /* WMUIExtension.swift */; };
 		07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F6E1E15062800DCB71D /* WMNetManager.swift */; };
+		07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */; };
 		07F290511E15F2AF00E94097 /* ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F290501E15F2AF00E94097 /* ExtensionTest.swift */; };
 		07F39F041E1C88B900EE268B /* EassyCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F031E1C88B900EE268B /* EassyCell2.swift */; };
 		07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F051E1C9D4500EE268B /* NoNetView.swift */; };
@@ -103,6 +104,7 @@
 		079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIMaker.swift; sourceTree = "<group>"; };
 		07C31F631E12732B00DCB71D /* WMUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIExtension.swift; sourceTree = "<group>"; };
 		07C31F6E1E15062800DCB71D /* WMNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNetManager.swift; sourceTree = "<group>"; };
+		07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelBannerView.swift; sourceTree = "<group>"; };
 		07F290501E15F2AF00E94097 /* ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTest.swift; sourceTree = "<group>"; };
 		07F39F031E1C88B900EE268B /* EassyCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell2.swift; sourceTree = "<group>"; };
 		07F39F051E1C9D4500EE268B /* NoNetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoNetView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				07F39F0C1E1CEF5200EE268B /* zhiHuCell.swift */,
 				07F39F0E1E1CEF7400EE268B /* zhiHuTopCell.swift */,
 				07708CD81E541C9300E30708 /* CarouselBanner.swift */,
+				07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */,
 			);
 			name = "知乎日报";
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */,
 				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,
 				079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */,
+				07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */,
 				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
 				07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */,
 				07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */,
@@ -786,7 +790,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1B6FCA82195CED9744C95F6 /* Pods-SwiftTest.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -801,6 +805,7 @@
 					"$(PROJECT_DIR)/SwiftTest/SDK",
 					"$(PROJECT_DIR)/SwiftTest",
 				);
+				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
@@ -813,7 +818,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -828,6 +833,7 @@
 					"$(PROJECT_DIR)/SwiftTest/SDK",
 					"$(PROJECT_DIR)/SwiftTest",
 				);
+				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";

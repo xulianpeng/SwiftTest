@@ -14,7 +14,7 @@ pod 'AlamofireNetworkActivityIndicator', '~> 2.1.0'
 pod 'AlamofireImage', '~> 3.2.0'
 pod 'HandyJSON', '~> 1.4.0'
 pod 'MBProgressHUD', '~> 1.0.0'
-pod 'SDWebImage', '~> 4.0.0-beta2'
+pod 'SDWebImage', '~> 3.8.2'
 use_frameworks!
 end
 

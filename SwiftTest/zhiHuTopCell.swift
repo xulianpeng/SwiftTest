@@ -41,7 +41,7 @@ class zhiHuTopCell: UITableViewCell {
         }
         
         
-        let wheelView = CarouselBanner.init(frame: CGRect(x:0,y:0,width:Int(SCREENWIDTH),height:kTopCellHeight), imageArr: imageArr)
+        let wheelView = WheelBannerView.init(frame: CGRect(x:0,y:0,width:Int(SCREENWIDTH),height:kTopCellHeight), ImagesArr: imageArr)
         addSubview(wheelView)
 
     }

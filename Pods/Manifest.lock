@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Alamofire (4.2.0)
+  - Alamofire (4.3.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
   - AlamofireNetworkActivityIndicator (2.1.0):
@@ -25,18 +25,18 @@ PODS:
   - FMDB/standard (2.6.2)
   - HandyJSON (1.4.0)
   - IQKeyboardManagerSwift (4.0.8)
-  - Kingfisher (3.2.4)
+  - Kingfisher (3.4.0)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
-  - SDWebImage (4.0.0-beta2):
-    - SDWebImage/Core (= 4.0.0-beta2)
-  - SDWebImage/Core (4.0.0-beta2)
-  - SnapKit (3.0.2)
-  - SQLite.swift (0.11.1):
-    - SQLite.swift/standard (= 0.11.1)
-  - SQLite.swift/standard (0.11.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SnapKit (3.1.2)
+  - SQLite.swift (0.11.2):
+    - SQLite.swift/standard (= 0.11.2)
+  - SQLite.swift/standard (0.11.2)
   - SVProgressHUD (2.1.2)
-  - SwiftyJSON (3.1.3)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -50,7 +50,7 @@ DEPENDENCIES:
   - Kingfisher (>= 3.2.3)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
-  - SDWebImage (~> 4.0.0-beta2)
+  - SDWebImage (~> 3.8.2)
   - SnapKit (>= 3.0.2)
   - SQLite.swift (>= 0.11.1)
   - SVProgressHUD
@@ -58,22 +58,22 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HandyJSON: 8aa98b0ece8c5f7a9042bccd33b0254448704bcb
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
-  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
+  Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
-  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  SQLite.swift: e0c01bd94d8a5cb726835f8bddd41c7d32b606a9
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 5f66f91cb8f2f42cb181c1d513a5c8941d86afae
+PODFILE CHECKSUM: 99df7cecec97519d33e68666bcfe6e120ea74605
 
 COCOAPODS: 1.1.1

@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SDWebImage
 class EassyCell: UITableViewCell {
 
     var newsImage = UIImageView()
@@ -32,7 +33,9 @@ class EassyCell: UITableViewCell {
         */
         
         let url:URL = URL.init(string: modal.thumbnail)!
-        newsImage.setImageWith(url, placeholderImage: UIImage.init(named:"cellImage"))
+//        newsImage.setImageWith(url, placeholderImage: UIImage.init(named:"cellImage"))
+        
+        newsImage.sd_setImage(with: url, placeholderImage: UIImage.init(named:"cellImage"), options: [.progressiveDownload,.transformAnimatedImage,.retryFailed])
         
     }
     

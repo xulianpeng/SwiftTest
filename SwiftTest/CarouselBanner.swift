@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import Kingfisher
+import SDWebImage
 
 /// 第一阶段 实现轮播图
 /// 第二阶段 加入定时器 自动轮播 从头到尾
 /// 第三阶段 无限循环自动轮播
-
+//could not build objective-c module SDWebImage
 class CarouselBanner: UIView,UIScrollViewDelegate {
 
     //可选类型的 才能将其置为 nil
@@ -70,9 +71,7 @@ class CarouselBanner: UIView,UIScrollViewDelegate {
         initTimer()
         
     }
-    
-    
-    
+    /// 初始化定时器
     func initTimer() -> (){
         //如果只有一张图片，则直接返回，不开启定时器
         if self.theimageArr.count <= 1 {
@@ -130,12 +129,21 @@ class CarouselBanner: UIView,UIScrollViewDelegate {
     ///   - index: 坐标
     func loadImage(_ imgView:UIImageView,index:Int) -> Void {
         let imageData = self.theimageArr[index]
+        //AF的用法
+//            imgView.setImageWith(URL.init(string: imageData)!, placeholderImage: nil)
+        //kingfisher的用法
+//        let identifier = "CarouselBanner\(index)"
+//        let url = URL(string: imageData)!
+//        let resource = ImageResource(downloadURL: url, cacheKey: identifier)
+//        
+//     imgView.kf.setImage(with: resource, placeholder: nil, options:[.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: nil)
+     //SDWebImage的用法
+        imgView.sd_setImage(with: URL(string: imageData)!, placeholderImage: nil, options: [.retryFailed,.progressiveDownload,.continueInBackground])
         
-            imgView.setImageWith(URL.init(string: imageData)!, placeholderImage: nil)
-    
         
     }
     
+    ///貌似没有用这个
     deinit {
         
         print("=====我被销毁了")
