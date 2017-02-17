@@ -21,6 +21,7 @@
 		07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F631E12732B00DCB71D /* WMUIExtension.swift */; };
 		07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F6E1E15062800DCB71D /* WMNetManager.swift */; };
 		07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */; };
+		07E3DECE1E55A355001BAE03 /* xlpHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECD1E55A355001BAE03 /* xlpHud.swift */; };
 		07F290511E15F2AF00E94097 /* ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F290501E15F2AF00E94097 /* ExtensionTest.swift */; };
 		07F39F041E1C88B900EE268B /* EassyCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F031E1C88B900EE268B /* EassyCell2.swift */; };
 		07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F39F051E1C9D4500EE268B /* NoNetView.swift */; };
@@ -105,6 +106,7 @@
 		07C31F631E12732B00DCB71D /* WMUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIExtension.swift; sourceTree = "<group>"; };
 		07C31F6E1E15062800DCB71D /* WMNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNetManager.swift; sourceTree = "<group>"; };
 		07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelBannerView.swift; sourceTree = "<group>"; };
+		07E3DECD1E55A355001BAE03 /* xlpHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xlpHud.swift; sourceTree = "<group>"; };
 		07F290501E15F2AF00E94097 /* ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTest.swift; sourceTree = "<group>"; };
 		07F39F031E1C88B900EE268B /* EassyCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell2.swift; sourceTree = "<group>"; };
 		07F39F051E1C9D4500EE268B /* NoNetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoNetView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				07F39F0E1E1CEF7400EE268B /* zhiHuTopCell.swift */,
 				07708CD81E541C9300E30708 /* CarouselBanner.swift */,
 				07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */,
+				07E3DECD1E55A355001BAE03 /* xlpHud.swift */,
 			);
 			name = "知乎日报";
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
 				07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */,
 				07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */,
+				07E3DECE1E55A355001BAE03 /* xlpHud.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
 				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,

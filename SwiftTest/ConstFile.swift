@@ -47,8 +47,9 @@ let xlpCoredataManager = XLPCoreDataManager.shareInstance
     return timeStr;
 }
  */
-func RGB(r:CGFloat,g:CGFloat,b:CGFloat)->UIColor{
-    return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
+func RGB(r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat)->UIColor{
+    
+    return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: alpha)
 }
 func obtainTimeWith(timestamp:Int) -> String {
     
@@ -113,3 +114,8 @@ func XLPRandomColor() -> UIColor {
         
         return str;
 }*/
+
+func showHud(text:String,yHeight:CGFloat) -> Void {
+    
+//    xlpHud.init(frame: <#T##CGRect#>, text: <#T##String#>)
+}

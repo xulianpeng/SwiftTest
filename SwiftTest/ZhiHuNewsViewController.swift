@@ -24,8 +24,15 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let aXlpHud = xlpHud.init(text: "每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分每天登陆奖励+10积分", constransY: 400)
+        aXlpHud.show()
+        aXlpHud.hideWhenAfter(time: 2.0)
+        
         setUpViews()
         obtainData()
+        
+        
     }
 
     func setUpViews() {

@@ -49,6 +49,11 @@ class WheelBannerView: UIView,UIScrollViewDelegate{
     
 
     
+    /// 子定义轮播图
+    ///
+    /// - Parameters:
+    ///   - frame: frame
+    ///   - ImagesArr: 图片网址数组
     init(frame: CGRect, ImagesArr:[String]) {
         super.init(frame: frame)
         
