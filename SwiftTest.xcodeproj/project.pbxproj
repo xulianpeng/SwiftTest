@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642871E1B38D000B21BF0 /* ButtonExtension.swift */; };
 		0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642891E1B931600B21BF0 /* RefreshViewController.swift */; };
+		073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */; };
+		073301D01E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301CF1E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift */; };
+		073301D21E5BE39300A87D52 /* EvernoteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301D11E5BE39300A87D52 /* EvernoteTransition.swift */; };
+		073301D51E5BEF4A00A87D52 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301D31E5BEF4A00A87D52 /* CollectionViewCell.swift */; };
+		073301D61E5BEF4A00A87D52 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073301D41E5BEF4A00A87D52 /* CollectionViewCell.xib */; };
 		075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */; };
 		07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07708CD81E541C9300E30708 /* CarouselBanner.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
@@ -93,6 +98,11 @@
 /* Begin PBXFileReference section */
 		071642871E1B38D000B21BF0 /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		071642891E1B931600B21BF0 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
+		073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
+		073301CF1E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		073301D11E5BE39300A87D52 /* EvernoteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteTransition.swift; sourceTree = "<group>"; };
+		073301D31E5BEF4A00A87D52 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		073301D41E5BEF4A00A87D52 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCityViewController.swift; sourceTree = "<group>"; };
 		07708CD81E541C9300E30708 /* CarouselBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselBanner.swift; sourceTree = "<group>"; };
 		07708CDA1E54350100E30708 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fqmjqktidlasnaamcmzpiogfmbpn/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
@@ -199,7 +209,12 @@
 		075EEAA91E276C4400D8E273 /* 商城 */ = {
 			isa = PBXGroup;
 			children = (
+				073301D31E5BEF4A00A87D52 /* CollectionViewCell.swift */,
+				073301D41E5BEF4A00A87D52 /* CollectionViewCell.xib */,
 				075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */,
+				073301CF1E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift */,
+				073301D11E5BE39300A87D52 /* EvernoteTransition.swift */,
+				073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */,
 			);
 			name = "商城";
 			sourceTree = "<group>";
@@ -312,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				89E73DF51DFA832900058FB0 /* SwiftTest */,
-				89E73E0A1DFA832A00058FB0 /* SwiftTestTests */,
 				89E73E151DFA832A00058FB0 /* SwiftTestUITests */,
 				89E73DF41DFA832900058FB0 /* Products */,
 				F7B9082E28318B73B2EA1B3F /* Pods */,
@@ -357,6 +371,7 @@
 				89E73DFD1DFA832900058FB0 /* Assets.xcassets */,
 				89E73DFF1DFA832900058FB0 /* LaunchScreen.storyboard */,
 				89E73E021DFA832900058FB0 /* Info.plist */,
+				89E73E0A1DFA832A00058FB0 /* SwiftTestTests */,
 				8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */,
 			);
 			path = SwiftTest;
@@ -369,7 +384,7 @@
 				89E73E0D1DFA832A00058FB0 /* Info.plist */,
 			);
 			path = SwiftTestTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		89E73E151DFA832A00058FB0 /* SwiftTestUITests */ = {
 			isa = PBXGroup;
@@ -524,6 +539,7 @@
 			files = (
 				89E73E011DFA832900058FB0 /* LaunchScreen.storyboard in Resources */,
 				89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */,
+				073301D61E5BEF4A00A87D52 /* CollectionViewCell.xib in Resources */,
 				89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +619,7 @@
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
 				07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */,
 				89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */,
+				073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */,
 				07F39F0F1E1CEF7400EE268B /* zhiHuTopCell.swift in Sources */,
 				07F39F081E1CEEE500EE268B /* ZhiHuHomeViewModal.swift in Sources */,
 				0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */,
@@ -618,9 +635,11 @@
 				8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */,
 				89E73E321DFBEA6A00058FB0 /* UI_tableable_VC.swift in Sources */,
 				07F87C9F1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift in Sources */,
+				073301D01E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift in Sources */,
 				07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */,
 				079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */,
 				89E73E3B1DFE46AD00058FB0 /* RootViewController.swift in Sources */,
+				073301D51E5BEF4A00A87D52 /* CollectionViewCell.swift in Sources */,
 				89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */,
 				079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */,
 				07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */,
@@ -635,6 +654,7 @@
 				07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */,
 				07E3DECE1E55A355001BAE03 /* xlpHud.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
+				073301D21E5BE39300A87D52 /* EvernoteTransition.swift in Sources */,
 				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
