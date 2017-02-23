@@ -43,6 +43,18 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
     }
     func obtainData() {
         
+//        var myOperation = ZhiHuObtainDataOperation()
+//        myOperation.initWith(url: urlStr)
+        
+        let mm = ZhiHuObtainDataOperation.init {
+            print("=====asdasdasd")
+        }.main()
+//        mm.main()
+        print(mm)
+        
+//        mm.addDependency(<#T##op: Operation##Operation#>)
+        
+//        self.netStatus
         let hud = MBProgressHUD.init()
 //        hud.mode = MBProgressHUDMode.customView
 //        hud.customView = 
@@ -59,6 +71,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
         hud.removeFromSuperViewOnHide = true
         hud.hide(animated: true, afterDelay: 3.0)
         
+        /*
         MyManager.sharedInstance.SucceedGET(urlStr, parameters: [:]) { (json) in
             let  homeModel = zhiHuControllerModal(json)
             self.zhiHuTopCellModelArr = homeModel.top_stroies
@@ -82,13 +95,24 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
 //            
 //          
 //            xlpCoredataManager.fetchData()
-            
-            
-            
-            
-            
             self.rootTableView.reloadData()
         }
+*/
+        MyManager.sharedInstance.SucceedGETFull2(urlStr, parameters: [:]) { (json, error) in
+            
+            if json != nil{
+               
+                let  homeModel = zhiHuControllerModal(json!)
+                self.zhiHuTopCellModelArr = homeModel.top_stroies
+                self.zhiHuCellModelArr = homeModel.stroies
+                self.rootTableView.reloadData()
+            }else{
+                
+                print("===\(error)" )
+            }
+            
+        }
+        
         
     }
     

@@ -29,6 +29,7 @@ class CCDemoViewController: XLPBaseViewController {
 
         initPlayer()
         
+        alipayDemo()
     }
 
     func initPlayer() {
@@ -104,6 +105,17 @@ class CCDemoViewController: XLPBaseViewController {
     
     
     print("play url: %@", self.DWPlayer?.originalContentURL ?? "什么鬼");
+        
+    }
+    
+    func alipayDemo()  {
+        
+        
+        let resultDic = [String:Any]()
+        AlipaySDK.defaultService().payOrder("", fromScheme: "") { (resultDic) in
+            
+            
+        }
         
     }
     override func didReceiveMemoryWarning() {

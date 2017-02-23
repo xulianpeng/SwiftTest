@@ -84,6 +84,7 @@ class WMNetManager: NSObject {
             }  
             
             
+            
         })
 
         
@@ -186,8 +187,62 @@ class MyManager {
             
             
         })
+    }
+
+    func SucceedGETFull(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping succeedBlock,failed:@escaping failureClosure) {
+        
+        //        SVProgressHUD.setBackgroundColor(.gray)
+        //        SVProgressHUD.show()
+        
+        Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON(completionHandler: { (response) in
+            
+            //            SVProgressHUD.dismiss()
+            
+            switch response.result {
+            case .success(let value):
+                
+                let theValueJson = JSON(value)
+                succeed(theValueJson)
+                
+            case.failure:
+                
+                let theError = response.result.error!
+                
+                failed(theError)
+                print("=====\(theError)")
+                
+                
+                break
+            }
+            
+            
+        })
+    }
+    
+    
+    /// 完整的数据请求
+    ///
+    /// - Parameters:
+    ///   - urlString: 网址
+    ///   - parameters: 参数
+    ///   - finished: 请求完成后的处理包括 成功和失败
+    func SucceedGETFull2(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping finishClosure) {
         
         
+        
+        Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON(completionHandler: { (response) in
+            
+            switch response.result {
+                
+            case .success(let value):
+                let theValueJson = JSON(value)
+                finished(theValueJson,nil)
+            case.failure:
+                let theError = response.result.error!
+                finished(nil,theError)
+            }
+        
+        })
     }
 
 }

@@ -314,6 +314,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
         
         self.playerVC1.pause()
+        self.playerVC1.stop()
         self.playerVC1.view.removeFromSuperview()
         notificationCenter.removeObserver(self)
         self.navigationController?.navigationBar.alpha = 1.0

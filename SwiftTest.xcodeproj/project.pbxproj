@@ -14,6 +14,22 @@
 		073301D21E5BE39300A87D52 /* EvernoteTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301D11E5BE39300A87D52 /* EvernoteTransition.swift */; };
 		073301D51E5BEF4A00A87D52 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301D31E5BEF4A00A87D52 /* CollectionViewCell.swift */; };
 		073301D61E5BEF4A00A87D52 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 073301D41E5BEF4A00A87D52 /* CollectionViewCell.xib */; };
+		073301EB1E5D6DDE00A87D52 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301EA1E5D6DDE00A87D52 /* AlertExtension.swift */; };
+		073302081E5E845600A87D52 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 073302061E5E845500A87D52 /* AlipaySDK.bundle */; };
+		073302091E5E845600A87D52 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073302071E5E845600A87D52 /* AlipaySDK.framework */; };
+		0733020B1E5E869000A87D52 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733020A1E5E869000A87D52 /* libc++.tbd */; };
+		0733020D1E5E86A000A87D52 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733020C1E5E86A000A87D52 /* libz.tbd */; };
+		0733020F1E5E86AD00A87D52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733020E1E5E86AD00A87D52 /* SystemConfiguration.framework */; };
+		073302111E5E86BC00A87D52 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073302101E5E86BC00A87D52 /* CoreTelephony.framework */; };
+		073302131E5E86CA00A87D52 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073302121E5E86CA00A87D52 /* QuartzCore.framework */; };
+		073302151E5E86D800A87D52 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073302141E5E86D800A87D52 /* CoreText.framework */; };
+		073302171E5E86E600A87D52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073302161E5E86E600A87D52 /* CoreGraphics.framework */; };
+		073302191E5E86F800A87D52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073302181E5E86F800A87D52 /* UIKit.framework */; };
+		0733021B1E5E870300A87D52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733021A1E5E870300A87D52 /* Foundation.framework */; };
+		0733021D1E5E870D00A87D52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733021C1E5E870D00A87D52 /* CFNetwork.framework */; };
+		0733021F1E5E871900A87D52 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733021E1E5E871900A87D52 /* CoreMotion.framework */; };
+		073302211E5E918300A87D52 /* ZhiHuObtainDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073302201E5E918300A87D52 /* ZhiHuObtainDataOperation.swift */; };
+		073302241E5ECFC200A87D52 /* zhiHuObtainDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 073302231E5ECFC200A87D52 /* zhiHuObtainDataOperation.m */; };
 		075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */; };
 		07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07708CD81E541C9300E30708 /* CarouselBanner.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
@@ -103,6 +119,23 @@
 		073301D11E5BE39300A87D52 /* EvernoteTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvernoteTransition.swift; sourceTree = "<group>"; };
 		073301D31E5BEF4A00A87D52 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		073301D41E5BEF4A00A87D52 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		073301EA1E5D6DDE00A87D52 /* AlertExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
+		073302061E5E845500A87D52 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		073302071E5E845600A87D52 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		0733020A1E5E869000A87D52 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		0733020C1E5E86A000A87D52 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0733020E1E5E86AD00A87D52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		073302101E5E86BC00A87D52 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		073302121E5E86CA00A87D52 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		073302141E5E86D800A87D52 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		073302161E5E86E600A87D52 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		073302181E5E86F800A87D52 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0733021A1E5E870300A87D52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0733021C1E5E870D00A87D52 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0733021E1E5E871900A87D52 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		073302201E5E918300A87D52 /* ZhiHuObtainDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZhiHuObtainDataOperation.swift; sourceTree = "<group>"; };
+		073302221E5ECFC200A87D52 /* zhiHuObtainDataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhiHuObtainDataOperation.h; sourceTree = "<group>"; };
+		073302231E5ECFC200A87D52 /* zhiHuObtainDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhiHuObtainDataOperation.m; sourceTree = "<group>"; };
 		075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCityViewController.swift; sourceTree = "<group>"; };
 		07708CD81E541C9300E30708 /* CarouselBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselBanner.swift; sourceTree = "<group>"; };
 		07708CDA1E54350100E30708 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fqmjqktidlasnaamcmzpiogfmbpn/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
@@ -177,8 +210,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0733021F1E5E871900A87D52 /* CoreMotion.framework in Frameworks */,
+				0733021D1E5E870D00A87D52 /* CFNetwork.framework in Frameworks */,
+				0733021B1E5E870300A87D52 /* Foundation.framework in Frameworks */,
+				073302191E5E86F800A87D52 /* UIKit.framework in Frameworks */,
+				073302171E5E86E600A87D52 /* CoreGraphics.framework in Frameworks */,
+				073302151E5E86D800A87D52 /* CoreText.framework in Frameworks */,
+				073302131E5E86CA00A87D52 /* QuartzCore.framework in Frameworks */,
+				073302111E5E86BC00A87D52 /* CoreTelephony.framework in Frameworks */,
+				0733020F1E5E86AD00A87D52 /* SystemConfiguration.framework in Frameworks */,
+				0733020D1E5E86A000A87D52 /* libz.tbd in Frameworks */,
+				0733020B1E5E869000A87D52 /* libc++.tbd in Frameworks */,
 				07F87CB31E2F102400CE7178 /* libCCSDK.a in Frameworks */,
 				F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */,
+				073302091E5E845600A87D52 /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +244,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073302051E5E843700A87D52 /* AlipaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				073302061E5E845500A87D52 /* AlipaySDK.bundle */,
+				073302071E5E845600A87D52 /* AlipaySDK.framework */,
+			);
+			name = AlipaySDK;
+			sourceTree = "<group>";
+		};
 		075EEAA81E276C2F00D8E273 /* 旅法师 */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,7 +273,7 @@
 			name = "商城";
 			sourceTree = "<group>";
 		};
-		07708CA81E53EB4E00E30708 /* CC视频 */ = {
+		07708CA81E53EB4E00E30708 /* CC视频点播 */ = {
 			isa = PBXGroup;
 			children = (
 				07F87CAB1E2F102400CE7178 /* DWDownloader.h */,
@@ -232,7 +286,7 @@
 				07F87CB11E2F102400CE7178 /* DWVideoCompressController.h */,
 				07F87CB21E2F102400CE7178 /* libCCSDK.a */,
 			);
-			name = "CC视频";
+			name = "CC视频点播";
 			sourceTree = "<group>";
 		};
 		079FE39C1E094793007DF3DE /* Swift与OC混编 */ = {
@@ -264,6 +318,7 @@
 				07C31F631E12732B00DCB71D /* WMUIExtension.swift */,
 				07F290501E15F2AF00E94097 /* ExtensionTest.swift */,
 				071642871E1B38D000B21BF0 /* ButtonExtension.swift */,
+				073301EA1E5D6DDE00A87D52 /* AlertExtension.swift */,
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
 				07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */,
@@ -283,6 +338,9 @@
 				07708CD81E541C9300E30708 /* CarouselBanner.swift */,
 				07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */,
 				07E3DECD1E55A355001BAE03 /* xlpHud.swift */,
+				073302201E5E918300A87D52 /* ZhiHuObtainDataOperation.swift */,
+				073302221E5ECFC200A87D52 /* zhiHuObtainDataOperation.h */,
+				073302231E5ECFC200A87D52 /* zhiHuObtainDataOperation.m */,
 			);
 			name = "知乎日报";
 			sourceTree = "<group>";
@@ -347,7 +405,8 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				07708CA81E53EB4E00E30708 /* CC视频 */,
+				073302051E5E843700A87D52 /* AlipaySDK */,
+				07708CA81E53EB4E00E30708 /* CC视频点播 */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
@@ -408,6 +467,17 @@
 		D7B4330CCF80B14D18087C44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0733021E1E5E871900A87D52 /* CoreMotion.framework */,
+				0733021C1E5E870D00A87D52 /* CFNetwork.framework */,
+				0733021A1E5E870300A87D52 /* Foundation.framework */,
+				073302181E5E86F800A87D52 /* UIKit.framework */,
+				073302161E5E86E600A87D52 /* CoreGraphics.framework */,
+				073302141E5E86D800A87D52 /* CoreText.framework */,
+				073302121E5E86CA00A87D52 /* QuartzCore.framework */,
+				073302101E5E86BC00A87D52 /* CoreTelephony.framework */,
+				0733020E1E5E86AD00A87D52 /* SystemConfiguration.framework */,
+				0733020C1E5E86A000A87D52 /* libz.tbd */,
+				0733020A1E5E869000A87D52 /* libc++.tbd */,
 				07708CDA1E54350100E30708 /* SDWebImage.framework */,
 				D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */,
 			);
@@ -537,6 +607,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073302081E5E845600A87D52 /* AlipaySDK.bundle in Resources */,
 				89E73E011DFA832900058FB0 /* LaunchScreen.storyboard in Resources */,
 				89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */,
 				073301D61E5BEF4A00A87D52 /* CollectionViewCell.xib in Resources */,
@@ -615,10 +686,12 @@
 			files = (
 				89E73E411E01292900058FB0 /* TsetClass.swift in Sources */,
 				075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */,
+				073302241E5ECFC200A87D52 /* zhiHuObtainDataOperation.m in Sources */,
 				079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */,
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
 				07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */,
 				89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */,
+				073301EB1E5D6DDE00A87D52 /* AlertExtension.swift in Sources */,
 				073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */,
 				07F39F0F1E1CEF7400EE268B /* zhiHuTopCell.swift in Sources */,
 				07F39F081E1CEEE500EE268B /* ZhiHuHomeViewModal.swift in Sources */,
@@ -661,6 +734,7 @@
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
 				07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */,
 				07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */,
+				073302211E5E918300A87D52 /* ZhiHuObtainDataOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

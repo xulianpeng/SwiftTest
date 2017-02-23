@@ -38,6 +38,31 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
         webView.load(request)
         
 //        webView.loadRequest(twoRequest)
+        
+        var textStr = ""
+        let alertView = UIAlertController.init(title: "", message: "我是大帅哥", preferredStyle: .alert)
+        self.present(alertView, animated: true, completion: nil)
+        alertView.addTextField { (textfield) in
+            textfield.placeholder = "崴泥中国"
+            textStr =  textfield.text!
+        }
+        
+        alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: { (alertaction) in
+            
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        alertView.addAction(UIAlertAction.init(title: "确定", style: .destructive, handler: { (alertAction) in
+            self.dismiss(animated: true, completion: nil)
+            
+            let text:String = (alertView.textFields?.last?.text)!
+            print("lallalalla===\(text)")
+        }))
+        
+        
+        
+        
+        
     }
 
     //mARK: 隐藏导航栏的代理方法
