@@ -26,8 +26,51 @@ let kTFPlaceholderColor = UIColor.lightGray
 
 
 //MARK: 营地token
-
 let kToken = "E1BB0782CF8E65F29356A8DE7D86A28B"
+
+
+
+//MARK:iOS系统的判断
+func IS_iOS8() -> Bool{
+    
+    let systemVersion = Double(UIDevice.current.systemVersion)!
+    if systemVersion < 9.0 {
+        return true
+    }
+    return false
+}
+func IS_iOS8orLater() -> Bool{
+    
+    let systemVersion = Double(UIDevice.current.systemVersion)!
+    if systemVersion >= 8.0 {
+        return true
+    }
+    return false
+}
+func IS_iOS9() -> Bool{
+    
+    let systemVersion = Double(UIDevice.current.systemVersion)!
+    if systemVersion < 10.0 {
+        return true
+    }
+    return false
+}
+func IS_iOS9orLater() -> Bool{
+    
+    let systemVersion = Double(UIDevice.current.systemVersion)!
+    if systemVersion >= 9.0 {
+        return true
+    }
+    return false
+}
+func IS_iOS10orLater() -> Bool{
+    
+    let systemVersion = Double(UIDevice.current.systemVersion)!
+    if systemVersion >= 10.0 {
+        return true
+    }
+    return false
+}
 
 
 let xlpCoredataManager = XLPCoreDataManager.shareInstance
@@ -47,10 +90,13 @@ let xlpCoredataManager = XLPCoreDataManager.shareInstance
     return timeStr;
 }
  */
+
+//MARK:颜色的缩写
 func RGB(r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat)->UIColor{
     
     return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: alpha)
 }
+//MARK:时间戳转时间
 func obtainTimeWith(timestamp:Int) -> String {
     
     /*
@@ -80,7 +126,7 @@ func obtainTimeWith(timestamp:Int) -> String {
     return dateformatter.string(from: date as Date)
     
 }
-
+//MARK:随机颜色
 func XLPRandomColor() -> UIColor {
     
     let red = CGFloat(arc4random()%256)/255.0
@@ -119,3 +165,7 @@ func showHud(text:String,yHeight:CGFloat) -> Void {
     
 //    xlpHud.init(frame: <#T##CGRect#>, text: <#T##String#>)
 }
+
+//#if DEBUG
+//#else
+//#endif

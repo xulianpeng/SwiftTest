@@ -94,7 +94,21 @@ class XLPBaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        printLog(message: "目前的试图控制器")//这个暂时没啥用
+        
+        print("====当前将要进入视图====\(self.description)")//MARK:这个告诉我们当前所在的视图控制器的名字
+    }
+    func printLog<T>(message: T,
+                  file: String = #file,
+                  method: String = #function,
+                  line: Int = #line)
+    {
+        #if DEBUG
+            print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+        #endif
+    }
     /*
     // MARK: - Navigation
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0707CE771E5FC2E60041D364 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0707CE721E5FC2E60041D364 /* libWeChatSDK.a */; };
+		0707CE781E5FC2E60041D364 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0707CE731E5FC2E60041D364 /* README.txt */; };
+		0707CE7A1E5FC3AB0041D364 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0707CE791E5FC3AB0041D364 /* libsqlite3.0.tbd */; };
+		0707CE7C1E5FC3CA0041D364 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0707CE7B1E5FC3CA0041D364 /* Security.framework */; };
 		071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642871E1B38D000B21BF0 /* ButtonExtension.swift */; };
 		0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642891E1B931600B21BF0 /* RefreshViewController.swift */; };
 		073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */; };
@@ -112,6 +116,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0707CE721E5FC2E60041D364 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		0707CE731E5FC2E60041D364 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		0707CE741E5FC2E60041D364 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		0707CE751E5FC2E60041D364 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		0707CE761E5FC2E60041D364 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		0707CE791E5FC3AB0041D364 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		0707CE7B1E5FC3CA0041D364 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		071642871E1B38D000B21BF0 /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		071642891E1B931600B21BF0 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
 		073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -210,6 +221,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0707CE7C1E5FC3CA0041D364 /* Security.framework in Frameworks */,
+				0733020B1E5E869000A87D52 /* libc++.tbd in Frameworks */,
+				0707CE7A1E5FC3AB0041D364 /* libsqlite3.0.tbd in Frameworks */,
 				0733021F1E5E871900A87D52 /* CoreMotion.framework in Frameworks */,
 				0733021D1E5E870D00A87D52 /* CFNetwork.framework in Frameworks */,
 				0733021B1E5E870300A87D52 /* Foundation.framework in Frameworks */,
@@ -220,10 +234,10 @@
 				073302111E5E86BC00A87D52 /* CoreTelephony.framework in Frameworks */,
 				0733020F1E5E86AD00A87D52 /* SystemConfiguration.framework in Frameworks */,
 				0733020D1E5E86A000A87D52 /* libz.tbd in Frameworks */,
-				0733020B1E5E869000A87D52 /* libc++.tbd in Frameworks */,
 				07F87CB31E2F102400CE7178 /* libCCSDK.a in Frameworks */,
 				F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */,
 				073302091E5E845600A87D52 /* AlipaySDK.framework in Frameworks */,
+				0707CE771E5FC2E60041D364 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +258,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0707CE711E5FC2B80041D364 /* WeiXinSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0707CE721E5FC2E60041D364 /* libWeChatSDK.a */,
+				0707CE731E5FC2E60041D364 /* README.txt */,
+				0707CE741E5FC2E60041D364 /* WechatAuthSDK.h */,
+				0707CE751E5FC2E60041D364 /* WXApi.h */,
+				0707CE761E5FC2E60041D364 /* WXApiObject.h */,
+			);
+			name = WeiXinSDK;
+			sourceTree = "<group>";
+		};
 		073302051E5E843700A87D52 /* AlipaySDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +431,7 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				0707CE711E5FC2B80041D364 /* WeiXinSDK */,
 				073302051E5E843700A87D52 /* AlipaySDK */,
 				07708CA81E53EB4E00E30708 /* CC视频点播 */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
@@ -467,6 +494,8 @@
 		D7B4330CCF80B14D18087C44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0707CE7B1E5FC3CA0041D364 /* Security.framework */,
+				0707CE791E5FC3AB0041D364 /* libsqlite3.0.tbd */,
 				0733021E1E5E871900A87D52 /* CoreMotion.framework */,
 				0733021C1E5E870D00A87D52 /* CFNetwork.framework */,
 				0733021A1E5E870300A87D52 /* Foundation.framework */,
@@ -611,6 +640,7 @@
 				89E73E011DFA832900058FB0 /* LaunchScreen.storyboard in Resources */,
 				89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */,
 				073301D61E5BEF4A00A87D52 /* CollectionViewCell.xib in Resources */,
+				0707CE781E5FC2E60041D364 /* README.txt in Resources */,
 				89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -903,6 +933,44 @@
 					"$(PROJECT_DIR)/SwiftTest/SDK",
 					"$(PROJECT_DIR)/SwiftTest",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"AlamofireNetworkActivityIndicator\"",
+					"-framework",
+					"\"Async\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"HandyJSON\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SQLite\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-Objc",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -931,6 +999,44 @@
 					"$(PROJECT_DIR)/SwiftTest/SDK",
 					"$(PROJECT_DIR)/SwiftTest",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"AlamofireNetworkActivityIndicator\"",
+					"-framework",
+					"\"Async\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"HandyJSON\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SQLite\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-Objc",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DRELEASE";
 				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

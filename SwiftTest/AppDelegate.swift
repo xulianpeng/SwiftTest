@@ -14,8 +14,9 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var isIOS9orLater = true
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -31,11 +32,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         keyBoardManager.enable = true
         keyBoardManager.keyboardDistanceFromTextField = 20
         
-        return true
+        //MARK:微信支付注册
         
+//        WXApi.registerApp(<#T##appid: String!##String!#>)
+        
+        if !IS_iOS9orLater() {
+            
+            isIOS9orLater = false
+            
+        }
+        debugPrint("asdad哇哈哈哈")
+       printLog(message: "这是一条输出")
+        return true
     
     }
-
+    
+    func printLog<T>(message: T,
+                  file: String = #file,
+                  method: String = #function,
+                  line: Int = #line)
+    {
+        #if DEBUG
+            print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+        #endif
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -58,11 +78,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    //MARK:支付回调处理 支付宝 微信
+    //条件判断 只能是bool值  不能是有返回值的函数  #if  #endif  成对出现
+    #if isIOS9orLater
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    
+    
+        return true
+    }
+    #else
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    
+    if (url.host == "safepay") {
+    //跳转支付宝钱包进行支付，处理支付结果
+    AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (resultDic) in
+    print(resultDic ?? "")
+    })
+    }
+    return true
+    }
+    #endif
+    
+    
     // MARK: - Core Data stack
-    
-   
-    
-    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
