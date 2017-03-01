@@ -8,7 +8,7 @@
 
 import UIKit
 
-let kImageViewHeight = (SCREENWIDTH-20)/4
+let kImageViewHeight = (kSCREENWIDTH-20)/4
 
 
 class zhiHuCell: UITableViewCell {
@@ -52,7 +52,7 @@ class zhiHuCell: UITableViewCell {
         titleLable = UILabel()
         titleLable?.initLabel(nil, textColor: .black, fontSize: 14, backgroundColor: .clear, superView: contentView, snpMaker: { (make) in
             make.left.top.equalTo(10)
-            make.width.equalTo((SCREENWIDTH - 20)/3*2)
+            make.width.equalTo((kSCREENWIDTH - 20)/3*2)
         })
         
         rightImage = UIImageView()

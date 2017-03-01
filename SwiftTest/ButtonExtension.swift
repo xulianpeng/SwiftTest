@@ -113,6 +113,7 @@ extension UIButton{
             self.layer.masksToBounds = true
         }
         
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
         superView.addSubview(self)
         
         self.snp.makeConstraints(snpMaker)
@@ -138,5 +139,79 @@ extension UIButton{
     }
     
 
+    /// 生成具有点击效果的button 不需展示其外观效果
+    func xlpInitFianlButton(_ title:String?,
+                            titleColor:UIColor?,
+                            fontSize:CGFloat?,
+                            superView:UIView,
+                            snpMaker:snapMakerClosure,
+                            buttonClick:@escaping xlpButtonClickHandler
+        ) {
+        
+        
+        self.xlpInitRootButton(title, titleColor: titleColor, fontSize: fontSize, backgroundColor: .clear, imageStr: nil, backgroundImageStr: nil, cornerRedius: nil, superView: superView, snpMaker: snpMaker, buttonClick: buttonClick)
+    }
+
 }
 
+
+typealias viewTapBlock = (_ sender:UITapGestureRecognizer) -> Void
+
+private var viewTapAssociate:String = "viewTapAssociate"
+
+extension UIView{
+    
+    var mytapBlock:viewTapBlock{
+        
+        get {
+            
+            return objc_getAssociatedObject(self, &viewTapAssociate) as! viewTapBlock
+        }
+        
+        set(newValue){
+            objc_setAssociatedObject(self, &viewTapAssociate, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+    
+    func initView(frame:CGRect,superView:UIView,snpMaker: snapMakerClosure?,tapBlock:@escaping viewTapBlock) {
+        
+        self.frame = frame
+        superView.addSubview(self)
+        if snpMaker != nil {
+             self.snp.makeConstraints(snpMaker!)
+        }
+       
+        
+        mytapBlock = tapBlock
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapHandle(tap:)))
+        tap.numberOfTapsRequired = 1
+        addGestureRecognizer(tap)
+        self.isUserInteractionEnabled = true
+    }
+    
+    
+    func initView(superView:UIView,snpMaker: snapMakerClosure?,tapBlock:@escaping viewTapBlock) {
+        
+        
+        superView.addSubview(self)
+        if snpMaker != nil {
+            self.snp.makeConstraints(snpMaker!)
+        }
+        
+        
+        mytapBlock = tapBlock
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapHandle(tap:)))
+        tap.numberOfTapsRequired = 1
+        addGestureRecognizer(tap)
+        self.isUserInteractionEnabled = true
+    }
+
+    func tapHandle(tap:UITapGestureRecognizer)  {
+        
+        mytapBlock(tap)
+    }
+    
+    
+}

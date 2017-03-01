@@ -1,3 +1,4 @@
+
 //
 //  AppDelegate.swift
 //  SwiftTest
@@ -9,7 +10,8 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
-
+import Alamofire
+import SDWebImage
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -42,11 +44,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         debugPrint("asdad哇哈哈哈")
+        ///这个只能做调试用 如果想实现进入一个视图控制器 打印输出控制器的名字 则在XLPBaseViewController里面 viewDidLoad里面添加代码如下: print("====当前将要进入视图====\(self.description)")//MARK:这个告诉我们当前所在的视图控制器的名字
        printLog(message: "这是一条输出")
+        
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(netChanged), name: NSNotification.Name(rawValue: "netStatusChanged"), object: nil)
+        
+        ///userdefaults
+        
+        UserDefaults.standard.setValue("测试一下", forKey: "测试Demo")
+        UserDefaults.standard.synchronize()
+        
+        let arr = ["asda","12331","ajkaljskljkj","ahgasuydg"]
+        
+        UserDefaults.standard.setValue(arr, forKey: "测试数组")
+        UserDefaults.standard.synchronize()
+        
+        let zzz = UserDefaults.standard.value(forKey: "测试Demo")
+        
+        kUserDefaults("我当时这样子想的哈哈哈", key: "测试自定义1")
+        print(zzz!,"======\(UserDefaults.standard.value(forKey:"测试数组")!)","\(UserDefaults.standard.value(forKey: "测试自定义1"))","======\(kUserDefaultsValue("测试自定义1"))=======")
+        
+        
+        
+        SDWebImageManager.shared().imageCache.maxCacheSize = 1024 * 30
+        print(SDWebImageManager.shared().imageCache.getSize())
+        var sdCachePath = kCreateDocDirectoryWith("xlp")
+        
+        SDWebImageManager.shared().imageCache.defaultCachePath(forKey: sdCachePath)
+        
+        print(SDWebImageManager.shared().imageCache.getSize()/(1024 * 1024))
+        
+        
+        
+        
+        let lastPath = kCreatFile("ios.text").0
+        print(kCreatFile("ios.text"))
+        
+        kWriteToFile("万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦", at: lastPath)
+        
+        print(kGetFileSizeMBAtPath(lastPath))
+
+        //MARK:关于除法的心得
+        ///除法 0.被除数和除数 必须类型一致; 
+        ///1.整数相除,则结果取整;
+        ///2.浮点数相除,结果为对应的类型浮点数 所以计算缓存时强制转为 浮点数 最后取精度
+        print(4/2,1/3,7/3,7.01/3,7.01/2.3)
+        
+        let docPath = kGetDocumentPath() as String
+        kGetFolderSizeMBAtPath(docPath)
         return true
     
     }
-    
+    func netChanged(notification:NotificationCenter) {
+        
+        let netStatusManager = NetworkReachabilityManager()
+
+        if (netStatusManager?.isReachable)!{
+            
+            showHud(text: "网络链接已成功", yHeight: 200)
+        }else{
+            showHud(text: "网络链接已失败", yHeight: 200)
+        }
+        
+    }
     func printLog<T>(message: T,
                   file: String = #file,
                   method: String = #function,

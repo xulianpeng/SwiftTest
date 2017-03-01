@@ -55,7 +55,7 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
      
         */
         
-        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
+        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
         view.addSubview(rootTableView)
       
 
@@ -83,7 +83,7 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SCREENWIDTH/4 + 20
+        return kSCREENWIDTH/4 + 20
     }
     
     //MARK:AF获取数据

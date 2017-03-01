@@ -39,7 +39,7 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
 
     func setupUI() {
 //        self.navigationController?.title = "Refresh测试"
-        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
+        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
         rootTableView.initTableView(delegate: self, superView: view)
         rootTableView.register(EassyCell.self, forCellReuseIdentifier: "cell")
         rootTableView.register(EassyCell2.self, forCellReuseIdentifier: "cell2")
@@ -94,10 +94,10 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
         if topModalArr.count > 0 {
             
             if indexPath.row == 0 {
-                return SCREENWIDTH * 3 / 4
+                return kSCREENWIDTH * 3 / 4
             }
         }
-        return SCREENWIDTH/4 + 20
+        return kSCREENWIDTH/4 + 20
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

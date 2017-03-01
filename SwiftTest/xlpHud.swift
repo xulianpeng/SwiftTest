@@ -25,6 +25,7 @@ import UIKit
 class xlpHud: UIView {
 
     
+    
     let kHudFont = UIFont.systemFont(ofSize: 14) //修改字体
     let kHudFontColor:UIColor = UIColor.yellow   //修改字体颜色
     let kHudBackgroundColor:UIColor = RGB(r: 0, g: 0, b: 0, alpha: 0.8)//修改背景色
@@ -41,6 +42,7 @@ class xlpHud: UIView {
         
         let myString:String = text
 
+        
         ///富文本相关的设置
         let aStyle = NSMutableParagraphStyle.init()
         aStyle.lineSpacing = 0 //行间距
@@ -51,13 +53,13 @@ class xlpHud: UIView {
         
         
         
-        let maxSize = CGSize(width:SCREENWIDTH - CGFloat(kPading * 2), height:
-            SCREENHEIGHT)
+        let maxSize = CGSize(width:kSCREENWIDTH - CGFloat(kPading * 2), height:
+            kSCREENHEIGHT)
         let aSize:CGRect = aAttritString.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],context: nil)
         
         let aWidth:CGFloat = aSize.size.width + CGFloat(kPading)
         let aheight:CGFloat = aSize.size.height + CGFloat(kPading)
-        let aX = Int(SCREENWIDTH)/2 - Int(aWidth)/2 - kPading/2
+        let aX = Int(kSCREENWIDTH)/2 - Int(aWidth)/2 - kPading/2
         
         let textLabel:UILabel = UILabel.init(frame: CGRect(x:CGFloat(kPading/2),y:CGFloat(kPading/2),width:aSize.width,height:aSize.height))
         

@@ -22,7 +22,7 @@ class ScrollViewSnapKitVController: XLPBaseViewController,UITableViewDelegate,UI
  
     
     var finalArr = NSMutableArray()
-    let rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
+    let rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +99,7 @@ class ScrollViewSnapKitVController: XLPBaseViewController,UITableViewDelegate,UI
         scrollView.addSubview(containerView)
         containerView.snp.makeConstraints { (make) in
             make.edges.equalTo(scrollView)
-            make.width.equalTo(SCREENWIDTH)
+            make.width.equalTo(kSCREENWIDTH)
         }
         
         
@@ -252,7 +252,7 @@ class ScrollViewSnapKitVController: XLPBaseViewController,UITableViewDelegate,UI
             make.top.equalTo(label2.snp.bottom).offset(20)
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.height.equalTo(SCREENHEIGHT)
+            make.height.equalTo(kSCREENHEIGHT)
             make.bottom.equalTo(containerView).offset(-20)
         }
         
@@ -278,7 +278,7 @@ class ScrollViewSnapKitVController: XLPBaseViewController,UITableViewDelegate,UI
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SCREENWIDTH/4 + 20
+        return kSCREENWIDTH/4 + 20
     }
 
    

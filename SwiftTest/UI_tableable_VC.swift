@@ -13,7 +13,7 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     
     var dataArr = NSMutableArray()
-    var myTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style:UITableViewStyle.plain)
+    var myTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style:UITableViewStyle.plain)
     
     
     

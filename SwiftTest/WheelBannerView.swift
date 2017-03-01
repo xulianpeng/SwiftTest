@@ -20,7 +20,7 @@ class WheelBannerView: UIView,UIScrollViewDelegate{
     var delegate : WheelBannerViewDelegate!
     
     //屏幕宽度
-    let kScreenWidth = SCREENWIDTH
+    let kkSCREENWIDTH = kSCREENWIDTH
     
     //当前展示的图片索引
     var currentIndex : Int = 0
@@ -124,7 +124,7 @@ class WheelBannerView: UIView,UIScrollViewDelegate{
     
     //设置页控制器
     func configurePageController() {
-        self.pageControl = UIPageControl(frame: CGRect(x: kScreenWidth/2-60,
+        self.pageControl = UIPageControl(frame: CGRect(x: kkSCREENWIDTH/2-60,
                                                        y: self.scrollerViewHeight! - 20, width: 120, height: 20))
         self.pageControl?.numberOfPages = (self.dataSource?.count)!
         self.pageControl?.isUserInteractionEnabled = false

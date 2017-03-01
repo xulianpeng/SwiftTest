@@ -18,7 +18,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     var vcArr = NSMutableArray()
     
     
-//    var rootTableView:UITableView = UITableView.init(frame: CGRect(x:0,y:0,width:screenWidth,height:screenHeight), style: UITableViewStyle.grouped) //在声明时不能调用之前声明的属性,必须在函数中调用才会识别
+//    var rootTableView:UITableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: UITableViewStyle.grouped) //在声明时不能调用之前声明的属性,必须在函数中调用才会识别
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         
     }
     func layoutUI() -> Void {
-        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
+        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
         rootTableView?.delegate = self
         rootTableView?.dataSource = self
         rootTableView?.separatorStyle = UITableViewCellSeparatorStyle.singleLine

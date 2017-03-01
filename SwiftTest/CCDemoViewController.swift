@@ -39,7 +39,7 @@ class CCDemoViewController: XLPBaseViewController {
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.top.equalTo(64)
-            make.height.equalTo(SCREENWIDTH * 9 / 16)
+            make.height.equalTo(kSCREENWIDTH * 9 / 16)
         })
         
         self.DWPlayer?.videoId = "34981E63A3ECA2F69C33DC5901307461";

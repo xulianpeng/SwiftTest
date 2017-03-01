@@ -36,6 +36,9 @@ class XLP_OperatorsVController: UIViewController {
     
     var studentScoreDic = [String:Double]()
     
+    let testView = UIView()
+    var toastView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "基本运算符"
@@ -419,11 +422,12 @@ class XLP_OperatorsVController: UIViewController {
         
         
         
+        testViewGesture1()
+        testViewGesture2()
         
         
         
-        
-        
+        showToastView()
         
         
         
@@ -596,7 +600,107 @@ class XLP_OperatorsVController: UIViewController {
     }
     
     
+    func testViewGesture1() {
+        
     
+        let testView = UIView()
+        let aFrame = CGRect(x:100,y:100,width:100,height:100)
+        testView.initView(frame: aFrame, superView: self.view, snpMaker: nil) { (tap) in
+            
+            self.view.backgroundColor = XLPRandomColor()
+        }
+        self.view.addSubview(testView)
+        testView.backgroundColor = UIColor.red
+    }
+    
+    func testViewGesture2() {
+        
+        
+        
+        testView.initView(superView: self.view, snpMaker: { (make) in
+            make.width.height.equalTo(100)
+            make.center.equalTo(self.view.center)
+            
+        }) { (tap) in
+            self.view.backgroundColor = XLPRandomColor()
+        }
+        self.view.addSubview(testView)
+        
+        testView.backgroundColor = UIColor.blue
+    }
+    
+    func showToastView()  {
+        
+        
+        kCreateDocDirectoryWith("xlp")
+        toastView.initView(superView: wmKeyWindow(), snpMaker: { (make) in
+            make.left.top.equalTo(0)
+            //            make.right.equalTo(0)
+            make.width.equalTo(kSCREENWIDTH)
+            make.height.equalTo(64)
+            
+        }, tapBlock: { (tap) in
+            
+//            self.view.backgroundColor = XLPRandomColor()
+            UIView.animate(withDuration: 3) {
+                
+                //不能在自己的点击事件里面写updateConstraints动画,否则没有渐变的效果,最终是瞬时效果
+                
+//                self.toastView.snp.updateConstraints({ (make) in
+//                    make.top.equalTo(64)
+//                    make.left.equalTo(0)
+//                    make.width.equalTo(kSCREENWIDTH)
+//                    make.height.equalTo(64)
+//                })
+            
+                //但是如果更新别的对象的约束  则具有渐变效果 
+                //那么关于toast的初始化 再用 约束 的话 就够呛了 暂时还是先按照 frame进行初始化吧
+                self.testView.snp.updateConstraints({ (make) in
+                    make.width.height.equalTo(200)
+                    make.center.equalTo(self.view.center)
+
+                })
+                
+                 self.view.layoutIfNeeded()
+            }
+           
+            
+        })
+        
+        toastView.backgroundColor = UIColor.purple
+        
+        
+        let label:UILabel = UILabel()
+        label.initLabel("网络链接有问题,请重新设置", textColor: .black, fontSize: 16, isBold: false, aligenment: .left, backgroundColor: .clear, superView: toastView) { (make) in
+            make.left.equalTo(20)
+            make.bottom.equalTo(toastView.snp.bottom).offset(-5)
+            make.right.equalTo(0)
+            make.height.equalTo(kXLPFontSize(16).lineHeight)
+        }
+        
+//        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 100, options: .allowUserInteraction, animations: { 
+//                self.toastView.frame.origin.y = -64
+//        }, completion: nil)
+        
+//        self.view.layoutIfNeeded()
+//        UIView.animate(withDuration: 10) {
+////            self.toastView.snp.makeConstraints({ (make) in
+////                
+////                make.top.equalTo(-64)
+////            })
+//            
+//            self.toastView.snp.remakeConstraints({ (make) in
+//                make.top.equalTo(-64)
+//            })
+//        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        toastView.removeFromSuperview()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

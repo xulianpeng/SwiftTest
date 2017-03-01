@@ -27,7 +27,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
 //        let cellNum = 3
 //        let mm = 5 * (cellNum - 1)
 //        let nn = CGFloat(10 * 2 + mm)
-//        let cellWidth = Int(SCREENWIDTH - nn) / cellNum
+//        let cellWidth = Int(kSCREENWIDTH - nn) / cellNum
 //        myCollectionLayout2.itemSize = CGSize(width:cellWidth,height:65)  //这个height 就是cell的高度
 //        myCollectionLayout2.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10) //上左下右
 //        myCollectionLayout2.minimumLineSpacing = 10 //上下item的距离
@@ -35,7 +35,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
         
         let BGColor = RGB(r: 56, g: 51, b: 76, alpha: 1.0)
         
-        let myCollectionView = UICollectionView.init(frame: CGRect(x:0,y:64,width:SCREENWIDTH,height:SCREENHEIGHT - 64), collectionViewLayout: myCollectionViewFlowLayout())
+        let myCollectionView = UICollectionView.init(frame: CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64), collectionViewLayout: myCollectionViewFlowLayout())
         myCollectionView.register(myCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         myCollectionView.backgroundColor = BGColor
         myCollectionView.delegate = self
@@ -67,7 +67,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
     
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width:SCREENWIDTH,height:15)
+//        return CGSize(width:kSCREENWIDTH,height:15)
 //    }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -87,7 +87,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
 //    }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
 //        
-//        return CGSize(width:SCREENWIDTH,height:15)
+//        return CGSize(width:kSCREENWIDTH,height:15)
 //    }
     
    

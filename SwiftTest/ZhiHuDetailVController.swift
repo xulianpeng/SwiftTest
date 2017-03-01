@@ -25,6 +25,10 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mmm"), object: nil)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "nnn"), object: nil)
+
         view.addSubview(webView)
         webView.scrollView.delegate = self
         
@@ -61,6 +65,14 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
         
         
         
+        let myIndictor = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+        self.view.addSubview(myIndictor)
+        myIndictor.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.width.height.equalTo(30)
+        }
+        myIndictor.startAnimating()
+        
         
         
     }
@@ -85,6 +97,8 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        
         self.navigationController?.navigationBar.barTintColor = UIColor.white
     }
     override func didReceiveMemoryWarning() {

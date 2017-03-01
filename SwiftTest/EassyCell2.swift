@@ -50,8 +50,8 @@ class EassyCell2: UITableViewCell {
         newsImage.isUserInteractionEnabled = true
         newsImage.snp.makeConstraints { (make) in
             make.left.top.equalTo(0)
-            make.width.equalTo(SCREENWIDTH)
-            make.height.equalTo(SCREENWIDTH*3/4)
+            make.width.equalTo(kSCREENWIDTH)
+            make.height.equalTo(kSCREENWIDTH*3/4)
         }
         
         titleLabel = UILabel()

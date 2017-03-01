@@ -58,8 +58,8 @@ class XLP_UI_ViewController: UIViewController {
         
         let mskWidth = 10.0
         
-//        let widthNum  = Int (screenWidth)/mskWidth
-//        let heightNum  = Int(screenHeight)/mskWidth
+//        let widthNum  = Int (kSCREENWIDTH)/mskWidth
+//        let heightNum  = Int(kSCREENHEIGHT)/mskWidth
         let widthNum:Int8  = 1
         let heightNum:Int16  = 500
         let mySum = heightNum + Int16(widthNum)
@@ -200,7 +200,7 @@ class XLP_UI_ViewController: UIViewController {
     
     
      func initLabel(_: UILabel) -> Void {
-     titleLabel2.frame = CGRect(x:10,y:130,width:SCREENWIDTH - 20,height: 0);
+     titleLabel2.frame = CGRect(x:10,y:130,width:kSCREENWIDTH - 20,height: 0);
      self.view.addSubview(titleLabel2)
      titleLabel2.backgroundColor = UIColor.green
      titleLabel2.text = text
@@ -236,7 +236,7 @@ class XLP_UI_ViewController: UIViewController {
     }
      func initLabel2() -> Void {
      
-     titleLabel.frame = CGRect(x:10,y:SCREENHEIGHT - 200,width:SCREENWIDTH - 20,height: 0);
+     titleLabel.frame = CGRect(x:10,y:kSCREENHEIGHT - 200,width:kSCREENWIDTH - 20,height: 0);
      view.addSubview(titleLabel)
      titleLabel.backgroundColor = UIColor.blue
      titleLabel.text = text
@@ -247,7 +247,7 @@ class XLP_UI_ViewController: UIViewController {
      }
      /*
      func initButton1() -> Void {
-     button1.frame = CGRect(x:20 ,y:70,width:(screenWidth - 40)/2,height:40)
+     button1.frame = CGRect(x:20 ,y:70,width:(kSCREENWIDTH - 40)/2,height:40)
      button1 .addTarget(self, action:#selector(handleAction1(btn:)), for:.touchUpInside)
      //        button1.titleLabel?.text = "按钮111";
      //        button1.titleLabel?.textColor = UIColor.red
@@ -264,7 +264,7 @@ class XLP_UI_ViewController: UIViewController {
      
      func initButton2() -> Void {
         
-        button2.frame = CGRect(x:screenWidth/2,y:70,width:button1.frame.width,height:button1.frame.height)
+        button2.frame = CGRect(x:kSCREENWIDTH/2,y:70,width:button1.frame.width,height:button1.frame.height)
         WMUIMaker.creatButton(button: button2, title: "按钮222", titleColor: .green, imageStr:"" , backgroundImageStr: "", cornerRedius: 4, superView: view)
         button2.tag = tag2
         button2.addTarget(self, action: #selector(handleAction2(btn:)), for: .touchUpInside)

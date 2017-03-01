@@ -154,7 +154,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
         self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
         self.view.addSubview((self.playerVC1.view)!)
-//        self.playerVC1.view.frame = CGRect(x:0,y:64,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
+//        self.playerVC1.view.frame = CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENWIDTH * 9 / 16)
         let theHeight = (self.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height
         print(theHeight)
         self.playerVC1.view.snp.makeConstraints { (make) in
@@ -162,7 +162,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.top.equalTo(0)
-            make.height.equalTo(SCREENWIDTH * 9 / 16)
+            make.height.equalTo(kSCREENWIDTH * 9 / 16)
         }
         
         self.playerVC1.controlStyle = .embedded//embedded,fullscreen,none,default

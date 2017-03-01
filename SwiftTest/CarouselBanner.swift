@@ -51,7 +51,7 @@ class CarouselBanner: UIView,UIScrollViewDelegate {
         for _ in self.theimageArr {
             
             let imageView = UIImageView()
-            imageView.frame = CGRect(x:Int(SCREENWIDTH) * i,y:0,width:Int(SCREENWIDTH),height:kTopCellHeight)
+            imageView.frame = CGRect(x:Int(kSCREENWIDTH) * i,y:0,width:Int(kSCREENWIDTH),height:kTopCellHeight)
             imageView.isUserInteractionEnabled = true
             loadImage(imageView, index: i)
             scrollview.addSubview(imageView)
@@ -93,14 +93,14 @@ class CarouselBanner: UIView,UIScrollViewDelegate {
         if currentIndex < self.theimageArr.count - 1 && !changeDirection {
             
             currentIndex += 1
-            scrollview.setContentOffset(CGPoint(x: SCREENWIDTH * CGFloat(currentIndex), y: 0), animated: true)
+            scrollview.setContentOffset(CGPoint(x: kSCREENWIDTH * CGFloat(currentIndex), y: 0), animated: true)
             if currentIndex == self.theimageArr.count - 1 {
                 changeDirection = true
             }
         }else{
             
             currentIndex -= 1
-            scrollview.setContentOffset(CGPoint(x: SCREENWIDTH * CGFloat(currentIndex), y: 0), animated: true)
+            scrollview.setContentOffset(CGPoint(x: kSCREENWIDTH * CGFloat(currentIndex), y: 0), animated: true)
             if currentIndex == 0 {
                 changeDirection = false
             }

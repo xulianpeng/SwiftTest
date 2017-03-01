@@ -11,10 +11,10 @@ import UIKit
 public let horizonallyPadding:CGFloat = 10
 public let verticallyPadding:CGFloat = 5
 
-public let screenWidth = UIScreen.main.bounds.size.width
-public let screenHeight = UIScreen.main.bounds.size.height
+//public let kSCREENWIDTH = UIScreen.main.bounds.size.width
+//public let kSCREENHEIGHT = UIScreen.main.bounds.size.height
 
-public let cellWidth = (screenWidth - 2 * horizonallyPadding - 10)/3
+public let cellWidth = (kSCREENWIDTH - 2 * horizonallyPadding - 10)/3
 private let cellHeight:CGFloat = 65
 
 private let SpringFactor:CGFloat = 10.0
@@ -23,7 +23,7 @@ class myCollectionViewFlowLayout: UICollectionViewFlowLayout {
     override init() {
         super.init()
         itemSize = CGSize(width: cellWidth, height: cellHeight)
-        headerReferenceSize = CGSize(width: screenWidth, height: verticallyPadding)
+        headerReferenceSize = CGSize(width: kSCREENWIDTH, height: verticallyPadding)
         sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
         minimumInteritemSpacing = 5
         minimumLineSpacing = 5
@@ -32,7 +32,7 @@ class myCollectionViewFlowLayout: UICollectionViewFlowLayout {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         itemSize = CGSize(width: cellWidth, height: cellHeight)
-        headerReferenceSize = CGSize(width: screenWidth, height: verticallyPadding)
+        headerReferenceSize = CGSize(width: kSCREENWIDTH, height: verticallyPadding)
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {

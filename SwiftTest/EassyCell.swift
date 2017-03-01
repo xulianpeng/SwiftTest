@@ -61,8 +61,8 @@ class EassyCell: UITableViewCell {
         addSubview(newsImage)
         newsImage.snp.makeConstraints { (make) in
             make.left.top.equalTo(10)
-            make.width.equalTo(SCREENWIDTH/3)
-            make.height.equalTo(SCREENWIDTH/4)
+            make.width.equalTo(kSCREENWIDTH/3)
+            make.height.equalTo(kSCREENWIDTH/4)
         }
         
         titleLabel = UILabel()

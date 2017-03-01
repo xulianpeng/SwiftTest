@@ -19,7 +19,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
     /// 新闻cell数据模型
     private var zhiHuCellModelArr : [zhiHuCellModel] = Array()
     
-    let rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), style: .plain)
+    let rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
     
     
     override func viewDidLoad() {
@@ -31,8 +31,8 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
         
         setUpViews()
         obtainData()
-        
-        
+        ///注册通知
+        registerNotification()
     }
 
     func setUpViews() {
@@ -65,7 +65,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
     //TODO:有个限制 超出屏宽的话 则省略号显示
         hud.label.text = "正在加asdajsdajsdkjk哈坚实的骄傲和发生地方的说法和骄傲啥地方就俺俩的身份是短发接快递发货就爱上的回复载..."
         hud.animationType = MBProgressHUDAnimation.zoomOut
-        hud.frame = CGRect(x:SCREENWIDTH/2 - 20,y:SCREENHEIGHT/2 - 20,width:40,height:40)
+        hud.frame = CGRect(x:kSCREENWIDTH/2 - 20,y:kSCREENHEIGHT/2 - 20,width:40,height:40)
         self.view.addSubview(hud)
         hud.show(animated: true)
         hud.removeFromSuperViewOnHide = true
@@ -185,8 +185,29 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    
+    /// 注册通知
+    func registerNotification(){
         
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationHandle), name: NSNotification.Name(rawValue: "mmm"), object: nil)
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue:"mmm"), object: nil, queue: nil) { (notification) in
+            self.navigationController?.navigationBar.barTintColor = UIColor.purple
+        }
+        
+        let mainQueue = OperationQueue.main
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue:"nnn"), object: nil, queue: mainQueue) { (sender) in
+            
+            self.view.backgroundColor = UIColor.brown
+        }
+        
+    }
+    func notificationHandle(sender:NSNotification){
+    
+        self.navigationController?.navigationBar.barTintColor = UIColor.yellow
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-let SCREENWIDTH = UIScreen.main.bounds.width
-let SCREENHEIGHT = UIScreen.main.bounds.height
+let kSCREENWIDTH = UIScreen.main.bounds.width
+let kSCREENHEIGHT = UIScreen.main.bounds.height
 
 //MARK: UIButton 相关的默认属性
 
@@ -188,6 +188,163 @@ func isTelNumber(_ num:String)->Bool{
     {
         return false
     }
+}
+
+
+/// 通知 暂未发现好的解决办法
+typealias NSNotificationBlock = (_ sender:Notification) -> Void
+
+func kNotificationAddObserver(_ observer:String,notificationName:String,object:Any?,selector:NSNotificationBlock){
+    
+//    NotificationCenter.default.addObserver(observer, selector: #selector(notificationHandle), name: NSNotification.Name(rawValue: notificationName), object: object)
+    
+//    NotificationCenter.default.addObserver(<#T##observer: Any##Any#>, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+//    NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: notificationName), object: object, queue: OperationQueue.main, using: NSNotificationBlock)
+    
+//    NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue:"mmm"), object: nil, queue: nil) { (notification) in
+//        self.navigationController?.navigationBar.barTintColor = UIColor.purple
+//    }
+}
+//func notificationHandle(<#parameters#>) -> <#return type#> {
+//    <#function body#>
+//}
+
+
+/// UserDefaults的简单封装
+///
+/// - Parameters:
+///   - value: <#value description#>
+///   - key: <#key description#>
+func kUserDefaults(_ value:Any?,key:String) {
+    
+    UserDefaults.standard.setValue(value, forKey:key)
+    UserDefaults.standard.synchronize()
+}
+func kUserDefaultsValue(_ key:String) -> Any{
+    
+    return UserDefaults.standard.value(forKey: key)!
+    
+}
+
+//let WMkeyWindow: UIWindow {
+//    
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    
+//    return appDelegate.window!
+//}
+//MARK:获取主Window
+func wmKeyWindow() -> UIWindow {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    return appDelegate.window!
+}
+//MARK:font方法简写
+func kXLPFontSize(_ size:CGFloat) -> UIFont {
+    return UIFont.systemFont(ofSize: size)
+}
+//MARK:沙盒相关的方法
+func kGetLibraryPath() ->NSString{
+    
+    let pathArr = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+    let libPath = pathArr[0]
+    return libPath as NSString
+    
+}
+
+
+/// 获取沙盒Document的路径
+///
+/// - Returns: 获取沙盒Document的路径
+func kGetDocumentPath() -> NSString{
+    
+    let pathArr = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+    let docPath:NSString = pathArr[0] as NSString
+    return docPath
+}
+
+/// 获取创建指定文件夹的路径
+///
+/// - Parameter name: 创建的文件夹
+/// - Returns: 创建指定文件夹的路径
+func kCreateDocDirectoryWith(_ name:String) -> String{
+    
+    let docPath:NSString = kGetDocumentPath()
+    let fileManager = FileManager.default
+    let finalPath = docPath.appendingPathComponent(name)
+    try! fileManager.createDirectory(atPath: finalPath, withIntermediateDirectories: true, attributes: nil)
+    print("===创建的文件夹的路径==\(finalPath)")
+    return finalPath
+}
+
+/// 创建文件
+///
+/// - Parameter name: 文件名 比如 ios.text
+/// - Returns: 是否创建成功
+func kCreatFile(_ name:String) -> (String,Bool){
+    let docPath:NSString = kGetDocumentPath()
+    let fileManager = FileManager.default
+    let finalPath = docPath.appendingPathComponent(name)
+    let isSuccesed:Bool = fileManager.createFile(atPath: finalPath, contents: nil, attributes: nil)
+    return (finalPath,isSuccesed)
+}
+
+/// 写入文件内容 接上面这个方法
+///
+/// - Parameters:
+///   - content: 写入的内容
+///   - path: 文件所在路径 即kCreatFile的返回结果的第一个
+func kWriteToFile(_ content:String,at path:String)  {
+    
+    let mm = content
+    
+    try! mm.write(toFile: path, atomically: true, encoding: String.Encoding.utf8)
+    
+}
+
+/// 计算文件的大小 单位为MB  暂时结果取小数点后5位
+///
+/// - Parameter path: 文件所在路径
+/// - Returns: 文件大小
+func kGetFileSizeMBAtPath(_ path:String) -> Double{
+    
+    let fileManager = FileManager.default
+    let isExist = fileManager.fileExists(atPath: path)
+    if isExist {
+        
+        let attr = try! fileManager.attributesOfItem(atPath: path)
+//        let fileSize = attr[FileAttributeKey.size] as! Double //这个方法也可以
+        let dict = attr as NSDictionary
+        //单位为bit 最终转为 MB
+        let fileSize = dict.fileSize()
+        let lastSize = Double(fileSize) / Double(8 * 1024 * 1024)
+        let lastStr = String.init(format: "%.5f", lastSize)
+        print("文件的大小为\( (lastStr as NSString).doubleValue)MB")
+       return (lastStr as NSString).doubleValue
+    }
+    return 0.0
+}
+func kGetFolderSizeMBAtPath(_ path:String) -> Double{
+    let fileManager = FileManager.default
+    let isExist = fileManager.fileExists(atPath: path)
+    if (isExist){
+        
+        print(try! fileManager.subpathsOfDirectory(atPath: path),try! fileManager.subpathsOfDirectory(atPath: path).enumerated())
+//        var childFileEnumerator :NSEnumerator = fileManager.subpathsOfDirectory(atPath: path).enumerated()
+//        
+//            [[fileManager subpathsAtPath:folderPath] objectEnumerator];
+//        unsigned long long folderSize = 0;
+//        NSString *fileName = @"";
+//        while ((fileName = [childFileEnumerator nextObject]) != nil){
+//            NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
+//            folderSize += [self fileSizeAtPath:fileAbsolutePath];
+//        }
+//        return folderSize / (1024.0 * 1024.0);
+//    } else {
+//        NSLog(@"file is not exist");
+//        return 0;
+    }
+    
+    return 0.003
 }
 //#if DEBUG
 //#else

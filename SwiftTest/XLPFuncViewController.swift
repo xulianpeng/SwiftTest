@@ -198,6 +198,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic,UIGestureRecognizer
 //MARK: 手势练习
         panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(panHandle))
         panGesture.delegate = self
+        
         view.addGestureRecognizer(panGesture)
         
         

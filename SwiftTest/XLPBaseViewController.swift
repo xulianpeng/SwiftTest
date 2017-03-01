@@ -1,4 +1,4 @@
-//
+ //
 //  XLPBaseViewController.swift
 //  SwiftTest
 //
@@ -36,12 +36,18 @@ class XLPBaseViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
        
+        ///实现进入一个视图控制器 打印输出控制器的名字
+        print("====当前将要进入视图====\(self.description)")//MARK:这个告诉我们当前所在的视图控制器的名字
+
+        ///
+        
+        
         
         
         let netStatusManager = NetworkReachabilityManager()
         
         
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadHandle), name: NSNotification.Name(rawValue: "netStatusChanged"), object: nil)
         
         if (netStatusManager?.isReachable)! {
             
@@ -55,14 +61,19 @@ class XLPBaseViewController: UIViewController {
             netStatus = false
             
             //展示
-            subNoNetView = NoNetView.init(CGRect(x:0,y:0,width:SCREENWIDTH,height:SCREENHEIGHT), title: "重新加载", superView: myWindow, reloaDataBlock1: { (btn) in
-//                print("============无数据时点我重新加载===============")
-                
+//            subNoNetView = NoNetView.init(CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT), title: "数据连接已断开,请检查后重新加载", superView: myWindow, reloaDataBlock1: { (btn) in
+////                print("============无数据时点我重新加载===============")
+//                
+//                self.reloadHandle()
+//
+//            })
+//            subNoNetView?.initWithButtonText(text: "请您检查连接后重新加载数据,信球货")
+            
+            subNoNetView = NoNetView.init(64, title: "请您检查连接后重新加载数据,信球货", style: .OnlyText, superView: myWindow, reloaDataBlock1: { (btn) in
                 self.reloadHandle()
-
             })
-
-            subNoNetView?.backgroundColor = .red
+            
+            subNoNetView?.backgroundColor = .gray
         }
         
         
@@ -83,11 +94,16 @@ class XLPBaseViewController: UIViewController {
 
     func reloadHandle() {
         viewDidLoad()
+        
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
+        super.viewWillDisappear(animated)
         SVProgressHUD.dismiss()
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "netStatusChanged"), object: nil)
+        //断网页面移除
+        subNoNetView?.removeFromSuperview()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,11 +111,26 @@ class XLPBaseViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        printLog(message: "目前的试图控制器")//这个暂时没啥用
+        super.viewWillAppear(animated) 
         
-        print("====当前将要进入视图====\(self.description)")//MARK:这个告诉我们当前所在的视图控制器的名字
+        ///断网处理toast
+        
+        let noNetToast = NoNetTast.init("网络不给力,请检查网络设置", superView: self.view) { (tap) in
+            
+            self.view.backgroundColor = XLPRandomColor()
+            let hud = xlpHud.init(text: "妈咪妈咪哄", constransY: 300)
+            hud.show()
+            hud.hideWhenAfter(time: 3)
+            
+        }
+//        self.view.addSubview(noNetToast)
+        myWindow.addSubview(noNetToast)
+        myWindow.bringSubview(toFront: noNetToast)
+//        UIView.animate(withDuration: 3) {
+//            noNetToast.frame.origin.y = -64
+//        }
     }
+    //做调试用
     func printLog<T>(message: T,
                   file: String = #file,
                   method: String = #function,
@@ -109,14 +140,6 @@ class XLPBaseViewController: UIViewController {
             print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
         #endif
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

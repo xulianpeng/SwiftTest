@@ -62,7 +62,7 @@ class OneCell: UITableViewCell {
         }
         
         
-//        clickBt.frame = CGRect(x:screenWidth - 10 - 50,y:15,width:50,height:50)
+//        clickBt.frame = CGRect(x:kSCREENWIDTH - 10 - 50,y:15,width:50,height:50)
         
         contentView.addSubview(clickBt)
         

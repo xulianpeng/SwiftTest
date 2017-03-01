@@ -31,6 +31,7 @@ class videoRootViewController: XLPBaseViewController {
         super.viewDidLoad()
         layoutViews()
         
+        initIndicator(self.view).startAnimating()
     }
     //悠军毅
     func layoutViews()  {
@@ -63,7 +64,7 @@ class videoRootViewController: XLPBaseViewController {
             /*
             // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
             self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
-            self.playerVC1.view.frame = CGRect(x:0,y:300,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
+            self.playerVC1.view.frame = CGRect(x:0,y:300,width:kSCREENWIDTH,height:kSCREENWIDTH * 9 / 16)
             
             self.view.addSubview((self.playerVC1.view)!)
             
@@ -118,7 +119,7 @@ class videoRootViewController: XLPBaseViewController {
             self.avPlayer = AVPlayer.init(playerItem: avPlayerItem)
             self.avPlayer.play()
             self.avPlayerLayer = AVPlayerLayer.init(player: self.avPlayer)
-            self.avPlayerLayer.frame = CGRect(x:0,y:300,width:SCREENWIDTH,height:SCREENWIDTH * 9 / 16)
+            self.avPlayerLayer.frame = CGRect(x:0,y:300,width:kSCREENWIDTH,height:kSCREENWIDTH * 9 / 16)
             self.avPlayerLayer.borderColor = UIColor.red.cgColor
             self.avPlayerLayer.borderWidth = 3
             self.view.layer.addSublayer(self.avPlayerLayer)
