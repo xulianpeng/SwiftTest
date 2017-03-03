@@ -10,20 +10,11 @@ import UIKit
 
 class ZhiHuObtainDataOperation: Operation {
 
-    var urlStr = ""
+    var urlStr :String = ""
     
-     func initWith( url :String){
+     func initWith(_ url :String){
         
-     urlStr = url
-        
-        
-    }
-    
-    private var operation1: () -> ()
-    init(operation: @escaping () -> ())
-    {
-        
-        operation1 = operation
+     self.urlStr = url
         
         
     }
@@ -41,6 +32,6 @@ class ZhiHuObtainDataOperation: Operation {
     }
     func doYourOperation() {
         
-        print("我的网址是什么啊\(operation1)")
+        print("我的网址是什么啊)")
     }
 }

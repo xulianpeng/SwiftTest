@@ -25,6 +25,7 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "mmm"), object: nil)
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "nnn"), object: nil)
@@ -41,10 +42,14 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
         
         webView.load(request)
         
+        self.view.bringSubview(toFront: wmIndictor)
+        wmIndictor.startAnimating()
+        
 //        webView.loadRequest(twoRequest)
         
+        /*
         var textStr = ""
-        let alertView = UIAlertController.init(title: "", message: "我是大帅哥", preferredStyle: .alert)
+        let alertView = UIAlertController.init(title: "提示", message: "我是大帅哥", preferredStyle: .alert)
         self.present(alertView, animated: true, completion: nil)
         alertView.addTextField { (textfield) in
             textfield.placeholder = "崴泥中国"
@@ -53,25 +58,43 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
         
         alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: { (alertaction) in
             
-            self.dismiss(animated: true, completion: nil)
+//            alertView.dismiss(animated: true, completion: {
+//                print("============我是大帅哥么那必须的啊--取消================")
+//
+//            })
+            
+            print("============我是大帅哥么那必须的啊--取消================")
         }))
         
         alertView.addAction(UIAlertAction.init(title: "确定", style: .destructive, handler: { (alertAction) in
-            self.dismiss(animated: true, completion: nil)
-            
+//            self.dismiss(animated: true, completion: {
+//                print("============我是大帅哥么那必须的啊--取消================")
+//
+//            })
+            print("============我是大帅哥么那必须的啊--取消================")
             let text:String = (alertView.textFields?.last?.text)!
             print("lallalalla===\(text)")
         }))
+        */
+        
+//        unprintable ascll character found in source file
+
         
         
-        
-        let myIndictor = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
-        self.view.addSubview(myIndictor)
-        myIndictor.snp.makeConstraints { (make) in
-            make.center.equalTo(self.view)
-            make.width.height.equalTo(30)
+        kInitAlertFinal(self, message:"是大帅哥么必须", second: "确定") { (alert) in
+            print("============我是大帅哥必须的啊================")
+            
+            kInitActionSheetFinal(self, message: "我是大帅哥啊啊 啊啊", first: "周一", second: "周二", firstBlock: { (alert) in
+               print("============我是大帅哥必须的啊===1================")
+            }, secondBlock: { (alert) in
+                
+                print("============我是大帅哥必须的啊===2=============")
+            })
+            
         }
-        myIndictor.startAnimating()
+        
+        
+       
         
         
         

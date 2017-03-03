@@ -10,11 +10,19 @@ import UIKit
 import SVProgressHUD
 import MJRefresh
 import Alamofire
+ 
+extension UIViewController{
+    
+    
+ }
 class XLPBaseViewController: UIViewController {
 
+     let netStatusManager = NetworkReachabilityManager()
     public var baseHeader:MJRefreshNormalHeader = MJRefreshNormalHeader()
     public var baseFooter:MJRefreshBackNormalFooter = MJRefreshBackNormalFooter()
     public var netStatus:Bool = true
+    
+    let wmIndictor = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
     
     public func initMjRefresh(target:UIViewController)  {
 
@@ -39,12 +47,18 @@ class XLPBaseViewController: UIViewController {
         ///实现进入一个视图控制器 打印输出控制器的名字
         print("====当前将要进入视图====\(self.description)")//MARK:这个告诉我们当前所在的视图控制器的名字
 
-        ///
+        //TODO: 后添加的请在这里写
+        
+        
+        self.view.addSubview(wmIndictor)
+        wmIndictor.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.width.height.equalTo(30)
+        }
         
         
         
-        
-        let netStatusManager = NetworkReachabilityManager()
+       
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadHandle), name: NSNotification.Name(rawValue: "netStatusChanged"), object: nil)
@@ -114,18 +128,19 @@ class XLPBaseViewController: UIViewController {
         super.viewWillAppear(animated) 
         
         ///断网处理toast
-        
-        let noNetToast = NoNetTast.init("网络不给力,请检查网络设置", superView: self.view) { (tap) in
-            
-            self.view.backgroundColor = XLPRandomColor()
-            let hud = xlpHud.init(text: "妈咪妈咪哄", constransY: 300)
-            hud.show()
-            hud.hideWhenAfter(time: 3)
-            
+        if (!(netStatusManager?.isReachable)!) {
+            let noNetToast = NoNetTast.init("网络不给力,请检查网络设置", superView: self.view) { (tap) in
+                
+                self.view.backgroundColor = XLPRandomColor()
+                let hud = xlpHud.init(text: "妈咪妈咪哄", constransY: 300)
+                hud.show()
+                hud.hideWhenAfter(time: 3)
+                
+            }
+            myWindow.addSubview(noNetToast)
+            myWindow.bringSubview(toFront: noNetToast)
         }
 //        self.view.addSubview(noNetToast)
-        myWindow.addSubview(noNetToast)
-        myWindow.bringSubview(toFront: noNetToast)
 //        UIView.animate(withDuration: 3) {
 //            noNetToast.frame.origin.y = -64
 //        }

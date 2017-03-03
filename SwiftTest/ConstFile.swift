@@ -12,6 +12,7 @@ import UIKit
 let kSCREENWIDTH = UIScreen.main.bounds.width
 let kSCREENHEIGHT = UIScreen.main.bounds.height
 
+
 //MARK: UIButton 相关的默认属性
 
 let kBtFontSize:CGFloat = 14
@@ -29,7 +30,10 @@ let kTFPlaceholderColor = UIColor.lightGray
 let kToken = "E1BB0782CF8E65F29356A8DE7D86A28B"
 
 
-
+//func kWeakSelf(_ any:Any) -> Any {
+//     weak var weakSelf = any
+//    return weakSelf
+//}
 //MARK:iOS系统的判断
 func IS_iOS8() -> Bool{
     
@@ -346,6 +350,77 @@ func kGetFolderSizeMBAtPath(_ path:String) -> Double{
     
     return 0.003
 }
+typealias alertBlock = (UIAlertAction)-> Void
+
+//MARK: alertController 简单封装
+/// alertController 简单封装
+///
+/// - Parameters:
+///   - superView: 父试图
+///   - title: title
+///   - message: 提示信息
+///   - first: 取消按钮的文案
+///   - second: 确定按钮的文案
+///   - firstBlock: 点击取消的block
+///   - secondBlock: 点击确定的block
+func kInitAlert(_ superView:UIViewController, title:String,message:String,first:String,second:String,firstBlock: @escaping alertBlock,secondBlock:@escaping alertBlock){
+    
+    let alertView = UIAlertController.init(title: title, message:message, preferredStyle: .alert)
+    alertView.addAction(UIAlertAction.init(title: first, style: .cancel, handler: firstBlock))
+    alertView.addAction(UIAlertAction.init(title: second, style: .destructive, handler:secondBlock))
+    superView.present(alertView, animated: true, completion: nil)
+}
+
+/// 有提示的laert
+///
+/// - Parameters:
+///   - superView: <#superView description#>
+///   - title: <#title description#>
+///   - message: <#message description#>
+///   - second: <#second description#>
+///   - secondBlock: <#secondBlock description#>
+func kInitAlertEassy(_ superView:UIViewController, title:String,message:String,second:String,secondBlock:@escaping alertBlock){
+    
+    let alertView = UIAlertController.init(title: title, message:message, preferredStyle: .alert)
+    alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler:nil ))
+    alertView.addAction(UIAlertAction.init(title: second, style: .destructive, handler:secondBlock))
+    superView.present(alertView, animated: true, completion: nil)
+}
+
+/// 无提示alert
+///
+/// - Parameters:
+///   - superView: <#superView description#>
+///   - message: <#message description#>
+///   - second: <#second description#>
+///   - secondBlock: <#secondBlock description#>
+func kInitAlertFinal(_ superView:UIViewController,message:String,second:String,secondBlock:@escaping alertBlock){
+    
+    let alertView = UIAlertController.init(title: nil, message:message, preferredStyle: .alert)
+    alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler:nil))
+    alertView.addAction(UIAlertAction.init(title: second, style: .destructive, handler:secondBlock))
+    superView.present(alertView, animated: true, completion: nil)
+}
+
+//MARK: actionSheet的简单封装 ,默认有取消按钮 ,一共3个选项
+/// actionSheet
+///
+/// - Parameters:
+///   - superView: <#superView description#>
+///   - message: <#message description#>
+///   - first: <#first description#>
+///   - second: <#second description#>
+///   - firstBlock: <#firstBlock description#>
+///   - secondBlock: <#secondBlock description#>
+func kInitActionSheetFinal(_ superView:UIViewController,message:String,first:String,second:String,firstBlock:@escaping alertBlock,secondBlock:@escaping alertBlock){
+    
+    let alertView = UIAlertController.init(title: nil, message:message, preferredStyle: .actionSheet)
+    alertView.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
+    alertView.addAction(UIAlertAction.init(title: first, style: .default, handler: firstBlock))
+    alertView.addAction(UIAlertAction.init(title: second, style: .default, handler:secondBlock))
+    superView.present(alertView, animated: true, completion: nil)
+}
+
 //#if DEBUG
 //#else
 //#endif

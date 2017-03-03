@@ -38,11 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        WXApi.registerApp(<#T##appid: String!##String!#>)
         
-        if !IS_iOS9orLater() {
-            
-            isIOS9orLater = false
-            
-        }
+//        if !IS_iOS9orLater() {
+//            
+//            isIOS9orLater = false
+//            
+//        }
         debugPrint("asdad哇哈哈哈")
         ///这个只能做调试用 如果想实现进入一个视图控制器 打印输出控制器的名字 则在XLPBaseViewController里面 viewDidLoad里面添加代码如下: print("====当前将要进入视图====\(self.description)")//MARK:这个告诉我们当前所在的视图控制器的名字
        printLog(message: "这是一条输出")
@@ -61,6 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.setValue(arr, forKey: "测试数组")
         UserDefaults.standard.synchronize()
         
+        kUserDefaults("asas", key: "什么")
+        
+        print(kUserDefaultsValue("什么"))
         let zzz = UserDefaults.standard.value(forKey: "测试Demo")
         
         kUserDefaults("我当时这样子想的哈哈哈", key: "测试自定义1")

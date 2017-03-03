@@ -9,8 +9,31 @@
 import UIKit
 import CoreData
 import MBProgressHUD
+import SwiftyJSON
+class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITableViewDelegate,UITableViewDataSource {
+    internal func obtainDataDelegateSuccess(_ json: JSON?) {
+        
+        wmIndictor.stopAnimating()
+        print("=====代理方法 咋回事啊=======")
+        
+        print("======operation的代理回调结果为\(json)============")
+        
+        if json != nil{
+            
+            let  homeModel = zhiHuControllerModal(json!)
+            self.zhiHuTopCellModelArr = homeModel.top_stroies
+            self.zhiHuCellModelArr = homeModel.stroies
+            //            self.rootTableView.reloadData()
+        }else{
+            
+            print("===\\代理可以么啊啊大大" )
+            
+        }
+        
+        
+        rootTableView.reloadData()
+    }
 
-class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     let urlStr = "http://news-at.zhihu.com/api/4/news/latest"
     
@@ -30,7 +53,8 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
         aXlpHud.hideWhenAfter(time: 2.0)
         
         setUpViews()
-        obtainData()
+//        obtainData()
+        obtainDataWithDelegate()
         ///注册通知
         registerNotification()
     }
@@ -43,16 +67,28 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
     }
     func obtainData() {
         
-//        var myOperation = ZhiHuObtainDataOperation()
-//        myOperation.initWith(url: urlStr)
+        let myOperation = ZhiHuObtainDataOperation()
         
-        let mm = ZhiHuObtainDataOperation.init {
-            print("=====asdasdasd")
-        }.main()
-//        mm.main()
-        print(mm)
+        myOperation.initWith("asdas")
+        myOperation.completionBlock = {
+            
+            print("哈哈哈我是最后的操作")
+        }
         
-//        mm.addDependency(<#T##op: Operation##Operation#>)
+         let twoOperation = testOperation11.init("asda我是大帅哥啊 啊啊啊")
+        
+        twoOperation.addDependency(myOperation)
+        let queue = OperationQueue()
+        queue.name = "Dowload Queue"
+        queue.maxConcurrentOperationCount = 3
+        queue.addOperation(myOperation)
+        queue.addOperation(twoOperation)
+        queue.cancelAllOperations()
+        
+        
+        
+        
+        
         
 //        self.netStatus
         let hud = MBProgressHUD.init()
@@ -98,6 +134,8 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
             self.rootTableView.reloadData()
         }
 */
+        
+        weak var weakSelf = self
         MyManager.sharedInstance.SucceedGETFull2(urlStr, parameters: [:]) { (json, error) in
             
             if json != nil{
@@ -111,11 +149,46 @@ class ZhiHuNewsViewController: XLPBaseViewController,UITableViewDelegate,UITable
                 print("===\(error)" )
             }
             
+            weakSelf?.navigationItem.title = "防止循环引用"
+            weakSelf?.view.backgroundColor = UIColor.red
         }
         
         
     }
     
+    
+    
+    func obtainDataWithDelegate() -> Void {
+        
+        wmIndictor.startAnimating()
+        let twoOperation = testOperation11.init(urlStr)
+        
+        let queue = OperationQueue()
+        queue.name = "Dowload Queue"
+        queue.maxConcurrentOperationCount = 1
+        queue.addOperation(twoOperation)
+        twoOperation.delegate = self
+        
+    }
+    
+    func obtainDtaDelegateSuccess(_ json: JSON?) {
+        
+        print("======operation的代理回调结果为\(json)============")
+        
+        if json != nil{
+            
+            let  homeModel = zhiHuControllerModal(json!)
+            self.zhiHuTopCellModelArr = homeModel.top_stroies
+            self.zhiHuCellModelArr = homeModel.stroies
+//            self.rootTableView.reloadData()
+        }else{
+            
+            print("===\\代理可以么啊啊大大" )
+        }
+        
+        rootTableView.reloadData()
+
+    }
     //MARK: tableview代理方法
     func numberOfSections(in tableView: UITableView) -> Int {
         if self.zhiHuTopCellModelArr.count > 0 {
