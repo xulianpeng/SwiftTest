@@ -425,11 +425,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/ZhiHuNewsViewController.swift"
-            timestampString = "510226584.82058"
+            timestampString = "510487868.467587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "obtainDtaDelegateSuccess(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -441,11 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/ZhiHuNewsViewController.swift"
-            timestampString = "510226584.82058"
+            timestampString = "510487868.467587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "obtainDtaDelegateSuccess(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -457,11 +457,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/ZhiHuNewsViewController.swift"
-            timestampString = "510226584.82058"
+            timestampString = "510487868.467587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "obtainDataWithDelegate()"
             landmarkType = "7">
          </BreakpointContent>
@@ -473,11 +473,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/ZhiHuNewsViewController.swift"
-            timestampString = "510226584.82058"
+            timestampString = "510487868.467587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "obtainData()"
             landmarkType = "7">
          </BreakpointContent>

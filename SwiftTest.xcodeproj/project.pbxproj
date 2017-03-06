@@ -41,6 +41,7 @@
 		07956E721E6D5CEC00E8D22D /* PopoverAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E6D1E6D5CEC00E8D22D /* PopoverAction.m */; };
 		07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E6F1E6D5CEC00E8D22D /* PopoverView.m */; };
 		07956E741E6D5CEC00E8D22D /* PopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E711E6D5CEC00E8D22D /* PopoverViewCell.m */; };
+		07956E761E6D6B6E00E8D22D /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E751E6D6B6E00E8D22D /* CoreDataViewController.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -163,6 +164,7 @@
 		07956E6F1E6D5CEC00E8D22D /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
 		07956E701E6D5CEC00E8D22D /* PopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCell.h; sourceTree = "<group>"; };
 		07956E711E6D5CEC00E8D22D /* PopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewCell.m; sourceTree = "<group>"; };
+		07956E751E6D6B6E00E8D22D /* CoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 		07F39F141E232C0100EE268B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				07956E751E6D6B6E00E8D22D /* CoreDataViewController.swift */,
 				07F39F221E233D6000EE268B /* Modal */,
 				07F39F181E232DE700EE268B /* SwiftTest.xcdatamodeld */,
 			);
@@ -752,6 +755,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07956E761E6D6B6E00E8D22D /* CoreDataViewController.swift in Sources */,
 				89E73E411E01292900058FB0 /* TsetClass.swift in Sources */,
 				075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */,
 				073302241E5ECFC200A87D52 /* zhiHuObtainDataOperation.m in Sources */,

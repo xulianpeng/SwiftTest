@@ -37,8 +37,8 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func obtainDataArr() -> Void {
 
-       dataArr = NSMutableArray.init(array: ["UI控件/数据类型Test","基本运算符Tset","TableView自定义Test","对象/属性","函数与闭包","Swift与OC混编","Scrollview与SnapKit的爱情","Swift进阶之路","refresh练习","知乎日报","视频大综合"])
-        vcArr = NSMutableArray.init(array: [XLP_UI_ViewController(),XLP_OperatorsVController(),UI_tableable_VC(),TestClassViewController(),XLPFuncViewController(),XLPClosuresViewController(),ScrollViewSnapKitVController(),XLP_RealViewController(),RefreshViewController(),ZhiHuNewsViewController(),videoRootViewController()])
+       dataArr = NSMutableArray.init(array: ["UI控件/数据类型Test","基本运算符Tset","TableView自定义Test","对象/属性","函数与闭包","Swift与OC混编","Scrollview与SnapKit的爱情","Swift进阶之路","refresh练习","知乎日报","视频大综合","CoreData封装"])
+        vcArr = NSMutableArray.init(array: [XLP_UI_ViewController(),XLP_OperatorsVController(),UI_tableable_VC(),TestClassViewController(),XLPFuncViewController(),XLPClosuresViewController(),ScrollViewSnapKitVController(),XLP_RealViewController(),RefreshViewController(),ZhiHuNewsViewController(),videoRootViewController(),CoreDataViewController()])
     }
     
     //tableview的代理方法
@@ -118,6 +118,9 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         
         if indexPath.row == 10 {
             jumpToVC = videoRootViewController()
+        }
+        if indexPath.row == 11 {
+            jumpToVC = CoreDataViewController()
         }
         jumpToVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(jumpToVC, animated: true)

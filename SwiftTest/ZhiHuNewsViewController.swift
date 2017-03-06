@@ -107,33 +107,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
         hud.removeFromSuperViewOnHide = true
         hud.hide(animated: true, afterDelay: 3.0)
         
-        /*
-        MyManager.sharedInstance.SucceedGET(urlStr, parameters: [:]) { (json) in
-            let  homeModel = zhiHuControllerModal(json)
-            self.zhiHuTopCellModelArr = homeModel.top_stroies
-            self.zhiHuCellModelArr = homeModel.stroies
-//            hud.hide(animated: true);
-            
-            
-//            xlpCoredataManager.obtainContext()
-//            
-//            let top_stroies = json["top_stroies"].array
-//            let stories = json["stories"].array
-//            
-//            
-//            for dic in stories!{
-//                
-//                let theDic:Dictionary =  dic.dictionary!
-//                
-//                xlpCoredataManager.insertData(entyName: "ZhiHuEntity", dic: theDic as NSDictionary)
-//                
-//            }
-//            
-//          
-//            xlpCoredataManager.fetchData()
-            self.rootTableView.reloadData()
-        }
-*/
+        
         
         weak var weakSelf = self
         MyManager.sharedInstance.SucceedGETFull2(urlStr, parameters: [:]) { (json, error) in
@@ -282,6 +256,40 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+    
+    //MARK: 使用CoreData
+    func obtainDataWithCoreData()  {
+        
+        MyManager.sharedInstance.SucceedGET(urlStr, parameters: [:]) { (json) in
+            let  homeModel = zhiHuControllerModal(json)
+            self.zhiHuTopCellModelArr = homeModel.top_stroies
+            self.zhiHuCellModelArr = homeModel.stroies
+          
+            
+            xlpCoredataManager.obtainContext()
+            
+            let top_stroies = json["top_stroies"].array
+            let stories = json["stories"].array
+            
+            
+            for dic in stories!{
+                
+                let theDic:Dictionary =  dic.dictionary!
+                
+                xlpCoredataManager.insertData(entyName: "ZhiHuEntity", dic: theDic as NSDictionary)
+                
+            }
+            
+            
+            xlpCoredataManager.fetchData()
+            
+            self.rootTableView.reloadData()
+        }
+        
+ 
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
