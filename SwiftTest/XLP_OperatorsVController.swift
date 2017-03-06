@@ -39,6 +39,8 @@ class XLP_OperatorsVController: UIViewController {
     let testView = UIView()
     var toastView = UIView()
     
+    var popButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "基本运算符"
@@ -425,7 +427,15 @@ class XLP_OperatorsVController: UIViewController {
         testViewGesture1()
         testViewGesture2()
         
-        
+        popButton.xlpInitEassyButton("添加", titleColor: UIColor.purple, fontSize: 13, backgroundColor: .yellow, cornerRedius: 4, superView: self.view, snpMaker: { (make) in
+            make.top.equalTo(testView)
+            make.width.equalTo(30)
+            make.right.equalTo(self.view).offset(-10)
+            make.height.equalTo(testView)
+        }) { (bt) in
+            
+            self.showPopView(self.popButton)
+        }
         
         showToastView()
         
@@ -608,9 +618,13 @@ class XLP_OperatorsVController: UIViewController {
         testView.initView(frame: aFrame, superView: self.view, snpMaker: nil) { (tap) in
             
             self.view.backgroundColor = XLPRandomColor()
+            self.showPopView(testView)
         }
         self.view.addSubview(testView)
         testView.backgroundColor = UIColor.red
+        
+        
+        
     }
     
     func testViewGesture2() {
@@ -623,6 +637,7 @@ class XLP_OperatorsVController: UIViewController {
             
         }) { (tap) in
             self.view.backgroundColor = XLPRandomColor()
+            self.showPopView(self.testView)
         }
         self.view.addSubview(testView)
         
@@ -696,6 +711,31 @@ class XLP_OperatorsVController: UIViewController {
         
     }
     
+    func showPopView(_ pointView:UIView)  {
+        
+        let apopView = PopoverView.init()
+        
+        let action1 = PopoverAction.init(image: kImageWithName("right_menu_multichat@2x"), title: "发起多人聊天") { (action) in
+            
+        }
+        let action2 = PopoverAction.init(image: kImageWithName("right_menu_addFri@2x"), title: "加好友") { (action) in
+            
+        }
+        let action3 = PopoverAction.init(image: kImageWithName("right_menu_QR@2x"), title: "扫一扫") { (action) in
+            
+        }
+        let action4 = PopoverAction.init(image: kImageWithName("right_menu_facetoface@2x"), title: "面对面快传") { (action) in
+            
+        }
+        let action5 = PopoverAction.init(image: kImageWithName("right_menu_payMoney@2x"), title: "付款") { (action) in
+            
+        }
+        //        apopView.show(to: testView, with: [action1,action2,action3,action4,action5])
+        let arr = [action1!,action2!,action3!,action4!,action5!]
+        apopView.show(to: pointView, with: arr)
+        //        apopView.show(to: CGPoint(x:100,y:100), with: arr)
+        
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         

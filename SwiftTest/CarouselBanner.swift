@@ -129,16 +129,17 @@ class CarouselBanner: UIView,UIScrollViewDelegate {
     ///   - index: 坐标
     func loadImage(_ imgView:UIImageView,index:Int) -> Void {
         let imageData = self.theimageArr[index]
-        //AF的用法
+        //MARK:AF的用法
 //            imgView.setImageWith(URL.init(string: imageData)!, placeholderImage: nil)
-        //kingfisher的用法
-//        let identifier = "CarouselBanner\(index)"
-//        let url = URL(string: imageData)!
-//        let resource = ImageResource(downloadURL: url, cacheKey: identifier)
-//        
-//     imgView.kf.setImage(with: resource, placeholder: nil, options:[.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: nil)
-     //SDWebImage的用法
-        imgView.sd_setImage(with: URL(string: imageData)!, placeholderImage: nil, options: [.retryFailed,.progressiveDownload,.continueInBackground])
+        
+        //MARK:kingfisher的用法
+        let identifier = "CarouselBanner\(index)"
+        let url = URL(string: imageData)!
+        let resource = ImageResource(downloadURL: url, cacheKey: identifier)
+        imgView.kf.setImage(with: resource, placeholder: nil, options:[.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: nil)
+        
+     //MARK:SDWebImage的用法
+//        imgView.sd_setImage(with: URL(string: imageData)!, placeholderImage: nil, options: [.retryFailed,.progressiveDownload,.continueInBackground])
         
         
     }

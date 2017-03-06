@@ -42,7 +42,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
     /// 新闻cell数据模型
     private var zhiHuCellModelArr : [zhiHuCellModel] = Array()
     
-    let rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
+    let rootTableView = UITableView.init(frame: CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64), style: .plain)
     
     
     override func viewDidLoad() {
@@ -53,8 +53,8 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
         aXlpHud.hideWhenAfter(time: 2.0)
         
         setUpViews()
-//        obtainData()
-        obtainDataWithDelegate()
+        obtainData()
+//        obtainDataWithDelegate()
         ///注册通知
         registerNotification()
     }

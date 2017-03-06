@@ -138,6 +138,8 @@ class WheelBannerView: UIView,UIScrollViewDelegate{
         autoScrollTimer = Timer.scheduledTimer(timeInterval: 3, target: self,
                                                selector: #selector(letItScroll),
                                                userInfo: nil, repeats: true)
+        
+        RunLoop.main.add(autoScrollTimer!, forMode: .commonModes)
     }
     
     //计时器时间一到，滚动一张图片

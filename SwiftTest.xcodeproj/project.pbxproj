@@ -38,6 +38,9 @@
 		077367D01E657AB6002BFB86 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077367CF1E657AB6002BFB86 /* UIViewController+Extension.swift */; };
 		077367D21E66621E002BFB86 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077367D11E66621E002BFB86 /* UserManager.swift */; };
 		07956E2F1E69404D00E8D22D /* testOperation11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E2E1E69404D00E8D22D /* testOperation11.swift */; };
+		07956E721E6D5CEC00E8D22D /* PopoverAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E6D1E6D5CEC00E8D22D /* PopoverAction.m */; };
+		07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E6F1E6D5CEC00E8D22D /* PopoverView.m */; };
+		07956E741E6D5CEC00E8D22D /* PopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E711E6D5CEC00E8D22D /* PopoverViewCell.m */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -154,6 +157,12 @@
 		077367CF1E657AB6002BFB86 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		077367D11E66621E002BFB86 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		07956E2E1E69404D00E8D22D /* testOperation11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testOperation11.swift; sourceTree = "<group>"; };
+		07956E6C1E6D5CEC00E8D22D /* PopoverAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverAction.h; sourceTree = "<group>"; };
+		07956E6D1E6D5CEC00E8D22D /* PopoverAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverAction.m; sourceTree = "<group>"; };
+		07956E6E1E6D5CEC00E8D22D /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
+		07956E6F1E6D5CEC00E8D22D /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
+		07956E701E6D5CEC00E8D22D /* PopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCell.h; sourceTree = "<group>"; };
+		07956E711E6D5CEC00E8D22D /* PopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewCell.m; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -319,6 +328,30 @@
 			name = "CC视频点播";
 			sourceTree = "<group>";
 		};
+		07956E6A1E6D5CBF00E8D22D /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				07956E6B1E6D5CEC00E8D22D /* PopoverView */,
+				07708CA81E53EB4E00E30708 /* CC视频点播 */,
+				073302051E5E843700A87D52 /* AlipaySDK */,
+				0707CE711E5FC2B80041D364 /* WeiXinSDK */,
+			);
+			name = ThirdLib;
+			sourceTree = "<group>";
+		};
+		07956E6B1E6D5CEC00E8D22D /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				07956E6C1E6D5CEC00E8D22D /* PopoverAction.h */,
+				07956E6D1E6D5CEC00E8D22D /* PopoverAction.m */,
+				07956E6E1E6D5CEC00E8D22D /* PopoverView.h */,
+				07956E6F1E6D5CEC00E8D22D /* PopoverView.m */,
+				07956E701E6D5CEC00E8D22D /* PopoverViewCell.h */,
+				07956E711E6D5CEC00E8D22D /* PopoverViewCell.m */,
+			);
+			path = PopoverView;
+			sourceTree = "<group>";
+		};
 		079FE39C1E094793007DF3DE /* Swift与OC混编 */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,9 +469,7 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				0707CE711E5FC2B80041D364 /* WeiXinSDK */,
-				073302051E5E843700A87D52 /* AlipaySDK */,
-				07708CA81E53EB4E00E30708 /* CC视频点播 */,
+				07956E6A1E6D5CBF00E8D22D /* ThirdLib */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				077367D11E66621E002BFB86 /* UserManager.swift */,
@@ -724,12 +755,14 @@
 				89E73E411E01292900058FB0 /* TsetClass.swift in Sources */,
 				075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */,
 				073302241E5ECFC200A87D52 /* zhiHuObtainDataOperation.m in Sources */,
+				07956E721E6D5CEC00E8D22D /* PopoverAction.m in Sources */,
 				079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */,
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
 				07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */,
 				89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */,
 				073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */,
 				07F39F0F1E1CEF7400EE268B /* zhiHuTopCell.swift in Sources */,
+				07956E741E6D5CEC00E8D22D /* PopoverViewCell.m in Sources */,
 				07F39F081E1CEEE500EE268B /* ZhiHuHomeViewModal.swift in Sources */,
 				0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */,
 				079FE4301E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift in Sources */,
@@ -771,6 +804,7 @@
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
+				07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */,
 				07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */,
 				07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */,
 				073302211E5E918300A87D52 /* ZhiHuObtainDataOperation.swift in Sources */,

@@ -421,6 +421,9 @@ func kInitActionSheetFinal(_ superView:UIViewController,message:String,first:Str
     superView.present(alertView, animated: true, completion: nil)
 }
 
+func kImageWithName(_ name:String)-> UIImage{
+    return UIImage.init(named:name)!
+}
 //#if DEBUG
 //#else
 //#endif
