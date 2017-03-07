@@ -472,6 +472,39 @@ extension UITextField {
         self.snp.makeConstraints(snpMaker)
         
     }
+    func xlpInitTextfield(_ textColor:UIColor?,
+                       fontSize:CGFloat?,
+                       placeholder:String?,
+                       delegate:Any,
+                       boderstyle:UITextBorderStyle,
+                       superView:UIView,
+                       tag:Int,
+                       snpMaker:snapMakerClosure){
+        
+        self.textColor = textColor
+        self.font = UIFont.systemFont(ofSize: fontSize!)
+        self.placeholder = placeholder
+        self.delegate = delegate as? UITextFieldDelegate
+        self.borderStyle = boderstyle
+        self.tag = tag
+        self.backgroundColor = .clear
+        superView.addSubview(self)
+        self.snp.makeConstraints(snpMaker)
+        
+    }
+
+    func xlpInitTextfieldDefault(_ textColor:UIColor?,
+                          fontSize:CGFloat?,
+                          placeholder:String?,
+                          delegate:Any,
+                          tag:Int,
+                          superView:UIView,
+                          snpMaker:snapMakerClosure){
+        
+        xlpInitTextfield(textColor, fontSize: fontSize, placeholder: placeholder, delegate: delegate, boderstyle: .roundedRect, superView: superView, tag: tag, snpMaker: snpMaker)
+        
+    }
+
 }
 
 //MARK:UIImageView 的 extension

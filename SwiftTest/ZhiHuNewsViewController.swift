@@ -276,12 +276,12 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
                 
                 let theDic:Dictionary =  dic.dictionary!
                 
-                xlpCoredataManager.insertData(entyName: "ZhiHuEntity", dic: theDic as NSDictionary)
+                xlpCoredataManager.insertData("ZhiHuEntity", dic: theDic as NSDictionary)
                 
             }
             
             
-            xlpCoredataManager.fetchData()
+//            xlpCoredataManager.fetchData("ZhiHuEntity")
             
             self.rootTableView.reloadData()
         }

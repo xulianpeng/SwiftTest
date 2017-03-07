@@ -79,6 +79,7 @@ func IS_iOS10orLater() -> Bool{
 
 let xlpCoredataManager = XLPCoreDataManager.shareInstance
 
+let xlpCoredataManager1 = XLPCoreDataManager1.shareInstance
 /*
 +(NSString *)obtainAllDateNowWithTimestamp:(NSNumber *)timestamp
 {

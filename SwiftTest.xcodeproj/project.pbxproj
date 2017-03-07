@@ -42,6 +42,10 @@
 		07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E6F1E6D5CEC00E8D22D /* PopoverView.m */; };
 		07956E741E6D5CEC00E8D22D /* PopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07956E711E6D5CEC00E8D22D /* PopoverViewCell.m */; };
 		07956E761E6D6B6E00E8D22D /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E751E6D6B6E00E8D22D /* CoreDataViewController.swift */; };
+		07956E851E6E58FC00E8D22D /* StudentEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E831E6E58FC00E8D22D /* StudentEntity+CoreDataClass.swift */; };
+		07956E861E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E841E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift */; };
+		07956E891E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E871E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift */; };
+		07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E881E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -165,6 +169,10 @@
 		07956E701E6D5CEC00E8D22D /* PopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCell.h; sourceTree = "<group>"; };
 		07956E711E6D5CEC00E8D22D /* PopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewCell.m; sourceTree = "<group>"; };
 		07956E751E6D6B6E00E8D22D /* CoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		07956E831E6E58FC00E8D22D /* StudentEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StudentEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07956E841E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StudentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07956E871E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZhiHuEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07956E881E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZhiHuEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -434,6 +442,10 @@
 		07F39F221E233D6000EE268B /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				07956E871E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift */,
+				07956E881E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift */,
+				07956E831E6E58FC00E8D22D /* StudentEntity+CoreDataClass.swift */,
+				07956E841E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -796,9 +808,11 @@
 				079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */,
 				07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */,
 				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
+				07956E861E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift in Sources */,
 				07956E2F1E69404D00E8D22D /* testOperation11.swift in Sources */,
 				07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */,
 				077367D01E657AB6002BFB86 /* UIViewController+Extension.swift in Sources */,
+				07956E851E6E58FC00E8D22D /* StudentEntity+CoreDataClass.swift in Sources */,
 				07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */,
 				07E3DECE1E55A355001BAE03 /* xlpHud.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
@@ -807,11 +821,13 @@
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
+				07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
 				07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */,
 				07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */,
 				07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */,
 				073302211E5E918300A87D52 /* ZhiHuObtainDataOperation.swift in Sources */,
+				07956E891E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
