@@ -46,6 +46,7 @@
 		07956E861E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E841E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift */; };
 		07956E891E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E871E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift */; };
 		07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E881E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift */; };
+		079F68771E70032D001E882D /* BaseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F68761E70032D001E882D /* BaseBlock.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -53,6 +54,7 @@
 		079FE4301E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */; };
 		079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */; };
 		079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */; };
+		07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */; };
 		07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F631E12732B00DCB71D /* WMUIExtension.swift */; };
 		07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F6E1E15062800DCB71D /* WMNetManager.swift */; };
 		07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */; };
@@ -173,6 +175,7 @@
 		07956E841E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StudentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07956E871E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZhiHuEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		07956E881E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZhiHuEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		079F68761E70032D001E882D /* BaseBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBlock.swift; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 		079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPBaseNavigationVController.swift; sourceTree = "<group>"; };
 		079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewSnapKitVController.swift; sourceTree = "<group>"; };
 		079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIMaker.swift; sourceTree = "<group>"; };
+		07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		07C31F631E12732B00DCB71D /* WMUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIExtension.swift; sourceTree = "<group>"; };
 		07C31F6E1E15062800DCB71D /* WMNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNetManager.swift; sourceTree = "<group>"; };
 		07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelBannerView.swift; sourceTree = "<group>"; };
@@ -392,10 +396,12 @@
 				077367CF1E657AB6002BFB86 /* UIViewController+Extension.swift */,
 				07F290501E15F2AF00E94097 /* ExtensionTest.swift */,
 				071642871E1B38D000B21BF0 /* ButtonExtension.swift */,
+				07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */,
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
 				07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */,
 				079FE3A41E0A56C7007DF3DE /* ConstFile.swift */,
+				079F68761E70032D001E882D /* BaseBlock.swift */,
 				07956E2E1E69404D00E8D22D /* testOperation11.swift */,
 			);
 			name = Base;
@@ -791,6 +797,7 @@
 				07F87C951E2DB5E700CE7178 /* RefreshWKWebViewController.swift in Sources */,
 				07F39F0B1E1CEF3B00EE268B /* ZhiHuNewsViewController.swift in Sources */,
 				8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */,
+				079F68771E70032D001E882D /* BaseBlock.swift in Sources */,
 				89E73E321DFBEA6A00058FB0 /* UI_tableable_VC.swift in Sources */,
 				07F87C9F1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift in Sources */,
 				073301D01E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift in Sources */,
@@ -821,6 +828,7 @@
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
+				07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */,
 				07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
 				07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */,

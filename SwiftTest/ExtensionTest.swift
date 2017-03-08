@@ -59,7 +59,7 @@ extension UIButton {
                     cornerRedius:CGFloat?,
                     target:UIViewController,
                     
-                    snpMaker:snapMakerClosure,
+                    snpMaker:WMSnapMakerBlock,
                     buttonClick:@escaping buttonClickClosure
         ) {
         

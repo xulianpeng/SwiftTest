@@ -654,7 +654,7 @@ class XLP_OperatorsVController: UIViewController {
             make.width.equalTo(kSCREENWIDTH)
             make.height.equalTo(64)
             
-        }, tapBlock: { (tap) in
+        }, WMTapBlock: { (tap) in
             
 //            self.view.backgroundColor = XLPRandomColor()
             UIView.animate(withDuration: 3) {

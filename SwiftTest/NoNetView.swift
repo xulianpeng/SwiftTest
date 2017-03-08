@@ -13,7 +13,8 @@ let snpTop = 200
 /// 断网提示页面 包括提示信息和点击重新加载按钮
 
 typealias reloadDataBlock = (_ sender:UIButton)->Void
-typealias reloadDataTapBlock = (_ sender:UITapGestureRecognizer)->Void
+typealias reloadDataWMTapBlock = (_ sender:UITapGestureRecognizer)->Void
+
 enum NoNetViewStyle {
     case Both
     case OnlyImage
@@ -174,21 +175,21 @@ class NoNetView: UIView {
 
 class NoNetTast: UIView,UIGestureRecognizerDelegate {
     
-    init(_ text:String,superView:UIView,tapBlock:@escaping reloadDataTapBlock) {
+    init(_ text:String,superView:UIView,WMTapBlock:@escaping reloadDataWMTapBlock) {
         
 //        let aFrame = CGRect(x:0,y:0,width:kSCREENWIDTH,height:64)
         super.init(frame: CGRect.zero)
         
         
         
-//        self.initView(frame: aFrame, superView: superView, snpMaker: nil, tapBlock: tapBlock)
+//        self.initView(frame: aFrame, superView: superView, snpMaker: nil, WMTapBlock: WMTapBlock)
         
         self.initView(superView: superView, snpMaker: { (make) in
             make.left.top.equalTo(0)
 //            make.right.equalTo(0)
             make.width.equalTo(kSCREENWIDTH)
             make.height.equalTo(64)
-        }, tapBlock: tapBlock)
+        }, WMTapBlock: WMTapBlock)
         self.backgroundColor = UIColor.yellow
         
         

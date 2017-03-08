@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 
-typealias snapMakerClosure = ((ConstraintMaker)->Void)
 
 //MARK: UILabel 的 extension
 extension UILabel{
@@ -34,7 +33,7 @@ extension UILabel{
                    aligenment:NSTextAlignment,
                    backgroundColor:UIColor?,
                    superView:UIView,
-                   snpMaker:snapMakerClosure) {
+                   snpMaker:WMSnapMakerBlock) {
         self.text = text;
         self.textColor = textColor
         if isBold {
@@ -55,12 +54,12 @@ extension UILabel{
                    fontSize:CGFloat,
                    backgroundColor:UIColor?,
                    superView:UIView,
-                   snpMaker:snapMakerClosure) {
+                   snpMaker:WMSnapMakerBlock) {
         self.initLabel(text, textColor: textColor, fontSize: fontSize, isBold: false, aligenment: .left, backgroundColor: backgroundColor, superView: superView, snpMaker: snpMaker)
     }
     func initLabel(_ text:String?,
                    superView:UIView,
-                   snpMaker:snapMakerClosure) {
+                   snpMaker:WMSnapMakerBlock) {
         self.initLabel(text, textColor: kLabelTextColor, fontSize: kLabelFontSize, isBold: false, aligenment: .left, backgroundColor: .clear, superView: superView, snpMaker: snpMaker)
     }
 
@@ -189,10 +188,10 @@ func onTouchDown(sender:UIButton) {
 }
  
  */
-typealias ButtonClickBlock = ((_ sender: Selector) -> ())
+typealias WMButtonClickBlock1 = ((_ sender: Selector) -> ())
 extension UIButton{
     
-    func creatButton(_ title:String,titleColor:UIColor,imageStr:String,backgroundImageStr:String,cornerRedius:CGFloat,superView:UIView,_: ButtonClickBlock) -> Void{
+    func creatButton(_ title:String,titleColor:UIColor,imageStr:String,backgroundImageStr:String,cornerRedius:CGFloat,superView:UIView,_: WMButtonClickBlock1) -> Void{
         
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
@@ -242,7 +241,7 @@ extension UIButton{
     }
     
     
-    func creatButton(_ title:String?,titleColor:UIColor?,imageStr:String?,backgroundImageStr:String?,cornerRedius:CGFloat?,target:UIViewController,myAction: Selector?,snpMaker:snapMakerClosure) {
+    func creatButton(_ title:String?,titleColor:UIColor?,imageStr:String?,backgroundImageStr:String?,cornerRedius:CGFloat?,target:UIViewController,myAction: Selector?,snpMaker:WMSnapMakerBlock) {
         
         if title != nil {
             self.setTitle(title, for: .normal)
@@ -278,7 +277,7 @@ extension UIButton{
                      cornerRedius:CGFloat?,
                      target:Any,
                      myAction: Selector?,
-                     snpMaker:snapMakerClosure) {
+                     snpMaker:WMSnapMakerBlock) {
         
         if title != nil {
             self.setTitle(title, for: .normal)
@@ -321,7 +320,7 @@ extension UIButton{
                  titleColor:UIColor?,
                  target:UIViewController,
                  myAction:Selector?,
-                 snpMaker:snapMakerClosure) {
+                 snpMaker:WMSnapMakerBlock) {
         self.initButton(title,
                      titleColor: titleColor,
                      fontSize: kBtFontSize,
@@ -344,7 +343,7 @@ extension UIButton{
                     cornerRedius:CGFloat?,
                     target:UIViewController,
                     myAction: Selector?,
-                    snpMaker:snapMakerClosure
+                    snpMaker:WMSnapMakerBlock
         
         ) {
         
@@ -422,7 +421,7 @@ extension UITextField {
                        clearsOnBeginEditing:Bool,
                        delegate:Any,
                        superView:UIView,
-                       snpMaker:snapMakerClosure
+                       snpMaker:WMSnapMakerBlock
         ){
         
         self.textColor = textColor
@@ -448,7 +447,7 @@ extension UITextField {
                        clearsOnBeginEditing:Bool,
                        delegate:Any,
                        superView:UIView,
-                       snpMaker:snapMakerClosure
+                       snpMaker:WMSnapMakerBlock
         ){
         
         self.initTextfield(textColor, fontSize: fontSize, alignment: .center, placeholder: placeholder, placeholderFontSize: nil, placeholderColor: nil, isSecurity: isSecurity, clearsOnBeginEditing: clearsOnBeginEditing, delegate: delegate, superView: superView, snpMaker: snpMaker)
@@ -461,7 +460,7 @@ extension UITextField {
                        placeholder:String?,
                        delegate:Any,
                        superView:UIView,
-                       snpMaker:snapMakerClosure){
+                       snpMaker:WMSnapMakerBlock){
         
         self.textColor = textColor
         self.font = UIFont.systemFont(ofSize: fontSize!)
@@ -479,7 +478,7 @@ extension UITextField {
                        boderstyle:UITextBorderStyle,
                        superView:UIView,
                        tag:Int,
-                       snpMaker:snapMakerClosure){
+                       snpMaker:WMSnapMakerBlock){
         
         self.textColor = textColor
         self.font = UIFont.systemFont(ofSize: fontSize!)
@@ -499,7 +498,7 @@ extension UITextField {
                           delegate:Any,
                           tag:Int,
                           superView:UIView,
-                          snpMaker:snapMakerClosure){
+                          snpMaker:WMSnapMakerBlock){
         
         xlpInitTextfield(textColor, fontSize: fontSize, placeholder: placeholder, delegate: delegate, boderstyle: .roundedRect, superView: superView, tag: tag, snpMaker: snpMaker)
         
@@ -511,7 +510,7 @@ extension UITextField {
 
 extension UIImageView {
     
-    func initImageView(_ name:String?,superView:UIView,snpMaker:snapMakerClosure) {
+    func initImageView(_ name:String?,superView:UIView,snpMaker:WMSnapMakerBlock) {
         
         if name != nil {
             

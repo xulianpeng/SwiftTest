@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+
+/// 包括相关默认属性 常用设置 宏等 工具类方法 一些系统方法的简写
+/// APP相关的密匙之类的相关属性
+/// 一般k开头
 let kSCREENWIDTH = UIScreen.main.bounds.width
 let kSCREENHEIGHT = UIScreen.main.bounds.height
 
@@ -425,6 +429,8 @@ func kInitActionSheetFinal(_ superView:UIViewController,message:String,first:Str
 func kImageWithName(_ name:String)-> UIImage{
     return UIImage.init(named:name)!
 }
+
+
 //#if DEBUG
 //#else
 //#endif

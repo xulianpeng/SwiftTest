@@ -32,28 +32,30 @@ class EassyCell: UITableViewCell {
         }
         */
         
-        let url:URL = URL.init(string: modal.thumbnail)!
+//        let url:URL = URL.init(string: modal.thumbnail)!
 // MARK:AF的用法       newsImage.setImageWith(url, placeholderImage: UIImage.init(named:"cellImage"))
         //SD的用法
 //        newsImage.sd_setImage(with: url, placeholderImage: UIImage.init(named:"cellImage"), options: [.progressiveDownload,.transformAnimatedImage,.retryFailed])
         
         //MARK:kingfisher的用法
 //        let identifier = "CarouselBanner\(index)"
-        let resource = ImageResource(downloadURL: url, cacheKey: nil)
-//        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"cellImage"), options:[.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: {
+//        let resource = ImageResource(downloadURL: url, cacheKey: nil)
+////        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"cellImage"), options:[.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: {
+////            
+////        })
+//        
+//        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"cellImage"), options: [.transition(.flipFromLeft(1)),.processor(RoundCornerImageProcessor(cornerRadius: CGFloat(100)))], progressBlock: { (mm,nn) in
+//            print(mm,nn)
 //            
-//        })
+//        }) { (aImage, aNSError, aCacheType, aURL) in
+//            
+//            print("图片是\(aImage),图片网址是\(aCacheType)")
+//            
+//        }
         
-        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"cellImage"), options: [.transition(.flipFromLeft(1))], progressBlock: { (mm,nn) in
-            print(mm,nn)
-//            _ = Progress.init(totalUnitCount: nn, parent: Progress.init(), pendingUnitCount: mm)
-//            var aProgress = Progress.init(totalUnitCount: mm)
-//            aProgress.
-            
-        }) { (aImage, aNSError, aCacheType, aURL) in
-            
-            
-        }
+        //MARK: 封装Kingfisher的用法
+//        newsImage.xlpSetImage(modal.thumbnail, placeholder: "cellImage")
+        newsImage.xlpSetImageCircle(modal.thumbnail, placeholder: "cellImage", diameter: Int(100))
         
         
     }

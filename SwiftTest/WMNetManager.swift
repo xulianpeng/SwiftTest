@@ -12,11 +12,7 @@ import SwiftyJSON
 import SVProgressHUD
 import MBProgressHUD
 
-typealias successClosure = (_ response : [String:Any])->Void
-typealias failureClosure = (_ error : Error )->Void
 
-typealias finishClosure = (_ success:JSON?,_ error:Error?) -> Void
-typealias succeedBlock = (_ success:JSON)->Void
 
 class WMNetManager: NSObject {
 
@@ -63,7 +59,7 @@ class WMNetManager: NSObject {
     
     
     
-    func AllGET(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping finishClosure) {
+    func AllGET(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping WMNetFinishBlock) {
         
         
         Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON(completionHandler: { (response) in
@@ -90,7 +86,7 @@ class WMNetManager: NSObject {
         
     }
     
-    func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping succeedBlock) {
+    func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
         
         SVProgressHUD.setBackgroundColor(.red)
         SVProgressHUD.show()
@@ -122,7 +118,7 @@ class WMNetManager: NSObject {
     }
     
     //MARK: 普通POST ->z针对一般的post请求
-    func SucceedPost(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping succeedBlock) {
+    func SucceedPost(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
         Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(queue: globalQueue, options: JSONSerialization.ReadingOptions.allowFragments) { (response) in
             
             switch response.result {
@@ -145,7 +141,7 @@ class WMNetManager: NSObject {
     }
     
     //MARK :大文件上传到服务器
-    func SucceedUpload(_ any:Any,parameters:Dictionary<String,Any>,succeed:@escaping succeedBlock) {
+    func SucceedUpload(_ any:Any,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
         
 //        Alamofire.upload(any, with: <#T##URLRequestConvertible#>)
     }
@@ -160,7 +156,7 @@ class MyManager {
     static let sharedInstance = MyManager()
     private init(){}
     
-    func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping succeedBlock) {
+    func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
         
 //        SVProgressHUD.setBackgroundColor(.gray)
 //        SVProgressHUD.show()
@@ -189,7 +185,7 @@ class MyManager {
         })
     }
 
-    func SucceedGETFull(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping succeedBlock,failed:@escaping failureClosure) {
+    func SucceedGETFull(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock,failed:@escaping failureClosure) {
         
         //        SVProgressHUD.setBackgroundColor(.gray)
         //        SVProgressHUD.show()
@@ -226,7 +222,7 @@ class MyManager {
     ///   - urlString: 网址
     ///   - parameters: 参数
     ///   - finished: 请求完成后的处理包括 成功和失败
-    func SucceedGETFull2(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping finishClosure) {
+    func SucceedGETFull2(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping WMNetFinishBlock) {
         
         
         

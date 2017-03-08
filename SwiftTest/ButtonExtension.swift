@@ -9,18 +9,17 @@
 import UIKit
 
 //最终要识别的 闭包  点击方法
-typealias xlpButtonClickHandler = (_ sender:UIButton) -> Void
 
 private var xlpAssociate:String = "xlpAssociate"
 
 
 
 extension UIButton{
-    var handle:xlpButtonClickHandler{
+    var handle:WMButtonClickBlock{
         
         get {
             
-            return objc_getAssociatedObject(self, &xlpAssociate) as! xlpButtonClickHandler
+            return objc_getAssociatedObject(self, &xlpAssociate) as! WMButtonClickBlock
         }
         
         set(newValue){
@@ -36,8 +35,8 @@ extension UIButton{
                      cornerRedius:CGFloat?,
                      superView:UIView,
                      
-                     snpMaker:snapMakerClosure,
-                     buttonClick:@escaping xlpButtonClickHandler
+                     snpMaker:WMSnapMakerBlock,
+                     buttonClick:@escaping WMButtonClickBlock
         ) {
         
         if title != nil {
@@ -85,8 +84,8 @@ extension UIButton{
                            backgroundImageStr:String?,
                            cornerRedius:CGFloat?,
                            superView:UIView,
-                           snpMaker:snapMakerClosure,
-                           buttonClick:@escaping xlpButtonClickHandler
+                           snpMaker:WMSnapMakerBlock,
+                           buttonClick:@escaping WMButtonClickBlock
         ) {
         
         if title != nil {
@@ -130,8 +129,8 @@ extension UIButton{
                             backgroundColor:UIColor?,
                             cornerRedius:CGFloat?,
                             superView:UIView,
-                            snpMaker:snapMakerClosure,
-                            buttonClick:@escaping xlpButtonClickHandler
+                            snpMaker:WMSnapMakerBlock,
+                            buttonClick:@escaping WMButtonClickBlock
         ) {
         
         
@@ -144,8 +143,8 @@ extension UIButton{
                             titleColor:UIColor?,
                             fontSize:CGFloat?,
                             superView:UIView,
-                            snpMaker:snapMakerClosure,
-                            buttonClick:@escaping xlpButtonClickHandler
+                            snpMaker:WMSnapMakerBlock,
+                            buttonClick:@escaping WMButtonClickBlock
         ) {
         
         
@@ -155,17 +154,17 @@ extension UIButton{
 }
 
 
-typealias viewTapBlock = (_ sender:UITapGestureRecognizer) -> Void
+typealias viewWMTapBlock = (_ sender:UITapGestureRecognizer) -> Void
 
 private var viewTapAssociate:String = "viewTapAssociate"
 
 extension UIView{
     
-    var mytapBlock:viewTapBlock{
+    var myWMTapBlock:viewWMTapBlock{
         
         get {
             
-            return objc_getAssociatedObject(self, &viewTapAssociate) as! viewTapBlock
+            return objc_getAssociatedObject(self, &viewTapAssociate) as! viewWMTapBlock
         }
         
         set(newValue){
@@ -173,7 +172,7 @@ extension UIView{
         }
     }
     
-    func initView(frame:CGRect,superView:UIView,snpMaker: snapMakerClosure?,tapBlock:@escaping viewTapBlock) {
+    func initView(frame:CGRect,superView:UIView,snpMaker: WMSnapMakerBlock?,WMTapBlock:@escaping viewWMTapBlock) {
         
         self.frame = frame
         superView.addSubview(self)
@@ -182,7 +181,7 @@ extension UIView{
         }
        
         
-        mytapBlock = tapBlock
+        myWMTapBlock = WMTapBlock
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapHandle(tap:)))
         tap.numberOfTapsRequired = 1
@@ -191,7 +190,7 @@ extension UIView{
     }
     
     
-    func initView(superView:UIView,snpMaker: snapMakerClosure?,tapBlock:@escaping viewTapBlock) {
+    func initView(superView:UIView,snpMaker: WMSnapMakerBlock?,WMTapBlock:@escaping viewWMTapBlock) {
         
         
         superView.addSubview(self)
@@ -200,7 +199,7 @@ extension UIView{
         }
         
         
-        mytapBlock = tapBlock
+        myWMTapBlock = WMTapBlock
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapHandle(tap:)))
         tap.numberOfTapsRequired = 1
@@ -210,7 +209,7 @@ extension UIView{
 
     func tapHandle(tap:UITapGestureRecognizer)  {
         
-        mytapBlock(tap)
+        myWMTapBlock(tap)
     }
     
     
