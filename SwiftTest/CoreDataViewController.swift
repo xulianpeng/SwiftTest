@@ -27,19 +27,19 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
     
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initView()
+        initNavView()
         
     }
     func initView()  {
         
-        
-        
         nameTf.xlpInitTextfieldDefault(XLPRandomColor(), fontSize: 14, placeholder: "姓名", delegate: self, tag:100,superView: self.view) { (make) in
             make.left.equalTo(50)
-            make.top.equalTo(100)
+            make.top.equalTo(200)
             make.right.equalTo(-50)
             make.height.equalTo(50)
         }
@@ -108,15 +108,6 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
                 
             }
         }
-
-        
-        
-        
-
-        
-        
-        
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -132,6 +123,44 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
             studentDic.updateValue(ageTf.text ?? " ", forKey: "age")
         default: break
         }
+    }
+    
+    func initNavView() -> Void {
+        
+        let bottomView = UIView.init()
+        self.view.addSubview(bottomView)
+        bottomView.backgroundColor = UIColor.gray
+        bottomView.snp.makeConstraints { (make) in
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.top.equalTo(64)
+            make.height.equalTo(50)
+        }
+        
+        let itemView = UIView.init()
+        itemView.frame = CGRect(x:0,y:0,width:50,height:50)
+        itemView.backgroundColor = UIColor.darkGray
+        
+        bottomView.addSubview(itemView)
+        let titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.initLabel("你好", textColor: .black, fontSize: 13, backgroundColor: .clear, superView: itemView) { (make) in
+            make.left.top.equalTo(0)
+            make.height.equalTo(45)
+            make.width.equalTo(50)
+        }
+        
+        
+        let lineLabel = UILabel()
+        lineLabel.initLabel("", textColor: nil, fontSize: 12, backgroundColor: .black, superView: itemView) { (make) in
+            make.left.equalTo(0)
+            make.height.equalTo(3)
+            make.width.equalTo(50)
+            make.bottom.equalTo(itemView.snp.bottom).offset(-1)
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

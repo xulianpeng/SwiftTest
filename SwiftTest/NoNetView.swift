@@ -189,7 +189,7 @@ class NoNetTast: UIView,UIGestureRecognizerDelegate {
 //            make.right.equalTo(0)
             make.width.equalTo(kSCREENWIDTH)
             make.height.equalTo(64)
-        }, WMTapBlock: WMTapBlock)
+        }, tapBlock: WMTapBlock)
         self.backgroundColor = UIColor.yellow
         
         

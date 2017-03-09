@@ -430,6 +430,18 @@ func kImageWithName(_ name:String)-> UIImage{
     return UIImage.init(named:name)!
 }
 
+//MARK: String相关的方法
+
+func kGetSizeOfString(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
+    
+    var lastSize = CGSize.zero
+    
+    if string != nil {
+        lastSize = string!.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],attributes:[NSFontAttributeName:font],context: nil).size
+        
+    }
+    return lastSize
+}
 
 //#if DEBUG
 //#else

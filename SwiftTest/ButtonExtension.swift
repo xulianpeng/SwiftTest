@@ -154,17 +154,16 @@ extension UIButton{
 }
 
 
-typealias viewWMTapBlock = (_ sender:UITapGestureRecognizer) -> Void
 
 private var viewTapAssociate:String = "viewTapAssociate"
 
 extension UIView{
     
-    var myWMTapBlock:viewWMTapBlock{
+    var myTapBlock:WMTapBlock{
         
         get {
             
-            return objc_getAssociatedObject(self, &viewTapAssociate) as! viewWMTapBlock
+            return objc_getAssociatedObject(self, &viewTapAssociate) as! WMTapBlock
         }
         
         set(newValue){
@@ -172,7 +171,7 @@ extension UIView{
         }
     }
     
-    func initView(frame:CGRect,superView:UIView,snpMaker: WMSnapMakerBlock?,WMTapBlock:@escaping viewWMTapBlock) {
+    func initView(frame:CGRect,superView:UIView,snpMaker: WMSnapMakerBlock?,tapBlock:@escaping WMTapBlock) {
         
         self.frame = frame
         superView.addSubview(self)
@@ -181,7 +180,7 @@ extension UIView{
         }
        
         
-        myWMTapBlock = WMTapBlock
+        myTapBlock = tapBlock
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapHandle(tap:)))
         tap.numberOfTapsRequired = 1
@@ -190,7 +189,7 @@ extension UIView{
     }
     
     
-    func initView(superView:UIView,snpMaker: WMSnapMakerBlock?,WMTapBlock:@escaping viewWMTapBlock) {
+    func initView(superView:UIView,snpMaker: WMSnapMakerBlock?,tapBlock:@escaping WMTapBlock) {
         
         
         superView.addSubview(self)
@@ -199,7 +198,7 @@ extension UIView{
         }
         
         
-        myWMTapBlock = WMTapBlock
+        myTapBlock = tapBlock
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapHandle(tap:)))
         tap.numberOfTapsRequired = 1
@@ -209,7 +208,7 @@ extension UIView{
 
     func tapHandle(tap:UITapGestureRecognizer)  {
         
-        myWMTapBlock(tap)
+        myTapBlock(tap)
     }
     
     

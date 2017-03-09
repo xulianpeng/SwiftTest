@@ -435,6 +435,7 @@ class XLP_OperatorsVController: UIViewController {
         }) { (bt) in
             
             self.showPopView(self.popButton)
+            
         }
         
         showToastView()
@@ -648,39 +649,39 @@ class XLP_OperatorsVController: UIViewController {
         
         
         kCreateDocDirectoryWith("xlp")
+        
         toastView.initView(superView: wmKeyWindow(), snpMaker: { (make) in
+            
             make.left.top.equalTo(0)
             //            make.right.equalTo(0)
             make.width.equalTo(kSCREENWIDTH)
             make.height.equalTo(64)
+        }) { (tap) in
             
-        }, WMTapBlock: { (tap) in
-            
-//            self.view.backgroundColor = XLPRandomColor()
+            //            self.view.backgroundColor = XLPRandomColor()
             UIView.animate(withDuration: 3) {
                 
                 //不能在自己的点击事件里面写updateConstraints动画,否则没有渐变的效果,最终是瞬时效果
                 
-//                self.toastView.snp.updateConstraints({ (make) in
-//                    make.top.equalTo(64)
-//                    make.left.equalTo(0)
-//                    make.width.equalTo(kSCREENWIDTH)
-//                    make.height.equalTo(64)
-//                })
-            
-                //但是如果更新别的对象的约束  则具有渐变效果 
+                //                self.toastView.snp.updateConstraints({ (make) in
+                //                    make.top.equalTo(64)
+                //                    make.left.equalTo(0)
+                //                    make.width.equalTo(kSCREENWIDTH)
+                //                    make.height.equalTo(64)
+                //                })
+                
+                //但是如果更新别的对象的约束  则具有渐变效果
                 //那么关于toast的初始化 再用 约束 的话 就够呛了 暂时还是先按照 frame进行初始化吧
                 self.testView.snp.updateConstraints({ (make) in
                     make.width.height.equalTo(200)
                     make.center.equalTo(self.view.center)
-
+                    
                 })
                 
-                 self.view.layoutIfNeeded()
+                self.view.layoutIfNeeded()
             }
-           
             
-        })
+        }
         
         toastView.backgroundColor = UIColor.purple
         
