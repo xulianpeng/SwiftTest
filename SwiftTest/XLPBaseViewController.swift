@@ -131,7 +131,7 @@ class XLPBaseViewController: UIViewController {
         if (!(netStatusManager?.isReachable)!) {
             let noNetToast = NoNetTast.init("网络不给力,请检查网络设置", superView: self.view) { (tap) in
                 
-                self.view.backgroundColor = XLPRandomColor()
+                self.view.backgroundColor = KRandomColor()
                 let hud = xlpHud.init(text: "妈咪妈咪哄", constransY: 300)
                 hud.show()
                 hud.hideWhenAfter(time: 3)

@@ -38,7 +38,7 @@ class videoRootViewController: XLPBaseViewController {
         
         
         
-        videoBt1.xlpInitEassyButton("MPMoviePlayerViewController", titleColor: .blue, fontSize: 14, backgroundColor: XLPRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
+        videoBt1.xlpInitEassyButton("MPMoviePlayerViewController", titleColor: .blue, fontSize: 14, backgroundColor: KRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
             
             make.left.equalTo(20)
             make.right.equalTo(-20)
@@ -51,7 +51,7 @@ class videoRootViewController: XLPBaseViewController {
             self.present(playerVC!, animated: true, completion: nil)
         }
         
-        videoBt2.xlpInitEassyButton("MPMoviePlayerController", titleColor: .blue, fontSize: 14, backgroundColor: XLPRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
+        videoBt2.xlpInitEassyButton("MPMoviePlayerController", titleColor: .blue, fontSize: 14, backgroundColor: KRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
             
             make.left.equalTo(videoBt1.snp.left)
             make.right.equalTo(videoBt1.snp.right)
@@ -89,7 +89,7 @@ class videoRootViewController: XLPBaseViewController {
             */
         }
         
-        videoBt3.xlpInitEassyButton("AVPlayerViewController", titleColor: .blue, fontSize: 14, backgroundColor: XLPRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
+        videoBt3.xlpInitEassyButton("AVPlayerViewController", titleColor: .blue, fontSize: 14, backgroundColor: KRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
             
             make.left.equalTo(videoBt1.snp.left)
             make.right.equalTo(videoBt1.snp.right)
@@ -107,7 +107,7 @@ class videoRootViewController: XLPBaseViewController {
             
         }
         
-        videoBt4.xlpInitEassyButton("AVPlayer", titleColor: .blue, fontSize: 14, backgroundColor: XLPRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
+        videoBt4.xlpInitEassyButton("AVPlayer", titleColor: .blue, fontSize: 14, backgroundColor: KRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
             
             make.left.equalTo(videoBt1.snp.left)
             make.right.equalTo(videoBt1.snp.right)
@@ -127,7 +127,7 @@ class videoRootViewController: XLPBaseViewController {
             
         }
         
-        videoBt5.xlpInitEassyButton("DWCC", titleColor: XLPRandomColor(), fontSize: 14, backgroundColor: XLPRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
+        videoBt5.xlpInitEassyButton("DWCC", titleColor: KRandomColor(), fontSize: 14, backgroundColor: KRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
             
             make.left.equalTo(videoBt1.snp.left)
             make.right.equalTo(videoBt1.snp.right)

@@ -28,7 +28,7 @@ class xlpHud: UIView {
     
     let kHudFont = UIFont.systemFont(ofSize: 14) //修改字体
     let kHudFontColor:UIColor = UIColor.yellow   //修改字体颜色
-    let kHudBackgroundColor:UIColor = RGB(r: 0, g: 0, b: 0, alpha: 0.8)//修改背景色
+    let kHudBackgroundColor:UIColor = kRGB(r: 0, g: 0, b: 0, alpha: 0.8)//修改背景色
     let kPading:Int = 10
     let kViewPading:Int = 10
 

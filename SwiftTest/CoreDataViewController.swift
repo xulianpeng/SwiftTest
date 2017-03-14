@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
+class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate,TitleArrViewDelegate,UIScrollViewDelegate {
 
     var insertBT = UIButton()
     var deleteBT = UIButton()
@@ -25,7 +25,8 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
     let entityName = "StudentEntity"
     
     
-
+    var titleView:TitleArrView?
+    let backScrollView = UIScrollView()
     
     
     override func viewDidLoad() {
@@ -37,26 +38,26 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
     }
     func initView()  {
         
-        nameTf.xlpInitTextfieldDefault(XLPRandomColor(), fontSize: 14, placeholder: "姓名", delegate: self, tag:100,superView: self.view) { (make) in
+        nameTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "姓名", delegate: self, tag:100,superView: self.view) { (make) in
             make.left.equalTo(50)
             make.top.equalTo(200)
             make.right.equalTo(-50)
             make.height.equalTo(50)
         }
        
-        idTf.xlpInitTextfieldDefault(XLPRandomColor(), fontSize: 14, placeholder: "id", delegate: self,tag:101, superView: self.view) { (make) in
+        idTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "id", delegate: self,tag:101, superView: self.view) { (make) in
             make.left.equalTo(nameTf)
             make.top.equalTo(nameTf.snp.bottom).offset(10)
             make.size.equalTo(nameTf)
         }
         
-        sexTf.xlpInitTextfieldDefault(XLPRandomColor(), fontSize: 14, placeholder: "性别", delegate: self,tag:102, superView: self.view) { (make) in
+        sexTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "性别", delegate: self,tag:102, superView: self.view) { (make) in
             make.left.equalTo(nameTf)
             make.top.equalTo(idTf.snp.bottom).offset(10)
             make.size.equalTo(nameTf)
         }
         
-        ageTf.xlpInitTextfieldDefault(XLPRandomColor(), fontSize: 14, placeholder: "年龄", delegate: self,tag:103, superView: self.view) { (make) in
+        ageTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "年龄", delegate: self,tag:103, superView: self.view) { (make) in
             make.left.equalTo(nameTf)
             make.top.equalTo(sexTf.snp.bottom).offset(10)
             make.size.equalTo(nameTf)
@@ -127,6 +128,7 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
     
     func initNavView() -> Void {
         
+        /*
         let bottomView = UIView.init()
         self.view.addSubview(bottomView)
         bottomView.backgroundColor = UIColor.gray
@@ -158,11 +160,56 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate {
             make.width.equalTo(50)
             make.bottom.equalTo(itemView.snp.bottom).offset(-1)
         }
+        */
+        
+        titleView = TitleArrView.init(frame: CGRect(x:0,y:64,width:kSCREENWIDTH,height:60), titleArr: ["资讯","守望","炉石","昆特","游戏王","万智","阵面","电游","手游","皇战","电台","HEX","杂谈"])
+        titleView!.backgroundColor = UIColor.brown
+        titleView!.delegate = self
+        self.view.addSubview(titleView!)
+        
+        
+        
+        backScrollView.frame = CGRect(x:0,y:130,width:kSCREENWIDTH,height:100)
+        backScrollView.isScrollEnabled = true
+        backScrollView.isPagingEnabled = true
+        backScrollView.showsHorizontalScrollIndicator = true
+        backScrollView.showsVerticalScrollIndicator = false
+        self.view.addSubview(backScrollView)
+        backScrollView.delegate = self
+        backScrollView.contentSize = CGSize(width:kSCREENWIDTH * 13,height:100)
+        backScrollView.backgroundColor = UIColor.cyan
+        
+        for i in 0...12 {
+            
+            let theRect = CGRect(x:kSCREENWIDTH * CGFloat(i),y:0,width:kSCREENWIDTH,height:100)
+            let subView = UIView()
+            subView.xlpInitView(frame: theRect, superView: backScrollView, tapBlock: { (tap) in
+                
+                print("你竟然惦记我啦啦啦啦\(i)")
+            })
+            subView.backgroundColor = KRandomColor()
+            backScrollView.addSubview(subView)
+        }
+        
         
         
         
     }
 
+    func clickTitleViewAtIndex(_ index: Int) {
+        
+        print("=====啦啦啦我点击了第\(index,kSCREENWIDTH * CGFloat(index))个标题")
+        let mm = kSCREENWIDTH * CGFloat(index)
+        backScrollView.contentOffset = CGPoint(x:mm,y:130)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let index:Int = Int(scrollView.contentOffset.x + kSCREENWIDTH/2 ) / Int(kSCREENWIDTH)
+        
+        titleView?.setCurrentIndex(index)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

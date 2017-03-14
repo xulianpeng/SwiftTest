@@ -225,7 +225,7 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic,UIGestureRecognizer
     func longPressHandle() {
         
         self.view.alpha += 0.1
-        self.view.backgroundColor = XLPRandomColor()
+        self.view.backgroundColor = KRandomColor()
     }
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true

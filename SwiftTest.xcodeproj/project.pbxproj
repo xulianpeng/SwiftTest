@@ -48,6 +48,7 @@
 		07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E881E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift */; };
 		079F68771E70032D001E882D /* BaseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F68761E70032D001E882D /* BaseBlock.swift */; };
 		079F687D1E70F623001E882D /* TitleArrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F687C1E70F623001E882D /* TitleArrView.swift */; };
+		079F68801E7681B5001E882D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F687F1E7681B5001E882D /* CameraViewController.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -178,6 +179,7 @@
 		07956E881E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZhiHuEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		079F68761E70032D001E882D /* BaseBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBlock.swift; sourceTree = "<group>"; };
 		079F687C1E70F623001E882D /* TitleArrView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleArrView.swift; sourceTree = "<group>"; };
+		079F687F1E7681B5001E882D /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -368,6 +370,14 @@
 			path = PopoverView;
 			sourceTree = "<group>";
 		};
+		079F687E1E768152001E882D /* 相册图片 */ = {
+			isa = PBXGroup;
+			children = (
+				079F687F1E7681B5001E882D /* CameraViewController.swift */,
+			);
+			name = "相册图片";
+			sourceTree = "<group>";
+		};
 		079FE39C1E094793007DF3DE /* Swift与OC混编 */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +523,7 @@
 				07F39F091E1CEEF700EE268B /* 知乎日报 */,
 				079FE42B1E0BAA6A007DF3DE /* Scrollview与SnapKit */,
 				079FE39C1E094793007DF3DE /* Swift与OC混编 */,
+				079F687E1E768152001E882D /* 相册图片 */,
 				89E73E331DFBEA9200058FB0 /* tableview */,
 				89E73DFA1DFA832900058FB0 /* Main.storyboard */,
 				89E73DFD1DFA832900058FB0 /* Assets.xcassets */,
@@ -832,6 +843,7 @@
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
+				079F68801E7681B5001E882D /* CameraViewController.swift in Sources */,
 				07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */,
 				07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,

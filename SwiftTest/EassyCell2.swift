@@ -21,7 +21,7 @@ class EassyCell2: UITableViewCell {
     func showValueWithModal(modal:EassyModal){
         titleLabel.text = modal.title
         
-//        timeLabel.text = obtainTimeWith(timestamp:modal.timestamp)
+//        timeLabel.text = kObtainTimeWith(timestamp:modal.timestamp)
 //        reviewCountLabel.text = "\(modal.replyNum)"
         
        

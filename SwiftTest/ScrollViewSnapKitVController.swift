@@ -115,7 +115,7 @@ class ScrollViewSnapKitVController: XLPBaseViewController,UITableViewDelegate,UI
             label1.numberOfLines = 0
             label1.lineBreakMode = .byClipping
             label1.textColor = .white
-            label1.backgroundColor = XLPRandomColor()
+            label1.backgroundColor = KRandomColor()
             label1.text = labelStr
             containerView.addSubview(label1)
             

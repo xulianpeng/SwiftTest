@@ -177,14 +177,12 @@ class NoNetTast: UIView,UIGestureRecognizerDelegate {
     
     init(_ text:String,superView:UIView,WMTapBlock:@escaping reloadDataWMTapBlock) {
         
-//        let aFrame = CGRect(x:0,y:0,width:kSCREENWIDTH,height:64)
         super.init(frame: CGRect.zero)
         
         
         
-//        self.initView(frame: aFrame, superView: superView, snpMaker: nil, WMTapBlock: WMTapBlock)
         
-        self.initView(superView: superView, snpMaker: { (make) in
+        self.xlpInitView(superView: superView, snpMaker: { (make) in
             make.left.top.equalTo(0)
 //            make.right.equalTo(0)
             make.width.equalTo(kSCREENWIDTH)

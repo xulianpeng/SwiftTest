@@ -33,7 +33,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
 //        myCollectionLayout2.minimumLineSpacing = 10 //上下item的距离
 //        myCollectionLayout2.minimumInteritemSpacing = 5 //item左右的距离
         
-        let BGColor = RGB(r: 56, g: 51, b: 76, alpha: 1.0)
+        let BGColor = kRGB(r: 56, g: 51, b: 76, alpha: 1.0)
         
         let myCollectionView = UICollectionView.init(frame: CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64), collectionViewLayout: myCollectionViewFlowLayout())
         myCollectionView.register(myCollectionViewCell.self, forCellWithReuseIdentifier: "cell")

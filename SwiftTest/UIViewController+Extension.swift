@@ -19,7 +19,6 @@ extension UIViewController{
             make.width.height.equalTo(50)
         }
         return myIndictor
-
     }
 }
 

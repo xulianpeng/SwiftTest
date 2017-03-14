@@ -58,7 +58,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuDetailVController.swift"
-                  timestampString = "510660040.715291"
+                  timestampString = "511181082.823739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -73,7 +73,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuDetailVController.swift"
-                  timestampString = "510660040.718032"
+                  timestampString = "511181082.826005"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -106,7 +106,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuDetailVController.swift"
-                  timestampString = "510660040.722958"
+                  timestampString = "511181082.830703"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -121,7 +121,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuDetailVController.swift"
-                  timestampString = "510660040.724999"
+                  timestampString = "511181082.833572"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -154,7 +154,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuDetailVController.swift"
-                  timestampString = "510660040.728827"
+                  timestampString = "511181082.840795"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -169,7 +169,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuDetailVController.swift"
-                  timestampString = "510660040.731222"
+                  timestampString = "511181082.843324"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "85"
@@ -202,7 +202,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuObtainDataOperation.swift"
-                  timestampString = "510660040.735725"
+                  timestampString = "511181082.849822"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -217,7 +217,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuObtainDataOperation.swift"
-                  timestampString = "510660040.73769"
+                  timestampString = "511181082.852099"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -232,7 +232,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ZhiHuObtainDataOperation.swift"
-                  timestampString = "510660040.739548"
+                  timestampString = "511181082.854808"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -569,11 +569,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/CoreDataViewController.swift"
-            timestampString = "510560115.507945"
+            timestampString = "511178465.710625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "initView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -667,6 +667,70 @@
             startingLineNumber = "223"
             endingLineNumber = "223"
             landmarkName = "deleteData(_:predicatStr:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/CameraViewController.swift"
+            timestampString = "511151458.29316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "image(image:didFinishSavingWithError:contextInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/CameraViewController.swift"
+            timestampString = "511151458.29316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/CameraViewController.swift"
+            timestampString = "511151458.29316"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/CoreDataViewController.swift"
+            timestampString = "511180962.67987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "initNavView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

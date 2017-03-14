@@ -616,9 +616,9 @@ class XLP_OperatorsVController: UIViewController {
     
         let testView = UIView()
         let aFrame = CGRect(x:100,y:100,width:100,height:100)
-        testView.initView(frame: aFrame, superView: self.view, snpMaker: nil) { (tap) in
+        testView.xlpInitView(frame: aFrame, superView: self.view) { (tap) in
             
-            self.view.backgroundColor = XLPRandomColor()
+            self.view.backgroundColor = KRandomColor()
             self.showPopView(testView)
         }
         self.view.addSubview(testView)
@@ -632,12 +632,12 @@ class XLP_OperatorsVController: UIViewController {
         
         
         
-        testView.initView(superView: self.view, snpMaker: { (make) in
+        testView.xlpInitView(superView: self.view, snpMaker: { (make) in
             make.width.height.equalTo(100)
             make.center.equalTo(self.view.center)
             
         }) { (tap) in
-            self.view.backgroundColor = XLPRandomColor()
+            self.view.backgroundColor = KRandomColor()
             self.showPopView(self.testView)
         }
         self.view.addSubview(testView)
@@ -650,7 +650,7 @@ class XLP_OperatorsVController: UIViewController {
         
         kCreateDocDirectoryWith("xlp")
         
-        toastView.initView(superView: wmKeyWindow(), snpMaker: { (make) in
+        toastView.xlpInitView(superView: kKeyWindow(), snpMaker: { (make) in
             
             make.left.top.equalTo(0)
             //            make.right.equalTo(0)
@@ -658,7 +658,7 @@ class XLP_OperatorsVController: UIViewController {
             make.height.equalTo(64)
         }) { (tap) in
             
-            //            self.view.backgroundColor = XLPRandomColor()
+            //            self.view.backgroundColor = KRandomColor()
             UIView.animate(withDuration: 3) {
                 
                 //不能在自己的点击事件里面写updateConstraints动画,否则没有渐变的效果,最终是瞬时效果
@@ -691,7 +691,7 @@ class XLP_OperatorsVController: UIViewController {
             make.left.equalTo(20)
             make.bottom.equalTo(toastView.snp.bottom).offset(-5)
             make.right.equalTo(0)
-            make.height.equalTo(kXLPFontSize(16).lineHeight)
+            make.height.equalTo(kFontWithSize(16).lineHeight)
         }
         
 //        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 100, options: .allowUserInteraction, animations: { 

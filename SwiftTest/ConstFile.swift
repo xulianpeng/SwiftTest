@@ -39,7 +39,7 @@ let kToken = "E1BB0782CF8E65F29356A8DE7D86A28B"
 //    return weakSelf
 //}
 //MARK:iOS系统的判断
-func IS_iOS8() -> Bool{
+func kIS_iOS8() -> Bool{
     
     let systemVersion = Double(UIDevice.current.systemVersion)!
     if systemVersion < 9.0 {
@@ -47,7 +47,7 @@ func IS_iOS8() -> Bool{
     }
     return false
 }
-func IS_iOS8orLater() -> Bool{
+func kIS_iOS8orLater() -> Bool{
     
     let systemVersion = Double(UIDevice.current.systemVersion)!
     if systemVersion >= 8.0 {
@@ -55,7 +55,7 @@ func IS_iOS8orLater() -> Bool{
     }
     return false
 }
-func IS_iOS9() -> Bool{
+func kIS_iOS9() -> Bool{
     
     let systemVersion = Double(UIDevice.current.systemVersion)!
     if systemVersion < 10.0 {
@@ -63,7 +63,7 @@ func IS_iOS9() -> Bool{
     }
     return false
 }
-func IS_iOS9orLater() -> Bool{
+func kIS_iOS9orLater() -> Bool{
     
     let systemVersion = Double(UIDevice.current.systemVersion)!
     if systemVersion >= 9.0 {
@@ -71,7 +71,7 @@ func IS_iOS9orLater() -> Bool{
     }
     return false
 }
-func IS_iOS10orLater() -> Bool{
+func kIS_iOS10orLater() -> Bool{
     
     let systemVersion = Double(UIDevice.current.systemVersion)!
     if systemVersion >= 10.0 {
@@ -101,12 +101,12 @@ let xlpCoredataManager1 = XLPCoreDataManager1.shareInstance
  */
 
 //MARK:颜色的缩写
-func RGB(r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat)->UIColor{
+func kRGB(r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat)->UIColor{
     
     return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: alpha)
 }
 //MARK:时间戳转时间
-func obtainTimeWith(timestamp:Int) -> String {
+func kObtainTimeWith(timestamp:Int) -> String {
     
     /*
     var formatter : DateFormatter = DateFormatter()
@@ -136,7 +136,7 @@ func obtainTimeWith(timestamp:Int) -> String {
     
 }
 //MARK:随机颜色
-func XLPRandomColor() -> UIColor {
+func KRandomColor() -> UIColor {
     
     let red = CGFloat(arc4random()%256)/255.0
     let green = CGFloat(arc4random()%256)/255.0
@@ -175,7 +175,7 @@ func showHud(text:String,yHeight:CGFloat) -> Void {
 //    xlpHud.init(frame: <#T##CGRect#>, text: <#T##String#>)
 }
 //MARK: 正则判断是否是电话号码
-func isTelNumber(_ num:String)->Bool{
+func kIsTelNumber(_ num:String)->Bool{
     
     let mobile = "^1(3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$"
     let  CM = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
@@ -235,20 +235,15 @@ func kUserDefaultsValue(_ key:String) -> Any{
     
 }
 
-//let WMkeyWindow: UIWindow {
-//    
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    
-//    return appDelegate.window!
-//}
+
 //MARK:获取主Window
-func wmKeyWindow() -> UIWindow {
+func kKeyWindow() -> UIWindow {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     return appDelegate.window!
 }
 //MARK:font方法简写
-func kXLPFontSize(_ size:CGFloat) -> UIFont {
+func kFontWithSize(_ size:CGFloat) -> UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 //MARK:沙盒相关的方法
