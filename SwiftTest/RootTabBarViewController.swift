@@ -19,7 +19,7 @@ class RootTabBarViewController: XLPBaseTabBarController {
 
         let firstVC  = RootViewController()
         let naFirstVC = XLPBaseNavigationVController.init(rootViewController:firstVC)
-        let twoVC = RefreshViewController()
+        let twoVC = YingDiViewController()
         let naTwoVC = XLPBaseNavigationVController.init(rootViewController: twoVC)
         let threeVC = ShopCityViewController()
         let naThreeVC = XLPBaseNavigationVController.init(rootViewController: threeVC)

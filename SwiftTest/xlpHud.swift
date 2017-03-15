@@ -77,6 +77,7 @@ class xlpHud: UIView {
         self.isHidden = true;
         self.alpha = 0.0;
         
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

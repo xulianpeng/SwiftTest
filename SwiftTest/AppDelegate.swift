@@ -22,11 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let rootVC = RootViewController()
+        
         
         let rootVC = RootTabBarViewController()
         
-//        let naVC = UINavigationController.init(rootViewController: rootVC)
         window?.rootViewController = rootVC
         
         //FIXME:全局键盘管理 键盘收回,只有点击键盘上的 done,添加 touchview方法后,整个页面向上偏移的距离没有返回
@@ -73,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SDWebImageManager.shared().imageCache.maxCacheSize = 1024 * 30
         print(SDWebImageManager.shared().imageCache.getSize())
-        var sdCachePath = kCreateDocDirectoryWith("xlp")
+        let sdCachePath = kCreateDocDirectoryWith("xlp")
         
         SDWebImageManager.shared().imageCache.defaultCachePath(forKey: sdCachePath)
         

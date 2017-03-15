@@ -18,8 +18,8 @@ class TitleArrView: UIView {
 
     var theFontSize:CGFloat = 13 //字体大小
     var kPading:CGFloat = 20.0   //间隔
-    let theSelectedColor = UIColor.red //选中时的颜色
-    let theNormalColor = kRGB(r: 144, g: 211, b: 247, alpha: 1.0) //未选中时的颜色
+    let theSelectedColor = kRGB(r: 20, g: 53, b: 104, alpha: 1.0) //选中时的颜色
+    let theNormalColor = kRGB(r: 20, g: 53, b: 104, alpha: 1.0) //未选中时的颜色
     let theScale:CGFloat = 1.3 //放大的比例
     
     var delegate : TitleArrViewDelegate?
@@ -29,13 +29,15 @@ class TitleArrView: UIView {
     private var titleBtArr = [UIButton]()
     private var backScrollView = UIScrollView()
     private var theHeight:CGFloat = 0
-    
+    private var theWidth:CGFloat = 0
     
     
     init(frame: CGRect,titleArr:[String]) {
         super.init(frame: frame)
         theHeight = frame.size.height
-        backScrollView.frame = CGRect(x:0,y:0,width:frame.size.width,height:theHeight)
+        self.theWidth = frame.size.width
+        
+        backScrollView.frame = CGRect(x:0,y:0,width:self.self.theWidth,height:theHeight)
         backScrollView.isScrollEnabled = true
         backScrollView.isPagingEnabled = false
         backScrollView.showsHorizontalScrollIndicator = false
@@ -82,36 +84,40 @@ class TitleArrView: UIView {
                 let widthFloat1 :CGFloat = newArr1.value(forKeyPath: "@sum.floatValue") as! CGFloat
                 let widthFloat2 :CGFloat = newArr2.value(forKeyPath: "@sum.floatValue") as! CGFloat
 
-                if( widthFloat > kSCREENWIDTH ){
+                if( widthFloat > self.theWidth ){
                     
-                    if widthFloat1 > kSCREENWIDTH/2,widthFloat2 > kSCREENWIDTH/2{
+                    if widthFloat1 > self.theWidth/2,widthFloat2 > self.theWidth/2{
                         
                         
                         let indexWidth = self.titleWidthArr[index]
                         let newArr3:NSArray = arr.subarray(with: NSMakeRange(0, index)) as NSArray
                         let widthFloat3 :CGFloat = newArr3.value(forKeyPath: "@sum.floatValue") as! CGFloat
-                        let offset0 = indexWidth/2 + widthFloat3 - kSCREENWIDTH/2
+                        let offset0 = indexWidth/2 + widthFloat3 - self.theWidth/2
                         
                         UIView.animate(withDuration: 0.3, animations: {
                             self.backScrollView.contentOffset = CGPoint(x:offset0,y:0)
 
                         })
+//                        self.backScrollView.setContentOffset(CGPoint(x:offset0,y:0), animated: true)
                         
                     }else{
                         
-                        if widthFloat1 < kSCREENWIDTH/2{
+                        if widthFloat1 < self.theWidth/2{
                             
                             UIView.animate(withDuration: 0.3, animations: {
                                 self.backScrollView.contentOffset = CGPoint(x:0,y:0)
                                 
                             })
                         }
-                        if widthFloat2 < kSCREENWIDTH/2{
+                        if widthFloat2 < self.theWidth/2{
                             
+                            ///所以同一使用此种方法
                             UIView.animate(withDuration: 0.3, animations: {
-                                self.backScrollView.contentOffset = CGPoint(x:widthFloat - kSCREENWIDTH,y:0)
+                                self.backScrollView.contentOffset = CGPoint(x:widthFloat - self.theWidth,y:0)
                                 
                             })
+                            ///此方法会出现点击两端会出现一定的偏移
+//                            self.backScrollView.setContentOffset(CGPoint(x:widthFloat - self.theWidth,y:0), animated: true)
                         }
                     }
                     
@@ -173,15 +179,15 @@ class TitleArrView: UIView {
         let widthFloat1 :CGFloat = newArr1.value(forKeyPath: "@sum.floatValue") as! CGFloat
         let widthFloat2 :CGFloat = newArr2.value(forKeyPath: "@sum.floatValue") as! CGFloat
         
-        if( widthFloat > kSCREENWIDTH ){
+        if( widthFloat > self.theWidth ){
             
-            if widthFloat1 > kSCREENWIDTH/2,widthFloat2 > kSCREENWIDTH/2{
+            if widthFloat1 > self.theWidth/2,widthFloat2 > self.theWidth/2{
                 
                 
                 let indexWidth = self.titleWidthArr[index]
                 let newArr3:NSArray = arr.subarray(with: NSMakeRange(0, index)) as NSArray
                 let widthFloat3 :CGFloat = newArr3.value(forKeyPath: "@sum.floatValue") as! CGFloat
-                let offset0 = indexWidth/2 + widthFloat3 - kSCREENWIDTH/2
+                let offset0 = indexWidth/2 + widthFloat3 - self.theWidth/2
                 
                 UIView.animate(withDuration: 0.3, animations: {
                     self.backScrollView.contentOffset = CGPoint(x:offset0,y:0)
@@ -190,17 +196,17 @@ class TitleArrView: UIView {
                 
             }else{
                 
-                if widthFloat1 < kSCREENWIDTH/2{
+                if widthFloat1 < self.theWidth/2{
                     
                     UIView.animate(withDuration: 0.3, animations: {
                         self.backScrollView.contentOffset = CGPoint(x:0,y:0)
                         
                     })
                 }
-                if widthFloat2 < kSCREENWIDTH/2{
+                if widthFloat2 < self.theWidth/2{
                     
                     UIView.animate(withDuration: 0.3, animations: {
-                        self.backScrollView.contentOffset = CGPoint(x:widthFloat - kSCREENWIDTH,y:0)
+                        self.backScrollView.contentOffset = CGPoint(x:widthFloat - self.theWidth,y:0)
                         
                     })
                 }

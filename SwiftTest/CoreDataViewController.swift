@@ -196,15 +196,22 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate,TitleArr
         
     }
 
+    
+    /// scrollview的偏移量的 y值必须为0  
+    ///
+    /// - Parameter index: <#index description#>
     func clickTitleViewAtIndex(_ index: Int) {
         
-        print("=====啦啦啦我点击了第\(index,kSCREENWIDTH * CGFloat(index))个标题")
         let mm = kSCREENWIDTH * CGFloat(index)
-        backScrollView.contentOffset = CGPoint(x:mm,y:130)
+        UIView.animate(withDuration: 0.3) { 
+            self.backScrollView.contentOffset = CGPoint(x:mm,y:0)
+
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
+        ///如果不+kSCREENWIDTH/2,会出现 变化的太快
         let index:Int = Int(scrollView.contentOffset.x + kSCREENWIDTH/2 ) / Int(kSCREENWIDTH)
         
         titleView?.setCurrentIndex(index)
