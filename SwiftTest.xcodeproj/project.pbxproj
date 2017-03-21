@@ -35,6 +35,8 @@
 		073302241E5ECFC200A87D52 /* zhiHuObtainDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 073302231E5ECFC200A87D52 /* zhiHuObtainDataOperation.m */; };
 		075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */; };
 		07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07708CD81E541C9300E30708 /* CarouselBanner.swift */; };
+		077145F81E7A2AC2003332E2 /* AppUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077145F71E7A2AC2003332E2 /* AppUrl.swift */; };
+		077145FA1E7A32E0003332E2 /* XLPSqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077145F91E7A32E0003332E2 /* XLPSqliteManager.swift */; };
 		077367D01E657AB6002BFB86 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077367CF1E657AB6002BFB86 /* UIViewController+Extension.swift */; };
 		077367D21E66621E002BFB86 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077367D11E66621E002BFB86 /* UserManager.swift */; };
 		07956E2F1E69404D00E8D22D /* testOperation11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07956E2E1E69404D00E8D22D /* testOperation11.swift */; };
@@ -51,6 +53,7 @@
 		079F68801E7681B5001E882D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F687F1E7681B5001E882D /* CameraViewController.swift */; };
 		079F68821E78F038001E882D /* YingDiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F68811E78F038001E882D /* YingDiViewController.swift */; };
 		079F68841E79101F001E882D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F68831E79101F001E882D /* NewsViewController.swift */; };
+		079F68861E7A26A3001E882D /* GetTitleArrOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F68851E7A26A3001E882D /* GetTitleArrOperation.swift */; };
 		079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A01E0948A7007DF3DE /* EassyModal.swift */; };
 		079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A21E0948BD007DF3DE /* EassyCell.swift */; };
 		079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE3A41E0A56C7007DF3DE /* ConstFile.swift */; };
@@ -165,6 +168,8 @@
 		075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCityViewController.swift; sourceTree = "<group>"; };
 		07708CD81E541C9300E30708 /* CarouselBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselBanner.swift; sourceTree = "<group>"; };
 		07708CDA1E54350100E30708 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fqmjqktidlasnaamcmzpiogfmbpn/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		077145F71E7A2AC2003332E2 /* AppUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUrl.swift; sourceTree = "<group>"; };
+		077145F91E7A32E0003332E2 /* XLPSqliteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPSqliteManager.swift; sourceTree = "<group>"; };
 		077367CF1E657AB6002BFB86 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		077367D11E66621E002BFB86 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		07956E2E1E69404D00E8D22D /* testOperation11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testOperation11.swift; sourceTree = "<group>"; };
@@ -184,6 +189,7 @@
 		079F687F1E7681B5001E882D /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		079F68811E78F038001E882D /* YingDiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YingDiViewController.swift; sourceTree = "<group>"; };
 		079F68831E79101F001E882D /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		079F68851E7A26A3001E882D /* GetTitleArrOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTitleArrOperation.swift; sourceTree = "<group>"; };
 		079FE3A01E0948A7007DF3DE /* EassyModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyModal.swift; sourceTree = "<group>"; };
 		079FE3A21E0948BD007DF3DE /* EassyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EassyCell.swift; sourceTree = "<group>"; };
 		079FE3A41E0A56C7007DF3DE /* ConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstFile.swift; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				079F68811E78F038001E882D /* YingDiViewController.swift */,
+				079F68851E7A26A3001E882D /* GetTitleArrOperation.swift */,
 				079F68831E79101F001E882D /* NewsViewController.swift */,
 			);
 			name = "旅法师";
@@ -418,7 +425,9 @@
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
 				07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */,
+				077145F91E7A32E0003332E2 /* XLPSqliteManager.swift */,
 				079FE3A41E0A56C7007DF3DE /* ConstFile.swift */,
+				077145F71E7A2AC2003332E2 /* AppUrl.swift */,
 				079F68761E70032D001E882D /* BaseBlock.swift */,
 				07956E2E1E69404D00E8D22D /* testOperation11.swift */,
 			);
@@ -794,6 +803,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07956E761E6D6B6E00E8D22D /* CoreDataViewController.swift in Sources */,
+				079F68861E7A26A3001E882D /* GetTitleArrOperation.swift in Sources */,
 				89E73E411E01292900058FB0 /* TsetClass.swift in Sources */,
 				079F68821E78F038001E882D /* YingDiViewController.swift in Sources */,
 				075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */,
@@ -844,9 +854,11 @@
 				079F687D1E70F623001E882D /* TitleArrView.swift in Sources */,
 				07F39F1A1E232DE700EE268B /* SwiftTest.xcdatamodeld in Sources */,
 				07E3DECE1E55A355001BAE03 /* xlpHud.swift in Sources */,
+				077145F81E7A2AC2003332E2 /* AppUrl.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
 				073301D21E5BE39300A87D52 /* EvernoteTransition.swift in Sources */,
 				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,
+				077145FA1E7A32E0003332E2 /* XLPSqliteManager.swift in Sources */,
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,

@@ -84,6 +84,9 @@ func kIS_iOS10orLater() -> Bool{
 let xlpCoredataManager = XLPCoreDataManager.shareInstance
 
 let xlpCoredataManager1 = XLPCoreDataManager1.shareInstance
+
+let xlpSqliteManager = XLPSqliteManager.shareInstance
+
 /*
 +(NSString *)obtainAllDateNowWithTimestamp:(NSNumber *)timestamp
 {
@@ -266,7 +269,7 @@ func kGetDocumentPath() -> NSString{
     return docPath
 }
 
-/// 获取创建指定文件夹的路径
+/// 获取创建在doc下指定文件夹的路径
 ///
 /// - Parameter name: 创建的文件夹
 /// - Returns: 创建指定文件夹的路径
@@ -275,21 +278,51 @@ func kCreateDocDirectoryWith(_ name:String) -> String{
     let docPath:NSString = kGetDocumentPath()
     let fileManager = FileManager.default
     let finalPath = docPath.appendingPathComponent(name)
-    try! fileManager.createDirectory(atPath: finalPath, withIntermediateDirectories: true, attributes: nil)
+    
+    if !fileManager.fileExists(atPath: finalPath) {
+        
+        try! fileManager.createDirectory(atPath: finalPath, withIntermediateDirectories: true, attributes: nil)
+    }
     print("===创建的文件夹的路径==\(finalPath)")
     return finalPath
 }
 
-/// 创建文件
+/// 在指定的路径下创建文件
+///
+/// - Parameters:
+///   - name: 文件的名字
+///   - inPath: 指定的路径
+/// - Returns: 返回 创建文件的路径,成功与否
+func kCreatFile(_ name:String, inPath:String) -> (String,Bool){
+
+    
+    let fileManager = FileManager.default
+    var finalPath:String?
+    var isSuccesed:Bool = false
+    finalPath = (inPath as NSString).strings(byAppendingPaths: [name]).last
+    if !fileManager.fileExists(atPath: finalPath!) {
+        isSuccesed = fileManager.createFile(atPath: finalPath!, contents: nil, attributes: nil)
+        
+    }
+    print("====文件的路径为\(finalPath!)")
+    return (finalPath!,isSuccesed)
+}
+/// 在doc里面创建文件
 ///
 /// - Parameter name: 文件名 比如 ios.text
 /// - Returns: 是否创建成功
 func kCreatFile(_ name:String) -> (String,Bool){
     let docPath:NSString = kGetDocumentPath()
     let fileManager = FileManager.default
-    let finalPath = docPath.appendingPathComponent(name)
-    let isSuccesed:Bool = fileManager.createFile(atPath: finalPath, contents: nil, attributes: nil)
-    return (finalPath,isSuccesed)
+    //            let finalPath = docPath.appendingPathComponent(name)
+    let finalPath = docPath.strings(byAppendingPaths: [name]).last
+    var isSuccesed:Bool = false
+    if !fileManager.fileExists(atPath: finalPath!) {
+        isSuccesed = fileManager.createFile(atPath: finalPath!, contents: nil, attributes: nil)
+
+    }
+    print("====文件的路径为\(finalPath)")
+    return (finalPath!,isSuccesed)
 }
 
 /// 写入文件内容 接上面这个方法

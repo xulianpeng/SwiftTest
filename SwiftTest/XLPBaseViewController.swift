@@ -70,24 +70,18 @@ class XLPBaseViewController: UIViewController {
                 subNoNetView?.removeFromSuperview()
             }
         }else{
-            
+            /*
             //MARK: 提示断网,检查网络连接,点击再次加载
             netStatus = false
             
             //展示
-//            subNoNetView = NoNetView.init(CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT), title: "数据连接已断开,请检查后重新加载", superView: myWindow, reloaDataBlock1: { (btn) in
-////                print("============无数据时点我重新加载===============")
-//                
-//                self.reloadHandle()
-//
-//            })
-//            subNoNetView?.initWithButtonText(text: "请您检查连接后重新加载数据,信球货")
             
             subNoNetView = NoNetView.init(64, title: "请您检查连接后重新加载数据,信球货", style: .OnlyText, superView: myWindow, reloaDataBlock1: { (btn) in
                 self.reloadHandle()
             })
             
             subNoNetView?.backgroundColor = .gray
+  */
         }
         
         
@@ -123,7 +117,7 @@ class XLPBaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    /*
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) 
         
@@ -145,6 +139,7 @@ class XLPBaseViewController: UIViewController {
 //            noNetToast.frame.origin.y = -64
 //        }
     }
+    */
     //做调试用
     func printLog<T>(message: T,
                   file: String = #file,

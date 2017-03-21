@@ -12,12 +12,16 @@ import CoreData
 import IQKeyboardManagerSwift
 import Alamofire
 import SDWebImage
+import SwiftyJSON
+import FMDB
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var isIOS9orLater = true
     
+    var dataBase : FMDatabase?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -94,8 +98,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ///2.浮点数相除,结果为对应的类型浮点数 所以计算缓存时强制转为 浮点数 最后取精度
         print(4/2,1/3,7/3,7.01/3,7.01/2.3)
         
-        let docPath = kGetDocumentPath() as String
-        kGetFolderSizeMBAtPath(docPath)
+        obtainTitleArr()
+        
+        let mm = kCreatFile("mm.text", inPath: kCreateDocDirectoryWith("xlp"))
+        kWriteToFile("万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦", at: mm.0)
+        
+        obtainTitleArrFromDB()
+        
+        
         return true
     
     }
@@ -162,6 +172,159 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
     }
     #endif
+    func initDataBase() {
+        
+//        let path = kCreatFile("SwifTest.sqlite").0
+        
+        
+        let pathArr = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let docPath:NSString = pathArr[0] as NSString
+        let path = docPath.strings(byAppendingPaths: ["SwifTest.sqlite"]).last
+        
+        
+        print(path)
+        if dataBase == nil {
+            dataBase = FMDatabase.init(path: path)
+        }else{
+            print("\(path)数据库已经初始化")
+        }
+
+        
+    }
+    
+    func creatTable(_ table:String,sqlStr:String)  {
+        if !dataBase!.open() {
+            
+            let hud = xlpHud.init(text: "亲,数据库未打开,初始化失败", constransY: 300)
+            hud.show()
+            hud.hideWhenAfter(time: 2)
+            
+            print("======Unable to open database========")
+            
+        }else{
+            
+            print("=============== open database=================")
+            
+            
+            
+            if (dataBase?.tableExists(table))! {
+                
+                print("*********表已存在*******************")
+                
+            }else{
+                
+                let sql = "create table " + table + "(" + sqlStr + ")"
+                
+                if (dataBase?.executeUpdate(sql, withArgumentsIn: nil))!{
+                    
+                    print("******创建表成功*******************")
+                }else{
+                    print("********创建表失败===================")
+                }
+                dataBase?.close()
+            }
+            
+        }
+        
+    }
+    @discardableResult
+    func insertTable(_ table:String,sql:String,dic:[String:Any])  -> Bool{
+        
+        var bool = false
+        if dataBase!.open() {
+            
+            
+            var valueArr = [Any]()
+            var arr = [String]()
+            
+            for key in sql.components(separatedBy: ",") {
+                
+                valueArr.append(dic[key]!)
+                arr.append("?")
+            }
+            
+            let arrString = (arr as NSArray).componentsJoined(by: ",")
+            let newSql = "insert into " + table + "(" + sql + ")" + "values" + "(" + arrString + ")"
+            print("========插入时的语句为\(newSql)")
+            bool = dataBase!.executeUpdate(newSql, withArgumentsIn: valueArr)
+            
+            if bool {
+                print("****************数据插入成功====================")
+            }else{
+                print("****************数据插入失败===failed: \(dataBase!.lastErrorMessage())")
+            }
+            
+            dataBase!.close()
+        }
+        return bool
+
+    }
+    func obtainTitleArr()  {
+        
+        
+//        initDataBase()
+//        creatTable("titleArr", sqlStr: "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+        
+        
+        
+        ///获得标题数组
+        xlpSqliteManager.creatTable("test", sqlStr: "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+        xlpSqliteManager.creatTable("titleArr", sqlStr: "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+        MyManager.sharedInstance.SucceedGETFull2(xlpNetGetTitleModel, parameters: [:]) { (json, error) in
+            
+            if error == nil{
+                
+                let modules = json!["modules"].array
+                
+                for dic in modules!{
+                    
+                    
+                    var newDic = [String:Any]()
+                    
+                    newDic["icon"] = dic["icon"].string!
+                    newDic["moduleID"] = dic["id"].int!
+                    newDic["oldTitle"] = dic["oldTitle"].string!
+                    newDic["remark"] = dic["remark"].string!
+                    newDic["tiny"] = dic["tiny"].string!
+                    newDic["title"] = dic["title"].string!
+                    newDic["version"] = dic["version"].int!
+                    newDic["visible"] = dic["visible"].int!
+                    newDic["weight"] = dic["weight"].int!
+                    
+                    
+//                    self.insertTable("titleArr", sql: "icon,moduleID,oldTitle,remark,tiny,title,version,visible,weight", dic: newDic)
+                    xlpSqliteManager.insertTable("titleArr", sql: "icon,moduleID,oldTitle,remark,tiny,title,version,visible,weight", dic: newDic)
+                    
+                }
+            }else{
+                
+                print(error!)
+            }
+            
+            
+        }
+    }
+    func obtainTitleArrFromDB(){
+        
+        
+        ///全部查询
+//        let sqlStr = "select * from titleArr order by moduleID desc"
+//        let titleArr = xlpSqliteManager.queryTable("titleArr", sql: sqlStr, id: nil)
+        
+//        let sqlStr = "select * from titleArr where moduleID > 20 order by moduleID desc "//->排序需放到最后
+        ///尝试二
+//        let sqlStr = "select * from titleArr where moduleID > ? and moduleID <= ? order by moduleID desc "
+//        let titleArr = xlpSqliteManager.queryTable("titleArr", sql:sqlStr , id: [20,30]) //-> oc里面 20需转为nsnumber 在这里不需要
+        
+        ///尝试三
+        let sqlStr = "select * from titleArr where tiny = ? order by moduleID desc "
+        let titleArr = xlpSqliteManager.queryTable("titleArr", sql:sqlStr , id: ["头条","炉石"])//-> ,默认只查询头条 第二个没有查询
+        
+        let deleteSucceed = xlpSqliteManager.deleteTable("titleArr", sql: "delete * from titleArr where moduleID = ?", atWhere: [19])
+        
+        
+        print(titleArr,deleteSucceed)
+    }
     
     
     // MARK: - Core Data stack
