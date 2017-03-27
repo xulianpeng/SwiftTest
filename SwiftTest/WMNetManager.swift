@@ -222,10 +222,7 @@ class MyManager {
     ///   - urlString: 网址
     ///   - parameters: 参数
     ///   - finished: 请求完成后的处理包括 成功和失败
-    func SucceedGETFull2(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping WMNetFinishBlock) {
-        
-        
-        
+    func SucceedGETFull2(_ urlString:String,parameters:Dictionary<String,Any>?,finished:@escaping WMNetFinishBlock) {
         Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON(completionHandler: { (response) in
             
             switch response.result {

@@ -109,35 +109,54 @@ func kRGB(r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat)->UIColor{
     return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: alpha)
 }
 //MARK:时间戳转时间
-func kObtainTimeWith(timestamp:Int) -> String {
-    
-    /*
-    var formatter : DateFormatter = DateFormatter()
-    formatter.dateStyle = DateFormatter.Style.medium
-    formatter.timeStyle = DateFormatter.Style.short
-    formatter.dateStyle = "yyyy/MM/dd HH:mm"
-    let timezone:NSTimeZone = NSTimeZone()
-    timezone.name = "Asia/Shanghai"
-    formatter.timeZone = timezone as TimeZone!
-    
-    let date:Date = Date.init(timeIntervalSinceNow: (timestamp as? Double)!)
-    date.timeIntervalSince1970
-    
-    timeStr = formatter.string(from: date)
-    */
+func kObtainTimeWith(timestamp:Int?) -> String {
     
     //转换为时间
-    let timeInterval:TimeInterval = TimeInterval(timestamp)
-    let date = NSDate(timeIntervalSince1970: timeInterval)
-    
-    //格式话输出
-    let dateformatter = DateFormatter()
-    dateformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
-    
-    
-    return dateformatter.string(from: date as Date)
+    if timestamp == nil {
+        return "暂无时间"
+    }else{
+        
+        let timeInterval:TimeInterval = TimeInterval(timestamp!)
+        let date = NSDate(timeIntervalSince1970: timeInterval)
+        //格式话输出
+        let dateformatter = DateFormatter()
+        //dateformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        dateformatter.dateFormat = "MM月dd日"
+
+        return dateformatter.string(from: date as Date)
+    }
     
 }
+
+func kTimeGetNow() -> Int {
+    return Int(Date().timeIntervalSince1970)
+}
+func kTimeCpmpareWithNow(_ time:Int) -> String {
+    let sub:Double = Double(kTimeGetNow() - time)
+    print("时间戳的差值为\(sub)",time,kTimeGetNow())
+    var value = "";
+    if (sub/60 < 1) {
+        //        value= NSLocalizedStringFromTable(@"just", @"IHLibStrings", @"刚刚");//国际化处理
+        value =  "刚刚";
+    }else if (sub/3600 < 1) {
+        let tmp = lrint(sub / 60.0)
+        value = "\(tmp)" + "分钟前"
+    }else if (sub/3600>1&&sub/86400<1){
+        let tmp = lrint(sub / 3600.0)
+        value = "\(tmp)" + "小时前"
+        
+    }
+        //    else if (sub/86400>1 && sub/86400<5){
+        //        int tmp = floor(sub/86400);
+        //        value = [NSString stringWithFormat:@"%d%@",tmp, @"天前"];
+        //    }
+    else{
+        value = kObtainTimeWith(timestamp: time)
+    }
+    
+    return value
+}
+
 //MARK:随机颜色
 func KRandomColor() -> UIColor {
     
@@ -454,13 +473,14 @@ func kInitActionSheetFinal(_ superView:UIViewController,message:String,first:Str
     superView.present(alertView, animated: true, completion: nil)
 }
 
-func kImageWithName(_ name:String)-> UIImage{
-    return UIImage.init(named:name)!
+func kImageWithName(_ name:String)-> UIImage?{
+    return UIImage.init(named:name)
 }
 
 //MARK: String相关的方法
-
-func kGetSizeOfString(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
+/// 计算字符串的尺寸
+///为很么要+3 实际算出来的宽度 会少这么多 否则会以省略号出现
+func kStringGetSize(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
     
     var lastSize = CGSize.zero
     
@@ -468,8 +488,11 @@ func kGetSizeOfString(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
         lastSize = string!.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],attributes:[NSFontAttributeName:font],context: nil).size
         
     }
+    lastSize  = CGSize(width:lastSize.width + 3,height:lastSize.height)
     return lastSize
 }
+///计算字符的个数(包括中英文)
+
 
 //#if DEBUG
 //#else

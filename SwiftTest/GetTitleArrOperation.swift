@@ -17,13 +17,14 @@ class GetTitleArrOperation: Operation {
     var delegate :GetTitleArrOperationDelegate?
     
     var url : String
-    var paraDic : [String:String]
+    var paraDic : [String:String]?
     
     
-    init(_ url:String,paraDic:[String:String]) {
+    init(_ url:String,para:[String:String]?) {
         
         self.url = url
-        self.paraDic = paraDic
+        self.paraDic = para
+        
         
         
     }
@@ -38,19 +39,12 @@ class GetTitleArrOperation: Operation {
         
     }
     
-    func obtainData(_ url:String,para:[String:String]) {
+    func obtainData(_ url:String,para:[String:String]?) {
         
         
         MyManager.sharedInstance.SucceedGETFull2(url, parameters: para) { (json, error) in
             
             if json != nil{
-                
-                //                let  homeModel = zhiHuControllerModal(json!)
-                
-                //                self.zhiHuTopCellModelArr = homeModel.top_stroies
-                //                self.zhiHuCellModelArr = homeModel.stroies
-                //                self.rootTableView.reloadData()
-                
                 
                 self.delegate?.getTitleArrDelegateSuccess(json)
                 

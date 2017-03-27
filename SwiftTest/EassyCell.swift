@@ -33,18 +33,18 @@ class EassyCell: UITableViewCell {
         */
         
 //        let url:URL = URL.init(string: modal.thumbnail)!
-// MARK:AF的用法       newsImage.setImageWith(url, placeholderImage: UIImage.init(named:"cellImage"))
+// MARK:AF的用法       newsImage.setImageWith(url, placeholderImage: UIImage.init(named:"defaultCell"))
         //SD的用法
-//        newsImage.sd_setImage(with: url, placeholderImage: UIImage.init(named:"cellImage"), options: [.progressiveDownload,.transformAnimatedImage,.retryFailed])
+//        newsImage.sd_setImage(with: url, placeholderImage: UIImage.init(named:"defaultCell"), options: [.progressiveDownload,.transformAnimatedImage,.retryFailed])
         
         //MARK:kingfisher的用法
 //        let identifier = "CarouselBanner\(index)"
 //        let resource = ImageResource(downloadURL: url, cacheKey: nil)
-////        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"cellImage"), options:[.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: {
+////        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"defaultCell"), options:[.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: {
 ////            
 ////        })
 //        
-//        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"cellImage"), options: [.transition(.flipFromLeft(1)),.processor(RoundCornerImageProcessor(cornerRadius: CGFloat(100)))], progressBlock: { (mm,nn) in
+//        newsImage.kf.setImage(with: resource, placeholder: UIImage.init(named:"defaultCell"), options: [.transition(.flipFromLeft(1)),.processor(RoundCornerImageProcessor(cornerRadius: CGFloat(100)))], progressBlock: { (mm,nn) in
 //            print(mm,nn)
 //            
 //        }) { (aImage, aNSError, aCacheType, aURL) in
@@ -54,8 +54,8 @@ class EassyCell: UITableViewCell {
 //        }
         
         //MARK: 封装Kingfisher的用法
-//        newsImage.xlpSetImage(modal.thumbnail, placeholder: "cellImage")
-        newsImage.xlpSetImageCircle(modal.thumbnail, placeholder: "cellImage", diameter: Int(100))
+//        newsImage.xlpSetImage(modal.thumbnail, placeholder: "defaultCell")
+        newsImage.xlpSetImageCircle(modal.thumbnail, placeholder: "defaultCell", diameter: Int(100))
         
         
     }

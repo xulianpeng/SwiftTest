@@ -63,7 +63,50 @@ extension UILabel{
         self.initLabel(text, textColor: kLabelTextColor, fontSize: kLabelFontSize, isBold: false, aligenment: .left, backgroundColor: .clear, superView: superView, snpMaker: snpMaker)
     }
 
-    //MARK:
+    
+    func xlpInitLabel(_ text:String?,
+                   textColor:UIColor?,
+                   fontSize:CGFloat,
+                   isBold:Bool,
+                   aligenment:NSTextAlignment,
+                   backgroundColor:UIColor?,
+                   superView:UIView,
+                   snpMaker:WMSnapMakerBlock) {
+        self.text = text;
+        self.textColor = textColor
+        if isBold {
+            self.font = UIFont.boldSystemFont(ofSize: fontSize)
+        }else{
+            
+            self.font = UIFont.systemFont(ofSize: fontSize)
+        }
+        self.textAlignment = aligenment
+        self.backgroundColor = backgroundColor
+        self.numberOfLines = 0;
+        superView.addSubview(self)
+        self.snp.makeConstraints(snpMaker)
+        
+    }
+    func xlpInitLabel(_ textColor:UIColor?,
+                      fontSize:CGFloat,
+                      isBold:Bool,
+                      aligenment:NSTextAlignment,
+                      backgroundColor:UIColor?,
+                      superView:UIView,
+                      snpMaker:WMSnapMakerBlock) {
+        
+        xlpInitLabel(nil, textColor: textColor, fontSize: fontSize, isBold: isBold, aligenment: aligenment, backgroundColor: backgroundColor, superView: superView, snpMaker: snpMaker)
+        
+    }
+    func xlpInitLabel(_ textColor:UIColor?,
+                      fontSize:CGFloat,
+                      aligenment:NSTextAlignment,
+                      superView:UIView,
+                      snpMaker:WMSnapMakerBlock) {
+        
+        xlpInitLabel(nil, textColor: textColor, fontSize: fontSize, isBold: false, aligenment: aligenment, backgroundColor: .clear, superView: superView, snpMaker: snpMaker)
+        
+    }
     
 }
 
@@ -532,8 +575,43 @@ extension UITableView{
         self.delegate = delegate as? UITableViewDelegate
         self.dataSource = delegate as? UITableViewDataSource
         self.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        //cellClass
+        /*
+        if cellClass != nil {
+            
+            for cell in cellClass! {
+                
+                let identifier:String =  NSStringFromClass(cell!) as String
+                print(identifier)
+                self.register(cell, forCellReuseIdentifier: identifier)
+            }
+        }*/
         superView.addSubview(self)
-        self.reloadData()
+        
+        
+    }
+    func initTableView(delegate:Any,superView:UIView,cellClass:[AnyClass?]?) {
+        
+        self.backgroundColor = .clear
+        self.delegate = delegate as? UITableViewDelegate
+        self.dataSource = delegate as? UITableViewDataSource
+        self.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        //cellClass
+        
+        if cellClass != nil {
+            
+            for cell in cellClass! {
+                
+                let identifier:String =  NSStringFromClass(cell!) as String
+                var lastStr :String = ""
+                if identifier.components(separatedBy: ".").count > 0 {
+                    lastStr = identifier.components(separatedBy: ".").last!
+                }
+                self.register(cell, forCellReuseIdentifier: lastStr)
+            }
+        }
+        superView.addSubview(self)
+        
         
     }
 }

@@ -27,7 +27,6 @@ class UserManager{
     
     //注册  用户名账号注册  第三方注册
     class  func registWith(_ name:String,passWord:String)  {
-        
         //网络请求 根据返回结果 更新 WMUser 跳转APP首页
     }
     

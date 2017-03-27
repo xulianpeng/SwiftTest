@@ -51,7 +51,7 @@ class TitleArrView: UIView {
             
             for titleStr in titleArr {
                 
-                let titleWidth = kGetSizeOfString(titleStr, font: kFontWithSize(theFontSize), maxSize: CGSize(width:kSCREENWIDTH,height:kSCREENHEIGHT)).width
+                let titleWidth = kStringGetSize(titleStr, font: kFontWithSize(theFontSize), maxSize: CGSize(width:kSCREENWIDTH,height:kSCREENHEIGHT)).width
                 
                 titleWidthArr.append(titleWidth + kPading)
                 buttonX += (titleWidth + kPading)

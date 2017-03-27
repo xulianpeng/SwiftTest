@@ -39,7 +39,7 @@ class zhiHuCell: UITableViewCell {
         
         let url:URL = URL.init(string: modal.imageURL!)!
         
-        self.rightImage?.setImageWith(url, placeholderImage: UIImage.init(named:"cellImage"))
+        self.rightImage?.setImageWith(url, placeholderImage: UIImage.init(named:"defaultCell"))
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

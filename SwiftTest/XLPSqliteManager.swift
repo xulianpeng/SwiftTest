@@ -70,6 +70,14 @@ class XLPSqliteManager {
 
     }
     
+    
+    /// 增 即插入新的数据
+    ///
+    /// - Parameters:
+    ///   - table: 表名
+    ///   - sql: sql语句
+    ///   - dic: <#dic description#>
+    /// - Returns: 返回bool值
     @discardableResult
     func insertTable(_ table:String,sql:String,dic:[String:Any]) -> Bool {
         
@@ -103,6 +111,34 @@ class XLPSqliteManager {
         
     }
     
+    @discardableResult
+    func insertTable(_ table:String,sql:String,limitArr:[Any]?) -> Bool {
+        
+        var bool = false
+        if dataBase.open() {
+            var arr = [String]()
+            
+            for _ in sql.components(separatedBy: ",") {
+                
+                arr.append("?")
+            }
+            
+            let arrString = (arr as NSArray).componentsJoined(by: ",")
+            let newSql = "insert into " + table + "(" + sql + ")" + "values" + "(" + arrString + ")"
+            print("========插入时的语句为\(newSql)")
+            bool = dataBase.executeUpdate(newSql, withArgumentsIn: limitArr)
+            
+            if bool {
+                print("****************数据插入成功====================")
+            }else{
+                print("****************数据插入失败===failed: \(dataBase.lastErrorMessage())")
+            }
+            
+            dataBase.close()
+        }
+        return bool
+        
+    }
     /// 查询 
     /// desc 逆序  asc 顺序
     /// - Parameters:
@@ -110,40 +146,59 @@ class XLPSqliteManager {
     ///   - sql: <#sql description#>
     ///   - id: <#id description#>
     /// - Returns: <#return value description#>
-    func queryTable(_ table:String,sql:String,id:[Any]?) -> [Any] {
+    func queryTable(_ table:String,sql:String,id:[Any]?) -> FMResultSet {
         
-        var resultArr = [Any]()
+        var resultSet = FMResultSet()
         
         if dataBase.open() {
             
 //            let resultSet:FMResultSet = dataBase.executeQuery(sql, withArgumentsIn: id)
-            let resultSet:FMResultSet = try! dataBase.executeQuery(sql, values: id)
+            resultSet = try! dataBase.executeQuery(sql, values: id)
 
 //            let resultSet:FMResultSet = try! dataBase.executeQuery(sql, withVAList: <#T##CVaListPointer#>)//-> 此方法暂时未查到相关用法
 
-
+           /*
             while resultSet.next() {
                 
                 print("=====查询结果为\(resultSet.string(forColumn: "icon")),\(resultSet.int(forColumn: "moduleID")),\(resultSet.string(forColumn: "tiny"))")
                 resultArr.append("一个结果啦啦啦")
                 
             }
+            */
         }
         
-        print("===========查询结果为\(resultArr.count)")
-        return resultArr
+        return resultSet
     }
     
+    /// 销毁表
+    ///
+    /// - Parameter table: 表名
+    /// - Returns: bool值
+    @discardableResult
     func dropTable(_ table:String) -> Bool {
         
         var dropSucceed = false
         if dataBase.open() {
-            let sql = "drop from \(table)"
+//            let sql = "drop from table \(table)" //句法错误
+            
+            let sql = "drop table \(table)"
             dropSucceed = dataBase.executeUpdate(sql, withArgumentsIn: nil)
+            if !dropSucceed {
+                print("======删除表失败\(dataBase.lastErrorMessage())")
+            }
         }
         return dropSucceed
     }
     
+    
+    /// 删-删除表中数据
+    ///
+    /// - Parameters:
+    ///   - table: 表名
+    ///   - sql: 删除语句
+    ///   - atWhere: 条件
+    /// - Returns: bool值
+    @discardableResult
     func deleteTable(_ table:String, sql:String ,atWhere:[Any]?) -> Bool {
         
         var deleteSucceed = false
@@ -151,8 +206,44 @@ class XLPSqliteManager {
             
 //            deleteSucceed = dataBase.executeUpdate(<#T##sql: String!##String!#>, withArgumentsIn: <#T##[Any]!#>)
 //            deleteSucceed = dataBase.executeUpdate(sql, withParameterDictionary: <#T##[AnyHashable : Any]!#>)
+//            try? dataBase.executeUpdate(sql, values: atWhere)
             deleteSucceed = dataBase.executeUpdate(sql, withArgumentsIn: atWhere)
+            
+//            let sql1 = "delete table titleArr where tiny = ?" //错误的
+//            let sql2 = "delete from titleArr where tiny = ?"  //正确的 不能添加 * 号
+
+//            let sql3 = "delete titleArr where tiny = ?" //错误的
+
+            if !deleteSucceed {
+                print("======删除数据失败\(dataBase.lastErrorMessage())")
+            }
         }
         return deleteSucceed
+    }
+    
+    
+    /// 改 更新表中的数据
+    ///
+    /// - Parameters:
+    ///   - table: <#table description#>
+    ///   - sql: <#sql description#>
+    ///   - atWhere: <#atWhere description#>
+    /// - Returns: <#return value description#>
+    @discardableResult
+    func updateTable(_ table:String,sql:String,atWhere:[Any]?) -> Bool {
+        
+        var updateSucceed = false
+        
+        if dataBase.open() {
+            
+            updateSucceed = dataBase.executeUpdate(sql, withArgumentsIn: atWhere)
+            if !updateSucceed {
+                print("======更新数据失败\(dataBase.lastErrorMessage())")
+
+            }
+            
+        }
+        dataBase.close()
+        return updateSucceed
     }
 }

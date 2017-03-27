@@ -320,10 +320,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sqlStr = "select * from titleArr where tiny = ? order by moduleID desc "
         let titleArr = xlpSqliteManager.queryTable("titleArr", sql:sqlStr , id: ["头条","炉石"])//-> ,默认只查询头条 第二个没有查询
         
-        let deleteSucceed = xlpSqliteManager.deleteTable("titleArr", sql: "delete * from titleArr where moduleID = ?", atWhere: [19])
+//        let deleteSucceed = xlpSqliteManager.deleteTable("titleArr", sql: "delete from titleArr where tiny = ?", atWhere: ["炉石"])
+        let titleArr1 = xlpSqliteManager.queryTable("titleArr", sql:sqlStr , id: ["头条"])//-> ,默认只查询头条 第二个没有查询
+
+//        let dropTag = xlpSqliteManager.dropTable("titleArr")
         
+        let updateSql = "update titleArr set weight = ? where tiny = ? "
+        let updateSucceed = xlpSqliteManager.updateTable("titleArr", sql: updateSql ,atWhere:[-100,"头条"] )
         
-        print(titleArr,deleteSucceed)
+        print(titleArr,titleArr1,updateSucceed)
     }
     
     

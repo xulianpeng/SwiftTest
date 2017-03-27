@@ -7,18 +7,17 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrViewDelegate {
+class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrViewDelegate,GetTitleArrOperationDelegate {
 
-//    let firstVC = XLPBaseViewController()
-//    let secondVC = XLPBaseViewController()
-//    let thirdVC = XLPBaseViewController()
+    
     
     var titleView :TitleArrView?
     
-    var titleArr = ["资讯","守望","炉石","昆特","游戏王","万智","阵面","电游","手游","皇战","电台","HEX","杂谈"]
+    var titleArr = [String]()
+        //["资讯","守望","炉石","昆特","游戏王","万智","阵面","电游","手游","皇战","电台","HEX","杂谈"]
     
-//    var vcArr = [NewsViewController]()
     let mainView = UIScrollView()
     
     let mainHeight = kSCREENHEIGHT - 64 - 44
@@ -27,6 +26,19 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(initVC), name: NSNotification.Name(rawValue:"getTitleSucceed"), object: nil)
+        
+        ///初始化moduleList数据库
+        xlpSqliteManager.creatTable(kTableModuleList, sqlStr: "id integer PRIMARY KEY AUTOINCREMENT,moduleID integer NOT NULL UNIQUE,tiny text NOT NULL,title text NOT NULL,weight integer NOT NULL")
+        
+        let getTitleOperation = GetTitleArrOperation.init(urlGetModuleList, para: nil)
+        getTitleOperation.delegate = self
+        let queue = OperationQueue.current
+        queue?.addOperation(getTitleOperation)
+        
+    }
+    func initVC() {
+        
         initNavTitleView()
         
         mainView.frame = CGRect(x:0,y:64,width:kSCREENWIDTH,height:mainHeight )
@@ -46,7 +58,6 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
             self.addChildViewController(childVC)
             
         }
-        
     }
     func initNavTitleView()  {
         
@@ -76,6 +87,32 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
             
             titleView?.setCurrentIndex(index)
         }
+        
+    }
+    func getTitleArrDelegateSuccess(_ json: JSON?) {
+        
+        if (json?["success"].bool!)! {
+            
+            let arr = json?["modules"].array!
+            for dic in arr! {
+                let newDic = dic.dictionary
+                
+                var arr = [Any]()
+                arr.append((newDic?["id"])!.int!)
+                arr.append((newDic?["tiny"])!.string!)
+                arr.append((newDic?["title"])!.string!)
+                arr.append((newDic?["weight"])!.int!)
+
+                xlpSqliteManager.insertTable(kTableModuleList, sql: "moduleID,tiny,title,weight", limitArr:arr)
+                titleArr.append((newDic?["tiny"])!.string!)
+            }
+            
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "getTitleSucceed"), object: nil)
+            
+        } else {
+            
+        }
+        
         
     }
     override func didReceiveMemoryWarning() {

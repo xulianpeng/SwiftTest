@@ -27,7 +27,7 @@ class EassyCell2: UITableViewCell {
        
         
         let url:URL = URL.init(string: modal.thumbnail)!
-        newsImage.setImageWith(url, placeholderImage: UIImage.init(named:"cellImage"))
+        newsImage.setImageWith(url, placeholderImage: UIImage.init(named:"defaultCell"))
         
     }
     
