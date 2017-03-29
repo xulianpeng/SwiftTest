@@ -614,6 +614,27 @@ extension UITableView{
         
         
     }
+    
+    func xlpInitTableViewEnd(delegate:Any,superView:UIView,cellClass:[AnyClass?]?)  {
+    
+        self.backgroundColor = .clear
+        self.delegate = delegate as? UITableViewDelegate
+        self.dataSource = delegate as? UITableViewDataSource
+        self.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        if cellClass != nil {
+            
+            for cell in cellClass! {
+                
+                let identifier:String =  NSStringFromClass(cell!) as String
+                var lastStr :String = ""
+                if identifier.components(separatedBy: ".").count > 0 {
+                    lastStr = identifier.components(separatedBy: ".").last!
+                }
+                self.register(cell, forCellReuseIdentifier: lastStr)
+            }
+        }
+        superView.addSubview(self)
+    }
 }
 class WMUIExtension: NSObject {
 

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import FMDB
 
 /// 包括相关默认属性 常用设置 宏等 工具类方法 一些系统方法的简写
 /// APP相关的密匙之类的相关属性
@@ -31,7 +31,7 @@ let kTFPlaceholderColor = UIColor.lightGray
 
 
 //MARK: 营地token
-let kToken = "E1BB0782CF8E65F29356A8DE7D86A28B"
+let kToken = "BD5DAF44780199E97C4DE2285CDB345B"
 
 
 //func kWeakSelf(_ any:Any) -> Any {
@@ -493,7 +493,21 @@ func kStringGetSize(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
 }
 ///计算字符的个数(包括中英文)
 
+func kXlpInitTableViewBegin(_ height:CGFloat,style:UITableViewStyle) -> UITableView{
+    return UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64 - height), style: style) as UITableView
+    
+}
 
+
+/// FMDB的坑点
+///   integer 在查询时 其结果类型为 Int32, 须先转为Int,才能做其他类型的转换,否则最终结果会为nil
+/// - Parameters:
+///   - resultSet: 目标
+///   - column: 字段
+/// - Returns: 字段对应的value值
+func IntFor(_ resultSet:FMResultSet,column:String ) -> Int {
+    return Int(resultSet.int(forColumn: column))
+}
 //#if DEBUG
 //#else
 //#endif

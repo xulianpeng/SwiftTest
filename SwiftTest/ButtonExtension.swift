@@ -151,6 +151,19 @@ extension UIButton{
         self.xlpInitRootButton(title, titleColor: titleColor, fontSize: fontSize, backgroundColor: .clear, imageStr: nil, backgroundImageStr: nil, cornerRedius: nil, superView: superView, snpMaker: snpMaker, buttonClick: buttonClick)
     }
     
+    /// 带frame的button的初始化
+    ///
+    /// - Parameters:
+    ///   - frame: <#frame description#>
+    ///   - title: <#title description#>
+    ///   - titleColor: <#titleColor description#>
+    ///   - fontSize: <#fontSize description#>
+    ///   - backgroundColor: <#backgroundColor description#>
+    ///   - imageStr: <#imageStr description#>
+    ///   - backgroundImageStr: <#backgroundImageStr description#>
+    ///   - cornerRedius: <#cornerRedius description#>
+    ///   - superView: <#superView description#>
+    ///   - buttonClick: <#buttonClick description#>
     func xlpInitRootButtonFrame(_ frame:CGRect,
                            title:String?,
                            titleColor:UIColor?,
@@ -196,6 +209,15 @@ extension UIButton{
         
     }
 
+    /// 带frame的按钮简化方法
+    ///
+    /// - Parameters:
+    ///   - frame: <#frame description#>
+    ///   - title: <#title description#>
+    ///   - titleColor: <#titleColor description#>
+    ///   - fontSize: <#fontSize description#>
+    ///   - superView: <#superView description#>
+    ///   - buttonClick: <#buttonClick description#>
     func xlpInitFinalButtonFrame(_ frame:CGRect,
                                  title:String?,
                                  titleColor:UIColor?,
@@ -206,6 +228,48 @@ extension UIButton{
         xlpInitRootButtonFrame(frame, title: title, titleColor: titleColor, fontSize: fontSize, backgroundColor: .clear, imageStr: nil, backgroundImageStr: nil, cornerRedius: nil, superView: superView, buttonClick: buttonClick)
         
     }
+    
+    func xlpInitButtonEassy(_ title:String?,
+                       titleColor:UIColor?,
+                       fontSize:CGFloat?,
+                       backgroundColor:UIColor?,
+                       imageStr:String?,
+                       backgroundImageStr:String?,
+                       cornerRedius:CGFloat?,
+                       superView:UIView,
+                       snpMaker:WMSnapMakerBlock) {
+        
+        if title != nil {
+            self.setTitle(title, for: .normal)
+        }
+        if titleColor != nil {
+            self.setTitleColor(titleColor, for: .normal)
+        }
+        if fontSize != nil {
+            
+            self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize!)
+        }
+        if backgroundColor != nil {
+            self.backgroundColor = backgroundColor
+        }
+        if imageStr != nil {
+            self.setImage(UIImage.init(named: imageStr!), for: .normal)
+        }
+        if backgroundImageStr != nil {
+            self.setBackgroundImage(UIImage.init(named: backgroundImageStr!), for: .normal)
+        }
+        if cornerRedius != nil {
+            self.layer.cornerRadius = cornerRedius!
+            self.layer.masksToBounds = true
+        }        
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
+        superView.addSubview(self)
+        self.snp.makeConstraints(snpMaker)
+        
+        
+    }
+    
+    
 }
 
 

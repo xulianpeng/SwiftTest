@@ -139,6 +139,42 @@ class XLPSqliteManager {
         return bool
         
     }
+    
+    func insertTable(_ table:String,sql:String,dic:[String:Any],limitTag:[String]) -> Bool {
+        
+        var bool = false
+        if dataBase.open() {
+            
+            
+            var valueArr = [Any]()
+            var arr = [String]()
+            
+            for key in sql.components(separatedBy: ",") {
+                
+                valueArr.append(dic[key]!)
+                arr.append("?")
+            }
+            
+            let arrString = (arr as NSArray).componentsJoined(by: ",")
+            let newSql = "insert into " + table + "(" + sql + ")" + "values" + "(" + arrString + ")"
+            print("========插入时的语句为\(newSql)")
+            
+//            dataBase.executeQuery("select *from \(table) where ", withArgumentsIn: <#T##[Any]!#>)
+            
+            bool = dataBase.executeUpdate(newSql, withArgumentsIn: valueArr)
+            
+            if bool {
+                print("****************数据插入成功====================")
+            }else{
+                print("****************数据插入失败===failed: \(dataBase.lastErrorMessage())")
+            }
+            
+            dataBase.close()
+        }
+        return bool
+        
+    }
+
     /// 查询 
     /// desc 逆序  asc 顺序
     /// - Parameters:
@@ -246,4 +282,6 @@ class XLPSqliteManager {
         dataBase.close()
         return updateSucceed
     }
+    
+    
 }

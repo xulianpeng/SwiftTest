@@ -156,7 +156,7 @@ class MyManager {
     static let sharedInstance = MyManager()
     private init(){}
     
-    func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
+    func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>?,succeed:@escaping WMNetSucceedBlock) {
         
 //        SVProgressHUD.setBackgroundColor(.gray)
 //        SVProgressHUD.show()
@@ -185,7 +185,7 @@ class MyManager {
         })
     }
 
-    func SucceedGETFull(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock,failed:@escaping failureClosure) {
+    func SucceedGETFull(_ urlString:String,parameters:Dictionary<String,Any>?,succeed:@escaping WMNetSucceedBlock,failed:@escaping failureClosure) {
         
         //        SVProgressHUD.setBackgroundColor(.gray)
         //        SVProgressHUD.show()
@@ -236,6 +236,50 @@ class MyManager {
             }
         
         })
+    }
+    
+//MARK: post请求 para有的话 不能合并到url里面 否则会出现 valid url的错误  至于get请求 暂不清楚
+    
+    func SucceedPOST(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
+        
+        Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: { (response) in
+            
+            //            SVProgressHUD.dismiss()
+            
+            switch response.result {
+            case .success(let value):
+                
+                let theValueJson = JSON(value)
+                succeed(theValueJson)
+                
+            case.failure:
+                
+                let theError = response.result.error!
+                
+                print("=====\(theError)")
+                
+                
+                break
+            }
+            
+            
+        })
+    }
+    func SucceedPOSTFull2(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping WMNetFinishBlock) {
+        Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: { (response) in
+            
+            switch response.result {
+                
+            case .success(let value):
+                let theValueJson = JSON(value)
+                finished(theValueJson,nil)
+            case.failure:
+                let theError = response.result.error!
+                finished(nil,theError)
+            }
+            
+        })
+    
     }
 
 }

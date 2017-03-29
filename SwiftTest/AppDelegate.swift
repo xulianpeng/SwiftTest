@@ -181,8 +181,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let docPath:NSString = pathArr[0] as NSString
         let path = docPath.strings(byAppendingPaths: ["SwifTest.sqlite"]).last
         
-        
-        print(path)
         if dataBase == nil {
             dataBase = FMDatabase.init(path: path)
         }else{

@@ -65,6 +65,10 @@
 		079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */; };
 		079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */; };
 		07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */; };
+		07B493CB1E8A423200791A76 /* SeriesHearthStone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B493CA1E8A423200791A76 /* SeriesHearthStone.swift */; };
+		07B493CE1E8A48B800791A76 /* DataManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B493CD1E8A48B800791A76 /* DataManagerCell.swift */; };
+		07B493D21E8A4A6D00791A76 /* XLPBaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B493D11E8A4A6D00791A76 /* XLPBaseTableCell.swift */; };
+		07B493D61E8A4CE600791A76 /* DataManagerSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B493D51E8A4CE600791A76 /* DataManagerSubCell.swift */; };
 		07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F631E12732B00DCB71D /* WMUIExtension.swift */; };
 		07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F6E1E15062800DCB71D /* WMNetManager.swift */; };
 		07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */; };
@@ -88,6 +92,7 @@
 		07F87CB31E2F102400CE7178 /* libCCSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F87CB21E2F102400CE7178 /* libCCSDK.a */; };
 		07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */; };
 		07FA9E831E891AC900674614 /* YingdiToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA9E821E891AC900674614 /* YingdiToolViewController.swift */; };
+		07FA9E851E8A2E9900674614 /* YDToolDataManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA9E841E8A2E9900674614 /* YDToolDataManagerController.swift */; };
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
@@ -205,6 +210,10 @@
 		079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewSnapKitVController.swift; sourceTree = "<group>"; };
 		079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIMaker.swift; sourceTree = "<group>"; };
 		07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		07B493CA1E8A423200791A76 /* SeriesHearthStone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesHearthStone.swift; sourceTree = "<group>"; };
+		07B493CD1E8A48B800791A76 /* DataManagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerCell.swift; sourceTree = "<group>"; };
+		07B493D11E8A4A6D00791A76 /* XLPBaseTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPBaseTableCell.swift; sourceTree = "<group>"; };
+		07B493D51E8A4CE600791A76 /* DataManagerSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerSubCell.swift; sourceTree = "<group>"; };
 		07C31F631E12732B00DCB71D /* WMUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIExtension.swift; sourceTree = "<group>"; };
 		07C31F6E1E15062800DCB71D /* WMNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNetManager.swift; sourceTree = "<group>"; };
 		07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelBannerView.swift; sourceTree = "<group>"; };
@@ -236,6 +245,7 @@
 		07F87CB21E2F102400CE7178 /* libCCSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCCSDK.a; sourceTree = "<group>"; };
 		07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDemoViewController.swift; sourceTree = "<group>"; };
 		07FA9E821E891AC900674614 /* YingdiToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YingdiToolViewController.swift; sourceTree = "<group>"; };
+		07FA9E841E8A2E9900674614 /* YDToolDataManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDToolDataManagerController.swift; sourceTree = "<group>"; };
 		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -437,6 +447,7 @@
 				079FE42D1E0BAAB3007DF3DE /* XLPBaseViewController.swift */,
 				079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */,
 				07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */,
+				07B493D11E8A4A6D00791A76 /* XLPBaseTableCell.swift */,
 				079FE4331E0CBA89007DF3DE /* WMUIMaker.swift */,
 				07C31F631E12732B00DCB71D /* WMUIExtension.swift */,
 				077367CF1E657AB6002BFB86 /* UIViewController+Extension.swift */,
@@ -453,6 +464,15 @@
 				07956E2E1E69404D00E8D22D /* testOperation11.swift */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		07B493CC1E8A488100791A76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07B493CD1E8A48B800791A76 /* DataManagerCell.swift */,
+				07B493D51E8A4CE600791A76 /* DataManagerSubCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		07F39F091E1CEEF700EE268B /* 知乎日报 */ = {
@@ -518,7 +538,10 @@
 		07FA9E7F1E891A1800674614 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				07B493CC1E8A488100791A76 /* View */,
 				07FA9E821E891AC900674614 /* YingdiToolViewController.swift */,
+				07FA9E841E8A2E9900674614 /* YDToolDataManagerController.swift */,
+				07B493CA1E8A423200791A76 /* SeriesHearthStone.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -861,6 +884,8 @@
 				079F68821E78F038001E882D /* YingDiViewController.swift in Sources */,
 				075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */,
 				073302241E5ECFC200A87D52 /* zhiHuObtainDataOperation.m in Sources */,
+				07B493CE1E8A48B800791A76 /* DataManagerCell.swift in Sources */,
+				07FA9E851E8A2E9900674614 /* YDToolDataManagerController.swift in Sources */,
 				07956E721E6D5CEC00E8D22D /* PopoverAction.m in Sources */,
 				079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */,
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
@@ -893,10 +918,12 @@
 				89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */,
 				079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */,
 				07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */,
+				07B493D61E8A4CE600791A76 /* DataManagerSubCell.swift in Sources */,
 				07F39F3A1E24F9E900EE268B /* videoPlayViewController.swift in Sources */,
 				071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */,
 				079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */,
 				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,
+				07B493D21E8A4A6D00791A76 /* XLPBaseTableCell.swift in Sources */,
 				079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */,
 				07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */,
 				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
@@ -911,6 +938,7 @@
 				07FA9E831E891AC900674614 /* YingdiToolViewController.swift in Sources */,
 				077145F81E7A2AC2003332E2 /* AppUrl.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
+				07B493CB1E8A423200791A76 /* SeriesHearthStone.swift in Sources */,
 				073301D21E5BE39300A87D52 /* EvernoteTransition.swift in Sources */,
 				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,
 				077145FA1E7A32E0003332E2 /* XLPSqliteManager.swift in Sources */,
