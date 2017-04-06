@@ -8,6 +8,7 @@
 
 import UIKit
 import FMDB
+import Alamofire
 class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     var rootTableView = UITableView.init(frame: CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64), style: .grouped)
@@ -263,31 +264,47 @@ class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UIT
         var row = 0
         var section = 0
         let mmm = "\(sender.tag)" as NSString
-        let sectionStr = mmm.substring(to: 1)
-        let rowStr = mmm.substring(from: 1)
-        section = Int(sectionStr)! - 1
-        row = Int(rowStr)!
-        
-        var series:SeriesHearthStone
-        if section == 0 {
+        if mmm.length >= 2 {
             
-            series = dataWildArr[row - 1] as! SeriesHearthStone
-        }else if section == 1{
-            series = dataStandArr[row - 1] as! SeriesHearthStone
+            let sectionStr = mmm.substring(to: 1)
+            let rowStr = mmm.substring(from: 1)
+            section = Int(sectionStr)! - 1
+            row = Int(rowStr)!
+            
+            var series:SeriesHearthStone
+            if section == 0 {
+                
+                series = dataWildArr[row - 1] as! SeriesHearthStone
+            }else if section == 1{
+                series = dataStandArr[row - 1] as! SeriesHearthStone
+                
+            }else{
+                series = dataLastArr[row - 1] as! SeriesHearthStone
+                
+            }
+            
+            //根据series处理
+            var imageUrl = ""
+            let resultSet = xlpSqliteManager.queryTable(kTableToolPackageHearthStone, sql: "select * from \(kTableToolPackageHearthStone) where series = ?", id: [series.id!])
+            while resultSet.next() {
+                imageUrl = resultSet.string(forColumn: "url")
+            }
+            
+            //下载图片解压到本地
+            Alamofire.request(imageUrl, method: .get, parameters: nil).responseData { (data) in
+                
+                print("卡片下载的数据为\(data,data.data)")
+                let path = kCreateDocDirectoryWith("CardData");
+                let outPath = kCreateDocDirectoryWith("Card");
+                
+                let url = URL.init(fileURLWithPath: path)
+                try? data.data!.write(to: url, options: .atomic)
+                
+                try? SSZipArchive.unzipFile(atPath: path, toDestination: outPath, overwrite: true, password: nil);
+            }
 
-        }else{
-            series = dataLastArr[row - 1] as! SeriesHearthStone
-
+            
         }
-        
-        //根据series处理
-        var imageUrl = ""
-        let resultSet = xlpSqliteManager.queryTable(kTableToolPackageHearthStone, sql: "select * from \(kTableToolPackageHearthStone) where series = ?", id: [series.id!])
-        while resultSet.next() {
-            imageUrl = resultSet.string(forColumn: "url")
-        }
-        
-        //下载图片解压到本地
         
         
     }

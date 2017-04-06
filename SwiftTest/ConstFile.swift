@@ -31,7 +31,7 @@ let kTFPlaceholderColor = UIColor.lightGray
 
 
 //MARK: 营地token
-let kToken = "BD5DAF44780199E97C4DE2285CDB345B"
+let kToken = "1B1521EA04DC430A5654FAAC6DA6075E"
 
 
 //func kWeakSelf(_ any:Any) -> Any {

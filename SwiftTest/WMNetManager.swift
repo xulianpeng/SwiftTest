@@ -238,6 +238,7 @@ class MyManager {
         })
     }
     
+
 //MARK: post请求 para有的话 不能合并到url里面 否则会出现 valid url的错误  至于get请求 暂不清楚
     
     func SucceedPOST(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
@@ -265,6 +266,39 @@ class MyManager {
             
         })
     }
+    //目前的网络请求 其失败的时候 不是通过.failure来显示的 而是 success这个字段为非正值来判断
+    func SucceedPOSTLast(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
+        
+        Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: { (response) in
+            
+            
+            switch response.result {
+            case .success(let value):
+                
+                let theValueJson = JSON(value)
+                if theValueJson["success"].int! > 0{
+                    succeed(theValueJson)
+                }else{
+                    
+                    print("=====\(theValueJson["msg"])")
+                    //在这里可以跳转到登录页 提示身份失效
+
+                }
+                
+            case.failure:
+                
+                let theError = response.result.error!
+                
+                print("=====\(theError)")
+                
+                
+                break
+            }
+            
+            
+        })
+    }
+    
     func SucceedPOSTFull2(_ urlString:String,parameters:Dictionary<String,Any>,finished:@escaping WMNetFinishBlock) {
         Alamofire.request(urlString, method: .post, parameters: parameters).responseJSON(completionHandler: { (response) in
             

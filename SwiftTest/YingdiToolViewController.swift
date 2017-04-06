@@ -37,7 +37,7 @@ class YingdiToolViewController: XLPBaseViewController {
      */
     func obtainData() {
         let para = ["timestamp":0,"version":510,"tags":"标准模式,狂野模式,衍生物数据包","token":kToken] as [String : Any]
-        MyManager.sharedInstance.SucceedPOST(urlGetToolHearthStone, parameters: para) { (json) in
+        MyManager.sharedInstance.SucceedPOSTLast(urlGetToolHearthStone, parameters: para) { (json) in
             let wildArr = json["狂野模式"].array
             let standardArr = json["标准模式"].array
             let derivativeArr = json["衍生物数据包"].array

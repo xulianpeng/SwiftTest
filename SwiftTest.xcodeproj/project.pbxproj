@@ -37,6 +37,11 @@
 		073302241E5ECFC200A87D52 /* zhiHuObtainDataOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 073302231E5ECFC200A87D52 /* zhiHuObtainDataOperation.m */; };
 		075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */; };
 		0761228B1E84F129001A33B6 /* AppUrlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761228A1E84F129001A33B6 /* AppUrlFile.swift */; };
+		0764618D1E9644E800A4AD4C /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 0764618C1E9644E800A4AD4C /* SSZipArchive.m */; };
+		076461981E96455200A4AD4C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 076461901E96455200A4AD4C /* ioapi.c */; };
+		076461991E96455200A4AD4C /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 076461921E96455200A4AD4C /* mztools.c */; };
+		0764619A1E96455200A4AD4C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 076461941E96455200A4AD4C /* unzip.c */; };
+		0764619B1E96455200A4AD4C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 076461961E96455200A4AD4C /* zip.c */; };
 		07708CD91E541C9300E30708 /* CarouselBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07708CD81E541C9300E30708 /* CarouselBanner.swift */; };
 		077145F81E7A2AC2003332E2 /* AppUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077145F71E7A2AC2003332E2 /* AppUrl.swift */; };
 		077145FA1E7A32E0003332E2 /* XLPSqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077145F91E7A32E0003332E2 /* XLPSqliteManager.swift */; };
@@ -178,6 +183,17 @@
 		073302231E5ECFC200A87D52 /* zhiHuObtainDataOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhiHuObtainDataOperation.m; sourceTree = "<group>"; };
 		075EEAAA1E276C7C00D8E273 /* ShopCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCityViewController.swift; sourceTree = "<group>"; };
 		0761228A1E84F129001A33B6 /* AppUrlFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUrlFile.swift; sourceTree = "<group>"; };
+		0764618B1E9644E800A4AD4C /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		0764618C1E9644E800A4AD4C /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		0764618F1E96455200A4AD4C /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		076461901E96455200A4AD4C /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		076461911E96455200A4AD4C /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		076461921E96455200A4AD4C /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		076461931E96455200A4AD4C /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		076461941E96455200A4AD4C /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		076461951E96455200A4AD4C /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		076461961E96455200A4AD4C /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		076461971E96455200A4AD4C /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		07708CD81E541C9300E30708 /* CarouselBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselBanner.swift; sourceTree = "<group>"; };
 		07708CDA1E54350100E30708 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fqmjqktidlasnaamcmzpiogfmbpn/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		077145F71E7A2AC2003332E2 /* AppUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUrl.swift; sourceTree = "<group>"; };
@@ -374,6 +390,32 @@
 			name = "旅法师";
 			sourceTree = "<group>";
 		};
+		0764618A1E9644E800A4AD4C /* 解压 */ = {
+			isa = PBXGroup;
+			children = (
+				0764618E1E96455200A4AD4C /* minizip */,
+				0764618B1E9644E800A4AD4C /* SSZipArchive.h */,
+				0764618C1E9644E800A4AD4C /* SSZipArchive.m */,
+			);
+			path = "解压";
+			sourceTree = "<group>";
+		};
+		0764618E1E96455200A4AD4C /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				0764618F1E96455200A4AD4C /* crypt.h */,
+				076461901E96455200A4AD4C /* ioapi.c */,
+				076461911E96455200A4AD4C /* ioapi.h */,
+				076461921E96455200A4AD4C /* mztools.c */,
+				076461931E96455200A4AD4C /* mztools.h */,
+				076461941E96455200A4AD4C /* unzip.c */,
+				076461951E96455200A4AD4C /* unzip.h */,
+				076461961E96455200A4AD4C /* zip.c */,
+				076461971E96455200A4AD4C /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 		07708CA81E53EB4E00E30708 /* CC视频点播 */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +435,7 @@
 		07956E6A1E6D5CBF00E8D22D /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				0764618A1E9644E800A4AD4C /* 解压 */,
 				07956E6B1E6D5CEC00E8D22D /* PopoverView */,
 				07708CA81E53EB4E00E30708 /* CC视频点播 */,
 				073302051E5E843700A87D52 /* AlipaySDK */,
@@ -913,11 +956,13 @@
 				073301D01E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift in Sources */,
 				07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */,
 				079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */,
+				0764618D1E9644E800A4AD4C /* SSZipArchive.m in Sources */,
 				89E73E3B1DFE46AD00058FB0 /* RootViewController.swift in Sources */,
 				073301D51E5BEF4A00A87D52 /* CollectionViewCell.swift in Sources */,
 				89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */,
 				079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */,
 				07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */,
+				076461981E96455200A4AD4C /* ioapi.c in Sources */,
 				07B493D61E8A4CE600791A76 /* DataManagerSubCell.swift in Sources */,
 				07F39F3A1E24F9E900EE268B /* videoPlayViewController.swift in Sources */,
 				071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */,
@@ -945,6 +990,7 @@
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
+				0764619A1E96455200A4AD4C /* unzip.c in Sources */,
 				079F68801E7681B5001E882D /* CameraViewController.swift in Sources */,
 				07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */,
 				07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */,
@@ -955,6 +1001,8 @@
 				07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */,
 				073302211E5E918300A87D52 /* ZhiHuObtainDataOperation.swift in Sources */,
 				079F68841E79101F001E882D /* NewsViewController.swift in Sources */,
+				0764619B1E96455200A4AD4C /* zip.c in Sources */,
+				076461991E96455200A4AD4C /* mztools.c in Sources */,
 				07956E891E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
