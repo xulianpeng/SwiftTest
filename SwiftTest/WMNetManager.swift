@@ -238,6 +238,19 @@ class MyManager {
         })
     }
     
+    func GetData(_ urlString:String,parameters:Dictionary<String,Any>?,succeed:@escaping WMNetSucceedDataBlock){
+
+        Alamofire.request(urlString, method: .get, parameters: parameters).responseData { (data) in
+            
+            if data.data != nil{
+                let resultData = (data.data!) as Data
+                succeed(resultData)
+            }else{
+                print("返回值为nil")
+            }
+            
+        }
+    }
 
 //MARK: post请求 para有的话 不能合并到url里面 否则会出现 valid url的错误  至于get请求 暂不清楚
     
@@ -315,6 +328,7 @@ class MyManager {
         })
     
     }
+    
 
 }
 

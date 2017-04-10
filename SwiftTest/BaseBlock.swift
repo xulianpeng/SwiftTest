@@ -41,3 +41,6 @@ typealias failureClosure = (_ error : Error )->Void //舍去
 
 typealias WMNetFinishBlock = (_ success:JSON?,_ error:Error?) -> Void
 typealias WMNetSucceedBlock = (_ success:JSON)->Void
+typealias WMNetSucceedDataBlock = (_ data:Data)->Void
+
+

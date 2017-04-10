@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lastPath = kCreatFile("ios.text").0
         print(kCreatFile("ios.text"))
         
-        kWriteToFile("万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦", at: lastPath)
+        kWriteStringToFile("万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦", at: lastPath)
         
         print(kGetFileSizeMBAtPath(lastPath))
 
@@ -101,16 +101,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         obtainTitleArr()
         
         let mm = kCreatFile("mm.text", inPath: kCreateDocDirectoryWith("xlp"))
-        kWriteToFile("万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦", at: mm.0)
+        kWriteStringToFile("万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦万哥哥擦擦擦擦擦擦擦擦擦擦", at: mm.0)
         
         obtainTitleArrFromDB()
         
-        
+//        print(kCreateDocDirectoryWith("Magic/Card"))
+        //表添加字段
+//        xlpSqliteManager.addColumnToTable("testColumn",columnType:"text",table: kTableToolPackageHearthStone)
         return true
     
     }
+    
+    
     func netChanged(notification:NotificationCenter) {
-        
+
         let netStatusManager = NetworkReachabilityManager()
 
         if (netStatusManager?.isReachable)!{

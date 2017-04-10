@@ -260,6 +260,8 @@ class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UIT
     /// - Parameter sender: <#sender description#>
     func downHandle(sender:UIButton){
         
+        //给旧表添加字段 
+        
         //前提是  section始终是个位数
         var row = 0
         var section = 0
@@ -291,23 +293,48 @@ class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UIT
             }
             
             //下载图片解压到本地
-            Alamofire.request(imageUrl, method: .get, parameters: nil).responseData { (data) in
+            
+            let customQueue2 = DispatchQueue.init(label: "custom",attributes:.concurrent)
+            
+            
+            let myQueue = DispatchQueue.global()
+            myQueue.sync {
                 
-                print("卡片下载的数据为\(data,data.data)")
-                let path = kCreateDocDirectoryWith("CardData");
-                let outPath = kCreateDocDirectoryWith("Card");
+                MyManager.sharedInstance.GetData(imageUrl, parameters: [:], succeed: { (data11) in
+                    
+                    let path = kCreateDocDirectoryWith("CardData");
+                    let outPath = kCreateDocDirectoryWith("Card/HearthStone");
+                    let pathStr = kCreatFileLast("cardData", inPath: path)
+                    
+                    do {
+                        try data11.write(to: URL.init(fileURLWithPath: pathStr), options: .atomic)
+                        
+                    } catch {
+                        print(error)
+                    }
+                    
+                    do{
+                        try SSZipArchive.unzipFile(atPath: pathStr, toDestination: outPath, overwrite: true, password: nil);
+                        
+                        DispatchQueue.main.async {            
+                            sender.setTitle("完成", for: .normal)
+                        }
+                        
+                    }catch{
+                        print(error)
+                    }
+                    
+                })
                 
-                let url = URL.init(fileURLWithPath: path)
-                try? data.data!.write(to: url, options: .atomic)
-                
-                try? SSZipArchive.unzipFile(atPath: path, toDestination: outPath, overwrite: true, password: nil);
             }
-
+            
             
         }
         
         
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

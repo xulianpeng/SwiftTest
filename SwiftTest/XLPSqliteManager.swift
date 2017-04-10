@@ -284,4 +284,33 @@ class XLPSqliteManager {
     }
     
     
+    /// 给已经创建的表 添加字段
+    ///
+    /// - Parameters:
+    ///   - column: 添加的字段名
+    ///   - columnType: 添加的字段的数据类型 比如 text integer bool 等
+    ///   - table: 被添加的表
+    func addColumnToTable(_ column:String,columnType:String,table:String) {
+        
+        if dataBase.open(){
+            
+            if !dataBase.columnExists(column, inTableWithName: table){
+                
+                let sql:String = "ALTER TABLE \(table) ADD \(column) \(columnType)"
+                let addSuccess = dataBase.executeUpdate(sql, withArgumentsIn: nil)
+                if addSuccess {
+                    print("====新增字段\(column)成功了==")
+                }else{
+                    print("====新增字段\(column)失败了==")
+                }
+                
+            }else
+            {
+                print("====新增字段\(column)已经存在了")
+
+            }
+        }
+    }
+    
+    
 }

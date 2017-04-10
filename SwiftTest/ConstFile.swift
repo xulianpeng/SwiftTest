@@ -269,6 +269,10 @@ func kFontWithSize(_ size:CGFloat) -> UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 //MARK:沙盒相关的方法
+
+/// 获取沙盒Library的路径
+///
+/// - Returns: 路径
 func kGetLibraryPath() ->NSString{
     
     let pathArr = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
@@ -276,8 +280,6 @@ func kGetLibraryPath() ->NSString{
     return libPath as NSString
     
 }
-
-
 /// 获取沙盒Document的路径
 ///
 /// - Returns: 获取沙盒Document的路径
@@ -288,10 +290,10 @@ func kGetDocumentPath() -> NSString{
     return docPath
 }
 
-/// 获取创建在doc下指定文件夹的路径
+/// 在doc下创建文件夹,并返回该文件夹的路径
 ///
-/// - Parameter name: 创建的文件夹
-/// - Returns: 创建指定文件夹的路径
+/// - Parameter name: 创建的文件夹,可以是 "card"或者拼接的"magic/card"
+/// - Returns: 文件夹的路径
 func kCreateDocDirectoryWith(_ name:String) -> String{
     
     let docPath:NSString = kGetDocumentPath()
@@ -306,7 +308,7 @@ func kCreateDocDirectoryWith(_ name:String) -> String{
     return finalPath
 }
 
-/// 在指定的路径下创建文件
+/// 创建文件 在指定的路径下
 ///
 /// - Parameters:
 ///   - name: 文件的名字
@@ -326,33 +328,45 @@ func kCreatFile(_ name:String, inPath:String) -> (String,Bool){
     print("====文件的路径为\(finalPath!)")
     return (finalPath!,isSuccesed)
 }
-/// 在doc里面创建文件
+func kCreatFileLast(_ name:String, inPath:String) -> String{
+    
+    
+    let fileManager = FileManager.default
+    var finalPath:String?
+    finalPath = (inPath as NSString).strings(byAppendingPaths: [name]).last
+    if !fileManager.fileExists(atPath: finalPath!) {
+        fileManager.createFile(atPath: finalPath!, contents: nil, attributes: nil)
+        
+    }
+    print("====文件的路径为\(finalPath!)")
+    return finalPath!
+}
+/// 创建文件在doc里面
 ///
-/// - Parameter name: 文件名 比如 ios.text
+/// - Parameter name: 文件名 比如 ios.text, mmm,...
 /// - Returns: 是否创建成功
 func kCreatFile(_ name:String) -> (String,Bool){
     let docPath:NSString = kGetDocumentPath()
     let fileManager = FileManager.default
-    //            let finalPath = docPath.appendingPathComponent(name)
     let finalPath = docPath.strings(byAppendingPaths: [name]).last
     var isSuccesed:Bool = false
     if !fileManager.fileExists(atPath: finalPath!) {
         isSuccesed = fileManager.createFile(atPath: finalPath!, contents: nil, attributes: nil)
 
     }
-    print("====文件的路径为\(finalPath)")
+    print("====文件的路径为\(finalPath!)")
     return (finalPath!,isSuccesed)
 }
 
-/// 写入文件内容 接上面这个方法
+
+/// 把String写入文件
 ///
 /// - Parameters:
 ///   - content: 写入的内容
 ///   - path: 文件所在路径 即kCreatFile的返回结果的第一个
-func kWriteToFile(_ content:String,at path:String)  {
+func kWriteStringToFile(_ content:String,at path:String)  {
     
     let mm = content
-    
     try! mm.write(toFile: path, atomically: true, encoding: String.Encoding.utf8)
     
 }
