@@ -114,6 +114,34 @@ class NewsViewController: XLPBaseViewController,UITableViewDelegate,UITableViewD
         
         return 10 + (kSCREENWIDTH/3 - 10) * 2 / 3
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        var article:Article?
+        
+        if topDataArr.count > 0 {
+            
+            if indexPath.section == 0 {
+                article = topDataArr[indexPath.row]
+            }else{
+                article = dataArr[indexPath.row] as? Article
+            }
+            
+        }else{
+            article = dataArr[indexPath.row] as? Article
+
+        }
+        
+        let vc = NewsDetailViewController()
+        
+        let articleID = String.init(format: "%d", (article?.id)!)
+        let url1 = "\(SERVER_ADDRESS_onLine)/article/\(articleID)/content?token=\(kToken)&from=iOS&skin=day&version=500&system=ios&read=1&levelNow=1&articleId=\(articleID)&fontSize=13"    
+        vc.urlStr = url1
+        vc.hidesBottomBarWhenPushed = true
+        vc.articleID = articleID;
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

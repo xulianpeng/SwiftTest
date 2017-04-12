@@ -108,6 +108,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        print(kCreateDocDirectoryWith("Magic/Card"))
         //表添加字段
 //        xlpSqliteManager.addColumnToTable("testColumn",columnType:"text",table: kTableToolPackageHearthStone)
+        
+        let str123 = "1231412"
+        let str1234 = "1231412.12345678"
+
+        let int123 = 213123123123
+        let int1234 = 213123123123.12376787679
+
+        
+        //坑点:浮点数转字符串 使用 String()方法 会自动在小数点后第三位 四舍五入
+        print(Int(str123)!,Double(str1234)!,String(int123),String(int1234))
+        
+        
+    
         return true
     
     }

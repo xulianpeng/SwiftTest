@@ -294,7 +294,7 @@ class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UIT
             
             //下载图片解压到本地
             
-            let customQueue2 = DispatchQueue.init(label: "custom",attributes:.concurrent)
+            //let customQueue2 = DispatchQueue.init(label: "custom",attributes:.concurrent)
             
             
             let myQueue = DispatchQueue.global()

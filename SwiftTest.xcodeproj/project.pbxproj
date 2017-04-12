@@ -13,6 +13,9 @@
 		0707CE7C1E5FC3CA0041D364 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0707CE7B1E5FC3CA0041D364 /* Security.framework */; };
 		071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642871E1B38D000B21BF0 /* ButtonExtension.swift */; };
 		0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071642891E1B931600B21BF0 /* RefreshViewController.swift */; };
+		071ECDFD1E9CB49300616FF2 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ECDFC1E9CB49300616FF2 /* NewsDetailViewController.swift */; };
+		071ECDFF1E9DBCB400616FF2 /* NewsCommentVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ECDFE1E9DBCB400616FF2 /* NewsCommentVController.swift */; };
+		071ECE011E9DBD7900616FF2 /* NewsCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ECE001E9DBD7900616FF2 /* NewsCommentModel.swift */; };
 		0721D0931E8510F500C55726 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721D0921E8510F500C55726 /* Article.swift */; };
 		0721D0951E851B8B00C55726 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721D0941E851B8B00C55726 /* ArticleCell.swift */; };
 		073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */; };
@@ -158,6 +161,9 @@
 		0707CE7B1E5FC3CA0041D364 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		071642871E1B38D000B21BF0 /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		071642891E1B931600B21BF0 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
+		071ECDFC1E9CB49300616FF2 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		071ECDFE1E9DBCB400616FF2 /* NewsCommentVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCommentVController.swift; sourceTree = "<group>"; };
+		071ECE001E9DBD7900616FF2 /* NewsCommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCommentModel.swift; sourceTree = "<group>"; };
 		0721D0921E8510F500C55726 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		0721D0941E851B8B00C55726 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -349,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				0721D0921E8510F500C55726 /* Article.swift */,
+				071ECE001E9DBD7900616FF2 /* NewsCommentModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -366,6 +373,8 @@
 			children = (
 				079F68811E78F038001E882D /* YingDiViewController.swift */,
 				079F68831E79101F001E882D /* NewsViewController.swift */,
+				071ECDFC1E9CB49300616FF2 /* NewsDetailViewController.swift */,
+				071ECDFE1E9DBCB400616FF2 /* NewsCommentVController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -933,6 +942,7 @@
 				079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */,
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
 				07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */,
+				071ECE011E9DBD7900616FF2 /* NewsCommentModel.swift in Sources */,
 				89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */,
 				073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */,
 				07F39F0F1E1CEF7400EE268B /* zhiHuTopCell.swift in Sources */,
@@ -961,6 +971,7 @@
 				073301D51E5BEF4A00A87D52 /* CollectionViewCell.swift in Sources */,
 				89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */,
 				079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */,
+				071ECDFF1E9DBCB400616FF2 /* NewsCommentVController.swift in Sources */,
 				07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */,
 				076461981E96455200A4AD4C /* ioapi.c in Sources */,
 				07B493D61E8A4CE600791A76 /* DataManagerSubCell.swift in Sources */,
@@ -989,6 +1000,7 @@
 				077145FA1E7A32E0003332E2 /* XLPSqliteManager.swift in Sources */,
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
+				071ECDFD1E9CB49300616FF2 /* NewsDetailViewController.swift in Sources */,
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
 				0764619A1E96455200A4AD4C /* unzip.c in Sources */,
 				079F68801E7681B5001E882D /* CameraViewController.swift in Sources */,
