@@ -65,3 +65,78 @@ class testOperation11: Operation {
 
     }
 }
+
+class DownADOperation: Operation {
+    
+    override func main() {
+        if self.isCancelled {
+            return
+        }
+        
+//        if kUserDefaultsValue("adTime") != nil {
+//            
+//            kUserDefaults(kTimeGetNow(), key: "adTime")
+//            downLoadAD()
+//        }else if kTimeGetNow() - kUserDefaultsValueInt("adTime") > 60 {
+//            
+//            downLoadAD()
+//            kUserDefaults(kTimeGetNow(), key: "adTime")
+//        }
+        
+        if kUserDefaultsValue("adTime") != nil {
+            
+            if kTimeGetNow() - kUserDefaultsValueInt("adTime") > 60 {
+                
+                downLoadAD()
+                kUserDefaults(kTimeGetNow(), key: "adTime")
+            }
+        }else {
+            
+            downLoadAD()
+            kUserDefaults(kTimeGetNow(), key: "adTime")
+        }
+    }
+    
+    func downLoadAD() {
+        
+        let adUrl = "\(SERVER_ADDRESS_onLine)" + "/ad/bytags"
+        let para = ["version":bundleNumber,"system":"ios","position":"startup","client":"ios"]
+        MyManager.sharedInstance.SucceedGET(adUrl, parameters: para) { (json) in
+            
+            if json["success"].bool!{
+                
+                let dic = json["ad"].dictionary!
+                let adImagerUrl = dic["w640H1136"]?.string
+                let adDetailUrl = dic["url"]?.string
+                
+                let updateADTag = (adImagerUrl! as NSString).lastPathComponent
+                let oldUpdateADTag = kUserDefaultsValue("updateADTag") as! NSString
+                if   !oldUpdateADTag.isEqual(to: updateADTag) || oldUpdateADTag.length == 0 {
+                    
+                    kUserDefaults(0, key: "adTime")
+                    self.saveADToLoacal(adImagerUrl!, detailUrl: adDetailUrl!)
+                }
+                
+            }
+            
+        }
+        
+    }
+    func saveADToLoacal(_ adUrl:String,detailUrl:String) {
+        
+        MyManager.sharedInstance.GetData(adUrl, parameters: nil) { (data) in
+            
+            let path = kCreateDocDirectoryWith("AD");
+//            let outPath = kCreateDocDirectoryWith("Card/HearthStone");
+            let pathStr = kCreatFileLast("adData", inPath: path)
+            
+            do {
+                try data.write(to: URL.init(fileURLWithPath: pathStr), options: .atomic)
+                
+            } catch {
+                print(error)
+            }
+            
+        }
+    }
+}

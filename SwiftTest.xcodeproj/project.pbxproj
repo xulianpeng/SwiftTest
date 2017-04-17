@@ -79,6 +79,10 @@
 		07B493D61E8A4CE600791A76 /* DataManagerSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B493D51E8A4CE600791A76 /* DataManagerSubCell.swift */; };
 		07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F631E12732B00DCB71D /* WMUIExtension.swift */; };
 		07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C31F6E1E15062800DCB71D /* WMNetManager.swift */; };
+		07DB216E1EA46B3600D844DA /* commentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB216D1EA46B3600D844DA /* commentCell.swift */; };
+		07DB21701EA46B4500D844DA /* commentTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB216F1EA46B4500D844DA /* commentTwoCell.swift */; };
+		07DB21721EA4BA7500D844DA /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB21711EA4BA7500D844DA /* Array+Extension.swift */; };
+		07DB21761EA4CE5B00D844DA /* ADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB21751EA4CE5B00D844DA /* ADView.swift */; };
 		07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */; };
 		07E3DECE1E55A355001BAE03 /* xlpHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECD1E55A355001BAE03 /* xlpHud.swift */; };
 		07F290511E15F2AF00E94097 /* ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F290501E15F2AF00E94097 /* ExtensionTest.swift */; };
@@ -238,6 +242,10 @@
 		07B493D51E8A4CE600791A76 /* DataManagerSubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerSubCell.swift; sourceTree = "<group>"; };
 		07C31F631E12732B00DCB71D /* WMUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUIExtension.swift; sourceTree = "<group>"; };
 		07C31F6E1E15062800DCB71D /* WMNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMNetManager.swift; sourceTree = "<group>"; };
+		07DB216D1EA46B3600D844DA /* commentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentCell.swift; sourceTree = "<group>"; };
+		07DB216F1EA46B4500D844DA /* commentTwoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentTwoCell.swift; sourceTree = "<group>"; };
+		07DB21711EA4BA7500D844DA /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		07DB21751EA4CE5B00D844DA /* ADView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADView.swift; sourceTree = "<group>"; };
 		07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelBannerView.swift; sourceTree = "<group>"; };
 		07E3DECD1E55A355001BAE03 /* xlpHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xlpHud.swift; sourceTree = "<group>"; };
 		07F290501E15F2AF00E94097 /* ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTest.swift; sourceTree = "<group>"; };
@@ -364,6 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				0721D0941E851B8B00C55726 /* ArticleCell.swift */,
+				07DB216D1EA46B3600D844DA /* commentCell.swift */,
+				07DB216F1EA46B4500D844DA /* commentTwoCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -506,6 +516,7 @@
 				07F290501E15F2AF00E94097 /* ExtensionTest.swift */,
 				071642871E1B38D000B21BF0 /* ButtonExtension.swift */,
 				07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */,
+				07DB21711EA4BA7500D844DA /* Array+Extension.swift */,
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
 				07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */,
@@ -649,6 +660,7 @@
 				07956E6A1E6D5CBF00E8D22D /* ThirdLib */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
+				07DB21751EA4CE5B00D844DA /* ADView.swift */,
 				077367D11E66621E002BFB86 /* UserManager.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
 				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
@@ -950,6 +962,7 @@
 				07F39F081E1CEEE500EE268B /* ZhiHuHomeViewModal.swift in Sources */,
 				0716428A1E1B931600B21BF0 /* RefreshViewController.swift in Sources */,
 				079FE4301E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift in Sources */,
+				07DB21721EA4BA7500D844DA /* Array+Extension.swift in Sources */,
 				07F39F041E1C88B900EE268B /* EassyCell2.swift in Sources */,
 				07F39F121E1DE84900EE268B /* RefreshDetailViewController.swift in Sources */,
 				0721D0931E8510F500C55726 /* Article.swift in Sources */,
@@ -962,6 +975,7 @@
 				8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */,
 				079F68771E70032D001E882D /* BaseBlock.swift in Sources */,
 				89E73E321DFBEA6A00058FB0 /* UI_tableable_VC.swift in Sources */,
+				07DB21761EA4CE5B00D844DA /* ADView.swift in Sources */,
 				07F87C9F1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift in Sources */,
 				073301D01E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift in Sources */,
 				07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */,
@@ -1006,8 +1020,10 @@
 				079F68801E7681B5001E882D /* CameraViewController.swift in Sources */,
 				07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */,
 				07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */,
+				07DB21701EA46B4500D844DA /* commentTwoCell.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
 				07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */,
+				07DB216E1EA46B3600D844DA /* commentCell.swift in Sources */,
 				0721D0951E851B8B00C55726 /* ArticleCell.swift in Sources */,
 				07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */,
 				07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */,

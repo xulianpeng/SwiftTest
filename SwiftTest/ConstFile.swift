@@ -251,12 +251,31 @@ func kUserDefaults(_ value:Any?,key:String) {
     UserDefaults.standard.setValue(value, forKey:key)
     UserDefaults.standard.synchronize()
 }
-func kUserDefaultsValue(_ key:String) -> Any{
+func kUserDefaultsValue(_ key:String) -> Any?{
     
-    return UserDefaults.standard.value(forKey: key)!
+    return UserDefaults.standard.value(forKey: key)
     
 }
-
+func kUserDefaultsValueInt(_ key:String) -> Int{
+    
+    return UserDefaults.standard.value(forKey: key)! as! Int
+    
+}
+func kUserDefaultsValueFloat(_ key:String) -> Float{
+    
+    return UserDefaults.standard.value(forKey: key)! as! Float
+    
+}
+func kUserDefaultsValueString(_ key:String) -> String{
+    
+    return UserDefaults.standard.value(forKey: key)! as! String
+    
+}
+func kUserDefaultsValueArr(_ key:String) -> [String]{
+    
+    return UserDefaults.standard.value(forKey: key)! as! [String]
+    
+}
 
 //MARK:获取主Window
 func kKeyWindow() -> UIWindow {
@@ -521,6 +540,16 @@ func kXlpInitTableViewBegin(_ height:CGFloat,style:UITableViewStyle) -> UITableV
 /// - Returns: 字段对应的value值
 func IntFor(_ resultSet:FMResultSet,column:String ) -> Int {
     return Int(resultSet.int(forColumn: column))
+}
+
+func kXlpCheckArr(_ arr:Array<Any>?) -> Bool {
+    
+    if arr != nil && arr!.count > 0 {
+        return true
+    }else{
+        print("=======数组为空")
+        return false
+    }
 }
 //#if DEBUG
 //#else

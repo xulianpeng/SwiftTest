@@ -30,6 +30,13 @@ class XLPBaseViewController: UIViewController {
          baseFooter = MJRefreshBackNormalFooter.init(refreshingTarget: target, refreshingAction: #selector(footerRefreshAction))
     }
     
+    public func xlpInitMjRefresh(_ target:UIViewController,tableView:UITableView)  {
+        
+        baseHeader = MJRefreshNormalHeader.init(refreshingTarget: target, refreshingAction: #selector(headerRefreshAction))
+        baseFooter = MJRefreshBackNormalFooter.init(refreshingTarget: target, refreshingAction: #selector(footerRefreshAction))
+        tableView.mj_header = baseHeader
+        tableView.mj_footer = baseFooter
+    }
    
     var subNoNetView : NoNetView?
     

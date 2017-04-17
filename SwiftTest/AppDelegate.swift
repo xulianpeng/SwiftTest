@@ -119,6 +119,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //坑点:浮点数转字符串 使用 String()方法 会自动在小数点后第三位 四舍五入
         print(Int(str123)!,Double(str1234)!,String(int123),String(int1234))
         
+        downAD()
+        displayAD()
+
         
     
         return true
@@ -158,7 +161,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        downAD()
+        displayAD()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -392,5 +397,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
+    /// 获取广告数据 保存到本地
+    func downAD() {
+        
+        let downADOperation = DownADOperation.init()
+        let queue = OperationQueue.current
+        queue?.addOperation(downADOperation)
+        
+    }
+    
+    /// 展示广告
+    func displayAD() {
+        
+        let adView = ADView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
+        
+        kKeyWindow().addSubview(adView)
+        
+    }
 }
 
