@@ -311,6 +311,8 @@ class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UIT
                         
                     } catch {
                         print(error)
+                        
+                        
                     }
                     
                     do{

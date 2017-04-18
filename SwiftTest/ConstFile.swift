@@ -258,23 +258,22 @@ func kUserDefaultsValue(_ key:String) -> Any?{
 }
 func kUserDefaultsValueInt(_ key:String) -> Int{
     
-    return UserDefaults.standard.value(forKey: key)! as! Int
+    return UserDefaults.standard.integer(forKey: key)
     
 }
 func kUserDefaultsValueFloat(_ key:String) -> Float{
     
-    return UserDefaults.standard.value(forKey: key)! as! Float
+    return UserDefaults.standard.float(forKey: key)
     
 }
-func kUserDefaultsValueString(_ key:String) -> String{
+func kUserDefaultsValueString(_ key:String) -> String?{
     
-    return UserDefaults.standard.value(forKey: key)! as! String
+    return UserDefaults.standard.string(forKey: key)
     
 }
-func kUserDefaultsValueArr(_ key:String) -> [String]{
+func kUserDefaultsValueArr(_ key:String) -> [String]?{
     
-    return UserDefaults.standard.value(forKey: key)! as! [String]
-    
+    return UserDefaults.standard.stringArray(forKey: key)
 }
 
 //MARK:获取主Window

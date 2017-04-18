@@ -83,6 +83,7 @@
 		07DB21701EA46B4500D844DA /* commentTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB216F1EA46B4500D844DA /* commentTwoCell.swift */; };
 		07DB21721EA4BA7500D844DA /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB21711EA4BA7500D844DA /* Array+Extension.swift */; };
 		07DB21761EA4CE5B00D844DA /* ADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB21751EA4CE5B00D844DA /* ADView.swift */; };
+		07DB21781EA60AD800D844DA /* ADDetailVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB21771EA60AD800D844DA /* ADDetailVController.swift */; };
 		07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */; };
 		07E3DECE1E55A355001BAE03 /* xlpHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E3DECD1E55A355001BAE03 /* xlpHud.swift */; };
 		07F290511E15F2AF00E94097 /* ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F290501E15F2AF00E94097 /* ExtensionTest.swift */; };
@@ -246,6 +247,7 @@
 		07DB216F1EA46B4500D844DA /* commentTwoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentTwoCell.swift; sourceTree = "<group>"; };
 		07DB21711EA4BA7500D844DA /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		07DB21751EA4CE5B00D844DA /* ADView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADView.swift; sourceTree = "<group>"; };
+		07DB21771EA60AD800D844DA /* ADDetailVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADDetailVController.swift; sourceTree = "<group>"; };
 		07E3DECB1E559B82001BAE03 /* WheelBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelBannerView.swift; sourceTree = "<group>"; };
 		07E3DECD1E55A355001BAE03 /* xlpHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xlpHud.swift; sourceTree = "<group>"; };
 		07F290501E15F2AF00E94097 /* ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTest.swift; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				07DB21751EA4CE5B00D844DA /* ADView.swift */,
+				07DB21771EA60AD800D844DA /* ADDetailVController.swift */,
 				077367D11E66621E002BFB86 /* UserManager.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
 				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
@@ -995,6 +998,7 @@
 				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,
 				07B493D21E8A4A6D00791A76 /* XLPBaseTableCell.swift in Sources */,
 				079FE3A31E0948BD007DF3DE /* EassyCell.swift in Sources */,
+				07DB21781EA60AD800D844DA /* ADDetailVController.swift in Sources */,
 				07E3DECC1E559B82001BAE03 /* WheelBannerView.swift in Sources */,
 				07C31F641E12732B00DCB71D /* WMUIExtension.swift in Sources */,
 				07956E861E6E58FC00E8D22D /* StudentEntity+CoreDataProperties.swift in Sources */,

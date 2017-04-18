@@ -648,12 +648,10 @@ class XLP_OperatorsVController: UIViewController {
     func showToastView()  {
         
         
-        kCreateDocDirectoryWith("xlp")
         
         toastView.xlpInitView(superView: kKeyWindow(), snpMaker: { (make) in
             
             make.left.top.equalTo(0)
-            //            make.right.equalTo(0)
             make.width.equalTo(kSCREENWIDTH)
             make.height.equalTo(64)
         }) { (tap) in

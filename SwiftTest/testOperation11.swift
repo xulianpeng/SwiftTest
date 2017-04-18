@@ -110,11 +110,16 @@ class DownADOperation: Operation {
                 let adDetailUrl = dic["url"]?.string
                 
                 let updateADTag = (adImagerUrl! as NSString).lastPathComponent
-                let oldUpdateADTag = kUserDefaultsValue("updateADTag") as! NSString
-                if   !oldUpdateADTag.isEqual(to: updateADTag) || oldUpdateADTag.length == 0 {
+                let oldUpdateADTag = kUserDefaultsValueString("updateADTag")
+                
+                if   oldUpdateADTag == nil || !oldUpdateADTag!.isEqual(updateADTag) || oldUpdateADTag!.isEmpty {
                     
                     kUserDefaults(0, key: "adTime")
+                    kUserDefaults(adDetailUrl!, key: "adDetailUrl")
                     self.saveADToLoacal(adImagerUrl!, detailUrl: adDetailUrl!)
+                }else{
+                    kUserDefaults(adDetailUrl!, key: "adDetailUrl")
+
                 }
                 
             }

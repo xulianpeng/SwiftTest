@@ -289,7 +289,13 @@ extension UIView{
             objc_setAssociatedObject(self, &viewTapAssociate, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
-    
+    func xlpInitView(frame:CGRect,superView:UIView) {
+        
+        self.frame = frame
+        superView.addSubview(self)
+        self.isUserInteractionEnabled = true
+    }
+
     func xlpInitView(frame:CGRect,superView:UIView,tapBlock:@escaping WMTapBlock) {
         
         self.frame = frame
@@ -302,7 +308,13 @@ extension UIView{
         self.isUserInteractionEnabled = true
     }
     
-    
+    func xlpInitView(superView:UIView,snpMaker: WMSnapMakerBlock?) {
+        
+        superView.addSubview(self)
+        if snpMaker != nil {
+            self.snp.makeConstraints(snpMaker!)
+        }
+    }
     func xlpInitView(superView:UIView,snpMaker: WMSnapMakerBlock?,tapBlock:@escaping WMTapBlock) {
         
         superView.addSubview(self)
