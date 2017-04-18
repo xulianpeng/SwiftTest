@@ -19,7 +19,9 @@ class ADDetailVController: XLPBaseViewController {
         self.navigationItem.setLeftBarButton(leftItem, animated: true)
 
         rootWebView.xlpInitView(superView: self.view, snpMaker: { (make) in
-            make.edges.equalTo(self.view)
+//            make.edges.equalTo(self.view)
+            make.top.equalTo(64)
+            make.left.right.bottom.equalTo(self.view)
         }) { (tap) in
             
         }
