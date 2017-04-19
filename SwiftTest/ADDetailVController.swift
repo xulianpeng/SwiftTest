@@ -22,9 +22,7 @@ class ADDetailVController: XLPBaseViewController {
 //            make.edges.equalTo(self.view)
             make.top.equalTo(64)
             make.left.right.bottom.equalTo(self.view)
-        }) { (tap) in
-            
-        }
+        })
         rootWebView.backgroundColor = UIColor.red
         
         adUrl = kUserDefaultsValueString("adDetailUrl")

@@ -29,8 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let rootVC = RootTabBarViewController()
+//        self.window = UIWindow.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
+        self.window?.rootViewController = rootVC
+//        self.window!.makeKeyAndVisible()
         
-        window?.rootViewController = rootVC
+        downAD()
         
         //FIXME:全局键盘管理 键盘收回,只有点击键盘上的 done,添加 touchview方法后,整个页面向上偏移的距离没有返回
         let keyBoardManager = IQKeyboardManager.sharedManager()
@@ -119,7 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //坑点:浮点数转字符串 使用 String()方法 会自动在小数点后第三位 四舍五入
         print(Int(str123)!,Double(str1234)!,String(int123),String(int1234))
         
-        downAD()
+        
         displayAD()
 
         
@@ -411,7 +414,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func displayAD() {
         
         let adView = ADView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
-        
+//        kKeyWindow().isHidden = false
         kKeyWindow().addSubview(adView)
         
     }

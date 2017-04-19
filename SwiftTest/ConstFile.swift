@@ -133,7 +133,7 @@ func kTimeGetNow() -> Int {
 }
 func kTimeCpmpareWithNow(_ time:Int) -> String {
     let sub:Double = Double(kTimeGetNow() - time)
-    print("时间戳的差值为\(sub)",time,kTimeGetNow())
+//    print("时间戳的差值为\(sub)",time,kTimeGetNow())
     var value = "";
     if (sub/60 < 1) {
         //        value= NSLocalizedStringFromTable(@"just", @"IHLibStrings", @"刚刚");//国际化处理
@@ -278,9 +278,10 @@ func kUserDefaultsValueArr(_ key:String) -> [String]?{
 
 //MARK:获取主Window
 func kKeyWindow() -> UIWindow {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    return appDelegate.window!
     
-    return appDelegate.window!
+    return UIApplication.shared.windows.first!
 }
 //MARK:font方法简写
 func kFontWithSize(_ size:CGFloat) -> UIFont {

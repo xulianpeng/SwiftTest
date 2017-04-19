@@ -74,7 +74,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/testOperation11.swift"
-                  timestampString = "514202213.775984"
+                  timestampString = "514278351.583516"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "104"
@@ -89,7 +89,7 @@
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/testOperation11.swift"
-                  timestampString = "514202213.77975"
+                  timestampString = "514278351.588278"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -153,46 +153,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTest/ADView.swift"
-            timestampString = "514198320.67745"
+            filePath = "SwiftTest/ADDetailVController.swift"
+            timestampString = "514257638.499434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "init(frame:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.ADView.init (frame : __C.CGRect) -&gt; SwiftTest.ADView"
-                  moduleName = "SwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ADView.swift"
-                  timestampString = "514202213.809732"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "343">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.ADView.(init (frame : __C.CGRect) -&gt; SwiftTest.ADView).(closure #1)"
-                  moduleName = "SwiftTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lianpeng/Desktop/2GitHub/SwiftTest/SwiftTest/ADView.swift"
-                  timestampString = "514202213.812535"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -201,14 +169,62 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftTest/ADDetailVController.swift"
-            timestampString = "514204568.909157"
+            filePath = "SwiftTest/AppDelegate.swift"
+            timestampString = "514277631.341189"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "displayAD()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/AppDelegate.swift"
+            timestampString = "514277631.341189"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "displayAD()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/AppDelegate.swift"
+            timestampString = "514277630.355055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/ConstFile.swift"
+            timestampString = "514277857.000944"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "kKeyWindow()"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
