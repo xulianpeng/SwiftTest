@@ -29,9 +29,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let rootVC = RootTabBarViewController()
-//        self.window = UIWindow.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
-        self.window?.rootViewController = rootVC
-//        self.window!.makeKeyAndVisible()
+        self.window = UIWindow.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
+        self.window!.rootViewController = rootVC
+        self.window!.makeKeyAndVisible()
+        
+        //测试其他window
+        
+//        var windowStatus = UIWindow.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT/2))
+//        windowStatus.windowLevel = UIWindowLevelStatusBar
+//        windowStatus.backgroundColor = UIColor.red
+////        windowStatus.isHidden = false
+//
+//        windowStatus.makeKeyAndVisible()
+//        
+//        var windowAlert = UIWindow.init(frame: CGRect(x:0,y:kSCREENHEIGHT/2,width:kSCREENWIDTH,height:kSCREENHEIGHT/2 - 100))
+//        windowAlert.windowLevel = UIWindowLevelAlert
+//        windowAlert.backgroundColor = UIColor.green
+////        windowAlert.isHidden = false
+//        windowAlert.makeKeyAndVisible()
+
         
         downAD()
         
