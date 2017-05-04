@@ -53,7 +53,7 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
             let childVC = NewsViewController()
             childVC.title = title
             childVC.view.frame = CGRect(x:kSCREENWIDTH * CGFloat(index),y:0,width:kSCREENWIDTH,height:mainHeight)
-            childVC.view.backgroundColor = KRandomColor()
+            childVC.view.backgroundColor = kRandomColor()
             mainView.addSubview(childVC.view)
             self.addChildViewController(childVC)
             

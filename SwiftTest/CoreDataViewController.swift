@@ -38,26 +38,26 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate,TitleArr
     }
     func initView()  {
         
-        nameTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "姓名", delegate: self, tag:100,superView: self.view) { (make) in
+        nameTf.xlpInitTextfieldDefault(kRandomColor(), fontSize: 14, placeholder: "姓名", delegate: self, tag:100,superView: self.view) { (make) in
             make.left.equalTo(50)
             make.top.equalTo(200)
             make.right.equalTo(-50)
             make.height.equalTo(50)
         }
        
-        idTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "id", delegate: self,tag:101, superView: self.view) { (make) in
+        idTf.xlpInitTextfieldDefault(kRandomColor(), fontSize: 14, placeholder: "id", delegate: self,tag:101, superView: self.view) { (make) in
             make.left.equalTo(nameTf)
             make.top.equalTo(nameTf.snp.bottom).offset(10)
             make.size.equalTo(nameTf)
         }
         
-        sexTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "性别", delegate: self,tag:102, superView: self.view) { (make) in
+        sexTf.xlpInitTextfieldDefault(kRandomColor(), fontSize: 14, placeholder: "性别", delegate: self,tag:102, superView: self.view) { (make) in
             make.left.equalTo(nameTf)
             make.top.equalTo(idTf.snp.bottom).offset(10)
             make.size.equalTo(nameTf)
         }
         
-        ageTf.xlpInitTextfieldDefault(KRandomColor(), fontSize: 14, placeholder: "年龄", delegate: self,tag:103, superView: self.view) { (make) in
+        ageTf.xlpInitTextfieldDefault(kRandomColor(), fontSize: 14, placeholder: "年龄", delegate: self,tag:103, superView: self.view) { (make) in
             make.left.equalTo(nameTf)
             make.top.equalTo(sexTf.snp.bottom).offset(10)
             make.size.equalTo(nameTf)
@@ -187,7 +187,7 @@ class CoreDataViewController: XLPBaseViewController,UITextFieldDelegate,TitleArr
                 
                 print("你竟然惦记我啦啦啦啦\(i)")
             })
-            subView.backgroundColor = KRandomColor()
+            subView.backgroundColor = kRandomColor()
             backScrollView.addSubview(subView)
         }
         

@@ -158,11 +158,22 @@ func kTimeCpmpareWithNow(_ time:Int) -> String {
 }
 
 //MARK:随机颜色
-func KRandomColor() -> UIColor {
+func kRandomColor() -> UIColor {
     
     let red = CGFloat(arc4random()%256)/255.0
     let green = CGFloat(arc4random()%256)/255.0
     let blue = CGFloat(arc4random()%256)/255.0
+    return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+}
+
+/// 16进制颜色生成
+///
+/// - Parameter rgbValue: 16进制颜色值
+/// - Returns: uicolor
+func kColorWith16(_ rgbValue:Int) ->UIColor{
+    let red = CGFloat((rgbValue & 0xFF0000) >> 16)/255.0
+    let green = CGFloat((rgbValue & 0xFF00) >> 8)/255.0
+    let blue = CGFloat(rgbValue & 0xFF)/255.0
     return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
 }
 
@@ -196,30 +207,7 @@ func showHud(text:String,yHeight:CGFloat) -> Void {
     
 //    xlpHud.init(frame: <#T##CGRect#>, text: <#T##String#>)
 }
-//MARK: 正则判断是否是电话号码
-func kIsTelNumber(_ num:String)->Bool{
-    
-    let mobile = "^1(3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$"
-    let  CM = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
-    let  CU = "(^1(3[0-2]|4[5]|5[56]|7[6]|8[56])\\d{8}$)|(^1709\\d{7}$)";
-    let  CT = "(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
-    let regextestmobile = NSPredicate(format: "SELF MATCHES %@",mobile)
-    let regextestcm = NSPredicate(format: "SELF MATCHES %@",CM )
-    let regextestcu = NSPredicate(format: "SELF MATCHES %@" ,CU)
-    let regextestct = NSPredicate(format: "SELF MATCHES %@" ,CT)
-    
-    if ((regextestmobile.evaluate(with: num) == true)
-        || (regextestcm.evaluate(with: num)  == true)
-        || (regextestct.evaluate(with: num) == true)
-        || (regextestcu.evaluate(with: num) == true))
-    {
-        return true
-    }
-    else
-    {
-        return false
-    }
-}
+
 
 
 /// 通知 暂未发现好的解决办法
@@ -280,8 +268,7 @@ func kUserDefaultsValueArr(_ key:String) -> [String]?{
 func kKeyWindow() -> UIWindow {
 //    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //    return appDelegate.window!
-    
-    return UIApplication.shared.windows.first!
+    return UIApplication.shared.keyWindow!
 }
 //MARK:font方法简写
 func kFontWithSize(_ size:CGFloat) -> UIFont {
@@ -524,8 +511,103 @@ func kStringGetSize(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
     lastSize  = CGSize(width:lastSize.width + 3,height:lastSize.height)
     return lastSize
 }
-///计算字符的个数(包括中英文)
 
+/// 对字符串进行空值判断
+///
+/// - Parameter string: 输入的字符
+func kStringIsEmpty(_ string:String?) -> Bool{
+    var bool = false
+    var str:String?
+    if string != nil  {
+        str = string?.trimmingCharacters(in: CharacterSet.whitespaces)
+         bool = str!.isEmpty
+    }
+    return bool
+}
+
+/// 对字符串是否可以转为URL做简单判断
+///
+/// - Parameter string: 网址url
+/// - Returns: bool
+func kStringIsUrl(_ string:String?) ->Bool{
+    var bool = false
+    if !kStringIsEmpty(string) {
+        let str = string?.trimmingCharacters(in: CharacterSet.whitespaces)
+        if (str?.contains("://"))! {
+            bool = true
+        }
+    }
+    return bool
+}
+
+/// 判断字符串是否数字
+///
+/// - Parameter string: <#string description#>
+/// - Returns: <#return value description#>
+func kStringIsNumber(_ string:String) -> Bool {
+    if let _ = NumberFormatter().number(from: string) {
+        return true
+    }
+    
+    return false
+}
+//MARK: 正则判断是否是电话号码
+func kStringIsPhoneNumber(_ phoneNum:String) ->Bool {
+    let phoneNumber = "^1[34578][0-9]{9}$";
+    let regextestpn:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", argumentArray: [phoneNumber])
+    return regextestpn.evaluate(with: phoneNum)
+}
+//MARK: 正则判断是否是电话号码  两者结合一下
+func kIsTelNumber(_ num:String)->Bool{
+    
+    if !kStringIsPhoneNumber(num) {
+        
+        let mobile = "^1(3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$"
+        let  CM = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
+        let  CU = "(^1(3[0-2]|4[5]|5[56]|7[6]|8[56])\\d{8}$)|(^1709\\d{7}$)";
+        let  CT = "(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
+        let regextestmobile = NSPredicate(format: "SELF MATCHES %@",mobile)
+        let regextestcm = NSPredicate(format: "SELF MATCHES %@",CM )
+        let regextestcu = NSPredicate(format: "SELF MATCHES %@" ,CU)
+        let regextestct = NSPredicate(format: "SELF MATCHES %@" ,CT)
+        
+        if ((regextestmobile.evaluate(with: num) == true)
+            || (regextestcm.evaluate(with: num)  == true)
+            || (regextestct.evaluate(with: num) == true)
+            || (regextestcu.evaluate(with: num) == true))
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }else{
+        return true
+    }
+}
+/// 判断是否包含表情 xcode里面直接输入表情是识别不了的
+///
+/// - Parameter string: <#string description#>
+/// - Returns: <#return value description#>
+func kStringContainEmotion(_ string:String) -> Bool {
+    let strLength = (string as NSString).length
+    
+    for i in 0...strLength {
+        let c:unichar = (string as NSString).character(at: i)
+        if (0xD800 <= c && c <= 0xDBFF) || (0xDC00 <= c && c <= 0xDFFF) {
+            return true
+        }
+    }
+    return false
+}
+
+/// 初始化tableview
+///
+/// - Parameters:
+///   - height: 距离底部的距离
+///   - style: <#style description#>
+/// - Returns: <#return value description#>
 func kXlpInitTableViewBegin(_ height:CGFloat,style:UITableViewStyle) -> UITableView{
     return UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64 - height), style: style) as UITableView
     

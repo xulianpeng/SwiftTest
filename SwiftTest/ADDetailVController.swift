@@ -27,11 +27,42 @@ class ADDetailVController: XLPBaseViewController {
         
         adUrl = kUserDefaultsValueString("adDetailUrl")
         if  adUrl != nil || !adUrl!.isEmpty {
-            let request = URLRequest.init(url: URL.init(string: adUrl!)!, cachePolicy: NSURLRequest.CachePolicy.reloadRevalidatingCacheData, timeoutInterval: 10)
-            rootWebView.load(request)
+            
+            let url:URL =  URL.init(string: adUrl!)!
+            var bool = false
+            do {
+                try? bool =  url.checkResourceIsReachable()
+            } catch  {
+                print("拉拉阿拉  网址不可用啊")
+            }
+            //
+            //
+            //
+           
+            if checkUrl(adUrl!) {
+                
+                let request = URLRequest.init(url: URL.init(string: adUrl!)!, cachePolicy: NSURLRequest.CachePolicy.reloadRevalidatingCacheData, timeoutInterval: 10)
+                rootWebView.load(request)
+            }
         }
     }
 
+    func checkUrl(_ str:String) -> Bool {
+        var bool = false
+        
+        let resultStr = str.trimmingCharacters(in: CharacterSet.whitespaces)
+        
+        if resultStr != nil {
+            
+            if (resultStr.range(of: "://") != nil) {
+                
+                bool = true
+            }
+        }
+        
+        return bool
+        
+    }
     func backHandle()  {
         self.dismiss(animated: true, completion: nil)
     }
@@ -41,14 +72,6 @@ class ADDetailVController: XLPBaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

@@ -618,7 +618,7 @@ class XLP_OperatorsVController: UIViewController {
         let aFrame = CGRect(x:100,y:100,width:100,height:100)
         testView.xlpInitView(frame: aFrame, superView: self.view) { (tap) in
             
-            self.view.backgroundColor = KRandomColor()
+            self.view.backgroundColor = kRandomColor()
             self.showPopView(testView)
         }
         self.view.addSubview(testView)
@@ -637,7 +637,7 @@ class XLP_OperatorsVController: UIViewController {
             make.center.equalTo(self.view.center)
             
         }) { (tap) in
-            self.view.backgroundColor = KRandomColor()
+            self.view.backgroundColor = kRandomColor()
             self.showPopView(self.testView)
         }
         self.view.addSubview(testView)
@@ -656,7 +656,7 @@ class XLP_OperatorsVController: UIViewController {
             make.height.equalTo(64)
         }) { (tap) in
             
-            //            self.view.backgroundColor = KRandomColor()
+            //            self.view.backgroundColor = kRandomColor()
             UIView.animate(withDuration: 3) {
                 
                 //不能在自己的点击事件里面写updateConstraints动画,否则没有渐变的效果,最终是瞬时效果

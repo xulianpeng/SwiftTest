@@ -290,7 +290,7 @@ class XLPSqliteManager {
     ///   - column: 添加的字段名
     ///   - columnType: 添加的字段的数据类型 比如 text integer bool 等
     ///   - table: 被添加的表
-    func addColumnToTable(_ column:String,columnType:String,table:String) {
+    func addColumnInTable(_ column:String,columnType:String,table:String) {
         
         if dataBase.open(){
             
@@ -312,5 +312,63 @@ class XLPSqliteManager {
         }
     }
     
+    /// 删除字段
+    ///
+    /// - Parameters:
+    ///   - column: 想要删除的字段
+    ///   - table: 表名
+    func deleteColumnFromTable(_ column:String,table:String){
+        
+        if dataBase.open(){
+            
+            if dataBase.columnExists(column, inTableWithName: table){
+                
+                let sql:String = "ALTER TABLE \(table) DROP COLUMN \(column)"
+                let addSuccess = dataBase.executeUpdate(sql, withArgumentsIn: nil)
+                if addSuccess {
+                    print("====删减字段\(column)成功了==")
+                }else{
+                    print("====删减字段\(column)失败了==")
+                }
+                
+            }else
+            {
+                print("====删减字段\(column)不存在")
+                
+            }
+        }
+
+        
+    }
     
+    /// 更改已有的字段的数据类型
+    ///
+    /// - Parameters:
+    ///   - column: 想要更改的字段
+    ///   - columnType: 想要的数据类型
+    ///   - table: 表名
+    func changeColumnTypeInTable(_ column:String,columnType:String,table:String){
+        
+        if dataBase.open(){
+            
+            if dataBase.columnExists(column, inTableWithName: table){
+                
+                let sql:String = "ALTER TABLE \(table) ALTER COLUMN \(column) \(columnType)"
+                let addSuccess = dataBase.executeUpdate(sql, withArgumentsIn: nil)
+                if addSuccess {
+                    print("====更改已有字段的类型\(column)成功了==")
+                }else{
+                    print("====更改已有字段的类型\(column)失败了==")
+                }
+                
+            }else
+            {
+                print("====将要更改的已有字段\(column)不存在")
+                
+            }
+        }
+        
+        
+    }
+
 }
