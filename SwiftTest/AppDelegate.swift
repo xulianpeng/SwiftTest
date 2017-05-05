@@ -147,9 +147,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         displayAD()
 
         
-        var str = "http://表情❤️屎"
+        let str = "  http://表情❤️屎  asdhjhasdasdasd\n你好啊骚年    "
     
-        var mmm = kStringContainEmotion(str)
+//        var mmm = kStringContainEmotion(str)
+        
+        print(kStringRemoveWhitespaces(str),"\n\(kStringRemoveWhitespacesAndNewlines(str))","\n\(kStringRemoveAllWhitespaces(str))","\n\(kStringRemoveAllWhitespacesAndNewlines(str))")
         
         
         return true

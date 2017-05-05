@@ -511,7 +511,7 @@ func kStringGetSize(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
     lastSize  = CGSize(width:lastSize.width + 3,height:lastSize.height)
     return lastSize
 }
-
+//MARK: 对字符串进行空值判断
 /// 对字符串进行空值判断
 ///
 /// - Parameter string: 输入的字符
@@ -524,7 +524,40 @@ func kStringIsEmpty(_ string:String?) -> Bool{
     }
     return bool
 }
-
+//MARK:去除字符串头尾的空格
+func kStringRemoveWhitespaces(_ string:String?) -> String{
+    var str = ""
+    if string != nil  {
+        str = string!.trimmingCharacters(in: CharacterSet.whitespaces)
+    }
+    return str
+}
+//MARK:去除字符串头尾的空格和换行
+func kStringRemoveWhitespacesAndNewlines(_ string:String?) -> String{
+    var str = ""
+    if string != nil  {
+        str = string!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
+    return str
+}
+//MARK:去除字符串中所有的空格
+func kStringRemoveAllWhitespaces(_ string:String?) -> String{
+    var str = ""
+    if string != nil  {
+        str = string!.replacingOccurrences(of: " ", with: "")
+    }
+    return str
+}
+//MARK:去除字符串头尾的空格和换行
+func kStringRemoveAllWhitespacesAndNewlines(_ string:String?) -> String{
+    var str = ""
+    if string != nil  {
+        str = string!.replacingOccurrences(of: " ", with: "")
+        str = str.replacingOccurrences(of: "\n", with: "")
+    }
+    return str
+}
+//MARK: 对字符串是否可以转为URL做简单判断
 /// 对字符串是否可以转为URL做简单判断
 ///
 /// - Parameter string: 网址url
@@ -539,8 +572,8 @@ func kStringIsUrl(_ string:String?) ->Bool{
     }
     return bool
 }
-
-/// 判断字符串是否数字
+//MARK: 判断字符串是否是数字
+/// 判断字符串是否是数字
 ///
 /// - Parameter string: <#string description#>
 /// - Returns: <#return value description#>
@@ -552,10 +585,37 @@ func kStringIsNumber(_ string:String) -> Bool {
     return false
 }
 //MARK: 正则判断是否是电话号码
-func kStringIsPhoneNumber(_ phoneNum:String) ->Bool {
-    let phoneNumber = "^1[34578][0-9]{9}$";
-    let regextestpn:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", argumentArray: [phoneNumber])
-    return regextestpn.evaluate(with: phoneNum)
+
+enum checkZhengZe {
+    case phone
+    case email
+    case url
+    case userName
+    case IP
+    case htmlFlag
+}
+func kStringIsPhoneNumber(_ phoneNum:String,limit:checkZhengZe) ->Bool {
+//    let phoneNumber = "^1[34578][0-9]{9}$";
+//    let regextestpn:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", argumentArray: [phoneNumber])
+    
+    var limitStr = ""
+    switch limit {
+    case .phone:
+        limitStr = "^1[34578][0-9]{9}$"
+    case .email:
+        limitStr = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+    case .url:
+//        limitStr = "^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$"
+        limitStr = "^(https?://)?([\\                                                                                    da-z\.-]+)\.([a-z\.]{2,6})([/w \.-]*)*\/?$"
+    case .userName:
+        limitStr = "^[a-z0-9_-]{3,16}$"
+    case .IP:
+        limitStr = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+    case .htmlFlag:
+        limitStr = "^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$"
+    }
+     let regextestpn:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", argumentArray: [limitStr])
+    return regextestpn.evaluate(with: phoneNum) //invalid escape sequence in literal
 }
 //MARK: 正则判断是否是电话号码  两者结合一下
 func kIsTelNumber(_ num:String)->Bool{
@@ -586,6 +646,7 @@ func kIsTelNumber(_ num:String)->Bool{
         return true
     }
 }
+//MARK: 判断是否包含表情 xcode里面直接输入表情是识别不了的
 /// 判断是否包含表情 xcode里面直接输入表情是识别不了的
 ///
 /// - Parameter string: <#string description#>
