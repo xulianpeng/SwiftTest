@@ -18,7 +18,7 @@ class NewsDetailViewController: XLPBaseViewController {
         super.viewDidLoad()
 
         
-        rootWebView = WKWebView.init(frame: CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64 - 44))
+        rootWebView = WKWebView.init(frame: CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64))
         self.view.addSubview(rootWebView)
         rootWebView.backgroundColor = UIColor.brown
         rootWebView.load(URLRequest.init(url: URL.init(string: urlStr!)!))

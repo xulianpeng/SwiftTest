@@ -26,43 +26,22 @@ class ADDetailVController: XLPBaseViewController {
         rootWebView.backgroundColor = UIColor.red
         
         adUrl = kUserDefaultsValueString("adDetailUrl")
-        if  adUrl != nil || !adUrl!.isEmpty {
-            
-            let url:URL =  URL.init(string: adUrl!)!
-            var bool = false
-            do {
-                try? bool =  url.checkResourceIsReachable()
-            } catch  {
-                print("拉拉阿拉  网址不可用啊")
-            }
-            //
-            //
-            //
-           
-            if checkUrl(adUrl!) {
+        if  adUrl != nil || !adUrl!.isEmpty  {
+            //不合法网址  http://  会crash 
+            if kStringZZJudge(adUrl!, type: .url) {
                 
                 let request = URLRequest.init(url: URL.init(string: adUrl!)!, cachePolicy: NSURLRequest.CachePolicy.reloadRevalidatingCacheData, timeoutInterval: 10)
                 rootWebView.load(request)
+            }else{
+                //TODO: 若是无效的网址 是否需要删除 相关的存储值呢?
+                //MARK: 若是无效的网址 是否需要删除 相关的存储值呢?
+                //若是无效的网址 是否需要删除 相关的存储值呢?
             }
+            
         }
     }
 
-    func checkUrl(_ str:String) -> Bool {
-        var bool = false
-        
-        let resultStr = str.trimmingCharacters(in: CharacterSet.whitespaces)
-        
-        if resultStr != nil {
-            
-            if (resultStr.range(of: "://") != nil) {
-                
-                bool = true
-            }
-        }
-        
-        return bool
-        
-    }
+    
     func backHandle()  {
         self.dismiss(animated: true, completion: nil)
     }

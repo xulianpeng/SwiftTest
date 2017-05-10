@@ -584,8 +584,7 @@ func kStringIsNumber(_ string:String) -> Bool {
     
     return false
 }
-//MARK: 正则判断是否是电话号码
-
+//MARK: 正则判断 手机号码 邮箱 网址合法 用户名
 enum checkZhengZe {
     case phone
     case email
@@ -594,33 +593,32 @@ enum checkZhengZe {
     case IP
     case htmlFlag
 }
-func kStringIsPhoneNumber(_ phoneNum:String,limit:checkZhengZe) ->Bool {
-//    let phoneNumber = "^1[34578][0-9]{9}$";
-//    let regextestpn:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", argumentArray: [phoneNumber])
-    
-    var limitStr = ""
-    switch limit {
-    case .phone:
-        limitStr = "^1[34578][0-9]{9}$"
-    case .email:
-        limitStr = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
-    case .url:
-//        limitStr = "^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$"
-        limitStr = "^(https?://)?([\\                                                                                    da-z\.-]+)\.([a-z\.]{2,6})([/w \.-]*)*\/?$"
-    case .userName:
-        limitStr = "^[a-z0-9_-]{3,16}$"
-    case .IP:
-        limitStr = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
-    case .htmlFlag:
-        limitStr = "^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$"
+
+func kStringZZJudge(_ str:String,type:checkZhengZe) ->Bool {
+    if !str.isEmpty {
+        
+       
+        var limitStr = ""
+        switch type {
+        case .phone:
+            limitStr = "^1[34578][0-9]{9}$"
+        case .email:
+            limitStr = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+        case .url:
+            limitStr = "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?"
+        case .userName:
+            limitStr = "^[a-z0-9_-]{3,16}$"
+        default: break
+        }
+        let regextestpn:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", argumentArray: [limitStr])
+        return regextestpn.evaluate(with: str)
     }
-     let regextestpn:NSPredicate = NSPredicate.init(format: "SELF MATCHES %@", argumentArray: [limitStr])
-    return regextestpn.evaluate(with: phoneNum) //invalid escape sequence in literal
+    return false
 }
 //MARK: 正则判断是否是电话号码  两者结合一下
 func kIsTelNumber(_ num:String)->Bool{
     
-    if !kStringIsPhoneNumber(num) {
+    if !kStringZZJudge(num, type: .phone) {
         
         let mobile = "^1(3[0-9]|4[57]|5[0-35-9]|7[0678]|8[0-9])\\d{8}$"
         let  CM = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
@@ -646,6 +644,7 @@ func kIsTelNumber(_ num:String)->Bool{
         return true
     }
 }
+
 //MARK: 判断是否包含表情 xcode里面直接输入表情是识别不了的
 /// 判断是否包含表情 xcode里面直接输入表情是识别不了的
 ///

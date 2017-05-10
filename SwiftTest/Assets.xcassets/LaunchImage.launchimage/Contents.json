@@ -20,10 +20,19 @@
     },
     {
       "orientation" : "portrait",
-      "idiom" : "ipad",
+      "idiom" : "iphone",
+      "filename" : "Default_640960@2x.png",
       "extent" : "full-screen",
-      "minimum-system-version" : "8.0",
-      "subtype" : "1366h",
+      "minimum-system-version" : "7.0",
+      "scale" : "2x"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
+      "subtype" : "retina4",
+      "filename" : "Default_6401136Retain4@2x.png",
+      "minimum-system-version" : "7.0",
+      "orientation" : "portrait",
       "scale" : "2x"
     }
   ],
