@@ -21,7 +21,12 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     var playerVC1 = MPMoviePlayerController()
     let notificationCenter = NotificationCenter.default
     
-    var topView = UIView()
+    
+    var backView = UIView() //player.view上的第一个view 尺寸和其一样大 ,所有的控制均为其 子视图
+    
+    var topView = UIView() //顶部视图:返回按钮  投放TV  横屏时: 返回 播放速率 选集 设置
+    
+    var bottomView = UIView() //底部视图: 播放 暂停  播放进度条 全屏 横屏时: 清晰度
     
     var swipBrightnessLeft = UISwipeGestureRecognizer()
     var swipBrightnessRight = UISwipeGestureRecognizer()
@@ -31,6 +36,14 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     
     var volumeView = MPVolumeView()
     var volumeSlider = UISlider()
+    
+    var volumeLeftView = UIView()
+    var brightnessRightView = UIView()
+   
+    //各种控制按钮
+    var playBt = UIButton() //播放暂停按钮
+
+    var fullScreenBt = UIButton() //全屏切换按钮
     
     
     //MARk: 坑点,若是使用系统手势平移返回  但是没返回 还是在这个页面的话 播放界面会消失  只走viewWillAppear
@@ -46,29 +59,20 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         //MARK: 坑点 导航栏的透明度设置为0 时,返回功能失效
         self.navigationController?.navigationBar.alpha = 0.0
 //        self.navigationController?.hidesBarsOnSwipe = true
+        //MARK: 初始化播放器
+        initMPMoviePlayer()
         //MARK: 模仿腾讯视频播放界面
         initBackScrollView()
-        
-        initMPMoviePlayer()
         //给palyer添加通知 监控其各种状态的变化
         addNoticeForPlayer()
         
         //截图
         obtainThunailImage()
         
-        //调节系统音量
         
-        //初始化音量条
-        
-        topView.addSubview(volumeView)
-        volumeView.snp.makeConstraints { (make) in
-            make.top.equalTo(10)
-            make.bottom.equalTo(-10)
-            make.width.equalTo(3)
-            make.centerX.equalTo(topView.snp.centerX)
-        }
+        //获取 系统音量条
         volumeView.showsVolumeSlider = true
-        
+        /// 获取到 volumeview里面控制音量的 slider
         for var aView in volumeView.subviews {
             
             if aView.description.contains("MPVolumeSlider") {
@@ -78,19 +82,19 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             }
 
         }
+        //MARK: 初始化视频的音量
+        self.volumeSlider.setValue(0.3, animated: false)
         
-        
+        /* 这是把音量条 做可视化处理
         let MySlider = UISlider()
-        topView.addSubview(MySlider)
+        backView.addSubview(MySlider)
         MySlider.snp.makeConstraints { (make) in
             
             make.left.equalTo(10)
             make.right.equalTo(-10)
             make.height.equalTo(10)
-            make.centerY.equalTo(topView.snp.centerY)
+            make.centerY.equalTo(backView.snp.centerY)
         }
-        
-        (volumeView.subviews[0] as! UISlider).setValue(1.0, animated: false)
 //        self.volumeSlider.setValue(0.0, animated: true)
 //        MySlider.value = self.volumeSlider.value
         
@@ -100,56 +104,58 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
 //        MySlider.transform.rotated(by:CGFloat(-M_PI/2))
         
 //        MySlider.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI/2))
+        */
         
         
-        
-        
-        
-        
-//        volumeView.userActivity
-        
+        //MARK:调节系统音量
+        backView.addSubview(volumeLeftView)
+        volumeLeftView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.top.equalTo(0)
+            make.width.equalTo(kSCREENWIDTH / 2)
+            make.height.equalTo(backView)
+        }
+        volumeLeftView.backgroundColor = UIColor.clear
         swipVolumeUp = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustVolumeUp(gesture:)))
-        swipVolumeUp.direction = UISwipeGestureRecognizerDirection.left
+        swipVolumeUp.direction = UISwipeGestureRecognizerDirection.up
         swipVolumeUp.numberOfTouchesRequired = 1
         swipVolumeUp.delegate = self
-        topView.addGestureRecognizer(swipVolumeUp)
-        
+        volumeLeftView.addGestureRecognizer(swipVolumeUp)
         swipVolumeDown = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustVolumeDown(gesture:)))
-        swipVolumeDown.direction = UISwipeGestureRecognizerDirection.right
+        swipVolumeDown.direction = UISwipeGestureRecognizerDirection.down
         swipVolumeDown.numberOfTouchesRequired = 1
         swipVolumeDown.delegate = self
-        topView.addGestureRecognizer(swipVolumeDown)
+        volumeLeftView.addGestureRecognizer(swipVolumeDown)
         
-        
-        MySlider.addGestureRecognizer(swipVolumeUp)
-        MySlider.addGestureRecognizer(swipVolumeDown)
-        //调节系统亮度
-        
+        //MARK:调节系统亮度
         swipBrightnessLeft = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustBrightnessLeft(gesture:)))
         swipBrightnessLeft.direction = UISwipeGestureRecognizerDirection.left
         swipBrightnessLeft.numberOfTouchesRequired = 1
         swipBrightnessLeft.delegate = self
-        topView.addGestureRecognizer(swipBrightnessLeft)
+        backView.addGestureRecognizer(swipBrightnessLeft)
         
         swipBrightnessRight = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustBrightnessRight(gesture:)))
         swipBrightnessRight.direction = UISwipeGestureRecognizerDirection.right
         swipBrightnessRight.numberOfTouchesRequired = 1
         swipBrightnessRight.delegate = self
-        topView.addGestureRecognizer(swipBrightnessRight)
+        backView.addGestureRecognizer(swipBrightnessRight)
         
         
     }
     
     func initBackScrollView() {
-        
-        
+        self.view.addSubview(backScrollView)
+        backScrollView.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(0)
+            make.top.equalTo(self.playerVC1.view.snp.bottom).offset(0)
+            make.right.equalTo(0)
+            make.bottom.equalTo(0)
+            
+        }
+        backScrollView.backgroundColor = UIColor.green
     }
     func initMPMoviePlayer() {
-        
-        
-        
-        
-        
         
         // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
         self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
@@ -165,14 +171,14 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             make.height.equalTo(kSCREENWIDTH * 9 / 16)
         }
         
-        self.playerVC1.controlStyle = .embedded//embedded,fullscreen,none,default
+        self.playerVC1.controlStyle = .none//embedded,fullscreen,none,default
         //显示播放 按钮  快进 快退 全屏等
         //fullscreen  分上下两部分 上面是 完成按钮  进度条  下面是 快退 播放 快进 三个按钮 ,其中 点完成时 播放暂停 , 点快进或快退时,若无视频队列 则会黑屏
         //none时 相关的控制按钮 进度条 全部没有
         //default 同 embedded
         //embedded 播放按钮  进度条 还有个类似全屏的按钮 但是 一点击 先放大但画面消失 声音还在 ->这个当palyer放在 push的另一个视图时,没有问题,点击放大 效果为MPMoviePlayerViewController.
         
-        self.playerVC1.scalingMode = .none
+        self.playerVC1.scalingMode = .aspectFit
         
         //aspectFit  成比例缩放 上下部分 会有部分黑屏
         //aspectFill / fill/none  全屏填充
@@ -181,18 +187,67 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         self.playerVC1.prepareToPlay()
         
         //MARK: 改变播放速率  float  0 暂停  1 正常播放  2 是2倍速率
-        self.playerVC1.currentPlaybackRate = 2.0
+        self.playerVC1.currentPlaybackRate = 1.0
         
         self.playerVC1.play()
         
-        //MARK: 在player上面 放一个view 然后对视频的各种控制 添加到 topView上面
-        view.addSubview(topView)
-        topView.snp.makeConstraints { (make) in
+        initRelatedViews()
+       
+       
+ 
+    }
+    
+    
+    //MARK: 初始化播放器相关的视图和控件
+    func initRelatedViews() {
+        //MARK: 在player上面 放一个view 然后对视频的各种控制 添加到 backView上面
+        view.addSubview(backView)
+        
+        backView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.playerVC1.view)
-            make.bottom.equalTo(self.playerVC1.view.snp.bottom).offset(-100)
         }
-        topView.backgroundColor = .red
-        topView.alpha = 0.5
+        backView.backgroundColor = UIColor.clear
+        
+        backView.addSubview(topView)
+        topView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.top.equalTo(0)
+            make.height.equalTo(44)
+        }
+        topView.backgroundColor = UIColor.red
+        
+        bottomView.xlpInitView(superView: backView) { (make) in
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.bottom.equalTo(0)
+            make.height.equalTo(44)
+        }
+        bottomView.backgroundColor = UIColor.gray
+        
+        playBt.xlpInitFianlButton("▶️", titleColor: .white, fontSize: 12, superView: bottomView, snpMaker: { (make) in
+            make.left.equalTo(10)
+            make.top.equalTo(3)
+            make.bottom.equalTo(-3)
+            make.width.equalTo(30)
+        }) { (bt) in
+            
+            self.playerVC1.pause()
+        }
+        
+        fullScreenBt.xlpInitFianlButton("全屏", titleColor: .white, fontSize: 12, superView: bottomView, snpMaker: { (make) in
+            make.right.equalTo(-10)
+            make.top.equalTo(3)
+            make.bottom.equalTo(-3)
+            make.width.equalTo(30)
+        }) { (bt) in
+            
+            self.playerVC1.view.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI_2))
+            self.playerVC1.view.snp.makeConstraints({ (make) in
+                make.left.top.bottom.equalTo(0)
+                make.right.equalTo(0)
+            })
+        }
         
     }
     
@@ -285,13 +340,17 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     //MARK: 调节音量
     func adjustVolumeUp(gesture:UIGestureRecognizer)  {
         
-//        topView.alpha += 0.1
+//        backView.alpha += 0.1
         
         self.volumeSlider.value += 0.05
+        let nowValue:Float = self.volumeSlider.value
+        print("=====音量增大后的值为\(nowValue)")
+        self.volumeSlider.setValue(nowValue, animated: false)
+
         print("======调节音量+++\(self.volumeSlider.value)")
     }
     func adjustVolumeDown(gesture:UIGestureRecognizer)  {
-//        topView.alpha -= 0.1
+//        backView.alpha -= 0.1
         
         self.volumeSlider.value -= 0.05
         print("======调节音----\(self.volumeSlider.value)")
@@ -310,6 +369,9 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     func beginSeekingBackward() {
         
     }
+    
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         
         
@@ -318,6 +380,8 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         self.playerVC1.view.removeFromSuperview()
         notificationCenter.removeObserver(self)
         self.navigationController?.navigationBar.alpha = 1.0
+        
+        volumeLeftView.removeFromSuperview()
         
         
     }
