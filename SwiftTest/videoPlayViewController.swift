@@ -8,11 +8,30 @@
 
 import UIKit
 import MediaPlayer
+import Darwin
 
+
+//坑点:横竖屏切换时  首先只勾选 portrait ,否则旋转角度的地方会出现问题 , 然后旋转的方法使用独立旋转那个方法 ,旋转后的布局一定要更新, snp约束的话要使用  center  width height  ,而不是left top  right bottom 
+// 状态栏自动隐藏 显现的话  要在plist文件里面 添加 View controller-based status bar appearance  为NO
+// 同时 添加观察者方法 var isFullscreen: Bool = false {
+//didSet {
+    // 为了隐藏状态栏必须在info.plist中View controller-based status bar appearance 设置为NO
+    //UIApplication.shared.setStatusBarHidden(isFullscreen, with: .slide)
+//}
+//}
+
+enum WLVideoPlayerViewFullscreenModel {
+    /// 当设备旋转、全屏按钮点击就进入全屏且横屏的状态
+    case awaysLandscape
+    /// 全屏按钮点击进入全屏状态，在全屏状态下旋转才进入横屏
+    case landscapeWhenInFullscreen
+}
 
 class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate {
 
     let url = NSURL.init(string: "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4")
+    
+//    let url = NSURL.init(string: "http://flv2.bn.netease.com/videolib3/1705/15/EQkHT1410/SD/EQkHT1410-mobile.mp4")
     
     let backScrollView = UIScrollView()
     let containView = UIView()
@@ -44,17 +63,33 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     var playBt = UIButton() //播放暂停按钮
 
     var fullScreenBt = UIButton() //全屏切换按钮
+
+//    weak var weakself = self
+
+    var isFullscreen: Bool = false {
+        didSet {
+            // 为了隐藏状态栏必须在info.plist中View controller-based status bar appearance 设置为NO
+            UIApplication.shared.setStatusBarHidden(isFullscreen, with: .slide)
+        }
+    }
+ //是否是横屏的标志位
+    
+    var fullscreenModel: WLVideoPlayerViewFullscreenModel = .awaysLandscape
+
+//    var inView = UIView()
     
     
     //MARk: 坑点,若是使用系统手势平移返回  但是没返回 还是在这个页面的话 播放界面会消失  只走viewWillAppear
     // 暂时的解决思路时  判断是否平移手势未成功  未成功时  则直接在 viewWillAppear里调用 初始化播放器的方法
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print("=====切换横竖屏时 此方法是否每次都走")
     }
  
     override func viewDidLoad() {
         view.backgroundColor = UIColor.white
+        
+//        self.shouldAutorotate = false
         
         //MARK: 坑点 导航栏的透明度设置为0 时,返回功能失效
         self.navigationController?.navigationBar.alpha = 0.0
@@ -235,6 +270,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             self.playerVC1.pause()
         }
         
+        /*
         fullScreenBt.xlpInitFianlButton("全屏", titleColor: .white, fontSize: 12, superView: bottomView, snpMaker: { (make) in
             make.right.equalTo(-10)
             make.top.equalTo(3)
@@ -242,12 +278,53 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             make.width.equalTo(30)
         }) { (bt) in
             
-            self.playerVC1.view.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI_2))
-            self.playerVC1.view.snp.makeConstraints({ (make) in
-                make.left.top.bottom.equalTo(0)
-                make.right.equalTo(0)
-            })
+            
+            
+            if !weakself!.isFullscreen{
+                
+                UIApplication.shared.setStatusBarOrientation(.landscapeLeft, animated: true)
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                    
+                    weakself!.playerVC1.view.transform = weakself!.playerVC1.view.transform.rotated(by: CGFloat(M_PI/2))
+//                    weakself!.topView.transform = weakself!.topView.transform.rotated(by: CGFloat(Double.pi / 2))
+//                    weakself!.bottomView.transform = weakself!.bottomView.transform.rotated(by: CGFloat(Double.pi / 2))
+
+                    weakself?.playerVC1.view.snp.remakeConstraints({ (make) in
+                        make.left.top.bottom.equalTo(0)
+                        make.right.equalTo(0)
+                        print("asdajdhjkahsdjka")
+                    })
+                    weakself!.backView.transform = weakself!.backView.transform.rotated(by: CGFloat(Double.pi / 2))
+
+                    weakself!.backView.snp.remakeConstraints { (make) in
+                        make.edges.equalTo(self.playerVC1.view)
+                    }
+                    weakself?.isFullscreen = true
+                })
+                
+            }else{
+                
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                    weakself!.playerVC1.view.transform = weakself!.playerVC1.view.transform.rotated(by: CGFloat(-M_PI/2))
+                    weakself!.backView.transform = weakself!.backView.transform.rotated(by: CGFloat(-Double.pi / 2))
+
+//                    weakself!.topView.transform = weakself!.topView.transform.rotated(by: CGFloat(-Double.pi / 2))
+//                    weakself!.bottomView.transform = weakself!.bottomView.transform.rotated(by: CGFloat(-Double.pi / 2))
+                    weakself?.playerVC1.view.snp.remakeConstraints({ (make) in
+                        make.left.right.top.equalTo(0)
+                        make.height.equalTo(kSCREENWIDTH * 9 / 16)
+                    })
+                    weakself?.isFullscreen = false
+                })
+                
+            }
+            
         }
+        
+        */
+        
         
     }
     
@@ -273,6 +350,10 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
          MPMoviePlayerDidExitFullscreen
          MPMoviePlayerDidEnterFullscreen
          **/
+        notificationCenter.addObserver(self, selector: #selector(deviceOrientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(playerWillEnterFullscreen), name: NSNotification.Name.MPMoviePlayerWillEnterFullscreen, object: self.playerVC1)
+        notificationCenter.addObserver(self, selector: #selector(playerWillExitFullscreen), name: NSNotification.Name.MPMoviePlayerWillExitFullscreen, object: self.playerVC1)
+        
     }
     
     func mediaPlayerPlaybackStateChange(notification:Notification){
@@ -369,8 +450,171 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     func beginSeekingBackward() {
         
     }
+   
+   //MARK: 横竖屏切换
+    /**
+     当设备发生旋转的时候调用
+     */
+    func deviceOrientationDidChange() {
+        guard isDisplayedInScreen() else {
+            return
+        }
+        let orientation = UIDevice.current.orientation
+        switch orientation {
+        case .landscapeLeft:
+            toLandscape(CGFloat(Double.pi / 2))
+            break
+        case .landscapeRight:
+            toLandscape(CGFloat(-Double.pi / 2))
+            break
+        case .portrait:
+            toPortrait()
+            break
+        default:
+            break
+        }
+    }
     
+    /**
+     即将进入全屏模式的时候调用
+     */
+    func playerWillEnterFullscreen() {
+        switch fullscreenModel {
+        case .awaysLandscape:
+            UIDevice.current.setValue(NSNumber(value: UIDeviceOrientation.landscapeLeft.rawValue as Int), forKey: "orientation")
+            break
+        case .landscapeWhenInFullscreen:
+            enterFullscreen(nil)
+            break
+        }
+    }
+    /**
+     即将退出全屏模式的时候调用
+     */
+    func playerWillExitFullscreen() {
+        switch fullscreenModel {
+        case .awaysLandscape:
+            UIDevice.current.setValue(NSNumber(value: UIDeviceOrientation.portrait.rawValue as Int), forKey: "orientation")
+            break
+        case .landscapeWhenInFullscreen:
+            UIDevice.current.setValue(NSNumber(value: UIDeviceOrientation.portrait.rawValue as Int), forKey: "orientation")
+            exitFullscreen()
+            break
+        }
+    }
     
+    /**
+     判断当前view是否显示在屏幕上
+     */
+    func isDisplayedInScreen() -> Bool {
+        
+//        if self.isHidden {
+//            return false
+//        }
+        
+        // self对应window的坐标
+//        let rect = self.convert(self.frame, to: nil)
+//        let screenRect = UIScreen.main.bounds
+//        
+//        let intersectionRect = rect.intersection(screenRect)
+//        if intersectionRect.isEmpty || intersectionRect.isNull {
+//            return false;
+//        }
+        
+        return true
+    }
+
+    
+    //========================================================
+    // MARK: 旋转\全屏控制方法
+    //========================================================
+    
+    /**
+     每当设备横屏的时候调用
+     让视频播放器进入横屏的全屏播放状态
+     - parameter angle: 旋转的角度
+     */
+    func toLandscape(_ angle: CGFloat) {
+        if fullscreenModel == .landscapeWhenInFullscreen && !isFullscreen {
+            return
+        }else {
+            enterFullscreen(angle);
+        }
+    }
+    /**
+     每当设备进入竖屏的时候调用
+     退出全屏播放状态
+     */
+    func toPortrait() {
+        
+        if fullscreenModel == .landscapeWhenInFullscreen && isFullscreen  {
+            
+            changePlayerScreenState(UIApplication.shared.keyWindow!, needRotation: nil, fullscreen: nil)
+            
+        }else if fullscreenModel == .awaysLandscape {
+            exitFullscreen()
+        }
+    }
+    
+    func enterFullscreen(_ angle: CGFloat?) {
+        changePlayerScreenState(UIApplication.shared.keyWindow!, needRotation: angle, fullscreen: true)
+    }
+    
+    func exitFullscreen() {
+        changePlayerScreenState(self.view, needRotation: nil, fullscreen: false)
+    }
+    /**
+     用来改变播放器的显示状态(是否全屏、是否竖屏等)
+     
+     - parameter inView:       播放器处于的父视图
+     - parameter angle:        是否需要旋转，nil代表不需要
+     - parameter isfullscreen: 是否将要全屏显示，nil代表保存原状
+     */
+    func changePlayerScreenState(_ inView: UIView, needRotation angle: CGFloat?, fullscreen: Bool?) {
+        
+//        guard let customControlView = self.customControlView else {
+//            return
+//        }
+        
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            
+            
+             self.notificationCenter.post(name: fullscreen! ? NSNotification.Name.MPMoviePlayerWillEnterFullscreen : NSNotification.Name.MPMoviePlayerWillExitFullscreen, object: nil)
+            
+            inView.addSubview(self.playerVC1.view)
+            
+            self.playerVC1.view.transform = CGAffineTransform(rotationAngle: angle ?? 0)
+            
+//            CGAffineTransform(rotationAngle: CGFloat(-M_PI/))
+
+            
+            if fullscreen!{
+                
+                
+                
+                self.playerVC1.view.snp.remakeConstraints({ (make) in
+                    make.center.equalTo(inView.center)
+                    make.width.equalTo(kSCREENHEIGHT)
+                    make.height.equalTo(kSCREENWIDTH)
+                })
+                
+                
+            }else{
+                
+                self.playerVC1.view.snp.remakeConstraints({ (make) in
+                    make.top.left.right.equalTo(0)
+                    make.height.equalTo(kSCREENWIDTH * 9 / 16)
+                })
+                
+                
+            }
+        }, completion: { (finish) -> Void in
+            if fullscreen != nil {
+                self.isFullscreen = fullscreen!
+            }
+            
+        })
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         
