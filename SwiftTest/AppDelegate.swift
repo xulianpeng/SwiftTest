@@ -136,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let str123 = "1231412"
         let str1234 = "1231412.12345678"
 
-        let int123 = 213123123123
+        let int123 = 3123
         let int1234 = 213123123123.12376787679
 
         
@@ -430,11 +430,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Fallback on earlier versions
         }
     }
-
-
-    
-    
-
     
     /// 获取广告数据 保存到本地
     func downAD() {
@@ -448,9 +443,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// 展示广告
     func displayAD() {
         
-        let adView = ADView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
-//        kKeyWindow().isHidden = false
-        kKeyWindow().addSubview(adView)
+        let dataPath = kGetDocumentPath().appendingPathComponent("/AD/adData")
+        let adImage = UIImage.init(contentsOfFile: dataPath)
+        if adImage != nil {
+            
+            let adView = ADView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
+            //        kKeyWindow().isHidden = false
+            kKeyWindow().addSubview(adView)
+        }
         
     }
 }

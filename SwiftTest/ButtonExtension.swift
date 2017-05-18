@@ -150,7 +150,34 @@ extension UIButton{
         
         self.xlpInitRootButton(title, titleColor: titleColor, fontSize: fontSize, backgroundColor: .clear, imageStr: nil, backgroundImageStr: nil, cornerRedius: nil, superView: superView, snpMaker: snpMaker, buttonClick: buttonClick)
     }
-    
+    func xlpInitFianlButton(_ title:String?,
+                            titleColor:UIColor?,
+                            fontSize:CGFloat?,
+                            superView:UIView,
+                            snpMaker:WMSnapMakerBlock
+        ) {
+        
+        
+        if title != nil {
+            self.setTitle(title, for: .normal)
+        }
+        if titleColor != nil {
+            self.setTitleColor(titleColor, for: .normal)
+        }
+        if fontSize != nil {
+            
+            self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize!)
+        }
+        if backgroundColor != nil {
+            self.backgroundColor = backgroundColor
+        }
+       
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
+        superView.addSubview(self)
+        
+        self.snp.makeConstraints(snpMaker)
+    }
+
     /// 带frame的button的初始化
     ///
     /// - Parameters:

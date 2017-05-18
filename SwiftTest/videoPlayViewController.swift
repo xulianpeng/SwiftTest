@@ -33,11 +33,11 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     
 //    let url = NSURL.init(string: "http://flv2.bn.netease.com/videolib3/1705/15/EQkHT1410/SD/EQkHT1410-mobile.mp4")
     
-    let backScrollView = UIScrollView()
-    let containView = UIView()
+    let backScrollView = UIScrollView() //播放器下面的view
+    let containView = UIView() //这个没用到啊
     
     
-    var playerVC1 = MPMoviePlayerController()
+    var playerVC1 = MPMoviePlayerController() //播放器
     let notificationCenter = NotificationCenter.default
     
     
@@ -64,8 +64,14 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
 
     var fullScreenBt = UIButton() //全屏切换按钮
 
+    var thumailBt = UIButton()//截图按钮
+    
+    var thumbImage = UIImageView()
+    
 //    weak var weakself = self
 
+    let playerHeight = kSCREENWIDTH * 9 / 16
+    
     var isFullscreen: Bool = false {
         didSet {
             // 为了隐藏状态栏必须在info.plist中View controller-based status bar appearance 设置为NO
@@ -76,7 +82,25 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     
     var fullscreenModel: WLVideoPlayerViewFullscreenModel = .awaysLandscape
 
-//    var inView = UIView()
+
+    var isXlpFullScreen : Bool = false //点击全屏按钮 切换 横竖屏的标志位
+    
+    //播放进度条
+    
+    var sliderView = UIView()
+    
+    
+    var playSlider:UISlider = UISlider()
+    var playSliderProgress:UIProgressView = UIProgressView()
+    
+    var updateTimer = Timer() //更新播放进度条的定时器
+    
+    //隐藏工具条 的定时器 ->思路 touchend 方法开始倒计时  隐藏后 定时器置为失效并销毁,再次touchend时 循环  ,刚进入播放界面  开始倒计时  ,倒计时间到隐藏 并将其置为失效并销毁,如果未到时间有进行触摸操作  倒计时置为失效并销毁
+//    var hiddenTimer = Timer()
+    var hiddenTimer:Timer?
+    var isHiddenControlView = false
+    let hiddenTime:TimeInterval = 5
+    
     
     
     //MARk: 坑点,若是使用系统手势平移返回  但是没返回 还是在这个页面的话 播放界面会消失  只走viewWillAppear
@@ -96,13 +120,12 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
 //        self.navigationController?.hidesBarsOnSwipe = true
         //MARK: 初始化播放器
         initMPMoviePlayer()
-        //MARK: 模仿腾讯视频播放界面
-        initBackScrollView()
+//        initBackScrollView()
         //给palyer添加通知 监控其各种状态的变化
         addNoticeForPlayer()
         
         //截图
-        obtainThunailImage()
+//        obtainThunailImage()
         
         
         //获取 系统音量条
@@ -163,6 +186,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         volumeLeftView.addGestureRecognizer(swipVolumeDown)
         
         //MARK:调节系统亮度
+        /*
         swipBrightnessLeft = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustBrightnessLeft(gesture:)))
         swipBrightnessLeft.direction = UISwipeGestureRecognizerDirection.left
         swipBrightnessLeft.numberOfTouchesRequired = 1
@@ -174,7 +198,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         swipBrightnessRight.numberOfTouchesRequired = 1
         swipBrightnessRight.delegate = self
         backView.addGestureRecognizer(swipBrightnessRight)
-        
+        */
         
     }
     
@@ -183,29 +207,38 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         backScrollView.snp.makeConstraints { (make) in
             
             make.left.equalTo(0)
-            make.top.equalTo(self.playerVC1.view.snp.bottom).offset(0)
+//            make.top.equalTo(playerHeight)
             make.right.equalTo(0)
-            make.bottom.equalTo(0)
+            make.bottom.equalTo(self.view.snp.bottom).offset(0)
+            make.height.equalTo(kSCREENHEIGHT - playerHeight)
             
         }
         backScrollView.backgroundColor = UIColor.green
+//        backScrollView.frame = CGRect(x:0,y:playerHeight - 64,width:kSCREENWIDTH,height:(kSCREENHEIGHT - playerHeight))
+        thumbImage.xlpInitImageView(backScrollView, corner: 4) { (make) in
+            
+            make.center.equalTo(backScrollView)
+            make.size.equalTo(CGSize(width:150,height:150))
+        }
+        thumbImage.backgroundColor = UIColor.yellow
     }
+    //MARK: 初始化播放器
     func initMPMoviePlayer() {
         
         // 坑点之一 playerVC1 必须是全局的 变量  否则 不会播放
         self.playerVC1 = MPMoviePlayerController.init(contentURL: self.url! as URL!)
         self.view.addSubview((self.playerVC1.view)!)
 //        self.playerVC1.view.frame = CGRect(x:0,y:64,width:kSCREENWIDTH,height:kSCREENWIDTH * 9 / 16)
-        let theHeight = (self.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height
-        print(theHeight)
+//        let theHeight = (self.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height
+//        print(theHeight)
         self.playerVC1.view.snp.makeConstraints { (make) in
             
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.top.equalTo(0)
-            make.height.equalTo(kSCREENWIDTH * 9 / 16)
+            make.top.equalTo(20)
+            make.height.equalTo(self.playerHeight)
         }
-        
+//        self.playerVC1.view.autoresizingMask = UIViewAutoresizing.flexibleHeight
         self.playerVC1.controlStyle = .none//embedded,fullscreen,none,default
         //显示播放 按钮  快进 快退 全屏等
         //fullscreen  分上下两部分 上面是 完成按钮  进度条  下面是 快退 播放 快进 三个按钮 ,其中 点完成时 播放暂停 , 点快进或快退时,若无视频队列 则会黑屏
@@ -226,6 +259,9 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
         self.playerVC1.play()
         
+        //MARK: 模仿腾讯视频播放界面
+        initBackScrollView()
+        
         initRelatedViews()
        
        
@@ -236,8 +272,8 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     //MARK: 初始化播放器相关的视图和控件
     func initRelatedViews() {
         //MARK: 在player上面 放一个view 然后对视频的各种控制 添加到 backView上面
-        view.addSubview(backView)
-        
+//        view.addSubview(backView)
+        self.playerVC1.view.addSubview(backView)
         backView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.playerVC1.view)
         }
@@ -253,79 +289,119 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         topView.backgroundColor = UIColor.red
         
         bottomView.xlpInitView(superView: backView) { (make) in
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.bottom.equalTo(0)
+            make.left.right.equalTo(0)
+//            make.width.equalTo(kSCREENWIDTH)
+            make.bottom.equalTo(self.backView.snp.bottom).offset(-0.05)
             make.height.equalTo(44)
+//            make.top.equalTo(0)
         }
         bottomView.backgroundColor = UIColor.gray
         
-        playBt.xlpInitFianlButton("▶️", titleColor: .white, fontSize: 12, superView: bottomView, snpMaker: { (make) in
+        //播放按钮初始化
+        playBt.xlpInitFianlButton("▶️", titleColor: .white, fontSize: 13, superView: bottomView) { (make) in
             make.left.equalTo(10)
             make.top.equalTo(3)
             make.bottom.equalTo(-3)
             make.width.equalTo(30)
-        }) { (bt) in
-            
-            self.playerVC1.pause()
         }
+        //MARK:添加播放暂停事件
+        playBt.addTarget(self, action: #selector(playOrPause), for: .touchUpInside)
         
-        /*
-        fullScreenBt.xlpInitFianlButton("全屏", titleColor: .white, fontSize: 12, superView: bottomView, snpMaker: { (make) in
+        //全屏按钮
+        fullScreenBt.xlpInitFianlButton("全屏", titleColor: .white, fontSize: 12, superView: bottomView) { (make) in
             make.right.equalTo(-10)
             make.top.equalTo(3)
             make.bottom.equalTo(-3)
             make.width.equalTo(30)
+        }
+        
+        fullScreenBt.addTarget(self, action: #selector(fullScreenAction), for: .touchUpInside)
+        
+        
+        
+        
+        
+        let  asset: AVURLAsset = AVURLAsset.init(url: self.url! as URL)
+        let gen:AVAssetImageGenerator = AVAssetImageGenerator.init(asset: asset)
+        gen.appliesPreferredTrackTransform = true
+        
+        self.thumailBt.xlpInitFianlButton("截图", titleColor: .green, fontSize: 13, superView: bottomView, snpMaker: { (make) in
+            make.right.equalTo(self.fullScreenBt.snp.left).offset(-10)
+            make.top.equalTo(self.fullScreenBt)
+            make.size.equalTo(self.fullScreenBt)
+
         }) { (bt) in
             
             
-            
-            if !weakself!.isFullscreen{
-                
-                UIApplication.shared.setStatusBarOrientation(.landscapeLeft, animated: true)
-                UIView.animate(withDuration: 0.5, animations: {
-                    
-                    
-                    weakself!.playerVC1.view.transform = weakself!.playerVC1.view.transform.rotated(by: CGFloat(M_PI/2))
-//                    weakself!.topView.transform = weakself!.topView.transform.rotated(by: CGFloat(Double.pi / 2))
-//                    weakself!.bottomView.transform = weakself!.bottomView.transform.rotated(by: CGFloat(Double.pi / 2))
-
-                    weakself?.playerVC1.view.snp.remakeConstraints({ (make) in
-                        make.left.top.bottom.equalTo(0)
-                        make.right.equalTo(0)
-                        print("asdajdhjkahsdjka")
-                    })
-                    weakself!.backView.transform = weakself!.backView.transform.rotated(by: CGFloat(Double.pi / 2))
-
-                    weakself!.backView.snp.remakeConstraints { (make) in
-                        make.edges.equalTo(self.playerVC1.view)
-                    }
-                    weakself?.isFullscreen = true
-                })
-                
-            }else{
-                
-                UIView.animate(withDuration: 0.5, animations: {
-                    
-                    weakself!.playerVC1.view.transform = weakself!.playerVC1.view.transform.rotated(by: CGFloat(-M_PI/2))
-                    weakself!.backView.transform = weakself!.backView.transform.rotated(by: CGFloat(-Double.pi / 2))
-
-//                    weakself!.topView.transform = weakself!.topView.transform.rotated(by: CGFloat(-Double.pi / 2))
-//                    weakself!.bottomView.transform = weakself!.bottomView.transform.rotated(by: CGFloat(-Double.pi / 2))
-                    weakself?.playerVC1.view.snp.remakeConstraints({ (make) in
-                        make.left.right.top.equalTo(0)
-                        make.height.equalTo(kSCREENWIDTH * 9 / 16)
-                    })
-                    weakself?.isFullscreen = false
-                })
-                
-            }
-            
+            //MARK: 获取截图的第二种方法
+            let theImage = self.obtainThumailImageTwo(url: (self.url! as NSURL) as URL, gen: gen)
+            print("====截取的图片为====\(theImage)")
+            self.thumbImage.image = theImage
         }
         
-        */
+        //MARK: 进度条的初始化
+//        playerVC1.view.isUserInteractionEnabled = true
+//        backView.isUserInteractionEnabled = true
+//        bottomView.isUserInteractionEnabled = true
         
         
+        sliderView.xlpInitView(superView: bottomView) { (make) in
+            make.left.equalTo(self.playBt.snp.right).offset(20)
+            make.right.equalTo(self.thumailBt.snp.left).offset(-10)
+                        make.centerY.equalTo(self.bottomView.snp.centerY)
+//            make.top.equalTo(self.thumbImage.snp.bottom).offset(20)
+            make.height.equalTo(30)
+        }
+        //缓冲进度条的初始化
+        sliderView.addSubview(playSliderProgress)
+        playSliderProgress.snp.makeConstraints { (make) in
+            
+            make.left.right.equalTo(0)
+            make.centerY.equalTo(sliderView.snp.centerY)
+            make.height.equalTo(1)
+        }
+        playSliderProgress.progressViewStyle = .default
+        playSliderProgress.progressTintColor = UIColor.yellow
+        
+        //播放进度条的初始化
+        sliderView.addSubview(playSlider)
+        playSlider.snp.makeConstraints { (make) in
+            
+            make.left.right.equalTo(0)
+            make.centerY.equalTo(self.playSliderProgress).offset(-0.3)
+            make.height.equalTo(30)
+
+        }
+        playSlider.minimumValue = 0
+        playSlider.isContinuous = true
+        playSlider.setThumbImage(kImageWithName("sliderImage"), for: .normal)
+//        playSlider.setMinimumTrackImage(kImageWithName("sliderImage"), for: .normal)
+//        playSlider.setMaximumTrackImage(kImageWithName("sliderImage"), for: .normal)
+        playSlider.minimumTrackTintColor = UIColor.red
+        playSlider.maximumTrackTintColor = UIColor.clear
+        playSlider.addTarget(self, action: #selector(changePlaySlider), for: UIControlEvents.valueChanged)
+        
+    }
+    
+    //MARK:播放按钮的点击事件
+    func playOrPause(bt:UIButton)  {
+        
+        if self.playerVC1.playbackState == .playing {
+            self.playerVC1.pause()
+        }else{
+            self.playerVC1.play()
+        }
+    }
+    func fullScreenAction(bt:UIButton) {
+        
+        if isXlpFullScreen {
+            self.changePlayerScreenState(self.view, needRotation: nil, fullscreen: false)
+
+        }else{
+            
+            self.changePlayerScreenState(self.view, needRotation: CGFloat(Double.pi / 2), fullscreen: true)
+        }
+
     }
     
     func addNoticeForPlayer() {
@@ -333,9 +409,10 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
         notificationCenter.addObserver(self, selector: #selector(mediaPlayerPlaybackStateChange), name: NSNotification.Name.MPMoviePlayerPlaybackStateDidChange, object: self.playerVC1)
         notificationCenter.addObserver(self, selector: #selector(mediaPlayerPlaybackFinished), name: NSNotification.Name.MPMoviePlayerPlaybackDidFinish, object: self.playerVC1)
-        notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlayerThumbnailImageRequestDidFinish, object: self.playerVC1)
+//        notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlayerThumbnailImageRequestDidFinish, object: self.playerVC1) //获取截图的方法 舍弃
         
-        notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlayerDidEnterFullscreen, object: self.playerVC1)
+        //播放时长的通知
+        notificationCenter.addObserver(self, selector: #selector(mediaPlayerDuration), name: NSNotification.Name.MPMovieDurationAvailable, object: self.playerVC1)
         
         
 //         notificationCenter.addObserver(self, selector: #selector(mediaPlayerThumbnailRequestFinished), name: NSNotification.Name.MPMoviePlaybackStateSeekingBackward, object: self.playerVC1)
@@ -385,56 +462,77 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         print("视频播放完成")
     }
 
-    
+    //该方法获取最终的图片时 出现问题 故舍弃
+ /*
     func mediaPlayerThumbnailRequestFinished(notification:Notification){
         
         let userinfoAny = notification.userInfo
-        
-        print("视频截图完成.======\(notification.userInfo?[MPMoviePlayerThumbnailErrorKey])====userinfo\(userinfoAny?[1])====\(notification)")
-        let image = notification.userInfo?[MPMoviePlayerThumbnailImageKey];
-        //保存图片到相册(首次调用会请求用户获得访问相册权限)
-        if image != nil {
-            UIImageWriteToSavedPhotosAlbum(image as! UIImage, nil, nil, nil);
-        }
+        print(userinfoAny ?? [:])
+//        print("\(userinfoAny["MPMoviePlayerThumbnailImageKey"])")
+//        print("视频截图完成.======\(notification.userInfo?[MPMoviePlayerThumbnailErrorKey])====userinfo\(userinfoAny?[1])====\(notification)")
+//        let image = notification.userInfo?[MPMoviePlayerThumbnailImageKey];
+//        //保存图片到相册(首次调用会请求用户获得访问相册权限)
+//        if image != nil {
+//            UIImageWriteToSavedPhotosAlbum(image as! UIImage, nil, nil, nil);
+//        }
         
     }
 
-    
+   
     func obtainThunailImage()  {
-      
-        
         self.playerVC1.requestThumbnailImages(atTimes: [10,20], timeOption: MPMovieTimeOption.nearestKeyFrame)
         
     }
+    */
+    
+    func obtainThumailImageTwo(url:URL,gen:AVAssetImageGenerator) -> UIImage {
+        
+        let obtainTime:CGFloat = CGFloat(self.playerVC1.currentPlaybackTime)
+        
+        // 将下面三行提出来 是为了 避免每次截图都要生成一遍 降低截图时间点的误差 可以初始化的时候 初始化一次即可 ,结果还凑合
+//        let  asset: AVURLAsset = AVURLAsset.init(url: url, options: nil)
+//        let gen:AVAssetImageGenerator = AVAssetImageGenerator.init(asset: asset)
+//        gen.appliesPreferredTrackTransform = true
+        let time:CMTime = CMTimeMakeWithSeconds(Float64(obtainTime), 1) //两个参数  第一个是视频的第几秒  第二个是 每秒的帧数
+        var actualTime = CMTime.init() //实际生成缩略图的时间
+        let image:CGImage = try! gen.copyCGImage(at: time, actualTime: &actualTime)
+        let thumb:UIImage = UIImage.init(cgImage: image)
+        
+        
+        
+        //oc代码
+//        [[AVURLAsset alloc] initWithURL:soundFileURL options:nil];
+//        AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+//        gen.appliesPreferredTrackTransform = YES;
+//        CMTime time = CMTimeMakeWithSeconds(0.0, 1);
+//        NSError *error = nil;
+//        CMTime actualTime;
+//        CGImageRef image = [gen copyCGImageAtTime:time actualTime:&actualTime error:&error];
+//        UIImage *thumb = [[UIImage alloc] initWithCGImage:image];
+        
+        return thumb;
+    }
+    
     //MARK: 调节亮度  模拟机无效 在真机上才有效
     func adjustBrightnessLeft(gesture:UIGestureRecognizer) {
         
         UIScreen.main.brightness -= 0.1
-        print("=====亮度的减少===\(UIScreen.main.brightness)")
     }
     func adjustBrightnessRight(gesture:UIGestureRecognizer) {
         UIScreen.main.brightness += 0.1
-//        UIScreen.main.setValue(1.0, forKey: "brightness")
         
-        print("=====亮度的增加===\(UIScreen.main.brightness)")
     }
     //MARK: 调节音量
     func adjustVolumeUp(gesture:UIGestureRecognizer)  {
         
 //        backView.alpha += 0.1
-        
         self.volumeSlider.value += 0.05
         let nowValue:Float = self.volumeSlider.value
-        print("=====音量增大后的值为\(nowValue)")
         self.volumeSlider.setValue(nowValue, animated: false)
-
-        print("======调节音量+++\(self.volumeSlider.value)")
     }
     func adjustVolumeDown(gesture:UIGestureRecognizer)  {
 //        backView.alpha -= 0.1
-        
         self.volumeSlider.value -= 0.05
-        print("======调节音----\(self.volumeSlider.value)")
     }
     
     //MARK:手势代理方法
@@ -456,9 +554,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
      当设备发生旋转的时候调用
      */
     func deviceOrientationDidChange() {
-        guard isDisplayedInScreen() else {
-            return
-        }
+        
         let orientation = UIDevice.current.orientation
         switch orientation {
         case .landscapeLeft:
@@ -502,29 +598,6 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             break
         }
     }
-    
-    /**
-     判断当前view是否显示在屏幕上
-     */
-    func isDisplayedInScreen() -> Bool {
-        
-//        if self.isHidden {
-//            return false
-//        }
-        
-        // self对应window的坐标
-//        let rect = self.convert(self.frame, to: nil)
-//        let screenRect = UIScreen.main.bounds
-//        
-//        let intersectionRect = rect.intersection(screenRect)
-//        if intersectionRect.isEmpty || intersectionRect.isNull {
-//            return false;
-//        }
-        
-        return true
-    }
-
-    
     //========================================================
     // MARK: 旋转\全屏控制方法
     //========================================================
@@ -549,7 +622,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
         if fullscreenModel == .landscapeWhenInFullscreen && isFullscreen  {
             
-            changePlayerScreenState(UIApplication.shared.keyWindow!, needRotation: nil, fullscreen: nil)
+            changePlayerScreenState(self.view, needRotation: nil, fullscreen: true)
             
         }else if fullscreenModel == .awaysLandscape {
             exitFullscreen()
@@ -557,7 +630,8 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     }
     
     func enterFullscreen(_ angle: CGFloat?) {
-        changePlayerScreenState(UIApplication.shared.keyWindow!, needRotation: angle, fullscreen: true)
+        changePlayerScreenState(self.view, needRotation: angle, fullscreen: true)
+
     }
     
     func exitFullscreen() {
@@ -572,22 +646,13 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
      */
     func changePlayerScreenState(_ inView: UIView, needRotation angle: CGFloat?, fullscreen: Bool?) {
         
-//        guard let customControlView = self.customControlView else {
-//            return
-//        }
-        
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             
-            
              self.notificationCenter.post(name: fullscreen! ? NSNotification.Name.MPMoviePlayerWillEnterFullscreen : NSNotification.Name.MPMoviePlayerWillExitFullscreen, object: nil)
-            
             inView.addSubview(self.playerVC1.view)
             
             self.playerVC1.view.transform = CGAffineTransform(rotationAngle: angle ?? 0)
-            
-//            CGAffineTransform(rotationAngle: CGFloat(-M_PI/))
-
-            
+           
             if fullscreen!{
                 
                 
@@ -597,37 +662,197 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
                     make.width.equalTo(kSCREENHEIGHT)
                     make.height.equalTo(kSCREENWIDTH)
                 })
+                self.isXlpFullScreen  = true
                 
                 
             }else{
                 
+
                 self.playerVC1.view.snp.remakeConstraints({ (make) in
-                    make.top.left.right.equalTo(0)
-                    make.height.equalTo(kSCREENWIDTH * 9 / 16)
+                    make.top.equalTo(20)
+                    make.left.right.equalTo(0)
+                    make.height.equalTo(self.playerHeight)
                 })
-                
-                
+
+                self.isXlpFullScreen = false
             }
         }, completion: { (finish) -> Void in
             if fullscreen != nil {
                 self.isFullscreen = fullscreen!
+                self.navigationController?.navigationBar.alpha = 0.0
+
             }
+            
+            
             
         })
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    //MARK:播放进度条
+    
+    func obtainPlaySlider() {
+        
+        //self.playerVC1.duration //时长 如果未知返回0  那推测 这是通知的存在的理由 -> //关于这个还有一个通知
+        //self.playerVC1.playableDuration //已经缓冲的
+        //self.playerVC1.currentPlaybackTime //当前的播放时间
+//        self.playerVC1.initialPlaybackTime //起始播放时间
+        //self.playerVC1.endPlaybackTime //终止播放时间
+        
+        print("\(self.playerVC1.duration)===\(self.playerVC1.playableDuration)====\(self.playerVC1.initialPlaybackTime)===\(self.playerVC1.endPlaybackTime)===\(self.playerVC1.currentPlaybackTime)")
+
+//        bottomView.addSubview(playSlider)
+//        playSlider.snp.makeConstraints { (make) in
+//            make.left.equalTo(playBt.snp.right).offset(20)
+//            make.right.equalTo(thumailBt.snp.left).offset(-10)
+//            make.centerY.equalTo(bottomView.snp.centerY)
+//            make.height.equalTo(10)
+//        }
+        playSlider.maximumValue = Float(self.playerVC1.duration)
+//        playSlider.value = Float(self.playerVC1.currentPlaybackTime)
+        playSlider.setValue(Float(self.playerVC1.currentPlaybackTime), animated: true)
         
         
+//        playSliderProgress.snp.makeConstraints { (make) in
+//            
+//        }
+        
+        
+        
+    }
+    
+    //MARK: slider拖拽时的 事件
+    func changePlaySlider(slider:UISlider) {
+        
+        print(slider.value)
+        
+        playerVC1.currentPlaybackTime = TimeInterval(slider.value)
+    }
+    
+    func mediaPlayerDuration(notification:Notification) {
+        
+        print("====播放时长的通知对应的方法 看看获取到什么了\(notification.userInfo ?? [:])")
+        
+        print("\(self.playerVC1.duration)===\(self.playerVC1.playableDuration)====\(self.playerVC1.initialPlaybackTime)===\(self.playerVC1.endPlaybackTime)===\(self.playerVC1.currentPlaybackTime)")
+        
+        playSlider.maximumValue = Float(self.playerVC1.duration)
+        //        playSlider.value = Float(self.playerVC1.currentPlaybackTime)
+        playSlider.setValue(Float(self.playerVC1.currentPlaybackTime), animated: true)
+        
+        //更新进度条的定时器初始化 由于需要视频时长这个参数 故定时器的初始化放在这里
+        
+//        if #available(iOS 10.0, *) {
+//            updateTimer = Timer.init(timeInterval: self.playerVC1.duration, repeats: false, block: { (timer) in
+//                
+//            })
+//        } else {
+//            // Fallback on earlier versions
+//        }
+        
+        updateTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updatePlayerSlider), userInfo: nil, repeats: true)
+        
+        //获取到视频时长的时候 开始倒计时 
+        
+        beginTimer()
+    }
+    
+    //MARK:更新播放进度条的事件
+    func updatePlayerSlider() {
+        
+        let progress:Float = Float(self.playerVC1.playableDuration / self.playerVC1.duration)
+      
+        playSliderProgress.setProgress(progress, animated: true)
+        playSlider.setValue(Float(self.playerVC1.currentPlaybackTime), animated: true)
+
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.navigationBar.alpha = 1.0
+
         self.playerVC1.pause()
         self.playerVC1.stop()
         self.playerVC1.view.removeFromSuperview()
         notificationCenter.removeObserver(self)
-        self.navigationController?.navigationBar.alpha = 1.0
         
         volumeLeftView.removeFromSuperview()
+
+        //页面消失后  将定时器失效
+        updateTimer.invalidate()
+        deleteTimer()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+//        print("没有操作 5秒钟了  要隐藏工具条了 啦啦啦 touchend")
+        beginTimer()
+        print("没有操作 开始倒计时  要隐藏工具条了 啦啦啦")
+
+    }
+//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        
+//        _ = Timer.init(timeInterval: 5, target: self, selector: #selector(hiddenControlView), userInfo: nil, repeats: false)
+//        print("没有操作 开始倒计时  要隐藏工具条了 啦啦啦")
+//
+//    }
+    
+    func hiddenControlView()  {
+        
+        print(" 隐藏工具条操作 啦啦啦  ")
+        //操作
+        UIView.animate(withDuration: 0.3) {
+            
+            self.topView.alpha = 0.0
+            self.bottomView.alpha = 0.0
+            
+            self.isHiddenControlView = true
+        }
+        //最后销毁定时器
+        deleteTimer()
         
     }
+    
+    func showHiddenControlView()  {
+        
+        deleteTimer()
+        //操作
+        UIView.animate(withDuration: 0.3) {
+            
+            self.topView.alpha = 1.0
+            self.bottomView.alpha = 1.0
+            
+            self.isHiddenControlView = true
+        }
+    }
+    
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("开始有人操作了begin")
+        
+        
+        
+        
+        
+        showHiddenControlView()
+    }
+    
+    func beginTimer()  {
+        
+        hiddenTimer = Timer.init(timeInterval: hiddenTime, target: self, selector: #selector(hiddenControlView), userInfo: nil, repeats: true)
+        
+        RunLoop.main.add(hiddenTimer!, forMode: RunLoopMode.commonModes)
+
+    }
+    
+    //MARK: 销毁定时器
+    func deleteTimer() {
+        
+        if (hiddenTimer != nil) {
+            
+            hiddenTimer?.invalidate()
+            hiddenTimer = nil
+        }
+    }
+    
+    
     
 }
