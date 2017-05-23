@@ -64,6 +64,7 @@ class TitleArrView: UIView {
     
     }
 
+    //MARK: 根据标题数组初始化button
     func initButtonWithArr(_ titleArr:[String]){
     
         let buttonPadding:CGFloat = 0;
@@ -167,6 +168,7 @@ class TitleArrView: UIView {
         
     }
     
+    //MARK: 关联scrollview 滚动时 改变 其位置
     func setCurrentIndex(_ index:Int)  {
         
         //MARK: 偏移量相关的处理

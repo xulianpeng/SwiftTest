@@ -44,7 +44,7 @@ class RootTabBarViewController: XLPBaseTabBarController {
         
         initTabBarItem(naFirstVC, title: "", imageName: "tool_normal", selectImageName: "tool_select", tag: 1)
         initTabBarItem(naTwoVC, title: "", imageName: "news_normal", selectImageName: "news_select", tag: 2)
-        initTabBarItem(naThreeVC, title: "", imageName: "shop_normal",selectImageName:"shop_select",tag:3)
+        initTabBarItem(naThreeVC, title: "资讯", imageName: "shop_normal",selectImageName:"shop_select",tag:3)
         initTabBarItem(naFourVC, title: "", imageName: "forum_normal",selectImageName:"forum_select",tag:4)
 
 //        naThreeVC.title = "什么情况"

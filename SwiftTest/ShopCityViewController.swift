@@ -20,6 +20,8 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "商城"
+        
         initCollectionView()
         
     }
