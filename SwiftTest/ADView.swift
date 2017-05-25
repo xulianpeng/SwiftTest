@@ -21,7 +21,7 @@ class ADView: UIView {
             //调到广告详情页 先判断adurl是否合法可用 这样在广告详情页就不需要做判断了
             
             let adUrl = kUserDefaultsValueString("adDetailUrl")
-            if  adUrl != nil || !adUrl!.isEmpty  {
+            if  adUrl != nil && !adUrl!.isEmpty  {
                 //不合法网址  http://  会crash
                 //合法 则可跳转到广告详情页
                 if kStringZZJudge(adUrl!, type: .url) {

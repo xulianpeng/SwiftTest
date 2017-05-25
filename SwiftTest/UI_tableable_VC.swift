@@ -19,10 +19,11 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = randomColor()
         self.title = "自定义Cell"
         initArray()
         initUI()
+        
         
     }
 
@@ -49,6 +50,7 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         */
         myTableView.initTableView(delegate: self, superView: view)
         myTableView .register(OneCell.self, forCellReuseIdentifier: "mmcell")//可舍弃
+    
         
         
     }
@@ -95,6 +97,24 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         let blue = CGFloat(arc4random()%256)/255.0
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
+    
+    //左划 是否出现 删除
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            self.dataArr.removeObject(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
