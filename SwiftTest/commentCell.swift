@@ -58,6 +58,7 @@ class commentCell: UITableViewCell {
             make.left.equalTo(headImageView)
             make.top.equalTo(headImageView.snp.bottom).offset(10)
             make.right.equalTo(-5)
+            make.bottom.equalTo(-5)
         })
         
         

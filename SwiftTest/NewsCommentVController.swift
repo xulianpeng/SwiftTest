@@ -23,6 +23,7 @@ class NewsCommentVController: XLPBaseViewController,UITableViewDelegate,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "文章评论"
+        rootTableView.estimatedRowHeight = 40
         obtainData()
         xlpInitMjRefresh(self, tableView: rootTableView)
 
@@ -76,22 +77,22 @@ class NewsCommentVController: XLPBaseViewController,UITableViewDelegate,UITableV
         
         
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if self.hotNormalArr.count > 0{
-            
-            if indexPath.section == 0 {
-                let model = self.hotNormalArr[indexPath.row]
-                
-                let contentHeight = kStringGetSize(model.oneContent, font: kFontWithSize(14), maxSize: CGSize(width:kSCREENWIDTH - 20,height:CGFloat(MAXFLOAT))).height
-                return contentHeight + CGFloat(50)
-            }
-        }
-        let model = self.normalArr[indexPath.row]
-        let contentHeight = kStringGetSize(model.oneContent, font: kFontWithSize(16), maxSize: CGSize(width:kSCREENWIDTH - 20,height:CGFloat(MAXFLOAT))).height
-        return contentHeight + CGFloat(50)
- 
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        if self.hotNormalArr.count > 0{
+//            
+//            if indexPath.section == 0 {
+//                let model = self.hotNormalArr[indexPath.row]
+//                
+//                let contentHeight = kStringGetSize(model.oneContent, font: kFontWithSize(14), maxSize: CGSize(width:kSCREENWIDTH - 20,height:CGFloat(MAXFLOAT))).height
+//                return contentHeight + CGFloat(50)
+//            }
+//        }
+//        let model = self.normalArr[indexPath.row]
+//        let contentHeight = kStringGetSize(model.oneContent, font: kFontWithSize(16), maxSize: CGSize(width:kSCREENWIDTH - 20,height:CGFloat(MAXFLOAT))).height
+//        return contentHeight + CGFloat(50)
+// 
+//    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
    
         

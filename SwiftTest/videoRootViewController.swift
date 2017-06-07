@@ -29,13 +29,13 @@ class videoRootViewController: XLPBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutViews()
-        
-        initIndicator(self.view).startAnimating()
-    }
+//        layoutViews()
+//        
+//        initIndicator(self.view).startAnimating()
+//    }
     //悠军毅
-    func layoutViews()  {
-        
+
+    
         
         
         videoBt1.xlpInitEassyButton("MPMoviePlayerViewController", titleColor: .blue, fontSize: 14, backgroundColor: kRandomColor(), cornerRedius: 4, superView: view, snpMaker: { (make) in
