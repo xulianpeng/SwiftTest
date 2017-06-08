@@ -10,8 +10,10 @@ import UIKit
 
 //最终要识别的 闭包  点击方法
 
-private var xlpAssociate:String = "xlpAssociate"
+private var xlpAssociateButton:String = "xlpAssociateButton"
 
+//private var xlpAssociateTextView:String = "xlpAssociateTextView"
+private var xlpAssociateTextViewLabel:String = "xlpAssociateTextViewLabel"
 
 
 extension UIButton{
@@ -19,11 +21,11 @@ extension UIButton{
         
         get {
             
-            return objc_getAssociatedObject(self, &xlpAssociate) as! WMButtonClickBlock
+            return objc_getAssociatedObject(self, &xlpAssociateButton) as! WMButtonClickBlock
         }
         
         set(newValue){
-            objc_setAssociatedObject(self, &xlpAssociate, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            objc_setAssociatedObject(self, &xlpAssociateButton, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
     
@@ -361,4 +363,51 @@ extension UIView{
     }
     
     
+}
+
+//FIXME: 暂时有一个bug,预留字体只能单行显示.还好一般不超过1行
+// 预留字体的大小需与textview的字体大小一样
+// textview必须设置其代理 否则无法检测其text 的内容的变化
+//方法名设置为 属性类型的名字 方便调用
+extension UITextView{
+    
+    
+    var xlpPlaceholderLabel:UILabel{
+        
+        get {
+            
+            return objc_getAssociatedObject(self, &xlpAssociateTextViewLabel) as! UILabel
+        }
+        
+        set(newValue){
+            objc_setAssociatedObject(self, &xlpAssociateTextViewLabel, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) //坑点是这里  若是字符串之类的属性 设为copy即可,若是控件类的关联属性 则需设置为 retain_nonatomic
+        }
+    }
+
+    
+    func xlpPlaceholder(_ placeholder:String,fontSize:CGFloat) {
+        
+        self.font = kFontWithSize(fontSize)
+        //初始化label
+        self.xlpPlaceholderLabel = UILabel()
+        self.xlpPlaceholderLabel.xlpInitLabel(placeholder, textColor: UIColor.lightGray, fontSize:fontSize, isBold: false, aligenment: .left, backgroundColor: .clear, superView: self) { (make) in
+            
+            make.left.equalTo(5)
+            make.top.equalTo(7)
+            make.right.equalTo(self.snp.right).offset(-5)
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewChanged), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        
+    }
+    func textViewChanged(notification:NSNotification)  {
+        
+        if kStringIsEmpty(self.text) {
+            self.xlpPlaceholderLabel.isHidden = false
+        }else{
+            self.xlpPlaceholderLabel.isHidden = true
+
+        }
+        
+    }
+
 }

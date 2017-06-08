@@ -8,7 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-class XLP_UI_ViewController: UIViewController {
+class XLP_UI_ViewController: UIViewController,UITextViewDelegate {
 
     //MARK: - ww
     //FIXME: qqq
@@ -170,27 +170,46 @@ class XLP_UI_ViewController: UIViewController {
         }
         view.addSubview(myBt)
         
-        let mybt1 = BaseUIButton.button(frame: CGRect(x:100,y:470,width:100,height:30), title: "请点我啊", fontFloat: 15, image: nil, color: .blue, target: self,superVtew:view) { (btn) in
+        let mybt1 = BaseUIButton.button(frame: CGRect(x:250,y:300,width:100,height:30), title: "请点我啊", fontFloat: 15, image: nil, color: .blue, target: self,superVtew:view) { (btn) in
             
             print("什么鬼啊啊啊啊 啊啊啊 啊啊啊啊啊啊啊 啊啊")
         }
        
         
-        _ = UIButton().xlpInitButton("点击重载", titleColor: .red, fontSize: 15, imageStr: nil, backgroundImageStr: nil, cornerRedius: 4, superView: view, snpMaker: { (make) in
+        let loadBt = UIButton()
+        loadBt.xlpInitButton("点击重载", titleColor: .red, fontSize: 15, imageStr: nil, backgroundImageStr: nil, cornerRedius: 4, superView: view, snpMaker: { (make) in
             make.left.equalTo(40)
             make.right.equalTo(-40)
             make.height.equalTo(40)
-            make.top.equalTo(testTextfield.snp.bottom).offset(100)
+            make.top.equalTo(testTextfield.snp.bottom).offset(20)
         }) { (btn) in
             
             print("=======================点击重载=========================")
             self.view.backgroundColor = UIColor.yellow
         }
         
+    
+        //
+        let testTextView = UITextView()
+        self.view.addSubview(testTextView)
+        testTextView.snp.makeConstraints { (make) in
+            
+            make.height.equalTo(100)
+            make.left.equalTo(30)
+            make.right.equalTo(-30)
+            make.bottom.equalTo(-10)
+        }
+        testTextView.backgroundColor = .yellow
+        testTextView.xlpPlaceholder("你好未来的自己你好未来的自己你好未来的自己你好未来的自己你好未来的自己你好未来的自己你好未来的自己你好未来的自己", fontSize: 18)
+        testTextView.delegate = self
         
         
         
         
+        
+        
+        
+    
     }
 
     //具体函数的实现
