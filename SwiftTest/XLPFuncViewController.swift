@@ -209,7 +209,54 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic,UIGestureRecognizer
         view.addGestureRecognizer(longPressGesture)
         
         
+        let bt:UIButton = UIButton()
+        bt.xlpInitFianlButton("电网啊  啊", titleColor: .red, fontSize: 12, superView: self.view, snpMaker: { (make) in
+            
+            make.left.top.equalTo(100)
+            make.width.equalTo(50)
+            make.height.equalTo(50)
+            
+        }) { (bt) in
+            
+            self.view.backgroundColor = UIColor.yellow
+            
+        }
         
+        self.view.backgroundColor = UIColor.cyan
+        print("====逃逸闭包到底怎么样呢？")
+        
+        
+        
+        let bt11:UIButton = UIButton()
+        
+//        bt11.xlpInitRootButtonTest("到底是什么情况", titleColor:UIColor.brown, fontSize: 14, backgroundColor: .green, imageStr: nil, backgroundImageStr: nil, cornerRedius: 3, superView: self.view, buttonClick: { (bt) in
+//            
+//            self.view.backgroundColor = UIColor.brown
+//            print("到底谁先谁后呢111=====")
+//
+//        }) { (make) in
+//            
+//            
+//            make.left.equalTo(100)
+//            make.top.equalTo(bt.snp.bottom).offset(20)
+//            make.width.equalTo(50)
+//            make.height.equalTo(50)
+//        }
+        
+        //闭包 默认是 不可套一的  
+        bt11.xlpInitRootButtonTest("lallalalal", titleColor: UIColor.brown, fontSize: 14, backgroundColor: nil, imageStr: nil, backgroundImageStr: nil, cornerRedius: 3, superView: self.view, buttonClick: { (bt) in
+            
+            self.view.backgroundColor = UIColor.brown
+            print("到底谁先谁后呢111=====")
+        }) { (make) in
+            make.left.equalTo(100)
+            make.top.equalTo(bt.snp.bottom).offset(20)
+            make.width.equalTo(50)
+            make.height.equalTo(50)
+        }
+        
+        self.view.backgroundColor = UIColor.cyan
+        print("====到底谁先谁后呢222=====")
         
         
     }

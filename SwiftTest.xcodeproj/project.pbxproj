@@ -111,6 +111,7 @@
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
 		895405E21EE6542D00886F4A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E11EE6542D00886F4A /* CollectionViewController.swift */; };
 		895405E41EE6571600886F4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E31EE6571600886F4A /* CollectionCell.swift */; };
+		898402121F0500F600F06920 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402111F0500F600F06920 /* NoDataView.swift */; };
 		89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73DF61DFA832900058FB0 /* AppDelegate.swift */; };
 		89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFA1DFA832900058FB0 /* Main.storyboard */; };
 		89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFD1DFA832900058FB0 /* Assets.xcassets */; };
@@ -287,6 +288,7 @@
 		8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPClosuresViewController.swift; sourceTree = "<group>"; };
 		895405E11EE6542D00886F4A /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		895405E31EE6571600886F4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		898402111F0500F600F06920 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		89E73DF31DFA832900058FB0 /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E73DF61DFA832900058FB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E73DFB1DFA832900058FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -677,6 +679,7 @@
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				07DB21751EA4CE5B00D844DA /* ADView.swift */,
+				898402111F0500F600F06920 /* NoDataView.swift */,
 				07DB21771EA60AD800D844DA /* ADDetailVController.swift */,
 				077367D11E66621E002BFB86 /* UserManager.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
@@ -1008,6 +1011,7 @@
 				076461981E96455200A4AD4C /* ioapi.c in Sources */,
 				07B493D61E8A4CE600791A76 /* DataManagerSubCell.swift in Sources */,
 				07F39F3A1E24F9E900EE268B /* videoPlayViewController.swift in Sources */,
+				898402121F0500F600F06920 /* NoDataView.swift in Sources */,
 				071642881E1B38D000B21BF0 /* ButtonExtension.swift in Sources */,
 				079FE4341E0CBA89007DF3DE /* WMUIMaker.swift in Sources */,
 				89E73E351DFBEABE00058FB0 /* OneCell.swift in Sources */,

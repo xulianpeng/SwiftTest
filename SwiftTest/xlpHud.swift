@@ -80,6 +80,140 @@ class xlpHud: UIView {
         
     }
     
+    
+    init(text:String,constransY:CGFloat,superView:UIView,duration:CGFloat) {
+        super.init(frame: CGRect.zero)
+        
+        let myString:String = text
+        
+        
+        ///富文本相关的设置
+        let aStyle = NSMutableParagraphStyle.init()
+        aStyle.lineSpacing = 0 //行间距
+        aStyle.alignment = NSTextAlignment.left
+        aStyle.firstLineHeadIndent = 10 //起始行开始的距离
+        let aAttritString = NSMutableAttributedString.init(string: myString)
+        aAttritString.addAttributes([NSFontAttributeName:kHudFont,NSParagraphStyleAttributeName:aStyle], range: NSMakeRange(0, aAttritString.length))
+        
+        
+        
+        let maxSize = CGSize(width:kSCREENWIDTH - CGFloat(kPading * 2), height:
+            kSCREENHEIGHT)
+        let aSize:CGRect = aAttritString.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],context: nil)
+        
+        let aWidth:CGFloat = aSize.size.width + CGFloat(kPading)
+        let aheight:CGFloat = aSize.size.height + CGFloat(kPading)
+        let aX = Int(kSCREENWIDTH)/2 - Int(aWidth)/2 - kPading/2
+        
+        let textLabel:UILabel = UILabel.init(frame: CGRect(x:CGFloat(kPading/2),y:CGFloat(kPading/2),width:aSize.width,height:aSize.height))
+        
+        textLabel.backgroundColor = UIColor.clear
+        textLabel.attributedText = aAttritString
+        textLabel.font = kHudFont
+        textLabel.textColor = kHudFontColor
+        textLabel.textAlignment = .center
+        textLabel.numberOfLines = 0
+        
+        self.frame = CGRect(x:CGFloat(aX) + CGFloat(kPading/2),y:constransY,width:aWidth,height:aheight)
+        self.layer.cornerRadius = 5
+        self.backgroundColor = kHudBackgroundColor
+        self.addSubview(textLabel)
+        self.alpha = 1.0;
+        
+        
+        kKeyWindow().addSubview(self)
+        
+        var aTime = duration
+        if (aTime < 0.30) {
+            aTime = 0.30
+        }
+        
+        let time = DispatchTime.now() + 3
+        DispatchQueue.main.asyncAfter(deadline: time) { 
+            
+            UIView.animate(withDuration: 1.0, animations: {
+                
+                self.alpha = 0.0
+                self.removeFromSuperview()
+            })
+            
+        }
+        
+
+        
+        
+    }
+
+    init(text:String,constransY:CGFloat,duration:Double) {
+        super.init(frame: CGRect.zero)
+        let myString:String = text
+        
+        ///富文本相关的设置
+        let aStyle = NSMutableParagraphStyle.init()
+        aStyle.lineSpacing = 0 //行间距
+        aStyle.alignment = NSTextAlignment.left
+//        aStyle.firstLineHeadIndent = 10 //起始行开始的距离
+        let aAttritString = NSMutableAttributedString.init(string: myString)
+        aAttritString.addAttributes([NSFontAttributeName:kHudFont,NSParagraphStyleAttributeName:aStyle], range: NSMakeRange(0, aAttritString.length))
+        
+        
+        
+        let maxSize = CGSize(width:kSCREENWIDTH - CGFloat(kPading * 2), height:
+            kSCREENHEIGHT)
+        let aSize:CGRect = aAttritString.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],context: nil)
+        
+        let aWidth:CGFloat = aSize.size.width + CGFloat(kPading)
+        let aheight:CGFloat = aSize.size.height + CGFloat(kPading)
+        let aX = Int(kSCREENWIDTH)/2 - Int(aWidth)/2 - kPading/2
+        
+        
+        
+        
+        let textLabel:UILabel = UILabel.init(frame: CGRect(x:CGFloat(kPading/2),y:CGFloat(kPading/2),width:aSize.width,height:aSize.height))
+        
+        textLabel.backgroundColor = UIColor.clear
+        textLabel.attributedText = aAttritString
+        textLabel.font = kHudFont
+        textLabel.textColor = kHudFontColor
+        textLabel.textAlignment = .center
+        textLabel.numberOfLines = 0
+        
+        self.frame = CGRect(x:CGFloat(aX) + CGFloat(kPading/2),y:constransY,width:aWidth,height:aheight)
+        self.layer.cornerRadius = 5
+        self.backgroundColor = kHudBackgroundColor
+        self.addSubview(textLabel)
+        
+        UIView.animate(withDuration: 1) { 
+            
+            self.alpha = 1.0;
+            kKeyWindow().addSubview(self)
+        }
+        
+        var aTime:Double = duration
+        if (aTime < 0.30) {
+            aTime = 0.30
+        }
+        
+        let time = DispatchTime.now() + aTime
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            
+            UIView.animate(withDuration: 1.0, animations: {
+                
+                self.alpha = 0.0
+                self.removeFromSuperview()
+            })
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -125,6 +125,54 @@ extension UIButton{
         
     }
     
+    func xlpInitRootButtonTest(_ title:String?,
+                           titleColor:UIColor?,
+                           fontSize:CGFloat?,
+                           backgroundColor:UIColor?,
+                           imageStr:String?,
+                           backgroundImageStr:String?,
+                           cornerRedius:CGFloat?,
+                           superView:UIView,
+                           buttonClick: @escaping WMButtonClickBlock,
+                           snpMaker:@escaping WMSnapMakerBlock
+        ) {
+        
+        if title != nil {
+            self.setTitle(title, for: .normal)
+        }
+        if titleColor != nil {
+            self.setTitleColor(titleColor, for: .normal)
+        }
+        if fontSize != nil {
+            
+            self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize!)
+        }
+        if backgroundColor != nil {
+            self.backgroundColor = backgroundColor
+        }
+        if imageStr != nil {
+            self.setImage(UIImage.init(named: imageStr!), for: .normal)
+        }
+        if backgroundImageStr != nil {
+            self.setBackgroundImage(UIImage.init(named: backgroundImageStr!), for: .normal)
+        }
+        if cornerRedius != nil {
+            self.layer.cornerRadius = cornerRedius!
+            self.layer.masksToBounds = true
+        }
+        
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
+        superView.addSubview(self)
+        
+        self.snp.makeConstraints(snpMaker)
+        
+        handle = buttonClick
+        
+        addTarget(self, action: #selector(xlpBtnClick(btn:)), for: .touchUpInside)
+        
+    }
+
+    
     func xlpInitEassyButton(_ title:String?,
                             titleColor:UIColor?,
                             fontSize:CGFloat?,

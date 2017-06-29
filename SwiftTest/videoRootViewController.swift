@@ -27,6 +27,9 @@ class videoRootViewController: XLPBaseViewController {
     var avPlayer = AVPlayer()
     var avPlayerLayer = AVPlayerLayer()
     
+    var noDataBt = UIButton()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        layoutViews()
@@ -138,6 +141,23 @@ class videoRootViewController: XLPBaseViewController {
             
             let ccDemoVC = CCDemoViewController()
             self.navigationController?.pushViewController(ccDemoVC, animated: true)
+        }
+        
+        noDataBt.xlpInitEassyButton("无数据显示", titleColor: .red, fontSize: 14, backgroundColor: .green, cornerRedius: 3, superView: self.view, snpMaker: { (make) in
+            
+            make.top.equalTo(videoBt5.snp.bottom).offset(10)
+            make.left.equalTo(videoBt5)
+            make.right.equalTo(videoBt5)
+            make.height.equalTo(videoBt5)
+        }) { (bt) in
+            
+            
+            let noDataView = NoDataView.init(superView: self.view, imageName: "defaultCell", str: "擦擦擦擦啊貌似没有数据哦 请检查网络连接是否正确", snapBlock: { (make) in
+                
+                make.edges.equalTo(self.view)
+            })
+            
+            print(noDataView)
         }
 
 

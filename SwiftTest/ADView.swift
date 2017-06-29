@@ -53,6 +53,8 @@ class ADView: UIView {
         }) { (bt) in
             self.unDisplayADDetail()
         }
+        
+        
     }
     
     func unDisplayADDetail() {
