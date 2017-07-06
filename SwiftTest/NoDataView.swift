@@ -14,16 +14,10 @@ class NoDataView: UIView {
     private var noDataImageView = UIImageView()
     private var noDataLabel = UILabel()
     
-    let imageWidth = 100
-//    {
-//        
-//        set{
-//            
-//        }
-//        get{
-//            return 
-//        }
-//    }//图片的宽度 可定制
+    let imageWidth = 100 //一般需要制定图片的宽高
+    let imageHeight = 100 //图片的宽高 可定制
+    let fontColor = UIColor.black
+    let fontSize = 14
     
     
     
@@ -36,7 +30,8 @@ class NoDataView: UIView {
         
         noDataImageView.snp.makeConstraints { (make) in
             
-            make.width.height.equalTo(imageWidth)
+            make.width.equalTo(imageWidth)
+            make.height.equalTo(imageHeight)
             make.center.equalTo(self.snp.center)
         }
         if imageName != nil{
@@ -50,8 +45,8 @@ class NoDataView: UIView {
         
         if str != nil{
             
-            noDataLabel.xlpInitLabel(UIColor.black, fontSize: 14, aligenment: .center, superView: self) { (make) in
-                make.top.equalTo(noDataImageView.snp.bottom).offset(20)
+            noDataLabel.xlpInitLabel(fontColor, fontSize: CGFloat(fontSize), aligenment: .center, superView: self) { (make) in
+                make.top.equalTo(noDataImageView.snp.bottom).offset(20) //提示文字距离图片的间隔
                 make.left.equalTo(10)
                 make.right.equalTo(-10)
             }

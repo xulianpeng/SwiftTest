@@ -159,6 +159,12 @@ class videoRootViewController: XLPBaseViewController {
             
             print(noDataView)
         }
+        
+        
+       let mySwitch =  XlpSwitch.init(frame:CGRect(x:100,y:400,width:45,height:20))
+        
+        
+        self.view.addSubview(mySwitch)
 
 
     }

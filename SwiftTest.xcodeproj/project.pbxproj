@@ -112,6 +112,7 @@
 		895405E21EE6542D00886F4A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E11EE6542D00886F4A /* CollectionViewController.swift */; };
 		895405E41EE6571600886F4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E31EE6571600886F4A /* CollectionCell.swift */; };
 		898402121F0500F600F06920 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402111F0500F600F06920 /* NoDataView.swift */; };
+		898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402151F05F2CB00F06920 /* XlpSwitch.swift */; };
 		89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73DF61DFA832900058FB0 /* AppDelegate.swift */; };
 		89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFA1DFA832900058FB0 /* Main.storyboard */; };
 		89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFD1DFA832900058FB0 /* Assets.xcassets */; };
@@ -289,6 +290,7 @@
 		895405E11EE6542D00886F4A /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		895405E31EE6571600886F4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		898402111F0500F600F06920 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		898402151F05F2CB00F06920 /* XlpSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XlpSwitch.swift; sourceTree = "<group>"; };
 		89E73DF31DFA832900058FB0 /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E73DF61DFA832900058FB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E73DFB1DFA832900058FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				07DB21751EA4CE5B00D844DA /* ADView.swift */,
 				898402111F0500F600F06920 /* NoDataView.swift */,
+				898402151F05F2CB00F06920 /* XlpSwitch.swift */,
 				07DB21771EA60AD800D844DA /* ADDetailVController.swift */,
 				077367D11E66621E002BFB86 /* UserManager.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
@@ -1041,6 +1044,7 @@
 				89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */,
 				0764619A1E96455200A4AD4C /* unzip.c in Sources */,
 				079F68801E7681B5001E882D /* CameraViewController.swift in Sources */,
+				898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */,
 				07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */,
 				07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */,
 				895405E41EE6571600886F4A /* CollectionCell.swift in Sources */,
