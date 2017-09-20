@@ -23,6 +23,7 @@ class XLPSqliteManager {
         let path = kCreatFile("SwifTest.sqlite").0
         dataBase = FMDatabase.init(path: path)
         print("\(path)数据库已经初始化")
+        
     }
     
     

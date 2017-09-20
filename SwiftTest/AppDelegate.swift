@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let url = URL.init(string: "www.baidu.com")
+//        let url = URL.init(string: "www.baidu.com")
         
 //        let url2 = URL.init(string: "http:// baidu.com")
         
@@ -131,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        print(kCreateDocDirectoryWith("Magic/Card"))
         //表添加字段
-//        xlpSqliteManager.addColumnInTable("testColumn",columnType:"text",table: kTableToolPackageHearthStone)
+        xlpSqliteManager.addColumnInTable("testColumn",columnType:"text",table: kTableToolPackageHearthStone)
         
         let str123 = "1231412"
         let str1234 = "1231412.12345678"

@@ -540,20 +540,20 @@ func kStringRemoveWhitespacesAndNewlines(_ string:String?) -> String{
     }
     return str
 }
-//MARK:去除字符串中所有的空格
-func kStringRemoveAllWhitespaces(_ string:String?) -> String{
-    var str = ""
-    if string != nil  {
-        str = string!.replacingOccurrences(of: " ", with: "")
-    }
-    return str
-}
 //MARK:去除字符串头尾的空格和换行
 func kStringRemoveAllWhitespacesAndNewlines(_ string:String?) -> String{
     var str = ""
     if string != nil  {
         str = string!.replacingOccurrences(of: " ", with: "")
         str = str.replacingOccurrences(of: "\n", with: "")
+    }
+    return str
+}
+//MARK:去除字符串中所有的空格
+func kStringRemoveAllWhitespaces(_ string:String?) -> String{
+    var str = ""
+    if string != nil  {
+        str = string!.replacingOccurrences(of: " ", with: "")
     }
     return str
 }

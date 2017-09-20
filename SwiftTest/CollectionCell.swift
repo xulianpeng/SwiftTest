@@ -28,6 +28,7 @@ class CollectionCell: UICollectionViewCell {
         super.init(frame: frame)
         
         layoutViews()
+       
     }
     
     required init?(coder aDecoder: NSCoder) {

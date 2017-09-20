@@ -18,12 +18,7 @@ class XlpSwitch: UIView {
     
     let tapView = UIImageView()
     
-    var isOnSwitch:Bool = false{
-        
-        
-        set
-        
-    }
+    var isOnSwitch:Bool = false
     
     
    

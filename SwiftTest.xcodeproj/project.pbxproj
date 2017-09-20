@@ -109,10 +109,13 @@
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
+		892E27951F53C7CF00B023B7 /* commentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27941F53C7CF00B023B7 /* commentCellModel.swift */; };
+		892E27971F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */; };
 		895405E21EE6542D00886F4A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E11EE6542D00886F4A /* CollectionViewController.swift */; };
 		895405E41EE6571600886F4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E31EE6571600886F4A /* CollectionCell.swift */; };
 		898402121F0500F600F06920 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402111F0500F600F06920 /* NoDataView.swift */; };
 		898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402151F05F2CB00F06920 /* XlpSwitch.swift */; };
+		89E2DC531F3030AD00F0AFB1 /* XLPFMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */; };
 		89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73DF61DFA832900058FB0 /* AppDelegate.swift */; };
 		89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFA1DFA832900058FB0 /* Main.storyboard */; };
 		89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFD1DFA832900058FB0 /* Assets.xcassets */; };
@@ -287,10 +290,13 @@
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPFuncViewController.swift; sourceTree = "<group>"; };
 		8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPClosuresViewController.swift; sourceTree = "<group>"; };
+		892E27941F53C7CF00B023B7 /* commentCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentCellModel.swift; sourceTree = "<group>"; };
+		892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xlpNewsCommentVCModel.swift; sourceTree = "<group>"; };
 		895405E11EE6542D00886F4A /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		895405E31EE6571600886F4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		898402111F0500F600F06920 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		898402151F05F2CB00F06920 /* XlpSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XlpSwitch.swift; sourceTree = "<group>"; };
+		89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPFMDBManager.swift; sourceTree = "<group>"; };
 		89E73DF31DFA832900058FB0 /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E73DF61DFA832900058FB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E73DFB1DFA832900058FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -528,6 +534,7 @@
 				07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */,
 				07DB21711EA4BA7500D844DA /* Array+Extension.swift */,
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
+				89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
 				07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */,
 				077145F91E7A32E0003332E2 /* XLPSqliteManager.swift */,
@@ -624,6 +631,7 @@
 			children = (
 				079F68851E7A26A3001E882D /* GetTitleArrOperation.swift */,
 				0721D0911E8510C200C55726 /* Controller */,
+				892E27931F53C76500B023B7 /* ViewModel */,
 				0721D0901E8510B900C55726 /* View */,
 				0721D08F1E8510AC00C55726 /* Model */,
 			);
@@ -641,6 +649,15 @@
 				073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */,
 			);
 			name = Shop;
+			sourceTree = "<group>";
+		};
+		892E27931F53C76500B023B7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */,
+				892E27941F53C7CF00B023B7 /* commentCellModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		895405E01EE653EE00886F4A /* CollectionView */ = {
@@ -918,9 +935,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest-resources.sh",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -933,9 +953,48 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${PODS_ROOT}/HyphenateLite/ios_IM_HyphenateLite_sdk_3.3.4r1/HyphenateSDK/HyphenateLite.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Meiqia/Meiqia.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyphenateLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Meiqia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -948,13 +1007,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftTest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -967,6 +1029,7 @@
 				0761228B1E84F129001A33B6 /* AppUrlFile.swift in Sources */,
 				07956E761E6D6B6E00E8D22D /* CoreDataViewController.swift in Sources */,
 				079F68861E7A26A3001E882D /* GetTitleArrOperation.swift in Sources */,
+				892E27971F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift in Sources */,
 				89E73E411E01292900058FB0 /* TsetClass.swift in Sources */,
 				079F68821E78F038001E882D /* YingDiViewController.swift in Sources */,
 				075EEAAB1E276C7C00D8E273 /* ShopCityViewController.swift in Sources */,
@@ -1038,6 +1101,7 @@
 				073301D21E5BE39300A87D52 /* EvernoteTransition.swift in Sources */,
 				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,
 				077145FA1E7A32E0003332E2 /* XLPSqliteManager.swift in Sources */,
+				89E2DC531F3030AD00F0AFB1 /* XLPFMDBManager.swift in Sources */,
 				07C31F6F1E15062800DCB71D /* WMNetManager.swift in Sources */,
 				077367D21E66621E002BFB86 /* UserManager.swift in Sources */,
 				071ECDFD1E9CB49300616FF2 /* NewsDetailViewController.swift in Sources */,
@@ -1046,6 +1110,7 @@
 				079F68801E7681B5001E882D /* CameraViewController.swift in Sources */,
 				898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */,
 				07B232BF1E6FA38F0027D14D /* UIImageView+Extension.swift in Sources */,
+				892E27951F53C7CF00B023B7 /* commentCellModel.swift in Sources */,
 				07956E8A1E6E945F00E8D22D /* ZhiHuEntity+CoreDataProperties.swift in Sources */,
 				895405E41EE6571600886F4A /* CollectionCell.swift in Sources */,
 				07DB21701EA46B4500D844DA /* commentTwoCell.swift in Sources */,
@@ -1205,7 +1270,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1B6FCA82195CED9744C95F6 /* Pods-SwiftTest.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
@@ -1277,7 +1342,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;

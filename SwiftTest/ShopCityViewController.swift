@@ -12,7 +12,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
 
 //    var myCollectionView:UICollectionView?
 //    var myCollectionLayout1 = UICollectionViewLayout()//这个是什么??
-    let myCollectionLayout2 = UICollectionViewFlowLayout()
+//    let myCollectionLayout2 = UICollectionViewFlowLayout()
     
     
     let colorArray = NSMutableArray()
@@ -43,7 +43,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         
-        myCollectionView.alwaysBounceVertical = false
+//        myCollectionView.alwaysBounceVertical = false
         myCollectionView.contentInset = UIEdgeInsetsMake(0, 0, verticallyPadding, 0);
         self.view.addSubview(myCollectionView)
         

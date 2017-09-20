@@ -40,12 +40,16 @@ class myCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let offsetY = self.collectionView!.contentOffset.y
         let attrsArray = super.layoutAttributesForElements(in: rect)
+        
+        let offsetY = self.collectionView!.contentOffset.y
+        
         let collectionViewFrameHeight = self.collectionView!.frame.size.height;
         let collectionViewContentHeight = self.collectionView!.contentSize.height;
         let ScrollViewContentInsetBottom = self.collectionView!.contentInset.bottom;
+        
         let bottomOffset = offsetY + collectionViewFrameHeight - collectionViewContentHeight - ScrollViewContentInsetBottom
+        
         let numOfItems = self.collectionView!.numberOfSections
         
         for attr:UICollectionViewLayoutAttributes in attrsArray! {
@@ -64,5 +68,31 @@ class myCollectionViewFlowLayout: UICollectionViewFlowLayout {
         }
         return attrsArray;
     }
+    
+//    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//        let array = super.layoutAttributesForElements(in: rect)
+//        
+//        //可视rect
+//        var visibleRect:CGRect?
+//        visibleRect?.origin = self.collectionView!.contentOffset;
+//        visibleRect?.size = self.collectionView!.bounds.size;
+//        
+//        //设置item的缩放
+//        for attributes:UICollectionViewLayoutAttributes in array! {
+//            if (attributes.frame.intersects(rect)) {
+//                var distance:CGFloat = visibleRect!.midX - attributes.center.x;//item到中心点的距离
+//                var normalizedDistance:CGFloat = distance / 100;//距离除以有效距离得到标准化距离
+//                //距离小于有效距离才生效
+////                NSLog(@"%f",distance);
+//                if (abs(distance) < 100) {
+//                    var zoom : CGFloat = 1 + 0.5 * (1 - abs(normalizedDistance));//缩放率范围1~1.3,与标准距离负相关
+//                    attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);//x,y轴方向变换
+//                    //attributes.zIndex = 0;
+//                }
+//            }
+//        }
+//        
+//        return array;
+//    }
 
 }
