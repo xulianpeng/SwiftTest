@@ -384,7 +384,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     }
     
     //MARK:播放按钮的点击事件
-    func playOrPause(bt:UIButton)  {
+    @objc func playOrPause(bt:UIButton)  {
         
         if self.playerVC1.playbackState == .playing {
             self.playerVC1.pause()
@@ -392,7 +392,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             self.playerVC1.play()
         }
     }
-    func fullScreenAction(bt:UIButton) {
+    @objc func fullScreenAction(bt:UIButton) {
         
         if isXlpFullScreen {
             self.changePlayerScreenState(self.view, needRotation: nil, fullscreen: false)
@@ -433,7 +433,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
     }
     
-    func mediaPlayerPlaybackStateChange(notification:Notification){
+    @objc func mediaPlayerPlaybackStateChange(notification:Notification){
         
         print("视频播放状态改变了")
         switch (self.playerVC1.playbackState) {
@@ -457,7 +457,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
             
         }
     }
-    func mediaPlayerPlaybackFinished(notification:Notification){
+    @objc func mediaPlayerPlaybackFinished(notification:Notification){
         
         print("视频播放完成")
     }
@@ -523,14 +523,14 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
     }
     //MARK: 调节音量
-    func adjustVolumeUp(gesture:UIGestureRecognizer)  {
+    @objc func adjustVolumeUp(gesture:UIGestureRecognizer)  {
         
 //        backView.alpha += 0.1
         self.volumeSlider.value += 0.05
         let nowValue:Float = self.volumeSlider.value
         self.volumeSlider.setValue(nowValue, animated: false)
     }
-    func adjustVolumeDown(gesture:UIGestureRecognizer)  {
+    @objc func adjustVolumeDown(gesture:UIGestureRecognizer)  {
 //        backView.alpha -= 0.1
         self.volumeSlider.value -= 0.05
     }
@@ -553,7 +553,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     /**
      当设备发生旋转的时候调用
      */
-    func deviceOrientationDidChange() {
+    @objc func deviceOrientationDidChange() {
         
         let orientation = UIDevice.current.orientation
         switch orientation {
@@ -574,7 +574,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     /**
      即将进入全屏模式的时候调用
      */
-    func playerWillEnterFullscreen() {
+    @objc func playerWillEnterFullscreen() {
         switch fullscreenModel {
         case .awaysLandscape:
             UIDevice.current.setValue(NSNumber(value: UIDeviceOrientation.landscapeLeft.rawValue as Int), forKey: "orientation")
@@ -587,7 +587,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     /**
      即将退出全屏模式的时候调用
      */
-    func playerWillExitFullscreen() {
+    @objc func playerWillExitFullscreen() {
         switch fullscreenModel {
         case .awaysLandscape:
             UIDevice.current.setValue(NSNumber(value: UIDeviceOrientation.portrait.rawValue as Int), forKey: "orientation")
@@ -721,14 +721,14 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     }
     
     //MARK: slider拖拽时的 事件
-    func changePlaySlider(slider:UISlider) {
+    @objc func changePlaySlider(slider:UISlider) {
         
         print(slider.value)
         
         playerVC1.currentPlaybackTime = TimeInterval(slider.value)
     }
     
-    func mediaPlayerDuration(notification:Notification) {
+    @objc func mediaPlayerDuration(notification:Notification) {
         
         print("====播放时长的通知对应的方法 看看获取到什么了\(notification.userInfo ?? [:])")
         
@@ -756,7 +756,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
     }
     
     //MARK:更新播放进度条的事件
-    func updatePlayerSlider() {
+    @objc func updatePlayerSlider() {
         
         let progress:Float = Float(self.playerVC1.playableDuration / self.playerVC1.duration)
       
@@ -794,7 +794,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
 //
 //    }
     
-    func hiddenControlView()  {
+    @objc func hiddenControlView()  {
         
         print(" 隐藏工具条操作 啦啦啦  ")
         //操作

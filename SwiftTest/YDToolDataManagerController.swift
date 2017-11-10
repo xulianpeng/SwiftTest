@@ -208,7 +208,7 @@ class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UIT
     /// cell的展开与删除的实现
     ///
     /// - Parameter sender: 按钮
-    func showDetail(_ sender:UIButton)  {
+    @objc func showDetail(_ sender:UIButton)  {
         
         let section = sender.tag - 100
         var rowsArray = [IndexPath]()
@@ -258,7 +258,7 @@ class YDToolDataManagerController: XLPBaseViewController,UITableViewDelegate,UIT
     /// <#Description#>
     ///
     /// - Parameter sender: <#sender description#>
-    func downHandle(sender:UIButton){
+    @objc func downHandle(sender:UIButton){
         
         //给旧表添加字段 
         

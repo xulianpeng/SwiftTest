@@ -357,7 +357,7 @@ class XLP_UI_ViewController: UIViewController,UITextViewDelegate {
     }
      /// 按钮的点击事件
      /// - Parameter btn: 按钮1
-     func handleAction1(btn:UIButton) -> Void {
+     @objc func handleAction1(btn:UIButton) -> Void {
         
         titleLabel.textColor = UIColor.yellow
         titleLabel.backgroundColor = UIColor.black
@@ -367,7 +367,7 @@ class XLP_UI_ViewController: UIViewController,UITextViewDelegate {
      }
      }
      
-     func handleAction2(btn:UIButton) -> Void {
+     @objc func handleAction2(btn:UIButton) -> Void {
      if btn.tag == tag2 {
      titleLabel.backgroundColor = UIColor.purple
      titleLabel.textColor = UIColor.brown

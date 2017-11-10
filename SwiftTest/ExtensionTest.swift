@@ -102,7 +102,7 @@ extension UIButton {
         
     }
     
-    func clickMe() -> Void {
+    @objc func clickMe() -> Void {
         print("==========点w啊啊===============")
     }
     
@@ -111,7 +111,7 @@ extension UIButton {
         var handler: tapHandler!
     }
     
-    func btnClick(btn:UIButton){
+    @objc func btnClick(btn:UIButton){
         ///调用block
 //        let theHander = tapHandler!()
 //        

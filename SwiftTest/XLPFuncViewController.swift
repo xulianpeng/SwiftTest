@@ -263,13 +263,13 @@ class XLPFuncViewController: UIViewController,IWillPlayMusic,UIGestureRecognizer
     
 //MARK: 手势添加的方法
     
-    func panHandle() {
+    @objc func panHandle() {
         if self.view.alpha > 0.1 {
             
             self.view.alpha -= 0.1
         }
     }
-    func longPressHandle() {
+    @objc func longPressHandle() {
         
         self.view.alpha += 0.1
         self.view.backgroundColor = kRandomColor()

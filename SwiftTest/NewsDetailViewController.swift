@@ -32,7 +32,7 @@ class NewsDetailViewController: XLPBaseViewController {
         
     }
 
-    func jumpToCommentVC() {
+    @objc func jumpToCommentVC() {
         
         let vc = NewsCommentVController()
         vc.articleID = self.articleID;

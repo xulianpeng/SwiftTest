@@ -79,7 +79,14 @@ func kIS_iOS10orLater() -> Bool{
     }
     return false
 }
-
+func kIS_iOS11orLater() -> Bool{
+    
+    let systemVersion = Double(UIDevice.current.systemVersion)!
+    if systemVersion >= 11.0 {
+        return true
+    }
+    return false
+}
 
 let xlpCoredataManager = XLPCoreDataManager.shareInstance
 
@@ -505,7 +512,7 @@ func kStringGetSize(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
     var lastSize = CGSize.zero
     
     if string != nil {
-        lastSize = string!.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],attributes:[NSFontAttributeName:font],context: nil).size
+        lastSize = string!.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],attributes:[NSAttributedStringKey.font:font],context: nil).size
         
     }
     lastSize  = CGSize(width:lastSize.width + 3,height:lastSize.height)

@@ -39,7 +39,15 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
 
     func setupUI() {
 //        self.navigationController?.title = "Refresh测试"
-        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
+        
+        if kIS_iOS11orLater() {
+            rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT - 34), style: .plain)
+
+        } else {
+            rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
+
+        }
+        rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT - 34), style: .plain)
         rootTableView.initTableView(delegate: self, superView: view,cellClass: [EassyCell.self,EassyCell2.self])
         rootTableView.register(EassyCell.self, forCellReuseIdentifier: "cell")
         rootTableView.register(EassyCell2.self, forCellReuseIdentifier: "cell2")
@@ -471,5 +479,22 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
     }
     
 
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return UIView()
+//    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 30
+//    }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        
+//        let label = UILabel.init()
+//        label.text = "你是我的眼"
+//        label.backgroundColor = UIColor.cyan
+//        
+//        return label
+//    }
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 30
+//    }
 
 }

@@ -143,7 +143,7 @@ class WheelBannerView: UIView,UIScrollViewDelegate{
     }
     
     //计时器时间一到，滚动一张图片
-    func letItScroll(){
+    @objc func letItScroll(){
         let offset = CGPoint(x: 2*scrollerViewWidth!, y: 0)
         self.scrollerView?.setContentOffset(offset, animated: true)
     }
@@ -199,7 +199,7 @@ class WheelBannerView: UIView,UIScrollViewDelegate{
         self.addGestureRecognizer(tap)
     }
     //点击事件响应
-    func handleTapAction(_ tap:UITapGestureRecognizer)->Void{
+    @objc func handleTapAction(_ tap:UITapGestureRecognizer)->Void{
         
         self.delegate.handleTapAction(index: self.currentIndex)
     }

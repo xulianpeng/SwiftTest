@@ -72,7 +72,7 @@ extension UIButton{
    
     }
     
-    func xlpBtnClick(btn:UIButton) -> Void {
+    @objc func xlpBtnClick(btn:UIButton) -> Void {
         
          print("=======来啊来啊 互相伤害啊==========")
         handle(btn)
@@ -405,7 +405,7 @@ extension UIView{
         self.isUserInteractionEnabled = true
     }
 
-    func tapHandle(tap:UITapGestureRecognizer)  {
+    @objc func tapHandle(tap:UITapGestureRecognizer)  {
         
         myTapBlock(tap)
     }
@@ -447,7 +447,7 @@ extension UITextView{
         NotificationCenter.default.addObserver(self, selector: #selector(textViewChanged), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
         
     }
-    func textViewChanged(notification:NSNotification)  {
+    @objc func textViewChanged(notification:NSNotification)  {
         
         if kStringIsEmpty(self.text) {
             self.xlpPlaceholderLabel.isHidden = false

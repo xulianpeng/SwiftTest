@@ -87,7 +87,7 @@ class CarouselBanner: UIView,UIScrollViewDelegate {
         
     }
 
-    func timerFunction() -> Void {
+    @objc func timerFunction() -> Void {
         //动画改变scrollview的偏移量就可以实现自动滚动
         
         if currentIndex < self.theimageArr.count - 1 && !changeDirection {

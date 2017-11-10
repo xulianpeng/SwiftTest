@@ -15,6 +15,7 @@ import SDWebImage
 import SwiftyJSON
 import FMDB
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -32,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
 //        print("============网址为\(url!)===\(url2!)")
+        
+        let str11 = OCTool.kObtainDeviceVersion()
+        print("====s设备的型号为 ===\(str11!)")
+        
         
         let rootVC = RootTabBarViewController()
         self.window = UIWindow.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT))
@@ -159,7 +164,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func netChanged(notification:NotificationCenter) {
+    @objc func netChanged(notification:NotificationCenter) {
 
         let netStatusManager = NetworkReachabilityManager()
 

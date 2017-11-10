@@ -85,7 +85,7 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         return cell1!
     }
 
-    func handleAction1(btn:UIButton) -> Void {
+    @objc func handleAction1(btn:UIButton) -> Void {
         myTableView.backgroundColor = randomColor()
         
     }

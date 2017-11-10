@@ -37,7 +37,7 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
         queue?.addOperation(getTitleOperation)
         
     }
-    func initVC() {
+    @objc func initVC() {
         
         initNavTitleView()
         

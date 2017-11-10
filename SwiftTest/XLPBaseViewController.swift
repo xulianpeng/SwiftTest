@@ -94,20 +94,20 @@ class XLPBaseViewController: UIViewController {
         
         
     }
-    public func headerRefreshAction(header:MJRefreshNormalHeader)  {
+    @objc public func headerRefreshAction(header:MJRefreshNormalHeader)  {
         
         
         
     }
     
-    public func footerRefreshAction(footer:MJRefreshBackNormalFooter)  {
+    @objc public func footerRefreshAction(footer:MJRefreshBackNormalFooter)  {
         
         
         
     }
     
 
-    func reloadHandle() {
+    @objc func reloadHandle() {
         viewDidLoad()
         
 

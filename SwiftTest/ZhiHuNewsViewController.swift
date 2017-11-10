@@ -252,7 +252,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
         }
         
     }
-    func notificationHandle(sender:NSNotification){
+    @objc func notificationHandle(sender:NSNotification){
     
         self.navigationController?.navigationBar.barTintColor = UIColor.yellow
     }

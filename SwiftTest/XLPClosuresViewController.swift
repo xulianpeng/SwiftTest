@@ -376,13 +376,13 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     
-    func headerRefreshAction(header:MJRefreshNormalHeader)  {
+    @objc func headerRefreshAction(header:MJRefreshNormalHeader)  {
         
         
         header.endRefreshing()
     }
         
-    func footerRefreshAction()  {
+    @objc func footerRefreshAction()  {
         
         
         

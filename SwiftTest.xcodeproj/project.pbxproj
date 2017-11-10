@@ -115,6 +115,7 @@
 		895405E41EE6571600886F4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E31EE6571600886F4A /* CollectionCell.swift */; };
 		898402121F0500F600F06920 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402111F0500F600F06920 /* NoDataView.swift */; };
 		898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402151F05F2CB00F06920 /* XlpSwitch.swift */; };
+		89D3412E1FA1B396007AC040 /* OCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3412D1FA1B396007AC040 /* OCTool.m */; };
 		89E2DC531F3030AD00F0AFB1 /* XLPFMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */; };
 		89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73DF61DFA832900058FB0 /* AppDelegate.swift */; };
 		89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E73DFA1DFA832900058FB0 /* Main.storyboard */; };
@@ -129,7 +130,6 @@
 		89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */; };
 		89E73E411E01292900058FB0 /* TsetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E401E01292900058FB0 /* TsetClass.swift */; };
 		89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E421E01294E00058FB0 /* TestClassViewController.swift */; };
-		89FA4A841EC3008400013964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89FA4A831EC3008400013964 /* LaunchScreen.storyboard */; };
 		F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -296,6 +296,8 @@
 		895405E31EE6571600886F4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		898402111F0500F600F06920 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		898402151F05F2CB00F06920 /* XlpSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XlpSwitch.swift; sourceTree = "<group>"; };
+		89D3412C1FA1B396007AC040 /* OCTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTool.h; sourceTree = "<group>"; };
+		89D3412D1FA1B396007AC040 /* OCTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTool.m; sourceTree = "<group>"; };
 		89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPFMDBManager.swift; sourceTree = "<group>"; };
 		89E73DF31DFA832900058FB0 /* SwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E73DF61DFA832900058FB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -316,7 +318,6 @@
 		89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_OperatorsVController.swift; sourceTree = "<group>"; };
 		89E73E401E01292900058FB0 /* TsetClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TsetClass.swift; sourceTree = "<group>"; };
 		89E73E421E01294E00058FB0 /* TestClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClassViewController.swift; sourceTree = "<group>"; };
-		89FA4A831EC3008400013964 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B6FCA82195CED9744C95F6 /* Pods-SwiftTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -522,6 +523,8 @@
 		079FE42C1E0BAA96007DF3DE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				89D3412C1FA1B396007AC040 /* OCTool.h */,
+				89D3412D1FA1B396007AC040 /* OCTool.m */,
 				079FE42D1E0BAAB3007DF3DE /* XLPBaseViewController.swift */,
 				079FE42F1E0BAAF4007DF3DE /* XLPBaseNavigationVController.swift */,
 				07F39F3E1E2768D000EE268B /* XLPBaseTabBarController.swift */,
@@ -721,7 +724,6 @@
 				89E73E331DFBEA9200058FB0 /* tableview */,
 				89E73DFA1DFA832900058FB0 /* Main.storyboard */,
 				89E73DFD1DFA832900058FB0 /* Assets.xcassets */,
-				89FA4A831EC3008400013964 /* LaunchScreen.storyboard */,
 				89E73E021DFA832900058FB0 /* Info.plist */,
 				89E73E0A1DFA832A00058FB0 /* SwiftTestTests */,
 				8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */,
@@ -855,24 +857,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = xulianpeng;
 				TargetAttributes = {
 					89E73DF21DFA832900058FB0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = B88JBVCS5S;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					89E73E061DFA832A00058FB0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = R7FLL89AQ2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 89E73DF21DFA832900058FB0;
 					};
 					89E73E111DFA832A00058FB0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = R7FLL89AQ2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 89E73DF21DFA832900058FB0;
 					};
@@ -906,7 +910,6 @@
 				073302081E5E845600A87D52 /* AlipaySDK.bundle in Resources */,
 				89E73DFE1DFA832900058FB0 /* Assets.xcassets in Resources */,
 				073301D61E5BEF4A00A87D52 /* CollectionViewCell.xib in Resources */,
-				89FA4A841EC3008400013964 /* LaunchScreen.storyboard in Resources */,
 				0707CE781E5FC2E60041D364 /* README.txt in Resources */,
 				89E73DFC1DFA832900058FB0 /* Main.storyboard in Resources */,
 			);
@@ -959,6 +962,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
+				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${PODS_ROOT}/HyphenateLite/ios_IM_HyphenateLite_sdk_3.3.4r1/HyphenateSDK/HyphenateLite.framework",
@@ -966,6 +970,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/Meiqia/Meiqia.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -981,6 +986,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyphenateLite.framework",
@@ -988,6 +994,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Meiqia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1097,6 +1104,7 @@
 				07FA9E831E891AC900674614 /* YingdiToolViewController.swift in Sources */,
 				077145F81E7A2AC2003332E2 /* AppUrl.swift in Sources */,
 				89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */,
+				89D3412E1FA1B396007AC040 /* OCTool.m in Sources */,
 				07B493CB1E8A423200791A76 /* SeriesHearthStone.swift in Sources */,
 				073301D21E5BE39300A87D52 /* EvernoteTransition.swift in Sources */,
 				07F39F391E24F9E900EE268B /* videoRootViewController.swift in Sources */,
@@ -1180,7 +1188,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1188,7 +1198,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1231,7 +1245,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1239,7 +1255,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1333,7 +1353,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1404,7 +1425,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1419,7 +1441,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTest.app/SwiftTest";
 			};
 			name = Debug;
@@ -1434,7 +1457,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTest.app/SwiftTest";
 			};
 			name = Release;
@@ -1448,7 +1472,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = SwiftTest;
 			};
 			name = Debug;
@@ -1462,7 +1487,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = SwiftTest;
 			};
 			name = Release;

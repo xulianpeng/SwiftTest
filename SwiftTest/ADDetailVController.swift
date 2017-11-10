@@ -42,7 +42,7 @@ class ADDetailVController: XLPBaseViewController {
     }
 
     
-    func backHandle()  {
+    @objc func backHandle()  {
         self.dismiss(animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {

@@ -36,7 +36,7 @@ class RefreshDetailViewController: XLPBaseViewController,UIWebViewDelegate,UIGes
         view.addGestureRecognizer(tap)
     }
 
-    func tapGestureHandle(tap:UITapGestureRecognizer) -> Void {
+    @objc func tapGestureHandle(tap:UITapGestureRecognizer) -> Void {
         print("==============点我点位我单啊啊啊啊啊")
         
         self.navigationController!.popViewController(animated: true)

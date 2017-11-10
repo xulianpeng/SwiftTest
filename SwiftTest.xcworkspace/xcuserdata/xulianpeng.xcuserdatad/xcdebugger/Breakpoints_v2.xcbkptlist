@@ -22,31 +22,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.xlpHud.init (text : Swift.String, constransY : CoreGraphics.CGFloat, duration : Swift.Double) -&gt; SwiftTest.xlpHud"
+                  symbolName = "SwiftTest.xlpHud.__allocating_init(text: Swift.String, constransY: CoreGraphics.CGFloat, duration: Swift.Double) -&gt; SwiftTest.xlpHud"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/xlpHud.swift"
-                  timestampString = "525584049.87418"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/xlpHud.swift"
+                  timestampString = "530692370.172765"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "51">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.xlpHud.__allocating_init (text : Swift.String, constransY : CoreGraphics.CGFloat, duration : Swift.Double) -&gt; SwiftTest.xlpHud"
+                  symbolName = "SwiftTest.xlpHud.init(text: Swift.String, constransY: CoreGraphics.CGFloat, duration: Swift.Double) -&gt; SwiftTest.xlpHud"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/xlpHud.swift"
-                  timestampString = "525584049.876754"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/xlpHud.swift"
+                  timestampString = "530692370.175031"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -86,31 +86,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.ADView.unDisplayADDetail () -&gt; ()"
+                  symbolName = "SwiftTest.ADView.unDisplayADDetail() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/ADView.swift"
-                  timestampString = "525584049.891475"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/ADView.swift"
+                  timestampString = "530692370.184189"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "61"
                   endingLineNumber = "61"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "20">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.ADView.(unDisplayADDetail () -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 () -&gt; () in SwiftTest.ADView.unDisplayADDetail() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/ADView.swift"
-                  timestampString = "525584049.894462"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/ADView.swift"
+                  timestampString = "530692370.185965"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
                   endingLineNumber = "63"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -182,31 +182,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPFuncViewController.viewDidLoad () -&gt; ()"
+                  symbolName = "SwiftTest.XLPFuncViewController.viewDidLoad() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPFuncViewController.swift"
-                  timestampString = "525584049.918605"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPFuncViewController.swift"
+                  timestampString = "530692370.202077"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "247"
                   endingLineNumber = "247"
-                  offsetFromSymbolStart = "8328">
+                  offsetFromSymbolStart = "6636">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPFuncViewController.(viewDidLoad () -&gt; ()).(closure #9)"
+                  symbolName = "closure #9 (__ObjC.UIButton) -&gt; () in SwiftTest.XLPFuncViewController.viewDidLoad() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPFuncViewController.swift"
-                  timestampString = "525584049.920898"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPFuncViewController.swift"
+                  timestampString = "530692370.203748"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "249"
                   endingLineNumber = "249"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -230,31 +230,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPFuncViewController.viewDidLoad () -&gt; ()"
+                  symbolName = "SwiftTest.XLPFuncViewController.viewDidLoad() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPFuncViewController.swift"
-                  timestampString = "525584049.926386"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPFuncViewController.swift"
+                  timestampString = "530692370.208731"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "247"
                   endingLineNumber = "247"
-                  offsetFromSymbolStart = "8328">
+                  offsetFromSymbolStart = "6636">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPFuncViewController.(viewDidLoad () -&gt; ()).(closure #9)"
+                  symbolName = "closure #9 (__ObjC.UIButton) -&gt; () in SwiftTest.XLPFuncViewController.viewDidLoad() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPFuncViewController.swift"
-                  timestampString = "525584049.929108"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPFuncViewController.swift"
+                  timestampString = "530692370.210409"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "249"
                   endingLineNumber = "249"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -294,31 +294,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPFuncViewController.(viewDidLoad () -&gt; ()).(closure #9)"
+                  symbolName = "closure #9 (__ObjC.UIButton) -&gt; () in SwiftTest.XLPFuncViewController.viewDidLoad() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPFuncViewController.swift"
-                  timestampString = "525584049.941031"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPFuncViewController.swift"
+                  timestampString = "530692370.219746"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "251"
                   endingLineNumber = "251"
-                  offsetFromSymbolStart = "482">
+                  offsetFromSymbolStart = "484">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPFuncViewController.(viewDidLoad () -&gt; ()).(closure #10)"
+                  symbolName = "closure #10 (SnapKit.ConstraintMaker) -&gt; () in SwiftTest.XLPFuncViewController.viewDidLoad() -&gt; ()"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPFuncViewController.swift"
-                  timestampString = "525584049.943527"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPFuncViewController.swift"
+                  timestampString = "530692370.221603"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "252"
                   endingLineNumber = "252"
-                  offsetFromSymbolStart = "19">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -351,8 +351,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "init()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -367,38 +367,38 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "init()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPSqliteManager.__allocating_init () -&gt; SwiftTest.XLPSqliteManager"
+                  symbolName = "SwiftTest.XLPSqliteManager.__allocating_init() -&gt; SwiftTest.XLPSqliteManager"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPSqliteManager.swift"
-                  timestampString = "525584049.967253"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPSqliteManager.swift"
+                  timestampString = "530692370.234258"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftTest.XLPSqliteManager.init () -&gt; SwiftTest.XLPSqliteManager"
+                  symbolName = "SwiftTest.XLPSqliteManager.(in _8B7E5A665BF676424D37C4CC10769BD3).init() -&gt; SwiftTest.XLPSqliteManager"
                   moduleName = "SwiftTest"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xulianpeng/Desktop/GitHub/SwiftTest/SwiftTest/XLPSqliteManager.swift"
-                  timestampString = "525584049.969817"
+                  urlString = "file:///Users/xulianpeng/Desktop/github/SwiftTest/SwiftTest/XLPSqliteManager.swift"
+                  timestampString = "530692370.235977"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/AppDelegate.swift"
-            timestampString = "523257974.026823"
+            timestampString = "530692361.450788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "obtainTitleArr()"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/AppDelegate.swift"
-            timestampString = "523257974.940517"
+            timestampString = "530692361.452485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
             landmarkName = "obtainTitleArr()"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,7 +462,41 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "705"
-            endingLineNumber = "705">
+            endingLineNumber = "705"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/AppDelegate.swift"
+            timestampString = "530692361.452633"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftTest/OCTool.m"
+            timestampString = "530692361.452743"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "+kObtainDeviceVersion"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

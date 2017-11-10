@@ -49,7 +49,7 @@ class xlpHud: UIView {
         aStyle.alignment = NSTextAlignment.left
         aStyle.firstLineHeadIndent = 10 //起始行开始的距离
         let aAttritString = NSMutableAttributedString.init(string: myString)
-        aAttritString.addAttributes([NSFontAttributeName:kHudFont,NSParagraphStyleAttributeName:aStyle], range: NSMakeRange(0, aAttritString.length))
+        aAttritString.addAttributes([NSAttributedStringKey.font:kHudFont,NSAttributedStringKey.paragraphStyle:aStyle], range: NSMakeRange(0, aAttritString.length))
         
         
         
@@ -93,7 +93,7 @@ class xlpHud: UIView {
         aStyle.alignment = NSTextAlignment.left
         aStyle.firstLineHeadIndent = 10 //起始行开始的距离
         let aAttritString = NSMutableAttributedString.init(string: myString)
-        aAttritString.addAttributes([NSFontAttributeName:kHudFont,NSParagraphStyleAttributeName:aStyle], range: NSMakeRange(0, aAttritString.length))
+        aAttritString.addAttributes([NSAttributedStringKey.font:kHudFont,NSAttributedStringKey.paragraphStyle:aStyle], range: NSMakeRange(0, aAttritString.length))
         
         
         
@@ -154,7 +154,7 @@ class xlpHud: UIView {
         aStyle.alignment = NSTextAlignment.left
 //        aStyle.firstLineHeadIndent = 10 //起始行开始的距离
         let aAttritString = NSMutableAttributedString.init(string: myString)
-        aAttritString.addAttributes([NSFontAttributeName:kHudFont,NSParagraphStyleAttributeName:aStyle], range: NSMakeRange(0, aAttritString.length))
+        aAttritString.addAttributes([NSAttributedStringKey.font:kHudFont,NSAttributedStringKey.paragraphStyle:aStyle], range: NSMakeRange(0, aAttritString.length))
         
         
         

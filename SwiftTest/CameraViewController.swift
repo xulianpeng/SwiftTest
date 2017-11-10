@@ -67,7 +67,7 @@ class CameraViewController: XLPBaseViewController,UINavigationControllerDelegate
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
     }
 //
-    func image(image: UIImage, didFinishSavingWithError: NSError?,contextInfo: AnyObject) {
+    @objc func image(image: UIImage, didFinishSavingWithError: NSError?,contextInfo: AnyObject) {
         if didFinishSavingWithError != nil {
             print("\(didFinishSavingWithError)")
         }else
