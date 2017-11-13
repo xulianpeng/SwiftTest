@@ -1,7 +1,7 @@
 //
-//  Image.swift
+//  SnapKit
 //
-//  Copyright (c) 2015-2016 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -20,14 +20,17 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
-//
 
-import Foundation
-
-#if os(iOS) || os(tvOS) || os(watchOS)
-import UIKit
-public typealias Image = UIImage
-#elseif os(macOS)
-import Cocoa
-public typealias Image = NSImage
+#if os(iOS) || os(tvOS)
+    import UIKit
 #endif
+    
+    
+@available(iOS 9.0, OSX 10.11, *)
+public extension ConstraintLayoutGuide {
+    
+    public var snp: ConstraintLayoutGuideDSL {
+        return ConstraintLayoutGuideDSL(guide: self)
+    }
+    
+}

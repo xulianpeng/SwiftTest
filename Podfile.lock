@@ -15,66 +15,56 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Alamofire (4.5.1)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
-  - AlamofireNetworkActivityIndicator (2.1.0):
-    - Alamofire (~> 4.1)
-  - AsyncSwift (2.0.1)
   - FBRetainCycleDetector (0.1.3)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - HandyJSON (1.4.0)
   - HyphenateLite (3.3.4.1)
-  - IQKeyboardManagerSwift (4.0.13)
-  - Kingfisher (3.2.3)
+  - IQKeyboardManagerSwift (5.0.6)
+  - Kingfisher (4.2.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
-  - Meiqia (3.4.2):
-    - Meiqia/MeiqiaSDK (= 3.4.2)
-    - Meiqia/MQChatViewController (= 3.4.2)
-  - Meiqia/MeiqiaSDK (3.4.2)
-  - Meiqia/MQChatViewController (3.4.2):
+  - Meiqia (3.4.3):
+    - Meiqia/MeiqiaSDK (= 3.4.3)
+    - Meiqia/MQChatViewController (= 3.4.3)
+  - Meiqia/MeiqiaSDK (3.4.3)
+  - Meiqia/MQChatViewController (3.4.3):
     - Meiqia/MeiqiaSDK
-  - MJRefresh (3.1.12)
+  - MJRefresh (3.1.15)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SnapKit (3.0.2)
+  - SnapKit (4.0.0)
   - SQLite.swift (0.11.4):
     - SQLite.swift/standard (= 0.11.4)
   - SQLite.swift/standard (0.11.4)
-  - SVProgressHUD (2.2.1)
-  - SwiftyJSON (3.1.4)
-  - UMengUShare/Core (6.4.5):
+  - SVProgressHUD (2.2.2)
+  - SwiftyJSON (4.0.0)
+  - UMengUShare/Core (6.4.6):
     - UMengUShare/Network
-  - UMengUShare/Network (6.4.5)
-  - UMengUShare/Social/ReducedWeChat (6.4.5):
+  - UMengUShare/Network (6.4.6)
+  - UMengUShare/Social/ReducedWeChat (6.4.6):
     - UMengUShare/Core
-  - UMengUShare/Social/WeChat (6.4.5):
+  - UMengUShare/Social/WeChat (6.4.6):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - Alamofire (>= 4.2.0)
-  - AlamofireImage (~> 3.2.0)
-  - AlamofireNetworkActivityIndicator (~> 2.1.0)
-  - AsyncSwift
   - FMDB (~> 2.6.2)
-  - HandyJSON (~> 1.4.0)
   - HyphenateLite (~> 3.3.4.1)
   - IQKeyboardManagerSwift (>= 4.0.7)
-  - Kingfisher (= 3.2.3)
+  - Kingfisher (~> 4.2.0)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
   - Meiqia (~> 3.4.2)
   - MJRefresh (~> 3.1.12)
   - MLeaksFinder
   - SDWebImage (~> 3.8.2)
-  - SnapKit (= 3.0.2)
+  - SnapKit (~> 4.0.0)
   - SQLite.swift (~> 0.11.4)
   - SVProgressHUD
   - SwiftyJSON (>= 3.1.3)
@@ -83,27 +73,23 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
-  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  HandyJSON: 8aa98b0ece8c5f7a9042bccd33b0254448704bcb
   HyphenateLite: 19e216404a15ed9b41906da00e2c1a7012e816a6
-  IQKeyboardManagerSwift: fb399c4cddcd8d9bbcd2d0c7c81ed290b61c088e
-  Kingfisher: 0e789b4069e20da071d6eec59a9cfb4cee67a1cb
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Meiqia: 788120975536c4cfb84315d830344516420242b2
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Meiqia: ae7aed037c68de44e21b881b862c53e8d20df47f
+  MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
-  SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  UMengUShare: fdbbf86353976727af26a66e9a84314ecb59c816
 
-PODFILE CHECKSUM: 107da75ff1a0c0366d701a4c1091b18ad880e808
+PODFILE CHECKSUM: 8ee2e6e32456d62fe3f3235515d1814d6f37eb60
 
 COCOAPODS: 1.3.1
