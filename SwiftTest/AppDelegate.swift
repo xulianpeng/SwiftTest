@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var dataBase : FMDatabase?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        //测试分支 以及分支的合并 啦啦啦
+        
         // Override point for customization after application launch.
         
 //        let url = URL.init(string: "www.baidu.com")
