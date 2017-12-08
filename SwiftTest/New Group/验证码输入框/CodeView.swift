@@ -24,6 +24,10 @@ import UIKit
 class CodeView: UIView,UIKeyInput {
 
     
+    var XlpSecureTextEntry:Bool = false
+    
+    
+    
     var characterArray = [String]()
     
     
@@ -33,24 +37,16 @@ class CodeView: UIView,UIKeyInput {
         willSet{
             self.text = newValue
             
-//            [_characterArray removeAllObjects];
-//            [text enumerateSubstringsInRange:NSMakeRange(0, text.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
-//                if (self.characterArray.count < self.inputUnitCount)
-//                [self.characterArray addObject:substring];
-//                else
-//                *stop = YES;
-//                }];
-            
-            characterArray.removeAll()
-            text.enumerateSubstrings(in: NSMakeRange(0,text.length), options: NSString.EnumerationOptions.byComposedCharacterSequences) { (substring, substringRange, enclosingRange, stopBool) in
-                
-                if self.characterArray.count < self.maxLength{
-                    
-                    self.characterArray.append(substring!)
-                    
-                }
-                
-            }
+//            characterArray.removeAll()
+//            text.enumerateSubstrings(in: NSMakeRange(0,text.length), options: NSString.EnumerationOptions.byComposedCharacterSequences) { (substring, substringRange, enclosingRange, stopBool) in
+//
+//                if self.characterArray.count < self.maxLength{
+//
+//                    self.characterArray.append(substring!)
+//
+//                }
+//
+//            }
             
             
             setNeedsDisplay()
@@ -69,8 +65,8 @@ class CodeView: UIView,UIKeyInput {
         
     }
     
-    var borderRadius:CGFloat = 10
-    var borderWidth:CGFloat = 2
+    var borderRadius:CGFloat = 5
+    var borderWidth:CGFloat = 1
     var pointColor = UIColor.black{
         willSet{
             self.pointColor = newValue
@@ -79,7 +75,7 @@ class CodeView: UIView,UIKeyInput {
     }
     
     /**>=2 是不连续的, <2 是连续的**/
-    var unitSpace:CGFloat = 3 {
+    var unitSpace:CGFloat = 0 {
     
         willSet{
             
@@ -106,6 +102,16 @@ class CodeView: UIView,UIKeyInput {
         if self.text.length < maxLength {
             self.text.append(text)
             delegate?.passwordView?(textChanged: self.text as String, length: self.text.length)
+            
+            self.characterArray.removeAll()
+            self.text.enumerateSubstrings(in: NSMakeRange(0,self.text.length), options: NSString.EnumerationOptions.byComposedCharacterSequences) { (substring, substringRange, enclosingRange, stopBool) in
+                
+                if self.characterArray.count < self.maxLength{
+                    
+                    self.characterArray.append(substring!)
+                }
+            }
+            
             setNeedsDisplay()
             if self.text.length == maxLength {
                 self.resignFirstResponder()
@@ -118,6 +124,16 @@ class CodeView: UIView,UIKeyInput {
         if self.text.length > 0 {
             self.text.deleteCharacters(in: NSRange(location: text.length - 1, length: 1))
             delegate?.passwordView?(textChanged: self.text as String, length: self.text.length)
+            
+            self.characterArray.removeAll()
+            self.text.enumerateSubstrings(in: NSMakeRange(0,self.text.length), options: NSString.EnumerationOptions.byComposedCharacterSequences) { (substring, substringRange, enclosingRange, stopBool) in
+                
+                if self.characterArray.count < self.maxLength{
+                    
+                    self.characterArray.append(substring!)
+                }
+            }
+            
             setNeedsDisplay()
         }
     }
@@ -127,6 +143,26 @@ class CodeView: UIView,UIKeyInput {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         let unitSize:CGSize = CGSize(width:(rect.size.width + unitSpace) / CGFloat(maxLength) - unitSpace,height:rect.size.height)
 
+        //获取小矩形的 size 上面的计算方法 感觉不准确啊 ,->实际测试后 上面准确 下面的计算不准确  什么情况,暂时不做处理
+        
+//        //分2种情况 // 连续 不连续
+//        var unitSize:CGSize = CGSize.zero
+//        //连续
+//        if unitSpace < 2 {
+//
+//            let lastWidth:CGFloat = rect.size.width - CGFloat(maxLength - 1) * borderWidth - borderWidth * 4.0
+//            unitSize = CGSize(width:lastWidth / CGFloat(maxLength),height:rect.size.height)
+//
+//        }else{
+//
+//            let lastWidth:CGFloat = rect.size.width - CGFloat(maxLength * 2) * borderWidth - unitSpace *  CGFloat(maxLength - 1)
+//            unitSize = CGSize(width:lastWidth / CGFloat(maxLength),height:rect.size.height)
+//
+//        }
+        
+        
+        
+        
     
         fillRect(context: context, rect: rect, clip: true)
         drawBorder(context: context, rect: rect, unitSize: unitSize)
@@ -200,16 +236,39 @@ class CodeView: UIView,UIKeyInput {
     func drawText(context:CGContext,rect:CGRect,unitSize:CGSize) {
         
         let width = unitSize.width
-        //画圓点
-        let pointSize = CGSize(width: width * 0.2, height: width * 0.2)
+        
         //xlp 此处不能使用 maxLength
         (0..<self.text.length).forEach { (index) in
-            let origin = CGPoint(x: rect.origin.x + CGFloat(index) * width + (width - pointSize.width) / 2, y: rect.origin.y + (rect.height - pointSize.height) / 2)
-            let pointRect = CGRect(origin: origin, size: pointSize)
             
-            self.pointColor.setFill()
-            context.addEllipse(in: pointRect)
-            context.fillPath()
+            if XlpSecureTextEntry{
+                //画圓点
+                let pointSize = CGSize(width: width * 0.2, height: width * 0.2)
+                let origin = CGPoint(x: rect.origin.x + CGFloat(index) * width + (width - pointSize.width) / 2, y: rect.origin.y + (rect.height - pointSize.height) / 2)
+                let pointRect = CGRect(origin: origin, size: pointSize)
+                
+                self.pointColor.setFill()
+                context.addEllipse(in: pointRect)
+                context.fillPath()
+            }else{
+                
+                if index > characterArray.count - 1{
+                    return
+                }
+                
+                let attrDic = [NSAttributedStringKey.foregroundColor:UIColor.black,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)]
+                let subString:NSString = characterArray[index] as NSString
+                let oneTextSize:CGSize = subString.size(withAttributes: attrDic)
+                
+                let origin = CGPoint(x: rect.origin.x + CGFloat(index) * width + (width - oneTextSize.width) / 2, y: rect.origin.y + (rect.height - oneTextSize.height) / 2)
+                
+                let oneTextRect = CGRect(origin: origin, size: oneTextSize)
+                
+//                let oneTextRect:CGRect = indexRect.insetBy(dx:(indexRect.size.width - oneTextSize.width)/2, dy: (indexRect.size.height - oneTextSize.height)/2)
+                
+                subString.draw(in: oneTextRect, withAttributes: attrDic)
+                
+            }
+            
         }
     }
     
@@ -254,8 +313,7 @@ class CodeView: UIView,UIKeyInput {
         
         
         let width = unitSize.width
-        //画圓点
-        let pointSize = CGSize(width: width * 0.2, height: width * 0.2)
+       
         //xlp 此处不能使用 maxLength
         (0..<self.text.length).forEach { (index) in
             
@@ -264,13 +322,32 @@ class CodeView: UIView,UIKeyInput {
             }
             
             let indexRect = unitSizeArr[index]
-            let origin = CGPoint(x: indexRect.origin.x + width/2 - pointSize.width / 2, y: indexRect.origin.y + (indexRect.height - pointSize.height) / 2)
-            let pointRect = CGRect(origin: origin, size: pointSize)
+            
+            //画圓点
+            if XlpSecureTextEntry{
+                let pointSize = CGSize(width: width * 0.2, height: width * 0.2)
+                let origin = CGPoint(x: indexRect.origin.x + width/2 - pointSize.width / 2, y: indexRect.origin.y + (indexRect.height - pointSize.height) / 2)
+                let pointRect = CGRect(origin: origin, size: pointSize)
+                self.pointColor.setFill()
+                context.addEllipse(in: pointRect)
+                context.fillPath()
+            }else{
+                
+                if index > characterArray.count - 1{
+                    return
+                }
+                
+                let attrDic = [NSAttributedStringKey.foregroundColor:UIColor.black,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)]
+                let subString:NSString = characterArray[index] as NSString
+                let oneTextSize:CGSize = subString.size(withAttributes: attrDic)
+                let oneTextRect:CGRect = indexRect.insetBy(dx:(indexRect.size.width - oneTextSize.width)/2, dy: (indexRect.size.height - oneTextSize.height)/2)
+                subString.draw(in: oneTextRect, withAttributes: attrDic)
+  
+            }
+           
 
             
-            self.pointColor.setFill()
-            context.addEllipse(in: pointRect)
-            context.fillPath()
+            
         }
     }
     

@@ -29,6 +29,7 @@ class CodeViewController: XLPBaseViewController,CodeViewDelegate {
         codeView.maxLength = 10
 //        codeView.borderColor = UIColor.cyan
         view.addSubview(codeView)
+        
     }
     
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
