@@ -50,6 +50,8 @@ class ArticleCell: UITableViewCell {
             make.height.equalTo(imgaeHeight)
         }
         
+        
+        
         titleLabel.xlpInitLabel(.black, fontSize: 13, aligenment: .left, superView: self.contentView) { (make) in
             make.left.equalTo(newsImage.snp.right).offset(10)
             make.top.equalTo(newsImage)

@@ -106,15 +106,22 @@
 		07F87CB51E2F125B00CE7178 /* CCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */; };
 		07FA9E831E891AC900674614 /* YingdiToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA9E821E891AC900674614 /* YingdiToolViewController.swift */; };
 		07FA9E851E8A2E9900674614 /* YDToolDataManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA9E841E8A2E9900674614 /* YDToolDataManagerController.swift */; };
+		890DEE641FC579E800589612 /* loginBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890DEE631FC579E800589612 /* loginBackView.swift */; };
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
 		892E27951F53C7CF00B023B7 /* commentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27941F53C7CF00B023B7 /* commentCellModel.swift */; };
 		892E27971F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */; };
+		8940B7D51FD8E40B006EB63D /* WLUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8940B7D31FD8E40A006EB63D /* WLUnitField.m */; };
+		8940B7D71FD8EA2E006EB63D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940B7D61FD8EA2E006EB63D /* CodeView.swift */; };
+		8940B7DA1FD8EC2A006EB63D /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940B7D91FD8EC2A006EB63D /* CodeViewController.swift */; };
+		8940B7DC1FD935DA006EB63D /* CodeView0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940B7DB1FD935DA006EB63D /* CodeView0.swift */; };
+		894F815D1FC5571B0086AE21 /* ATULoginVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894F815C1FC5571B0086AE21 /* ATULoginVController.swift */; };
 		895405E21EE6542D00886F4A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E11EE6542D00886F4A /* CollectionViewController.swift */; };
 		895405E41EE6571600886F4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E31EE6571600886F4A /* CollectionCell.swift */; };
 		898402121F0500F600F06920 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402111F0500F600F06920 /* NoDataView.swift */; };
 		898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402151F05F2CB00F06920 /* XlpSwitch.swift */; };
+		89C0D36D1FC70E670052B30C /* XlpAFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0D36C1FC70E670052B30C /* XlpAFManager.swift */; };
 		89D3412E1FA1B396007AC040 /* OCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3412D1FA1B396007AC040 /* OCTool.m */; };
 		89E2DC531F3030AD00F0AFB1 /* XLPFMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */; };
 		89E73DF71DFA832900058FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73DF61DFA832900058FB0 /* AppDelegate.swift */; };
@@ -286,16 +293,24 @@
 		07FA9E821E891AC900674614 /* YingdiToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YingdiToolViewController.swift; sourceTree = "<group>"; };
 		07FA9E841E8A2E9900674614 /* YDToolDataManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDToolDataManagerController.swift; sourceTree = "<group>"; };
 		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
+		890DEE631FC579E800589612 /* loginBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginBackView.swift; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPFuncViewController.swift; sourceTree = "<group>"; };
 		8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPClosuresViewController.swift; sourceTree = "<group>"; };
 		892E27941F53C7CF00B023B7 /* commentCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentCellModel.swift; sourceTree = "<group>"; };
 		892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xlpNewsCommentVCModel.swift; sourceTree = "<group>"; };
+		8940B7D31FD8E40A006EB63D /* WLUnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLUnitField.m; sourceTree = "<group>"; };
+		8940B7D41FD8E40B006EB63D /* WLUnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLUnitField.h; sourceTree = "<group>"; };
+		8940B7D61FD8EA2E006EB63D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		8940B7D91FD8EC2A006EB63D /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		8940B7DB1FD935DA006EB63D /* CodeView0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView0.swift; sourceTree = "<group>"; };
+		894F815C1FC5571B0086AE21 /* ATULoginVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATULoginVController.swift; sourceTree = "<group>"; };
 		895405E11EE6542D00886F4A /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		895405E31EE6571600886F4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		898402111F0500F600F06920 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		898402151F05F2CB00F06920 /* XlpSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XlpSwitch.swift; sourceTree = "<group>"; };
+		89C0D36C1FC70E670052B30C /* XlpAFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlpAFManager.swift; sourceTree = "<group>"; };
 		89D3412C1FA1B396007AC040 /* OCTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTool.h; sourceTree = "<group>"; };
 		89D3412D1FA1B396007AC040 /* OCTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTool.m; sourceTree = "<group>"; };
 		89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPFMDBManager.swift; sourceTree = "<group>"; };
@@ -537,6 +552,7 @@
 				07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */,
 				07DB21711EA4BA7500D844DA /* Array+Extension.swift */,
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
+				89C0D36C1FC70E670052B30C /* XlpAFManager.swift */,
 				89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
 				07F39F1B1E23334100EE268B /* XLPCoreDataManager.swift */,
@@ -663,6 +679,36 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		8940B7D21FD8E3E9006EB63D /* 验证码输入框 */ = {
+			isa = PBXGroup;
+			children = (
+				8940B7D41FD8E40B006EB63D /* WLUnitField.h */,
+				8940B7D31FD8E40A006EB63D /* WLUnitField.m */,
+				8940B7D61FD8EA2E006EB63D /* CodeView.swift */,
+				8940B7DB1FD935DA006EB63D /* CodeView0.swift */,
+			);
+			path = "验证码输入框";
+			sourceTree = "<group>";
+		};
+		8940B7D81FD8EBAA006EB63D /* 验证码 */ = {
+			isa = PBXGroup;
+			children = (
+				8940B7D21FD8E3E9006EB63D /* 验证码输入框 */,
+				8940B7D91FD8EC2A006EB63D /* CodeViewController.swift */,
+			);
+			name = "验证码";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		894F815B1FC556E70086AE21 /* ATULogin */ = {
+			isa = PBXGroup;
+			children = (
+				894F815C1FC5571B0086AE21 /* ATULoginVController.swift */,
+				890DEE631FC579E800589612 /* loginBackView.swift */,
+			);
+			name = ATULogin;
+			sourceTree = "<group>";
+		};
 		895405E01EE653EE00886F4A /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +742,7 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				894F815B1FC556E70086AE21 /* ATULogin */,
 				895405E01EE653EE00886F4A /* CollectionView */,
 				07956E6A1E6D5CBF00E8D22D /* ThirdLib */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
@@ -706,13 +753,14 @@
 				07DB21771EA60AD800D844DA /* ADDetailVController.swift */,
 				077367D11E66621E002BFB86 /* UserManager.swift */,
 				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
-				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
 				89E73E381DFE463300058FB0 /* XLP_UI_ViewController.swift */,
 				89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */,
 				89E73E401E01292900058FB0 /* TsetClass.swift */,
 				89E73E421E01294E00058FB0 /* TestClassViewController.swift */,
 				8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */,
 				8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */,
+				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
+				8940B7D81FD8EBAA006EB63D /* 验证码 */,
 				075EEAA81E276C2F00D8E273 /* 旅法师 */,
 				07F39F3B1E24F9ED00EE268B /* 视频相关 */,
 				07F39F141E232C0100EE268B /* CoreData */,
@@ -1038,6 +1086,7 @@
 				07956E721E6D5CEC00E8D22D /* PopoverAction.m in Sources */,
 				079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */,
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
+				8940B7DA1FD8EC2A006EB63D /* CodeViewController.swift in Sources */,
 				895405E21EE6542D00886F4A /* CollectionViewController.swift in Sources */,
 				07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */,
 				071ECE011E9DBD7900616FF2 /* NewsCommentModel.swift in Sources */,
@@ -1056,6 +1105,7 @@
 				89E73E371DFBEAD800058FB0 /* OneModal.swift in Sources */,
 				07F290511E15F2AF00E94097 /* ExtensionTest.swift in Sources */,
 				8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */,
+				89C0D36D1FC70E670052B30C /* XlpAFManager.swift in Sources */,
 				07F87C951E2DB5E700CE7178 /* RefreshWKWebViewController.swift in Sources */,
 				07F39F0B1E1CEF3B00EE268B /* ZhiHuNewsViewController.swift in Sources */,
 				8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */,
@@ -1063,13 +1113,17 @@
 				89E73E321DFBEA6A00058FB0 /* UI_tableable_VC.swift in Sources */,
 				07DB21761EA4CE5B00D844DA /* ADView.swift in Sources */,
 				07F87C9F1E2E0F0A00CE7178 /* ZhiHuDetailVController.swift in Sources */,
+				8940B7D51FD8E40B006EB63D /* WLUnitField.m in Sources */,
+				8940B7DC1FD935DA006EB63D /* CodeView0.swift in Sources */,
 				073301D01E5BE34C00A87D52 /* myCollectionViewFlowLayout.swift in Sources */,
 				07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */,
 				079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */,
 				0764618D1E9644E800A4AD4C /* SSZipArchive.m in Sources */,
 				89E73E3B1DFE46AD00058FB0 /* RootViewController.swift in Sources */,
+				890DEE641FC579E800589612 /* loginBackView.swift in Sources */,
 				073301D51E5BEF4A00A87D52 /* CollectionViewCell.swift in Sources */,
 				89E73E391DFE463300058FB0 /* XLP_UI_ViewController.swift in Sources */,
+				8940B7D71FD8EA2E006EB63D /* CodeView.swift in Sources */,
 				079FE4321E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift in Sources */,
 				071ECDFF1E9DBCB400616FF2 /* NewsCommentVController.swift in Sources */,
 				07F39F061E1C9D4500EE268B /* NoNetView.swift in Sources */,
@@ -1116,6 +1170,7 @@
 				07DB21701EA46B4500D844DA /* commentTwoCell.swift in Sources */,
 				07F39F0D1E1CEF5200EE268B /* zhiHuCell.swift in Sources */,
 				07956E731E6D5CEC00E8D22D /* PopoverView.m in Sources */,
+				894F815D1FC5571B0086AE21 /* ATULoginVController.swift in Sources */,
 				07DB216E1EA46B3600D844DA /* commentCell.swift in Sources */,
 				0721D0951E851B8B00C55726 /* ArticleCell.swift in Sources */,
 				07F39F411E27690800EE268B /* RootTabBarViewController.swift in Sources */,

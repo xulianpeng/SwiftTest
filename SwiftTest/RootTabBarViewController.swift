@@ -48,7 +48,7 @@ class RootTabBarViewController: XLPBaseTabBarController {
         initTabBarItem(naFourVC, title: "", imageName: "forum_normal",selectImageName:"forum_select",tag:4)
 
 //        naThreeVC.title = "什么情况"
-        self.viewControllers = [naTwoVC,naFirstVC,naThreeVC,naFourVC]
+        self.viewControllers = [naFourVC,naFirstVC,naThreeVC,naTwoVC]
         
         
     }

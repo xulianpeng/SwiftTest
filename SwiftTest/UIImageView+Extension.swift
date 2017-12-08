@@ -8,8 +8,7 @@
 
 import UIKit
 import Kingfisher
-class UIImageView_Extension: NSObject {
-}
+
 extension UIImageView{
     
     
@@ -54,7 +53,7 @@ extension UIImageView{
     ///   - snapMaker: <#snapMaker description#>
     func xlpInitImageView(_ name:String,superView:UIView,corner:CGFloat,snapMaker:WMSnapMakerBlock) -> Void {
 
-        xlpInitImageView(superView, corner: corner, contentmode: .scaleAspectFit, snapMaker: snapMaker)
+        xlpInitImageView(superView, corner: corner, contentmode: .scaleToFill, snapMaker: snapMaker)
         self.image = kImageWithName(name)
         
     }

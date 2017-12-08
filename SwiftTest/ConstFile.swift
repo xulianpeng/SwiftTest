@@ -34,6 +34,11 @@ let kTFPlaceholderColor = UIColor.lightGray
 let kToken = "1B1521EA04DC430A5654FAAC6DA6075E"
 
 
+func kXlpColor(r:CGFloat,g:CGFloat,b:CGFloat,alpha:CGFloat)->UIColor{
+    
+    return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: alpha)
+}
+
 //func kWeakSelf(_ any:Any) -> Any {
 //     weak var weakSelf = any
 //    return weakSelf
@@ -182,6 +187,16 @@ func kColorWith16(_ rgbValue:Int) ->UIColor{
     let green = CGFloat((rgbValue & 0xFF00) >> 8)/255.0
     let blue = CGFloat(rgbValue & 0xFF)/255.0
     return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+}
+
+func kColorWith16HexString(_ hexString:String) ->UIColor {
+    
+    let newStr:NSString = hexString as NSString
+    let removeSharpMarkhexString = newStr.replacingOccurrences(of: "#", with: "")
+    let scanner: Scanner = Scanner(string: removeSharpMarkhexString)
+    var result: UInt32 = 0
+    scanner.scanHexInt32(&result)
+    return kColorWith16(Int(result))
 }
 
 //func XLPRandomText() -> String {
@@ -703,3 +718,28 @@ func kXlpCheckArr(_ arr:Array<Any>?) -> Bool {
 //#if DEBUG
 //#else
 //#endif
+
+
+/*
++ (UIColor *)colorWithHexWithLong:(long)hexColor
+{
+    return [self colorWithHexWithLong:hexColor alpha:1.0];
+    }
+    
+ */
+
+
+//        + (UIColor *)getDarkerColorFromColor1:(UIColor *)color1 color2:(UIColor *)color2 {
+//            if ([color1 colorNumber] > [color2 colorNumber]) {
+//                return color2;
+//            } else {
+//                return color1;
+//            }
+//            }
+//
+//            - (float)colorNumber {
+//                double r,g,b,a;
+//                [self getRed:&r green:&g blue:&b alpha:&a];
+//                return r + g + b + a;
+//}
+
