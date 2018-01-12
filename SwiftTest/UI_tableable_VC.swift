@@ -51,6 +51,7 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         myTableView.initTableView(delegate: self, superView: view)
         myTableView .register(OneCell.self, forCellReuseIdentifier: "mmcell")//可舍弃
     
+//        self.view.transform = CGAffineTransform.init(rotationAngle: CGFloat(-Double.pi / 2))
         
         
     }
@@ -81,6 +82,7 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         //button 的点击事件
         
         cell1?.clickBt .addTarget(self, action: #selector(handleAction1(btn:)), for: UIControlEvents.touchUpInside)
+//        cell1?.contentView.transform = CGAffineTransform.init(rotationAngle: CGFloat(Double.pi / 2))
         
         return cell1!
     }

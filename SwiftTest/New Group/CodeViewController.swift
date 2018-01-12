@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+typealias MCNetworkUtilsBlock = (_ resArr:[String],_ success:Bool) -> Void
 class CodeViewController: XLPBaseViewController,CodeViewDelegate {
     func passwordView(textFinished: String) {
         //输入完成 改变背景色
@@ -30,14 +30,20 @@ class CodeViewController: XLPBaseViewController,CodeViewDelegate {
 //        codeView.borderColor = UIColor.cyan
         view.addSubview(codeView)
         
+        var strArr:[String] = ["123","345","456","46","679"]
+        
+//        print(strArr.filter{$0.0,0})
+        
+        
+        
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        
-//        if codeView.isFirstResponder {
-//            codeView.resignFirstResponder()
-//        }
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if codeView.isFirstResponder {
+            codeView.resignFirstResponder()
+        }
+    }
 
     //
     

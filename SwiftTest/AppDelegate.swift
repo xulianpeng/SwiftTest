@@ -14,6 +14,7 @@ import Alamofire
 import SDWebImage
 import SwiftyJSON
 import FMDB
+import YYModel
 
 
 @UIApplicationMain
@@ -157,6 +158,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        var mmm = kStringContainEmotion(str)
         
         print(kStringRemoveWhitespaces(str),"\n\(kStringRemoveWhitespacesAndNewlines(str))","\n\(kStringRemoveAllWhitespaces(str))","\n\(kStringRemoveAllWhitespacesAndNewlines(str))")
+        
+        
+        let dic :[String:Any] = ["name":"xlp","sex":"man"]
+        
+        var model = XlpModel.yy_model(with: dic)
+        
+        
+        
+        
+        print(model)
+        
         
         
         return true

@@ -112,6 +112,7 @@
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
 		892E27951F53C7CF00B023B7 /* commentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27941F53C7CF00B023B7 /* commentCellModel.swift */; };
 		892E27971F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */; };
+		8933D5151FDFB8A2000AD9E5 /* XlpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933D5141FDFB8A2000AD9E5 /* XlpModel.swift */; };
 		8940B7D51FD8E40B006EB63D /* WLUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8940B7D31FD8E40A006EB63D /* WLUnitField.m */; };
 		8940B7D71FD8EA2E006EB63D /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940B7D61FD8EA2E006EB63D /* CodeView.swift */; };
 		8940B7DA1FD8EC2A006EB63D /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940B7D91FD8EC2A006EB63D /* CodeViewController.swift */; };
@@ -300,6 +301,7 @@
 		8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPClosuresViewController.swift; sourceTree = "<group>"; };
 		892E27941F53C7CF00B023B7 /* commentCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentCellModel.swift; sourceTree = "<group>"; };
 		892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xlpNewsCommentVCModel.swift; sourceTree = "<group>"; };
+		8933D5141FDFB8A2000AD9E5 /* XlpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlpModel.swift; sourceTree = "<group>"; };
 		8940B7D31FD8E40A006EB63D /* WLUnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLUnitField.m; sourceTree = "<group>"; };
 		8940B7D41FD8E40B006EB63D /* WLUnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLUnitField.h; sourceTree = "<group>"; };
 		8940B7D61FD8EA2E006EB63D /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 				07956E6A1E6D5CBF00E8D22D /* ThirdLib */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
 				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
+				8933D5141FDFB8A2000AD9E5 /* XlpModel.swift */,
 				07DB21751EA4CE5B00D844DA /* ADView.swift */,
 				898402111F0500F600F06920 /* NoDataView.swift */,
 				898402151F05F2CB00F06920 /* XlpSwitch.swift */,
@@ -1022,6 +1025,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1042,6 +1046,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1119,6 +1124,7 @@
 				07F39F1C1E23334100EE268B /* XLPCoreDataManager.swift in Sources */,
 				079FE3A11E0948A7007DF3DE /* EassyModal.swift in Sources */,
 				0764618D1E9644E800A4AD4C /* SSZipArchive.m in Sources */,
+				8933D5151FDFB8A2000AD9E5 /* XlpModel.swift in Sources */,
 				89E73E3B1DFE46AD00058FB0 /* RootViewController.swift in Sources */,
 				890DEE641FC579E800589612 /* loginBackView.swift in Sources */,
 				073301D51E5BEF4A00A87D52 /* CollectionViewCell.swift in Sources */,
@@ -1343,6 +1349,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B88JBVCS5S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1408,6 +1415,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B88JBVCS5S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

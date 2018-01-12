@@ -21,7 +21,7 @@ pod 'Masonry', '~> 1.0.2'
 pod ‘UMengUShare/Social/WeChat'
 pod 'MLeaksFinder'
 pod 'SQLite.swift', '~> 0.11.4'
-
+pod 'YYModel', '~> 1.0.4'
 use_frameworks!
 end
 
