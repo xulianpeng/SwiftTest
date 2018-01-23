@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SwiftTest_Pro.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>89E6AAAB20089DB6004D488B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>89E73DF21DFA832900058FB0</key>
 		<dict>
 			<key>primary</key>

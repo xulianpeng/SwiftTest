@@ -171,6 +171,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+        print("=====现在是 海外版的APP 啦啦啦啦========")
+        
         return true
     
     }
