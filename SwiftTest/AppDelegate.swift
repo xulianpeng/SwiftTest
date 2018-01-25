@@ -173,6 +173,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("=====现在是 海外版的APP 啦啦啦啦========")
         
+        print("======啦啦啦啦啦啦xlp11======")
         return true
     
     }
