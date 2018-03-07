@@ -15,7 +15,7 @@ import SDWebImage
 import SwiftyJSON
 import FMDB
 import YYModel
-
+import Meiqia
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

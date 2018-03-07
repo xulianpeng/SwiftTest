@@ -330,7 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftTest/AppDelegate.swift"
+<<<<<<< Updated upstream
             timestampString = "538563434.319965"
+=======
+            timestampString = "541935932.854553"
+>>>>>>> Stashed changes
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"

@@ -22,6 +22,9 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
     //MARK:Kingfisher的高级使用 - UITableView的使用
     let contentView = UIView()
     
+    var oldRow:NSInteger = 0
+    var newRow:NSInteger = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -243,6 +246,11 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
                 DispatchQueue.main.async {
                     
                     self.rootTableView.reloadData()
+                    self.newRow = self.finalArr.count
+                    let theIndex:IndexPath = IndexPath.init(row: self.newRow - self.oldRow, section: 0)
+                    self.rootTableView.scrollToRow(at: theIndex, at: .top, animated: false)
+                    
+                    
                 }
             case .failure(let error):
                 print(error)
@@ -378,7 +386,8 @@ class XLPClosuresViewController: UIViewController,UITableViewDelegate,UITableVie
     
     @objc func headerRefreshAction(header:MJRefreshNormalHeader)  {
         
-        
+        oldRow = finalArr.count
+        obtainDataWithAFire()
         header.endRefreshing()
     }
         
