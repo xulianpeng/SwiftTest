@@ -15,13 +15,15 @@ pod 'SVProgressHUD'
 #pod 'HandyJSON', '~> 1.4.0'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'SDWebImage', '~> 3.8.2'
-pod 'Meiqia', '~> 3.4.3'
+pod 'Meiqia', '~> 3.4.5'
 pod 'HyphenateLite', '~> 3.3.4.1'
 pod 'Masonry', '~> 1.0.2'
 pod ‘UMengUShare/Social/WeChat'
 pod 'MLeaksFinder'
 pod 'SQLite.swift', '~> 0.11.4'
 pod 'YYModel', '~> 1.0.4'
+pod 'YYText', '~> 1.0.7'
+
 use_frameworks!
 end
 

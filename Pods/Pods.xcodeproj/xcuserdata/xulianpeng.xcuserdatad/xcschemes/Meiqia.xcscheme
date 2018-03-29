@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1A6A33B9B0024B6BE796D824B8F96E54'
+               BlueprintIdentifier = '72CFF52CBD91CB948B6C18C4A76C375C'
                BlueprintName = 'Meiqia'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Meiqia.framework'>

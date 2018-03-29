@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Injoy. All rights reserved.
 //
 
-#import "MQInputToolView.h"
+#import "MQBottomBar.h"
 
-@implementation MQInputToolView
+@implementation MQBottomBar
 {
     UIView *buttonContainerView;
     NSLayoutConstraint *buttonContainerViewHeightConstraint;

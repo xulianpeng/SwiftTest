@@ -30,7 +30,7 @@
 #import "MQBundleUtil.h"
 #import "MQFileDownloadCellModel.h"
 #import "MQServiceToViewInterface.h"
-#import <MeiQiaSDK/MeiqiaSDK.h>
+#import <MeiQiaSDK/MeiQiaSDK.h>
 #import "MQBotMenuAnswerCellModel.h"
 #import "MQWebViewBubbleCellModel.h"
 #import "MQBotWebViewBubbleAnswerCellModel.h"
@@ -125,6 +125,7 @@ static NSInteger const kMQChatGetHistoryMessageNumber = 20;
     [MQManager removeStateChangeObserverWithKey:@"MQChatViewService"];
 }
 
+//从后台返回到前台时 
 - (void)backFromBackground {
     if ([MQServiceToViewInterface waitingInQueuePosition] > 0) {
         [self setClientOnline];
@@ -312,7 +313,7 @@ static NSInteger const kMQChatGetHistoryMessageNumber = 20;
  * 发送“用户正在输入”的消息
  */
 - (void)sendUserInputtingWithContent:(NSString *)content {
-    //[MQServiceToViewInterface sendClientInputtingWithContent:content];
+    [MQServiceToViewInterface sendClientInputtingWithContent:content];
 }
 
 /**

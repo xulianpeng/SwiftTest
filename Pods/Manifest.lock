@@ -24,11 +24,11 @@ PODS:
   - Kingfisher (4.2.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
-  - Meiqia (3.4.3):
-    - Meiqia/MeiqiaSDK (= 3.4.3)
-    - Meiqia/MQChatViewController (= 3.4.3)
-  - Meiqia/MeiqiaSDK (3.4.3)
-  - Meiqia/MQChatViewController (3.4.3):
+  - Meiqia (3.4.5):
+    - Meiqia/MeiqiaSDK (= 3.4.5)
+    - Meiqia/MQChatViewController (= 3.4.5)
+  - Meiqia/MeiqiaSDK (3.4.5)
+  - Meiqia/MQChatViewController (3.4.5):
     - Meiqia/MeiqiaSDK
   - MJRefresh (3.1.15)
   - MLeaksFinder (1.0.0):
@@ -51,6 +51,7 @@ PODS:
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
   - YYModel (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -61,7 +62,7 @@ DEPENDENCIES:
   - Kingfisher (~> 4.2.0)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
-  - Meiqia (~> 3.4.3)
+  - Meiqia (~> 3.4.5)
   - MJRefresh (~> 3.1.12)
   - MLeaksFinder
   - SDWebImage (~> 3.8.2)
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - SwiftyJSON (>= 3.1.3)
   - UMengUShare/Social/WeChat
   - YYModel (~> 1.0.4)
+  - YYText (~> 1.0.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -82,7 +84,7 @@ SPEC CHECKSUMS:
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Meiqia: ae7aed037c68de44e21b881b862c53e8d20df47f
+  Meiqia: 17055d9abb1269243d82d9d8adb27151a1b6ef40
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
@@ -92,7 +94,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   UMengUShare: fdbbf86353976727af26a66e9a84314ecb59c816
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: b4bcac1a76a87101ef065dae6385fb6b2b1ed619
+PODFILE CHECKSUM: c9d5ce40b4c7d2a9b2cb4a53aeb50dc1128cc4a0
 
 COCOAPODS: 1.3.1

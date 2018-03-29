@@ -20,6 +20,12 @@ import Meiqia
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var rootIndex = 0
+    var lastRootIndex = 0
+    let pageCount = 3
+    var conVIDArr = [123,456,789,110,220,330,440,550,660,770,880,990]
+    
+    
     var window: UIWindow?
     var isIOS9orLater = true
     
@@ -174,8 +180,133 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("=====现在是 海外版的APP 啦啦啦啦========xlp分支啦啦啦  =====")
         
         print("======啦啦啦啦啦啦xlp11======")
+        
+       
+        
+        self.rootIndex = conVIDArr.index(of: 880)!
+        
+        lastRootIndex = self.rootIndex
+        
+        var FirstArr = obtainFistArr(theIndex: self.rootIndex)
+        
+        var newArr11 = obtainLastIDArr(theIndex: lastRootIndex)
+        var newArr22 = obtainLastIDArr(theIndex: lastRootIndex )
+        var newArr333 = obtainLastIDArr(theIndex: lastRootIndex)
+        
+        var newArr1 = obtainNextIDArr(theIndex: self.rootIndex+1)
+        var newArr2 = obtainNextIDArr(theIndex: self.rootIndex+1)
+        var newArr33 = obtainNextIDArr(theIndex: self.rootIndex+1)
+        
+       
+
+        print(self.rootIndex,newArr1,newArr2,newArr33)
+        
+        
+        
         return true
     
+    }
+    
+    //下拉 获取上一组数据
+    func obtainLastIDArr(theIndex:Int) -> [Int] {
+        var resultArr = [Int]()
+        if theIndex  - pageCount >= 0{
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(theIndex  - pageCount, pageCount)) as! [Int]
+            if resultArr.count > 0{
+                self.lastRootIndex = theIndex  - pageCount
+            }
+        }else{
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(0, theIndex))  as! [Int]
+            if resultArr.count > 0{
+                self.lastRootIndex = 0
+            }
+        }
+        return resultArr
+    }
+    //上拉 获取下一组数据
+    
+    func obtainNextIDArr(theIndex:Int) -> [Int] {
+        var resultArr = [Int]()
+        if self.conVIDArr.count - (theIndex  + pageCount) >= 0{
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(theIndex, pageCount)) as! [Int]
+            if resultArr.count > 0{
+                self.rootIndex = theIndex + pageCount - 1
+            }
+            
+        }else{
+            //获取最后的
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(theIndex, self.conVIDArr.count - theIndex)) as! [Int]
+            if resultArr.count > 0{
+                self.rootIndex = self.conVIDArr.count-1
+            }
+        }
+        return resultArr
+    }
+    
+    //下拉 获取上一组数据
+    func obtainLastIDArr11(theIndex:Int) -> [Int] {
+        var resultArr = [Int]()
+        if theIndex  - pageCount >= 0{
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(theIndex  - pageCount, pageCount)) as! [Int]
+            if resultArr.count > 0{
+                self.lastRootIndex = theIndex  - pageCount
+            }
+        }else{
+            
+            //下拉获取最后一组 不满足 pagecount
+            
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(0, theIndex))  as! [Int]
+            if resultArr.count > 0{
+                self.lastRootIndex = 0
+            }
+        }
+        return resultArr
+    }
+    //上拉 获取下一组数据
+    
+    func obtainNextIDArr11(theIndex:Int) -> [Int] {
+        var resultArr = [Int]()
+        if self.conVIDArr.count - (theIndex  + pageCount) >= 0{
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(theIndex, pageCount)) as! [Int]
+            if resultArr.count > 0{
+                self.rootIndex = theIndex + pageCount - 1
+            }
+            
+        }else{
+            //上拉 获取最后的一组 不满足 pagecount
+            resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(theIndex, self.conVIDArr.count - theIndex)) as! [Int]
+            if resultArr.count > 0{
+                self.rootIndex = self.conVIDArr.count-1
+            }
+        }
+        return resultArr
+    }
+    
+    func obtainFistArr(theIndex:Int) -> [Int] {
+        
+        var resultArr = [Int]()
+        if self.conVIDArr.count <= pageCount {
+            
+            return self.conVIDArr
+            
+        }else{
+            
+            if self.conVIDArr.count - (theIndex  + pageCount) >= 0{
+                resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(theIndex, pageCount)) as! [Int]
+                if resultArr.count > 0{
+                    self.rootIndex = theIndex + pageCount - 1
+                }
+            }else
+            {
+                resultArr = (self.conVIDArr as NSArray).subarray(with: NSMakeRange(self.conVIDArr.count - pageCount, pageCount)) as! [Int]
+                if resultArr.count > 0{
+                    self.rootIndex = self.conVIDArr.count-1
+                    self.lastRootIndex = self.conVIDArr.count - pageCount
+                }
+            }
+        }
+        return resultArr
+        
     }
     
     

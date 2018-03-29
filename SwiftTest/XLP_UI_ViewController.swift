@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import YYText
 class XLP_UI_ViewController: UIViewController,UITextViewDelegate {
 
     //MARK: - ww
@@ -204,6 +205,10 @@ class XLP_UI_ViewController: UIViewController,UITextViewDelegate {
         testTextView.delegate = self
         
         
+        
+        var yyTextView = YYTextView.init(frame: CGRect(x:300,y:kSCREENHEIGHT - 300,width:100,height:40))
+        self.view.addSubview(yyTextView)
+        yyTextView.backgroundColor = UIColor.brown
         
         
         

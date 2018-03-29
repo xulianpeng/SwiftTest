@@ -247,7 +247,6 @@
 		89E6AB2620089DB6004D488B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733020E1E5E86AD00A87D52 /* SystemConfiguration.framework */; };
 		89E6AB2720089DB6004D488B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0733020C1E5E86A000A87D52 /* libz.tbd */; };
 		89E6AB2820089DB6004D488B /* libCCSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F87CB21E2F102400CE7178 /* libCCSDK.a */; };
-		89E6AB2920089DB6004D488B /* Pods_SwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */; };
 		89E6AB2A20089DB6004D488B /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073302071E5E845600A87D52 /* AlipaySDK.framework */; };
 		89E6AB2B20089DB6004D488B /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0707CE721E5FC2E60041D364 /* libWeChatSDK.a */; };
 		89E6AB2D20089DB6004D488B /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 073302061E5E845500A87D52 /* AlipaySDK.bundle */; };
@@ -268,6 +267,7 @@
 		89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */; };
 		89E73E411E01292900058FB0 /* TsetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E401E01292900058FB0 /* TsetClass.swift */; };
 		89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E421E01294E00058FB0 /* TestClassViewController.swift */; };
+		D7FDF1F61D8B5DE56CEA21DC /* Pods_SwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */; };
 		F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -312,6 +312,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02E057C493E42B1FA2232B35 /* Pods-SwiftTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.debug.xcconfig"; sourceTree = "<group>"; };
 		0707CE721E5FC2E60041D364 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		0707CE731E5FC2E60041D364 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		0707CE741E5FC2E60041D364 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -433,7 +434,7 @@
 		07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDemoViewController.swift; sourceTree = "<group>"; };
 		07FA9E821E891AC900674614 /* YingdiToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YingdiToolViewController.swift; sourceTree = "<group>"; };
 		07FA9E841E8A2E9900674614 /* YDToolDataManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDToolDataManagerController.swift; sourceTree = "<group>"; };
-		4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
+		25FC4C683924C7A53B31C724 /* Pods-SwiftTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.release.xcconfig"; sourceTree = "<group>"; };
 		890DEE631FC579E800589612 /* loginBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginBackView.swift; sourceTree = "<group>"; };
 		8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLP_RealViewController.swift; sourceTree = "<group>"; };
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -478,7 +479,6 @@
 		89E73E401E01292900058FB0 /* TsetClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TsetClass.swift; sourceTree = "<group>"; };
 		89E73E421E01294E00058FB0 /* TestClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClassViewController.swift; sourceTree = "<group>"; };
 		D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1B6FCA82195CED9744C95F6 /* Pods-SwiftTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,7 +500,6 @@
 				89E6AB2620089DB6004D488B /* SystemConfiguration.framework in Frameworks */,
 				89E6AB2720089DB6004D488B /* libz.tbd in Frameworks */,
 				89E6AB2820089DB6004D488B /* libCCSDK.a in Frameworks */,
-				89E6AB2920089DB6004D488B /* Pods_SwiftTest.framework in Frameworks */,
 				89E6AB2A20089DB6004D488B /* AlipaySDK.framework in Frameworks */,
 				89E6AB2B20089DB6004D488B /* libWeChatSDK.a in Frameworks */,
 			);
@@ -527,6 +526,7 @@
 				F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */,
 				073302091E5E845600A87D52 /* AlipaySDK.framework in Frameworks */,
 				0707CE771E5FC2E60041D364 /* libWeChatSDK.a in Frameworks */,
+				D7FDF1F61D8B5DE56CEA21DC /* Pods_SwiftTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,8 +1003,8 @@
 		F7B9082E28318B73B2EA1B3F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E1B6FCA82195CED9744C95F6 /* Pods-SwiftTest.debug.xcconfig */,
-				4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */,
+				02E057C493E42B1FA2232B35 /* Pods-SwiftTest.debug.xcconfig */,
+				25FC4C683924C7A53B31C724 /* Pods-SwiftTest.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1016,13 +1016,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89E6AB3520089DB6004D488B /* Build configuration list for PBXNativeTarget "SwiftTest_Pro" */;
 			buildPhases = (
-				89E6AAAC20089DB6004D488B /* [CP] Check Pods Manifest.lock */,
 				89E6AAAD20089DB6004D488B /* Sources */,
 				89E6AB1A20089DB6004D488B /* Frameworks */,
 				89E6AB2C20089DB6004D488B /* Resources */,
 				89E6AB3220089DB6004D488B /* Embed Frameworks */,
-				89E6AB3320089DB6004D488B /* [CP] Embed Pods Frameworks */,
-				89E6AB3420089DB6004D488B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1188,94 +1185,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		89E6AAAC20089DB6004D488B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		89E6AB3320089DB6004D488B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${PODS_ROOT}/HyphenateLite/ios_IM_HyphenateLite_sdk_3.3.4r1/HyphenateSDK/HyphenateLite.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/Meiqia/Meiqia.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyphenateLite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Meiqia.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		89E6AB3420089DB6004D488B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest-resources.sh",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftTest/Pods-SwiftTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A95F18F6DF5FCB92D3CD9B08 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1319,6 +1228,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1340,6 +1250,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1642,7 +1553,6 @@
 /* Begin XCBuildConfiguration section */
 		89E6AB3620089DB6004D488B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1B6FCA82195CED9744C95F6 /* Pods-SwiftTest.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1708,7 +1618,6 @@
 		};
 		89E6AB3720089DB6004D488B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1880,7 +1789,7 @@
 		};
 		89E73E1C1DFA832A00058FB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1B6FCA82195CED9744C95F6 /* Pods-SwiftTest.debug.xcconfig */;
+			baseConfigurationReference = 02E057C493E42B1FA2232B35 /* Pods-SwiftTest.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1946,7 +1855,7 @@
 		};
 		89E73E1D1DFA832A00058FB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F69876CE76839206AEAF77D /* Pods-SwiftTest.release.xcconfig */;
+			baseConfigurationReference = 25FC4C683924C7A53B31C724 /* Pods-SwiftTest.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

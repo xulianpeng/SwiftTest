@@ -88,12 +88,26 @@ class WMNetManager: NSObject {
     
     func SucceedGET(_ urlString:String,parameters:Dictionary<String,Any>,succeed:@escaping WMNetSucceedBlock) {
         
-        SVProgressHUD.setBackgroundColor(.red)
-        SVProgressHUD.show()
+        SVProgressHUD.setBackgroundColor(.white)
+        SVProgressHUD.setDefaultStyle(.light)
+//        SVProgressHUD.setDefaultMaskType(.gradient) //聚光灯效果
         
+        SVProgressHUD.setMinimumDismissTimeInterval(5) //据说是和展示的文字的长度有关 但是时间还是和 预想的时间 差别很大
+//        SVProgressHUD.show(withStatus: "你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈")
+        // 圆环 转圈  不自动消失
+//        SVProgressHUD.showInfo(withStatus: "对不起")
+        //感叹号 自动消失 时间 为默认的5s
+//        SVProgressHUD.showError(withStatus: "你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈") //x号 自动消失 时间 为默认的5s
+        SVProgressHUD.showSuccess(withStatus: "你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈")// 对号 自动消失 时间 为默认的5s
+//        SVProgressHUD.show(UIImage.init(named: "triangle")!, status: "你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈") //图片会占据 show(withStatus:中 进度条所在的位置  自动消失 时间 为默认的5s
+//        SVProgressHUD.showProgress(0.5, status: "你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈你是我的小丫小苹果啦啦啦啦哈哈哈哈") //不主动显示
+        
+        SVProgressHUD.dismiss(withDelay: 2)
+        
+        SVProgressHUD.setOffsetFromCenter(UIOffset.init(horizontal: 0, vertical: 100))
         Alamofire.request(urlString, method: .get, parameters: parameters).responseJSON(completionHandler: { (response) in
             
-            SVProgressHUD.dismiss()
+//            SVProgressHUD.dismiss(withDelay: 3)
             
             switch response.result {
             case .success(let value):
