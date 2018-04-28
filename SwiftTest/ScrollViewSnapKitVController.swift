@@ -241,24 +241,24 @@ class ScrollViewSnapKitVController: XLPBaseViewController,UITableViewDelegate,UI
             make.left.equalTo(10)
             make.top.equalTo(label.snp.bottom).offset(20)
             make.right.equalTo(-10)
-            make.bottom.equalTo(containerView).offset(0)
+//            make.bottom.equalTo(containerView).offset(0)
             
         }
         
         //////////////
         
                 
-//        rootTableView.initTableView(delegate: self, superView: containerView)
-//        rootTableView.snp.makeConstraints { (make) in
-//            make.top.equalTo(label2.snp.bottom).offset(20)
-//            make.left.equalTo(0)
-//            make.right.equalTo(0)
-//            make.height.equalTo(kSCREENHEIGHT)
-//            make.bottom.equalTo(containerView).offset(-20)
-//        }
-//        
-//        rootTableView.register(EassyCell.self, forCellReuseIdentifier: "cell")
-//        obtainDataWithWMNet()
+        rootTableView.initTableView(delegate: self, superView: containerView)
+        rootTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(label2.snp.bottom).offset(20)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.height.equalTo(kSCREENHEIGHT)
+            make.bottom.equalTo(containerView).offset(-20)
+        }
+        
+        rootTableView.register(EassyCell.self, forCellReuseIdentifier: "cell")
+        obtainDataWithWMNet()
         
         
     }

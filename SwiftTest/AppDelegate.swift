@@ -201,6 +201,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         print(self.rootIndex,newArr1,newArr2,newArr33)
         
+        MQManager.initWithAppkey("009c6d3b9af54a81653c1982a1425e7b") { (clientId, error) in
+         print(clientId)
+            
+        }
         
         
         return true

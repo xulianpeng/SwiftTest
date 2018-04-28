@@ -23,6 +23,7 @@ pod 'MLeaksFinder'
 pod 'SQLite.swift', '~> 0.11.4'
 pod 'YYModel', '~> 1.0.4'
 pod 'YYText', '~> 1.0.7'
+pod 'GTSDK'
 
 use_frameworks!
 end

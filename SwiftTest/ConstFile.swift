@@ -86,10 +86,12 @@ func kIS_iOS10orLater() -> Bool{
 }
 func kIS_iOS11orLater() -> Bool{
     
-    let systemVersion = Double(UIDevice.current.systemVersion)!
-    if systemVersion >= 11.0 {
-        return true
+    if let systemVersion = Double(UIDevice.current.systemVersion){
+        if systemVersion >= 11.0 {
+            return true
+        }
     }
+   
     return false
 }
 

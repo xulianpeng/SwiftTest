@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 class TestClassViewController: UIViewController {
 
     
@@ -210,6 +210,25 @@ class TestClassViewController: UIViewController {
         
         
     
+    }
+    
+    //制作一个标签view
+    func initTagViews(titleArr:[String]) -> UIView {
+        let rootView = UIView()
+        
+        for (index,tag) in titleArr.enumerated() {
+            var subView:UILabel = UILabel()
+            rootView.addSubview(subView)
+            subView.snp.makeConstraints({ (make) in
+                make.left.equalTo(0)
+                make.top.equalTo(5)
+                make.height.equalTo(30)
+            })
+        }
+        
+        
+        
+        return rootView
     }
     
    
