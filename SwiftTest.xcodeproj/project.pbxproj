@@ -267,7 +267,6 @@
 		89E73E3F1DFFC27000058FB0 /* XLP_OperatorsVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */; };
 		89E73E411E01292900058FB0 /* TsetClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E401E01292900058FB0 /* TsetClass.swift */; };
 		89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E73E421E01294E00058FB0 /* TestClassViewController.swift */; };
-		D7FDF1F61D8B5DE56CEA21DC /* Pods_SwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */; };
 		F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9709A151B986F63AC761BEE /* Pods_SwiftTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -526,7 +525,6 @@
 				F384B77C50EF07EB7A89216E /* Pods_SwiftTest.framework in Frameworks */,
 				073302091E5E845600A87D52 /* AlipaySDK.framework in Frameworks */,
 				0707CE771E5FC2E60041D364 /* libWeChatSDK.a in Frameworks */,
-				D7FDF1F61D8B5DE56CEA21DC /* Pods_SwiftTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,7 +1092,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = xulianpeng;
 				TargetAttributes = {
 					89E6AAAB20089DB6004D488B = {
@@ -1102,7 +1100,7 @@
 					};
 					89E73DF21DFA832900058FB0 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = B88JBVCS5S;
+						DevelopmentTeam = H22N8T6DAX;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -1794,11 +1792,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = B88JBVCS5S;
+				DEVELOPMENT_TEAM = H22N8T6DAX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftTest",
@@ -1860,11 +1859,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = B88JBVCS5S;
+				DEVELOPMENT_TEAM = H22N8T6DAX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftTest",

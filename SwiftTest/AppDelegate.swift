@@ -201,11 +201,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         print(self.rootIndex,newArr1,newArr2,newArr33)
         
-        MQManager.initWithAppkey("009c6d3b9af54a81653c1982a1425e7b") { (clientId, error) in
+        MQManager.initWithAppkey("4fa38cc3e75af7bd2b99c9e986baac64") { (clientId, error) in
          print(clientId)
             
         }
         
+    
+        let dict = ["27":"w","15":"t","36":"b"]
+        
+        let keys = dict.sorted(by: {$0.0 < $1.0})
+        
+        let values = dict.sorted(by: {$0.1 < $1.1})
+        
+        print(keys)
+        
+        print(values)
+        
+     
         
         return true
     

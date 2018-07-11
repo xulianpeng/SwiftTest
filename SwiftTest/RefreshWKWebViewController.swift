@@ -29,6 +29,12 @@ class RefreshWKWebViewController: XLPBaseViewController,WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.navigationItem.title = self.detailWebView.title
+        let height =  webView.sizeThatFits(CGSize.zero).height
+        let height1 = webView.scrollView.contentSize.height
+        let height2 = webView.scrollView.contentOffset.y
+    }
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

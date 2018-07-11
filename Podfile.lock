@@ -25,11 +25,11 @@ PODS:
   - Kingfisher (4.2.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
-  - Meiqia (3.4.5):
-    - Meiqia/MeiqiaSDK (= 3.4.5)
-    - Meiqia/MQChatViewController (= 3.4.5)
-  - Meiqia/MeiqiaSDK (3.4.5)
-  - Meiqia/MQChatViewController (3.4.5):
+  - Meiqia (3.4.7):
+    - Meiqia/MeiqiaSDK (= 3.4.7)
+    - Meiqia/MQChatViewController (= 3.4.7)
+  - Meiqia/MeiqiaSDK (3.4.7)
+  - Meiqia/MQChatViewController (3.4.7):
     - Meiqia/MeiqiaSDK
   - MJRefresh (3.1.15)
   - MLeaksFinder (1.0.0):
@@ -64,7 +64,7 @@ DEPENDENCIES:
   - Kingfisher (~> 4.2.0)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
-  - Meiqia (~> 3.4.5)
+  - Meiqia (~> 3.4.7)
   - MJRefresh (~> 3.1.12)
   - MLeaksFinder
   - SDWebImage (~> 3.8.2)
@@ -87,7 +87,7 @@ SPEC CHECKSUMS:
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Meiqia: 17055d9abb1269243d82d9d8adb27151a1b6ef40
+  Meiqia: af9d79fb853b207703153000f3d917e14fa14f50
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
@@ -99,6 +99,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: aef0d7b2cf4dcbe7481af12753418e7902dc2ff5
+PODFILE CHECKSUM: 8e4032a62714a8e27b4da61ef690ab0c0181f0de
 
 COCOAPODS: 1.3.1

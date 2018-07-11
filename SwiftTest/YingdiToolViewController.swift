@@ -8,6 +8,7 @@
 
 import UIKit
 import FMDB
+import Meiqia
 class YingdiToolViewController: XLPBaseViewController {
 
     var cardBt = UIButton()
@@ -76,6 +77,11 @@ class YingdiToolViewController: XLPBaseViewController {
             make.width.equalTo(width)
             make.height.equalTo(width * 1.1)
         }) { (bt) in
+            
+            let manager = MQChatViewManager()
+            manager.setLoginCustomizedId("13520144597")
+            
+            manager.pushMQChatViewController(in: self)
             
         }
         cardManagerBt.xlpInitButton(nil, titleColor: nil, fontSize: nil, imageStr: "数据管理前", backgroundImageStr: nil, cornerRedius: 0, superView: self.view, snpMaker: { (make) in
