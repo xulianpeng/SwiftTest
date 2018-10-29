@@ -10,6 +10,60 @@
 import Foundation
 import FMDB
 
+class XlpFMDB {
+    
+    var dbName = ""
+    var RootDB:FMDatabase!
+    
+    init(dbName:String) {
+        self.dbName = dbName
+//        let path = kCreatFile("\(self.dbName).sqlite").0
+        let path = kCreatFile("\(self.dbName)").0
+
+        self.RootDB = FMDatabase.init(path: path)
+    }
+    
+    func creatTable(_ table:String,sqlStr:String)   {
+        
+        if !self.RootDB!.open() {
+            
+            let hud = xlpHud.init(text: "亲,数据库未打开,初始化失败", constransY: 300)
+            hud.show()
+            hud.hideWhenAfter(time: 2)
+            
+            print("======Unable to open database========")
+            
+        }else{
+            
+            print("=============== open database=================")
+            
+            
+            if self.RootDB.tableExists(table) {
+                
+                print("*********表已存在*******************")
+                
+            }else{
+                
+                let sql = "create table " + table + "(" + sqlStr + ")"
+                
+                if self.RootDB.executeUpdate(sql, withArgumentsIn: nil){
+                    
+                    print("******创建表成功*******************")
+                }else{
+                    print("********创建表失败===================")
+                }
+                self.RootDB.close()
+            }
+            
+        }
+        
+        
+    }
+    
+    
+}
+
+
 class XLPSqliteManager {
     
     static let shareInstance = XLPSqliteManager()

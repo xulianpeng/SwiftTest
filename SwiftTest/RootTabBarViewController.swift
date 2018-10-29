@@ -19,11 +19,12 @@ class RootTabBarViewController: XLPBaseTabBarController {
 
         let firstVC  = YingdiToolViewController()
         let naFirstVC = XLPBaseNavigationVController.init(rootViewController:firstVC)
-        let twoVC = YingDiViewController()
+        let twoVC = YingDiViewController.init(title: "营地", backColor: UIColor.red)
+//        let twoVC = YingDiViewController()
         let naTwoVC = XLPBaseNavigationVController.init(rootViewController: twoVC)
         let threeVC = ShopCityViewController()
         let naThreeVC = XLPBaseNavigationVController.init(rootViewController: threeVC)
-        let fourVC  = RootViewController()
+        let fourVC  = RootViewController.init(title: "根视图", backColor: UIColor.cyan)
         let naFourVC = XLPBaseNavigationVController.init(rootViewController:fourVC)
         /*
         

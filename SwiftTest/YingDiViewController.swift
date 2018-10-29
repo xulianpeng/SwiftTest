@@ -22,6 +22,16 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
     
     let mainHeight = kSCREENHEIGHT - 64 - 44
     
+    init(title:String,backColor:UIColor) {
+        super.init(nibName: nil, bundle: nil)
+        self.title = title
+        self.view.backgroundColor = backColor
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +117,8 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
                 titleArr.append((newDic?["tiny"])!.string!)
             }
             
+            let updateSql = "update titleArr set weight = ? where tiny = ? "
+            let updateSucceed = xlpSqliteManager.updateTable("titleArr", sql: updateSql ,atWhere:[-100,"头条"] )
           NotificationCenter.default.post(name: NSNotification.Name(rawValue: "getTitleSucceed"), object: nil)
             
         } else {

@@ -90,7 +90,10 @@ class YingdiToolViewController: XLPBaseViewController {
             make.width.equalTo(width)
             make.height.equalTo(width * 1.1)
         }) { (bt) in
-            self.navigationController?.pushViewController(YDToolDataManagerController(), animated: true)
+//            self.navigationController?.pushViewController(YDToolDataManagerController(), animated: true)
+            
+            self.navigationController?.pushViewController(webTestVController(), animated: true)
+            
         }
         
     }

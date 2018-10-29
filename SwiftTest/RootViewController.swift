@@ -20,6 +20,19 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
 //    var rootTableView:UITableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: UITableViewStyle.grouped) //在声明时不能调用之前声明的属性,必须在函数中调用才会识别
     
+    init(title:String,backColor:UIColor) {
+       super.init(nibName: nil, bundle: nil)
+        self.title = title
+        self.view.backgroundColor = backColor
+        
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutUI()

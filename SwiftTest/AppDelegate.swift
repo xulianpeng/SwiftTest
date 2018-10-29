@@ -142,6 +142,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         obtainTitleArrFromDB()
         
 //        print(kCreateDocDirectoryWith("Magic/Card"))
+//        xlpSqliteManager.creatTable("test", sqlStr: "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+
+        XlpFMDB.init(dbName: "xlpTest.sqlite").creatTable("mmm", sqlStr:  "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+        
+        XlpFMDB.init(dbName: "xlpTest11.db").creatTable("mmm", sqlStr:  "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+
+        XlpFMDB.init(dbName: "xlpTest12.db1").creatTable("mmm", sqlStr:  "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+        XlpFMDB.init(dbName: "xlpTest13.mmm").creatTable("mmm", sqlStr:  "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+
         //表添加字段
         xlpSqliteManager.addColumnInTable("testColumn",columnType:"text",table: kTableToolPackageHearthStone)
         
@@ -155,21 +164,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //坑点:浮点数转字符串 使用 String()方法 会自动在小数点后第三位 四舍五入
         print(Int(str123)!,Double(str1234)!,String(int123),String(int1234))
         
+//        XlpFMDB.init(dbName: "mechat.sqlite").creatTable("QuickReply", sqlStr:  "content text,content_type text,created_on text,enterprise_id integer,group_id integer,id integer,knowledge_converted integer,last_updated text,rank integer,rich_content text,title text")
+
         
         displayAD()
 
+        XLPSqliteManager.shareInstance.creatTable("QuickReply", sqlStr:"content text,content_type text,created_on text,enterprise_id integer,group_id integer,id integer,knowledge_converted integer,last_updated text,rank integer,rich_content text,title text" )
         
-        let str = "  http://表情❤️屎  asdhjhasdasdasd\n你好啊骚年    "
+//        XLPSqliteManager.shareInstance.insertTable("QuickReply", sql: "INSERT INTO QuickReply (content,knowledge_converted,rich_content,id,group_id,enterprise_id,created_on,title,rank,content_type,last_updated) VALUES ('<DIV class=operatorfont style="MARGIN-LEFT: 5px"><SPAN style='FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 1.0000pt; mso-spacerun: "yes"'><?xml:namespace prefix = "o" ns = "urn:schemas-microsoft-com:office:office" /><o:p><FONT face=微软雅黑 size=3><!--StartFragment -->
+//            <DIV>我们11年以来的地址是在：解放碑纽约纽约大厦3.4.5楼（太平洋百货对面金夫人影楼的楼上）。第一次来咨询的顾客，可以先到3楼接待大厅，我们有专业的导诊为您安排咨询服务。</DIV></FONT></o:p></SPAN><!--EndFragment--></DIV>',1,'',449400,65986,5869,'2016-11-10T07:49:13.643512','医院地址',400000,'text','2016-11-18T10:39:01.191339')", limitArr: nil)
+
+//            xlpSqliteManager.insertTable(kTableModuleList, sql: "moduleID,tiny,title,weight", limitArr:arr)
+
+//        var str:String = "<DIV class=operatorfont style="MARGIN-LEFT: 5px"><SPAN style='FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 1.0000pt; mso-spacerun: "yes"'><?xml:namespace prefix = "o" ns = "urn:schemas-microsoft-com:office:office" /><o:p><FONT face=微软雅黑 size=3><!--StartFragment -->
+//        <DIV>我们11年以来的地址是在：解放碑纽约纽约大厦3.4.5楼（太平洋百货对面金夫人影楼的楼上）。第一次来咨询的顾客，可以先到3楼接待大厅，我们有专业的导诊为您安排咨询服务。</DIV></FONT></o:p></SPAN><!--EndFragment--></DIV>"
+//        
+//        var contentData: Data = "<DIV class=operatorfont style="MARGIN-LEFT: 5px"><SPAN style='FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 1.0000pt; mso-spacerun: "yes"'><?xml:namespace prefix = "o" ns = "urn:schemas-microsoft-com:office:office" /><o:p><FONT face=微软雅黑 size=3><!--StartFragment -->
+//        <DIV>我们11年以来的地址是在：解放碑纽约纽约大厦3.4.5楼（太平洋百货对面金夫人影楼的楼上）。第一次来咨询的顾客，可以先到3楼接待大厅，我们有专业的导诊为您安排咨询服务。</DIV></FONT></o:p></SPAN><!--EndFragment--></DIV>".data(using: .utf8)!//Data.ini//NSData.init(contentsOfFile: "asdasdasdasdabadshfj附近撒发生sad返回键阿斯蒂芬12313123")
+//        
+//        var str:String = String.init(data: contentData, encoding: .utf8)!
+//        
+//        print("最终的输出字符转为===",str,"===")
+        
+//        xlpSqliteManager.insertTable("QuickReply", sql: "content,content_type,created_on,enterprise_id,group_id,id,knowledge_converted,last_updated,rank,rich_content,title", limitArr:['<DIV class=operatorfont style="MARGIN-LEFT: 5px"><SPAN style='FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 1.0000pt; mso-spacerun: "yes"'><?xml:namespace prefix = "o" ns = "urn:schemas-microsoft-com:office:office" /><o:p><FONT face=微软雅黑 size=3><!--StartFragment --><DIV>我们11年以来的地址是在：解放碑纽约纽约大厦3.4.5楼（太平洋百货对面金夫人影楼的楼上）。第一次来咨询的顾客，可以先到3楼接待大厅，我们有专业的导诊为您安排咨询服务。</DIV></FONT></o:p></SPAN><!--EndFragment--></DIV>'",1,'',449400,65986,5869,'2016-11-10T07:49:13.643512','医院地址',400000,'text','2016-11-18T10:39:01.191339'])
+//        let str = "  http://表情❤️屎  asdhjhasdasdasd\n你好啊骚年    "
     
 //        var mmm = kStringContainEmotion(str)
         
-        print(kStringRemoveWhitespaces(str),"\n\(kStringRemoveWhitespacesAndNewlines(str))","\n\(kStringRemoveAllWhitespaces(str))","\n\(kStringRemoveAllWhitespacesAndNewlines(str))")
+//        print(kStringRemoveWhitespaces(str),"\n\(kStringRemoveWhitespacesAndNewlines(str))","\n\(kStringRemoveAllWhitespaces(str))","\n\(kStringRemoveAllWhitespacesAndNewlines(str))")
         
         
         let dic :[String:Any] = ["name":"xlp","sex":"man"]
         
         var model = XlpModel.yy_model(with: dic)
         
+//        "<DIV class=operatorfont style=\"MARGIN-LEFT: 5px\"><SPAN style=\'FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 1.0000pt; mso-spacerun: \"yes\"\'><?xml:namespace prefix = \"o\" ns = \"urn:schemas-microsoft-com:office:office\" /><o:p><FONT face=微软雅黑 size=3><!--StartFragment -->
+//        <DIV>我们11年以来的地址是在：解放碑纽约纽约大厦3.4.5楼（太平洋百货对面金夫人影楼的楼上）。第一次来咨询的顾客，可以先到3楼接待大厅，我们有专业的导诊为您安排咨询服务。</DIV></FONT></o:p></SPAN><!--EndFragment--></DIV>"
         
         
         
@@ -217,7 +247,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(values)
         
-     
+        
+        var newArr = conVIDArr.filter { (mm1) -> Bool in
+            mm1 > 300
+        }
+      print("最终的结果为",newArr)
+        
+        
         
         return true
     
@@ -542,8 +578,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        let dropTag = xlpSqliteManager.dropTable("titleArr")
         
-        let updateSql = "update titleArr set weight = ? where tiny = ? "
-        let updateSucceed = xlpSqliteManager.updateTable("titleArr", sql: updateSql ,atWhere:[-100,"头条"] )
+        let updateSql = "update titleArr set weight = ?,title = ? where tiny = ? "
+        let updateSucceed = xlpSqliteManager.updateTable("titleArr", sql: updateSql ,atWhere:[-100,"头痛啊啊啊","头条"] )
         
         print(titleArr,titleArr1,updateSucceed)
     }

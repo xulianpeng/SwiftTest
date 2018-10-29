@@ -122,6 +122,7 @@
 		895405E41EE6571600886F4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E31EE6571600886F4A /* CollectionCell.swift */; };
 		898402121F0500F600F06920 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402111F0500F600F06920 /* NoDataView.swift */; };
 		898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402151F05F2CB00F06920 /* XlpSwitch.swift */; };
+		89ADDDBE210AF0170073E067 /* webTestVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ADDDBD210AF0170073E067 /* webTestVController.swift */; };
 		89C0D36D1FC70E670052B30C /* XlpAFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0D36C1FC70E670052B30C /* XlpAFManager.swift */; };
 		89D3412E1FA1B396007AC040 /* OCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3412D1FA1B396007AC040 /* OCTool.m */; };
 		89E2DC531F3030AD00F0AFB1 /* XLPFMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */; };
@@ -452,6 +453,7 @@
 		895405E31EE6571600886F4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		898402111F0500F600F06920 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		898402151F05F2CB00F06920 /* XlpSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XlpSwitch.swift; sourceTree = "<group>"; };
+		89ADDDBD210AF0170073E067 /* webTestVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webTestVController.swift; sourceTree = "<group>"; };
 		89C0D36C1FC70E670052B30C /* XlpAFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlpAFManager.swift; sourceTree = "<group>"; };
 		89D3412C1FA1B396007AC040 /* OCTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTool.h; sourceTree = "<group>"; };
 		89D3412D1FA1B396007AC040 /* OCTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTool.m; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 				07FA9E821E891AC900674614 /* YingdiToolViewController.swift */,
 				07FA9E841E8A2E9900674614 /* YDToolDataManagerController.swift */,
 				07B493CA1E8A423200791A76 /* SeriesHearthStone.swift */,
+				89ADDDBD210AF0170073E067 /* webTestVController.swift */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -1412,6 +1415,7 @@
 				895405E21EE6542D00886F4A /* CollectionViewController.swift in Sources */,
 				07F39F3F1E2768D000EE268B /* XLPBaseTabBarController.swift in Sources */,
 				071ECE011E9DBD7900616FF2 /* NewsCommentModel.swift in Sources */,
+				89ADDDBE210AF0170073E067 /* webTestVController.swift in Sources */,
 				89E73E431E01294E00058FB0 /* TestClassViewController.swift in Sources */,
 				073301CE1E5BD0D300A87D52 /* myCollectionViewCell.swift in Sources */,
 				07F39F0F1E1CEF7400EE268B /* zhiHuTopCell.swift in Sources */,
