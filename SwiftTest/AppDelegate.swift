@@ -253,7 +253,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
       print("最终的结果为",newArr)
         
-        
+        print("最终的结果为111",newArr)
         
         return true
     
