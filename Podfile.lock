@@ -25,11 +25,11 @@ PODS:
   - Kingfisher (4.2.0)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
-  - Meiqia (3.4.7):
-    - Meiqia/MeiqiaSDK (= 3.4.7)
-    - Meiqia/MQChatViewController (= 3.4.7)
-  - Meiqia/MeiqiaSDK (3.4.7)
-  - Meiqia/MQChatViewController (3.4.7):
+  - Meiqia (3.4.9):
+    - Meiqia/MeiqiaSDK (= 3.4.9)
+    - Meiqia/MQChatViewController (= 3.4.9)
+  - Meiqia/MeiqiaSDK (3.4.9)
+  - Meiqia/MQChatViewController (3.4.9):
     - Meiqia/MeiqiaSDK
   - MJRefresh (3.1.15)
   - MLeaksFinder (1.0.0):
@@ -64,7 +64,7 @@ DEPENDENCIES:
   - Kingfisher (~> 4.2.0)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
-  - Meiqia (~> 3.4.7)
+  - Meiqia (= 3.4.9)
   - MJRefresh (~> 3.1.12)
   - MLeaksFinder
   - SDWebImage (~> 3.8.2)
@@ -75,6 +75,30 @@ DEPENDENCIES:
   - UMengUShare/Social/WeChat
   - YYModel (~> 1.0.4)
   - YYText (~> 1.0.7)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Alamofire
+    - FBRetainCycleDetector
+    - FMDB
+    - GTSDK
+    - HyphenateLite
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - Masonry
+    - MBProgressHUD
+    - Meiqia
+    - MJRefresh
+    - MLeaksFinder
+    - SDWebImage
+    - SnapKit
+    - SQLite.swift
+    - SVProgressHUD
+    - SwiftyJSON
+    - UMengUShare
+    - YYModel
+    - YYText
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -87,7 +111,7 @@ SPEC CHECKSUMS:
   Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Meiqia: af9d79fb853b207703153000f3d917e14fa14f50
+  Meiqia: 75776701963217d7bde57a56e65da7b5e1718b3f
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
@@ -99,6 +123,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 8e4032a62714a8e27b4da61ef690ab0c0181f0de
+PODFILE CHECKSUM: 3473bff56a4445a5a5e1178492969f0e1db1edac
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
