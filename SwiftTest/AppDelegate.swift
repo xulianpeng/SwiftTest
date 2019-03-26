@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var dataBase : FMDatabase?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
 //        let url = URL.init(string: "www.baidu.com")
@@ -301,6 +301,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         print("=====1234",obtainStr(str: "adadssssaaaalllssdasss"))
+        
+         print("=====是否包含呢==",self.testArrcontainEmptyStr())
+        
         return true
     
     }
@@ -788,4 +791,11 @@ extension AppDelegate{
         }
         return lastStr
     }
+    
+    
+    func testArrcontainEmptyStr() -> Bool {
+        let arr = ["asdas","asddfgdfg","2134weqwe"]
+        return arr.contains(" ")
+    }
+    
 }

@@ -21,7 +21,7 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 5.0
-        self.horizonallyCons = NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0)
+        self.horizonallyCons = NSLayoutConstraint(item: titleLabel, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0)
     }
 
 }

@@ -13,7 +13,7 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     
     
     var dataArr = NSMutableArray()
-    var myTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style:UITableViewStyle.plain)
+    var myTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style:UITableView.Style.plain)
     
     
     
@@ -81,7 +81,7 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
         
         //button 的点击事件
         
-        cell1?.clickBt .addTarget(self, action: #selector(handleAction1(btn:)), for: UIControlEvents.touchUpInside)
+        cell1?.clickBt .addTarget(self, action: #selector(handleAction1(btn:)), for: UIControl.Event.touchUpInside)
 //        cell1?.contentView.transform = CGAffineTransform.init(rotationAngle: CGFloat(Double.pi / 2))
         
         return cell1!
@@ -105,10 +105,10 @@ class UI_tableable_VC: UIViewController,UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.delete
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             

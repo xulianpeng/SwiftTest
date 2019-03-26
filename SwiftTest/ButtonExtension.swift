@@ -444,7 +444,7 @@ extension UITextView{
             make.top.equalTo(7)
             make.right.equalTo(self.snp.right).offset(-5)
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(textViewChanged), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewChanged), name: UITextView.textDidChangeNotification, object: nil)
         
     }
     @objc func textViewChanged(notification:NSNotification)  {

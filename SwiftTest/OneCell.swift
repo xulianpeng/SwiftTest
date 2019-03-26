@@ -15,7 +15,7 @@ class OneCell: UITableViewCell {
     //类似OC的属性变量的声明 在外部可被调用
     var nameLabel : UILabel!
     var classLabel : UILabel!
-    var clickBt = UIButton.init(type:UIButtonType.custom)
+    var clickBt = UIButton.init(type:UIButton.ButtonType.custom)
     
     //自定义赋值方法
     func showViewWithModal(modal:OneModal){
@@ -25,7 +25,7 @@ class OneCell: UITableViewCell {
     
     //重载 初始化方法
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutTheSubviews()
     }
@@ -73,7 +73,7 @@ class OneCell: UITableViewCell {
         }
         clickBt.backgroundColor = UIColor.yellow
         clickBt .setTitle("点击", for: .normal)
-        clickBt .setTitleColor(UIColor.purple, for:UIControlState.normal)
+        clickBt .setTitleColor(UIColor.purple, for:UIControl.State.normal)
         clickBt.layer.cornerRadius = 5
     }
     

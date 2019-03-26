@@ -22,7 +22,7 @@ class XLPBaseViewController: UIViewController {
     public var baseFooter:MJRefreshBackNormalFooter = MJRefreshBackNormalFooter()
     public var netStatus:Bool = true
     
-    let wmIndictor = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+    let wmIndictor = UIActivityIndicatorView.init(style: .whiteLarge)
     
     public func initMjRefresh(target:UIViewController)  {
 

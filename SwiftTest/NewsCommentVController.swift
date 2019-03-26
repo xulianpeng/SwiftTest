@@ -25,7 +25,7 @@ class NewsCommentVController: XLPBaseViewController,UITableViewDelegate,UITableV
         self.title = "文章评论"
         rootTableView.estimatedRowHeight = 40
         
-        rootTableView.rowHeight = UITableViewAutomaticDimension
+        rootTableView.rowHeight = UITableView.automaticDimension
 
         obtainData()
         xlpInitMjRefresh(self, tableView: rootTableView)

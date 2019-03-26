@@ -139,7 +139,7 @@ class WheelBannerView: UIView,UIScrollViewDelegate{
                                                selector: #selector(letItScroll),
                                                userInfo: nil, repeats: true)
         
-        RunLoop.main.add(autoScrollTimer!, forMode: .commonModes)
+        RunLoop.main.add(autoScrollTimer!, forMode: RunLoop.Mode.common)
     }
     
     //计时器时间一到，滚动一张图片

@@ -175,12 +175,12 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         }
         volumeLeftView.backgroundColor = UIColor.clear
         swipVolumeUp = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustVolumeUp(gesture:)))
-        swipVolumeUp.direction = UISwipeGestureRecognizerDirection.up
+        swipVolumeUp.direction = UISwipeGestureRecognizer.Direction.up
         swipVolumeUp.numberOfTouchesRequired = 1
         swipVolumeUp.delegate = self
         volumeLeftView.addGestureRecognizer(swipVolumeUp)
         swipVolumeDown = UISwipeGestureRecognizer.init(target: self, action: #selector(adjustVolumeDown(gesture:)))
-        swipVolumeDown.direction = UISwipeGestureRecognizerDirection.down
+        swipVolumeDown.direction = UISwipeGestureRecognizer.Direction.down
         swipVolumeDown.numberOfTouchesRequired = 1
         swipVolumeDown.delegate = self
         volumeLeftView.addGestureRecognizer(swipVolumeDown)
@@ -379,7 +379,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
 //        playSlider.setMaximumTrackImage(kImageWithName("sliderImage"), for: .normal)
         playSlider.minimumTrackTintColor = UIColor.red
         playSlider.maximumTrackTintColor = UIColor.clear
-        playSlider.addTarget(self, action: #selector(changePlaySlider), for: UIControlEvents.valueChanged)
+        playSlider.addTarget(self, action: #selector(changePlaySlider), for: UIControl.Event.valueChanged)
         
     }
     
@@ -427,7 +427,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
          MPMoviePlayerDidExitFullscreen
          MPMoviePlayerDidEnterFullscreen
          **/
-        notificationCenter.addObserver(self, selector: #selector(deviceOrientationDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(deviceOrientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(playerWillEnterFullscreen), name: NSNotification.Name.MPMoviePlayerWillEnterFullscreen, object: self.playerVC1)
         notificationCenter.addObserver(self, selector: #selector(playerWillExitFullscreen), name: NSNotification.Name.MPMoviePlayerWillExitFullscreen, object: self.playerVC1)
         
@@ -493,7 +493,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
 //        let  asset: AVURLAsset = AVURLAsset.init(url: url, options: nil)
 //        let gen:AVAssetImageGenerator = AVAssetImageGenerator.init(asset: asset)
 //        gen.appliesPreferredTrackTransform = true
-        let time:CMTime = CMTimeMakeWithSeconds(Float64(obtainTime), 1) //两个参数  第一个是视频的第几秒  第二个是 每秒的帧数
+        let time:CMTime = CMTimeMakeWithSeconds(Float64(obtainTime), preferredTimescale: 1) //两个参数  第一个是视频的第几秒  第二个是 每秒的帧数
         var actualTime = CMTime.init() //实际生成缩略图的时间
         let image:CGImage = try! gen.copyCGImage(at: time, actualTime: &actualTime)
         let thumb:UIImage = UIImage.init(cgImage: image)
@@ -839,7 +839,7 @@ class videoPlayViewController: XLPBaseViewController,UIGestureRecognizerDelegate
         
         hiddenTimer = Timer.init(timeInterval: hiddenTime, target: self, selector: #selector(hiddenControlView), userInfo: nil, repeats: true)
         
-        RunLoop.main.add(hiddenTimer!, forMode: RunLoopMode.commonModes)
+        RunLoop.main.add(hiddenTimer!, forMode: RunLoop.Mode.common)
 
     }
     

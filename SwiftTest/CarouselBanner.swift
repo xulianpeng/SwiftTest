@@ -83,7 +83,7 @@ class CarouselBanner: UIView,UIScrollViewDelegate {
             timer = nil
         }
         timer = Timer.scheduledTimer(timeInterval: self.time, target: self, selector: #selector(timerFunction), userInfo: nil, repeats: true)
-        RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.common)
         
     }
 

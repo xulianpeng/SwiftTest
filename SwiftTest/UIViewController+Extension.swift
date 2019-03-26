@@ -12,7 +12,7 @@ extension UIViewController{
     
     func initIndicator(_ superView:UIView) -> UIActivityIndicatorView {
         
-        let myIndictor = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        let myIndictor = UIActivityIndicatorView.init(style: .gray)
         superView.addSubview(myIndictor)
         myIndictor.snp.makeConstraints { (make) in
             make.center.equalTo(self.view)

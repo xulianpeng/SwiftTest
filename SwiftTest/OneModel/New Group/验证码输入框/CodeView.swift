@@ -255,7 +255,7 @@ class CodeView: UIView,UIKeyInput {
                     return
                 }
                 
-                let attrDic = [NSAttributedStringKey.foregroundColor:UIColor.black,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)]
+                let attrDic = [NSAttributedString.Key.foregroundColor:UIColor.black,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12)]
                 let subString:NSString = characterArray[index] as NSString
                 let oneTextSize:CGSize = subString.size(withAttributes: attrDic)
                 
@@ -337,7 +337,7 @@ class CodeView: UIView,UIKeyInput {
                     return
                 }
                 
-                let attrDic = [NSAttributedStringKey.foregroundColor:UIColor.black,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)]
+                let attrDic = [NSAttributedString.Key.foregroundColor:UIColor.black,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12)]
                 let subString:NSString = characterArray[index] as NSString
                 let oneTextSize:CGSize = subString.size(withAttributes: attrDic)
                 let oneTextRect:CGRect = indexRect.insetBy(dx:(indexRect.size.width - oneTextSize.width)/2, dy: (indexRect.size.height - oneTextSize.height)/2)

@@ -529,7 +529,7 @@ func kStringGetSize(_ string:String?,font:UIFont,maxSize:CGSize) -> CGSize {
     var lastSize = CGSize.zero
     
     if string != nil {
-        lastSize = string!.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],attributes:[NSAttributedStringKey.font:font],context: nil).size
+        lastSize = string!.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesDeviceMetrics],attributes:[NSAttributedString.Key.font:font],context: nil).size
         
     }
     lastSize  = CGSize(width:lastSize.width + 3,height:lastSize.height)
@@ -692,7 +692,7 @@ func kStringContainEmotion(_ string:String) -> Bool {
 ///   - height: 距离底部的距离
 ///   - style: <#style description#>
 /// - Returns: <#return value description#>
-func kXlpInitTableViewBegin(_ height:CGFloat,style:UITableViewStyle) -> UITableView{
+func kXlpInitTableViewBegin(_ height:CGFloat,style:UITableView.Style) -> UITableView{
     return UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT - 64 - height), style: style) as UITableView
     
 }

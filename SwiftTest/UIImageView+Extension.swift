@@ -20,7 +20,7 @@ extension UIImageView{
     ///   - corner: 角度
     ///   - contentmode:
     ///   - snapMaker: 约束
-    func xlpInitImageView(_ superView:UIView,corner:CGFloat,contentmode:UIViewContentMode,snapMaker:WMSnapMakerBlock) -> Void {
+    func xlpInitImageView(_ superView:UIView,corner:CGFloat,contentmode:UIView.ContentMode,snapMaker:WMSnapMakerBlock) -> Void {
         
         superView.addSubview(self)
         self.snp.makeConstraints(snapMaker)

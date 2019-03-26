@@ -130,7 +130,7 @@ class TitleArrView: UIView {
                     
                     if bt.tag == anyBt.tag{
                         
-                        bt.setTitleColor(self.theSelectedColor, for: UIControlState.normal)
+                        bt.setTitleColor(self.theSelectedColor, for: UIControl.State.normal)
                         
                         UIView.animate(withDuration: 0.2, animations: {
                             bt.transform = CGAffineTransform(scaleX: self.theScale, y: self.theScale)
@@ -138,7 +138,7 @@ class TitleArrView: UIView {
                         
                     }else{
                         
-                        anyBt.setTitleColor(self.theNormalColor, for: UIControlState.normal)
+                        anyBt.setTitleColor(self.theNormalColor, for: UIControl.State.normal)
                         UIView.animate(withDuration: 0.2, animations: {
                             anyBt.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                         })
@@ -159,7 +159,7 @@ class TitleArrView: UIView {
             
             if (index == 0) {
                 
-                button.setTitleColor(theSelectedColor, for: UIControlState.normal)
+                button.setTitleColor(theSelectedColor, for: UIControl.State.normal)
                 UIView.animate(withDuration: 0.2, animations: {
                     button.transform = CGAffineTransform(scaleX: self.theScale, y: self.theScale)
                 })
@@ -225,7 +225,7 @@ class TitleArrView: UIView {
             
             if bt.tag == anyBt.tag{
                 
-                bt.setTitleColor(self.theSelectedColor, for: UIControlState.normal)
+                bt.setTitleColor(self.theSelectedColor, for: UIControl.State.normal)
                 
                 UIView.animate(withDuration: 0.2, animations: {
                     bt.transform = CGAffineTransform(scaleX: self.theScale, y: self.theScale)
@@ -233,7 +233,7 @@ class TitleArrView: UIView {
                 
             }else{
                 
-                anyBt.setTitleColor(self.theNormalColor, for: UIControlState.normal)
+                anyBt.setTitleColor(self.theNormalColor, for: UIControl.State.normal)
                 
                 
                 UIView.animate(withDuration: 0.2, animations: {

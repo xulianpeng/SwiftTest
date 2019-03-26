@@ -44,7 +44,7 @@ class ShopCityViewController: XLPBaseViewController,UICollectionViewDelegate,UIC
         myCollectionView.dataSource = self
         
 //        myCollectionView.alwaysBounceVertical = false
-        myCollectionView.contentInset = UIEdgeInsetsMake(0, 0, verticallyPadding, 0);
+        myCollectionView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: verticallyPadding, right: 0);
         self.view.addSubview(myCollectionView)
         
 //        let nib = UINib(nibName: "CollectionViewCell", bundle: nil)

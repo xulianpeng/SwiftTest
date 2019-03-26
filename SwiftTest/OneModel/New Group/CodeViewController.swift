@@ -58,7 +58,7 @@ class CodeViewController: XLPBaseViewController,CodeViewDelegate {
             
             let image:UIImage = UIImage.init(named: "right_menu_multichat@2x")!
             
-            let newImage = image.resizableImage(withCapInsets: UIEdgeInsetsMake(5, image.size.width/5 * 4, 10, image.size.width/5*4), resizingMode: UIImageResizingMode.stretch)
+            let newImage = image.resizableImage(withCapInsets: UIEdgeInsets.init(top: 5, left: image.size.width/5 * 4, bottom: 10, right: image.size.width/5*4), resizingMode: UIImage.ResizingMode.stretch)
 //            let newImage = image.resizableImage(withCapInsets: UIEdgeInsetsMake(5, self.imageView.frame.size.width/5 * 4, 10, self.imageView.frame.size.width/5*4), resizingMode: UIImageResizingMode.tile)
             self.imageView.frame = CGRect(x:20,y:100,width:300,height:40)
             self.imageView.image = nil
@@ -85,7 +85,7 @@ class CodeViewController: XLPBaseViewController,CodeViewDelegate {
 class XlpSerachBarView:UIView,UITextFieldDelegate{
     
     lazy var searchBt:UIButton = {
-        let bt = UIButton.init(type:UIButtonType.custom)
+        let bt = UIButton.init(type:UIButton.ButtonType.custom)
         bt.setImage(UIImage.init(named: "searchIcon"), for: .normal)
         return bt
     }()
@@ -120,7 +120,7 @@ class XlpSerachBarView:UIView,UITextFieldDelegate{
         self.searchBt.frame = CGRect(x:frame.size.width - 40,y:5,width:30,height:30)
         backView.addSubview(self.searchBt)
         
-        self.searchBt.addTarget(self, action: #selector(showSeachView), for: UIControlEvents.touchUpInside)
+        self.searchBt.addTarget(self, action: #selector(showSeachView), for: UIControl.Event.touchUpInside)
 
         
     }

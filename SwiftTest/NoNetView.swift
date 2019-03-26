@@ -74,7 +74,7 @@ class NoNetView: UIView {
     /// - Parameter text: 新的文案信息
     func initWithButtonText(text:String){
         
-        button.setTitle(text, for: UIControlState.normal)
+        button.setTitle(text, for: UIControl.State.normal)
     }
 
     

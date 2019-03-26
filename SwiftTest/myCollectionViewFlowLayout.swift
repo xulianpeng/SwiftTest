@@ -24,7 +24,7 @@ class myCollectionViewFlowLayout: UICollectionViewFlowLayout {
         super.init()
         itemSize = CGSize(width: cellWidth, height: cellHeight)
         headerReferenceSize = CGSize(width: kSCREENWIDTH, height: verticallyPadding)
-        sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
+        sectionInset = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)
         minimumInteritemSpacing = 5
         minimumLineSpacing = 5
     }
@@ -53,10 +53,10 @@ class myCollectionViewFlowLayout: UICollectionViewFlowLayout {
         let numOfItems = self.collectionView!.numberOfSections
         
         for attr:UICollectionViewLayoutAttributes in attrsArray! {
-            if (attr.representedElementCategory == UICollectionElementCategory.cell) {
+            if (attr.representedElementCategory == UICollectionView.ElementCategory.cell) {
                 var cellRect = attr.frame;
                 if offsetY <= 0 {
-                    let distance = fabs(offsetY) / SpringFactor;
+                    let distance = abs(offsetY) / SpringFactor;
                     cellRect.origin.y += offsetY + distance * CGFloat(attr.indexPath.section + 1);
                 }else if bottomOffset > 0 {
                     let distance = bottomOffset / SpringFactor;

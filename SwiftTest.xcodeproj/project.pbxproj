@@ -110,6 +110,7 @@
 		8921ACCC1E029DC400A20D60 /* XLP_RealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */; };
 		8921ACDA1E03D38000A20D60 /* XLPFuncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */; };
 		8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */; };
+		8929805D224A37DF001A82CC /* TAllVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8929805C224A37DF001A82CC /* TAllVController.swift */; };
 		892E27951F53C7CF00B023B7 /* commentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27941F53C7CF00B023B7 /* commentCellModel.swift */; };
 		892E27971F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */; };
 		8933D5151FDFB8A2000AD9E5 /* XlpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933D5141FDFB8A2000AD9E5 /* XlpModel.swift */; };
@@ -441,6 +442,7 @@
 		8921ACCD1E029DDA00A20D60 /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPFuncViewController.swift; sourceTree = "<group>"; };
 		8921ACDB1E03D3E500A20D60 /* XLPClosuresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLPClosuresViewController.swift; sourceTree = "<group>"; };
+		8929805C224A37DF001A82CC /* TAllVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAllVController.swift; sourceTree = "<group>"; };
 		892E27941F53C7CF00B023B7 /* commentCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commentCellModel.swift; sourceTree = "<group>"; };
 		892E27961F53FF3D00B023B7 /* xlpNewsCommentVCModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xlpNewsCommentVCModel.swift; sourceTree = "<group>"; };
 		8933D5141FDFB8A2000AD9E5 /* XlpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlpModel.swift; sourceTree = "<group>"; };
@@ -603,9 +605,6 @@
 		075EEAA81E276C2F00D8E273 /* 旅法师 */ = {
 			isa = PBXGroup;
 			children = (
-				07FA9E811E891A3900674614 /* Shop */,
-				07FA9E801E891A2700674614 /* News */,
-				07FA9E7F1E891A1800674614 /* Tool */,
 				0761228A1E84F129001A33B6 /* AppUrlFile.swift */,
 			);
 			name = "旅法师";
@@ -678,14 +677,6 @@
 			path = PopoverView;
 			sourceTree = "<group>";
 		};
-		079F687E1E768152001E882D /* 相册图片 */ = {
-			isa = PBXGroup;
-			children = (
-				079F687F1E7681B5001E882D /* CameraViewController.swift */,
-			);
-			name = "相册图片";
-			sourceTree = "<group>";
-		};
 		079FE39C1E094793007DF3DE /* Swift与OC混编 */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,14 +686,7 @@
 				07F39F031E1C88B900EE268B /* EassyCell2.swift */,
 			);
 			name = "Swift与OC混编";
-			sourceTree = "<group>";
-		};
-		079FE42B1E0BAA6A007DF3DE /* Scrollview与SnapKit */ = {
-			isa = PBXGroup;
-			children = (
-				079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */,
-			);
-			name = "Scrollview与SnapKit";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		079FE42C1E0BAA96007DF3DE /* Base */ = {
@@ -761,6 +745,7 @@
 				073302231E5ECFC200A87D52 /* zhiHuObtainDataOperation.m */,
 			);
 			name = "知乎日报";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		07F39F101E1DE80700EE268B /* refreshTest */ = {
@@ -771,6 +756,7 @@
 				07F87C941E2DB5E700CE7178 /* RefreshWKWebViewController.swift */,
 			);
 			name = refreshTest;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		07F39F141E232C0100EE268B /* CoreData */ = {
@@ -782,6 +768,7 @@
 				07F39F181E232DE700EE268B /* SwiftTest.xcdatamodeld */,
 			);
 			name = CoreData;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		07F39F221E233D6000EE268B /* Modal */ = {
@@ -803,6 +790,7 @@
 				07F87CB41E2F125B00CE7178 /* CCDemoViewController.swift */,
 			);
 			name = "视频相关";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		07FA9E7F1E891A1800674614 /* Tool */ = {
@@ -815,6 +803,7 @@
 				89ADDDBD210AF0170073E067 /* webTestVController.swift */,
 			);
 			name = Tool;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		07FA9E801E891A2700674614 /* News */ = {
@@ -827,6 +816,7 @@
 				0721D08F1E8510AC00C55726 /* Model */,
 			);
 			name = News;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		07FA9E811E891A3900674614 /* Shop */ = {
@@ -840,6 +830,65 @@
 				073301CD1E5BD0D300A87D52 /* myCollectionViewCell.swift */,
 			);
 			name = Shop;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		89298057224A2B74001A82CC /* FourModel */ = {
+			isa = PBXGroup;
+			children = (
+				07FA9E801E891A2700674614 /* News */,
+			);
+			path = FourModel;
+			sourceTree = "<group>";
+		};
+		89298058224A2B91001A82CC /* ThreeModel */ = {
+			isa = PBXGroup;
+			children = (
+				07FA9E811E891A3900674614 /* Shop */,
+			);
+			path = ThreeModel;
+			sourceTree = "<group>";
+		};
+		89298059224A2B9D001A82CC /* TwoModel */ = {
+			isa = PBXGroup;
+			children = (
+				07FA9E7F1E891A1800674614 /* Tool */,
+			);
+			path = TwoModel;
+			sourceTree = "<group>";
+		};
+		8929805A224A2BA7001A82CC /* OneModel */ = {
+			isa = PBXGroup;
+			children = (
+				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
+				89E73E381DFE463300058FB0 /* XLP_UI_ViewController.swift */,
+				89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */,
+				89E73E331DFBEA9200058FB0 /* tableview */,
+				89E73E421E01294E00058FB0 /* TestClassViewController.swift */,
+				8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */,
+				079FE39C1E094793007DF3DE /* Swift与OC混编 */,
+				079FE4311E0BAB48007DF3DE /* ScrollViewSnapKitVController.swift */,
+				8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */,
+				079F687F1E7681B5001E882D /* CameraViewController.swift */,
+				894F815B1FC556E70086AE21 /* ATULogin */,
+				8940B7D81FD8EBAA006EB63D /* 验证码 */,
+				895405E01EE653EE00886F4A /* CollectionView */,
+				07F39F101E1DE80700EE268B /* refreshTest */,
+				07F39F091E1CEEF700EE268B /* 知乎日报 */,
+				07F39F3B1E24F9ED00EE268B /* 视频相关 */,
+				07F39F141E232C0100EE268B /* CoreData */,
+				8929805B224A3766001A82CC /* 泛型 */,
+			);
+			path = OneModel;
+			sourceTree = "<group>";
+		};
+		8929805B224A3766001A82CC /* 泛型 */ = {
+			isa = PBXGroup;
+			children = (
+				8929805C224A37DF001A82CC /* TAllVController.swift */,
+			);
+			name = "泛型";
+			path = "../泛型";
 			sourceTree = "<group>";
 		};
 		892E27931F53C76500B023B7 /* ViewModel */ = {
@@ -879,6 +928,7 @@
 				890DEE631FC579E800589612 /* loginBackView.swift */,
 			);
 			name = ATULogin;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		895405E01EE653EE00886F4A /* CollectionView */ = {
@@ -888,6 +938,7 @@
 				895405E31EE6571600886F4A /* CollectionCell.swift */,
 			);
 			name = CollectionView;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		89E73DEA1DFA832900058FB0 = {
@@ -916,35 +967,22 @@
 		89E73DF51DFA832900058FB0 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				894F815B1FC556E70086AE21 /* ATULogin */,
-				895405E01EE653EE00886F4A /* CollectionView */,
+				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
+				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
+				8929805A224A2BA7001A82CC /* OneModel */,
+				89298059224A2B9D001A82CC /* TwoModel */,
+				89298058224A2B91001A82CC /* ThreeModel */,
+				89298057224A2B74001A82CC /* FourModel */,
 				07956E6A1E6D5CBF00E8D22D /* ThirdLib */,
 				079FE42C1E0BAA96007DF3DE /* Base */,
-				89E73DF61DFA832900058FB0 /* AppDelegate.swift */,
 				8933D5141FDFB8A2000AD9E5 /* XlpModel.swift */,
 				07DB21751EA4CE5B00D844DA /* ADView.swift */,
 				898402111F0500F600F06920 /* NoDataView.swift */,
 				898402151F05F2CB00F06920 /* XlpSwitch.swift */,
 				07DB21771EA60AD800D844DA /* ADDetailVController.swift */,
 				077367D11E66621E002BFB86 /* UserManager.swift */,
-				07F39F401E27690800EE268B /* RootTabBarViewController.swift */,
-				89E73E381DFE463300058FB0 /* XLP_UI_ViewController.swift */,
-				89E73E3E1DFFC26F00058FB0 /* XLP_OperatorsVController.swift */,
 				89E73E401E01292900058FB0 /* TsetClass.swift */,
-				89E73E421E01294E00058FB0 /* TestClassViewController.swift */,
-				8921ACCB1E029DC400A20D60 /* XLP_RealViewController.swift */,
-				8921ACD91E03D38000A20D60 /* XLPFuncViewController.swift */,
-				89E73E3A1DFE46AD00058FB0 /* RootViewController.swift */,
-				8940B7D81FD8EBAA006EB63D /* 验证码 */,
 				075EEAA81E276C2F00D8E273 /* 旅法师 */,
-				07F39F3B1E24F9ED00EE268B /* 视频相关 */,
-				07F39F141E232C0100EE268B /* CoreData */,
-				07F39F101E1DE80700EE268B /* refreshTest */,
-				07F39F091E1CEEF700EE268B /* 知乎日报 */,
-				079FE42B1E0BAA6A007DF3DE /* Scrollview与SnapKit */,
-				079FE39C1E094793007DF3DE /* Swift与OC混编 */,
-				079F687E1E768152001E882D /* 相册图片 */,
-				89E73E331DFBEA9200058FB0 /* tableview */,
 				89E73DFA1DFA832900058FB0 /* Main.storyboard */,
 				89E73DFD1DFA832900058FB0 /* Assets.xcassets */,
 				89E73E021DFA832900058FB0 /* Info.plist */,
@@ -980,6 +1018,7 @@
 				89E73E361DFBEAD800058FB0 /* OneModal.swift */,
 			);
 			name = tableview;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D7B4330CCF80B14D18087C44 /* Frameworks */ = {
@@ -1107,20 +1146,20 @@
 					89E73DF21DFA832900058FB0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = H22N8T6DAX;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					89E73E061DFA832A00058FB0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = R7FLL89AQ2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 89E73DF21DFA832900058FB0;
 					};
 					89E73E111DFA832A00058FB0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = R7FLL89AQ2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 89E73DF21DFA832900058FB0;
 					};
@@ -1509,6 +1548,7 @@
 				073302211E5E918300A87D52 /* ZhiHuObtainDataOperation.swift in Sources */,
 				079F68841E79101F001E882D /* NewsViewController.swift in Sources */,
 				0764619B1E96455200A4AD4C /* zip.c in Sources */,
+				8929805D224A37DF001A82CC /* TAllVController.swift in Sources */,
 				076461991E96455200A4AD4C /* mztools.c in Sources */,
 				07956E891E6E945F00E8D22D /* ZhiHuEntity+CoreDataClass.swift in Sources */,
 			);
@@ -1854,8 +1894,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1920,8 +1959,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1936,8 +1974,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTest.app/SwiftTest";
 			};
 			name = Debug;
@@ -1952,8 +1989,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTest.app/SwiftTest";
 			};
 			name = Release;
@@ -1967,8 +2003,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = SwiftTest;
 			};
 			name = Debug;
@@ -1982,8 +2017,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = XLP.SwiftTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = SwiftTest;
 			};
 			name = Release;

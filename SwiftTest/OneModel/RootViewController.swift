@@ -43,15 +43,15 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         rootTableView = UITableView.init(frame: CGRect(x:0,y:0,width:kSCREENWIDTH,height:kSCREENHEIGHT), style: .plain)
         rootTableView?.delegate = self
         rootTableView?.dataSource = self
-        rootTableView?.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        rootTableView?.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         view.addSubview(rootTableView!)
         
     }
     
     func obtainDataArr() -> Void {
 
-       dataArr = NSMutableArray.init(array: ["UI控件/数据类型Test","基本运算符Tset","TableView自定义Test","对象/属性","函数与闭包","Swift与OC混编","Scrollview与SnapKit的爱情","Swift进阶之路","refresh练习","知乎日报","视频大综合","CoreData封装","获取相册图片","CollectionView的实现","ATUlogin","验证码输入框"])
-        vcArr = NSMutableArray.init(array: [XLP_UI_ViewController(),XLP_OperatorsVController(),UI_tableable_VC(),TestClassViewController(),XLPFuncViewController(),XLPClosuresViewController(),ScrollViewSnapKitVController(),XLP_RealViewController(),RefreshViewController(),ZhiHuNewsViewController(),videoRootViewController(),CoreDataViewController(),CameraViewController(),CollectionViewController(),ATULoginVController(),CodeViewController()])
+       dataArr = NSMutableArray.init(array: ["UI控件/数据类型Test","基本运算符Tset","TableView自定义Test","对象/属性","函数与闭包","Swift与OC混编","Scrollview与SnapKit的爱情","Swift进阶之路","refresh练习","知乎日报","视频大综合","CoreData封装","获取相册图片","CollectionView的实现","ATUlogin","验证码输入框","泛型"])
+        vcArr = NSMutableArray.init(array: [XLP_UI_ViewController(),XLP_OperatorsVController(),UI_tableable_VC(),TestClassViewController(),XLPFuncViewController(),XLPClosuresViewController(),ScrollViewSnapKitVController(),XLP_RealViewController(),RefreshViewController(),ZhiHuNewsViewController(),videoRootViewController(),CoreDataViewController(),CameraViewController(),CollectionViewController(),ATULoginVController(),CodeViewController(),TAllVController()])
     }
     
     //tableview的代理方法
@@ -147,7 +147,9 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         if indexPath.row == 15 {
             jumpToVC = CodeViewController()
         }
-        
+        if indexPath.row == 16 {
+            jumpToVC = TAllVController()
+        }
         jumpToVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(jumpToVC, animated: true)
        

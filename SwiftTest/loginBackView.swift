@@ -88,8 +88,8 @@ class loginBackView: UIView,UITableViewDelegate {
         backScrollview.separatorStyle = .none
         backScrollview.frame = CGRect(x:0,y:0,width:newFrame.size.width,height:newFrame.size.height)
         backScrollview.delegate = self as UITableViewDelegate
-        backScrollview.contentInset = UIEdgeInsetsMake(oriImageHeight, 0, 0, 0)
-        backScrollview.scrollIndicatorInsets = UIEdgeInsetsMake(oriImageHeight, 0, 0, 0)
+        backScrollview.contentInset = UIEdgeInsets.init(top: oriImageHeight, left: 0, bottom: 0, right: 0)
+        backScrollview.scrollIndicatorInsets = UIEdgeInsets.init(top: oriImageHeight, left: 0, bottom: 0, right: 0)
         backScrollview.showsVerticalScrollIndicator = false
         backScrollview.alwaysBounceVertical = true
         backScrollview.backgroundColor = UIColor.clear

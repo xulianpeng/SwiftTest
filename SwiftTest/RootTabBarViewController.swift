@@ -17,38 +17,20 @@ class RootTabBarViewController: XLPBaseTabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let firstVC  = YingdiToolViewController()
-        let naFirstVC = XLPBaseNavigationVController.init(rootViewController:firstVC)
-        let twoVC = YingDiViewController.init(title: "营地", backColor: UIColor.red)
-//        let twoVC = YingDiViewController()
-        let naTwoVC = XLPBaseNavigationVController.init(rootViewController: twoVC)
-        let threeVC = ShopCityViewController()
-        let naThreeVC = XLPBaseNavigationVController.init(rootViewController: threeVC)
         let fourVC  = RootViewController.init(title: "根视图", backColor: UIColor.cyan)
         let naFourVC = XLPBaseNavigationVController.init(rootViewController:fourVC)
-        /*
-        
-//        firstVC.tabBarItem.title = "首页"
-//        firstVC.tabBarItem.image = UIImage.init(named: "")
-        naFirstVC.tabBarItem.selectedImage = UIImage.init(named: "tool_select")
-        naFirstVC.tabBarItem = UITabBarItem.init(title: "首页", image: UIImage.init(named: "tool_normal"), tag: 0)
-        
-        
-        naTwoVC.tabBarItem.selectedImage = UIImage.init(named: "news_normal")
-        naTwoVC.tabBarItem = UITabBarItem.init(title: "旅法师", image: UIImage.init(named: "news_select"), tag: 1)
-        
-
-        naThreeVC.tabBarItem.selectedImage = UIImage.init(named: "shop_select")
-        naThreeVC.tabBarItem = UITabBarItem.init(title: "", image: UIImage.init(named: "shop_normal"), tag: 2)
-        */
-        
+        let firstVC  = YingdiToolViewController()
+        let naFirstVC = XLPBaseNavigationVController.init(rootViewController:firstVC)
+        let threeVC = ShopCityViewController()
+        let naThreeVC = XLPBaseNavigationVController.init(rootViewController: threeVC)
+        let twoVC = YingDiViewController.init(title: "营地", backColor: UIColor.red)
+        let naTwoVC = XLPBaseNavigationVController.init(rootViewController: twoVC)
         
         initTabBarItem(naFirstVC, title: "", imageName: "tool_normal", selectImageName: "tool_select", tag: 1)
         initTabBarItem(naTwoVC, title: "", imageName: "news_normal", selectImageName: "news_select", tag: 2)
-        initTabBarItem(naThreeVC, title: "资讯", imageName: "shop_normal",selectImageName:"shop_select",tag:3)
+        initTabBarItem(naThreeVC, title: "", imageName: "shop_normal",selectImageName:"shop_select",tag:3)
         initTabBarItem(naFourVC, title: "", imageName: "forum_normal",selectImageName:"forum_select",tag:4)
 
-//        naThreeVC.title = "什么情况"
         self.viewControllers = [naFourVC,naFirstVC,naThreeVC,naTwoVC]
         
         
@@ -60,7 +42,7 @@ class RootTabBarViewController: XLPBaseTabBarController {
         let selectImage = UIImage.init(named: selectImageName)?.withRenderingMode(.alwaysOriginal)
         controller.tabBarItem = UITabBarItem.init(title: title, image: noamalImage, tag: tag)
         controller.tabBarItem.selectedImage = selectImage
-        controller.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+        controller.tabBarItem.imageInsets = UIEdgeInsets.init(top: 6, left: 0, bottom: -6, right: 0)
         
     }
     

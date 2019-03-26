@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class zhiHuCellModel{
+struct zhiHuCellModel{
     var articleId : Int?
     var imageURL : String?
     var title : String?
@@ -23,23 +23,23 @@ class zhiHuCellModel{
         self.imageURL =  json["images"][0].string
     }
     
-    func setValuesWithDictionary(dic:NSDictionary) -> Void {
-        
-        for i in 0 ..< dic.allKeys.count {
-            
-            let key = dic.allKeys[i];
-            let value = dic.object(forKey: key);
-//            self.setValue(value, forKey: key as! String);
-        
-            
-            
-        }
-    }
+//    func setValuesWithDictionary(dic:NSDictionary) -> Void {
+//
+//        for i in 0 ..< dic.allKeys.count {
+//
+//            let key = dic.allKeys[i];
+//            let value = dic.object(forKey: key);
+////            self.setValue(value, forKey: key as! String);
+//
+//
+//
+//        }
+//    }
     
 }
 
 //首页顶部banner数据模型
-class zhiHuTopCellModel{
+struct zhiHuTopCellModel{
     var id : String?
     var imgeURL : String?
     var title : String?
@@ -55,7 +55,7 @@ class zhiHuTopCellModel{
     }
     
 }
-
+/*
 class zhiHuControllerModal {
     var date : String?
     var top_stroies : [zhiHuTopCellModel] = Array()
@@ -76,4 +76,27 @@ class zhiHuControllerModal {
         }
     }
 
+}
+*/
+struct zhiHuControllerModal {
+    
+    var date : String?
+    var top_stroies : [zhiHuTopCellModel] = Array()
+    var stroies : [zhiHuCellModel] = Array()
+    init(_ json : JSON){
+        
+        let topStories  =  json["top_stories"].array
+        let stories = json["stories"].array
+        
+        for storyModelJson in stories! {
+            
+            self.stroies.append(zhiHuCellModel(storyModelJson))
+        }
+        
+        for topStoryModelJson in topStories! {
+            
+            self.top_stroies.append(zhiHuTopCellModel(topStoryModelJson))
+        }
+    }
+    
 }
