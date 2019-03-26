@@ -69,7 +69,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
         rootTableView.register(zhiHuTopCell.self, forCellReuseIdentifier: "zhiHuTopCell")
     }
     func obtainData() {
-        
+        /*
         let myOperation = ZhiHuObtainDataOperation()
         
         myOperation.initWith("asdas")
@@ -86,8 +86,8 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
         queue.maxConcurrentOperationCount = 3
         queue.addOperation(myOperation)
         queue.addOperation(twoOperation)
-        queue.cancelAllOperations()
-        
+//        queue.cancelAllOperations()
+        */
         
         
         
@@ -111,7 +111,7 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
         hud.hide(animated: true, afterDelay: 3.0)
         
         
-        
+        /*
         weak var weakSelf = self
         MyManager.sharedInstance.SucceedGETFull2(urlStr, parameters: [:]) { (json, error) in
             
@@ -129,7 +129,23 @@ class ZhiHuNewsViewController: XLPBaseViewController,TestOperationDelegate,UITab
             weakSelf?.navigationItem.title = "防止循环引用"
             weakSelf?.view.backgroundColor = UIColor.red
         }
-        
+        */
+        weak var weakSelf = self
+        XlpNetManager.shared.request(url: urlStr, method: .get, params: [:], headers: nil, success: { (response) in
+            
+            
+            let json = JSON(response)
+            let  homeModel = zhiHuControllerModal(json)
+            self.zhiHuTopCellModelArr = homeModel.top_stroies
+            self.zhiHuCellModelArr = homeModel.stroies
+            self.rootTableView.reloadData()
+            
+            weakSelf?.navigationItem.title = "防止循环引用"
+            weakSelf?.view.backgroundColor = UIColor.red
+            
+        }) { (error) in
+            print(error) 
+        }
         
     }
     

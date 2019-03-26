@@ -45,6 +45,17 @@ class TestClassViewController: UIViewController {
 
         self.view.backgroundColor = UIColor.green
         
+        var arr = ["123","234","345","456"]
+        
+        if let index = arr.index(where: {$0 == "234"}) {
+            arr.remove(at: index)
+            arr.insert("789", at: index)
+        }
+        
+        
+        
+        
+        
         let range1 = Range11(first:6,length:3)
         //MARK:小结1:
         //如果一个结构体被实例化为 一个常量结构体 则其不能被修改 即是其内部是变量存储属性

@@ -150,6 +150,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         XlpFMDB.init(dbName: "xlpTest12.db1").creatTable("mmm", sqlStr:  "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
         XlpFMDB.init(dbName: "xlpTest13.mmm").creatTable("mmm", sqlStr:  "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
+        
+        
 
         //表添加字段
         xlpSqliteManager.addColumnInTable("testColumn",columnType:"text",table: kTableToolPackageHearthStone)
@@ -170,6 +172,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         displayAD()
 
         XLPSqliteManager.shareInstance.creatTable("QuickReply", sqlStr:"content text,content_type text,created_on text,enterprise_id integer,group_id integer,id integer,knowledge_converted integer,last_updated text,rank integer,rich_content text,title text" )
+        
+        XLPSqliteManager.shareInstance.insertTable("test", sql:
+            "icon,moduleID,oldTitle,remark,tiny,title,version,visible,weight", limitArr: [["key0":"ceshiurl","key1":"ceshiurl","key2":"ceshiurl"],123,"你好啊","打招呼","你好","你好1","3.4.9",1,3])
+        XLPSqliteManager.shareInstance.insertTable("test", sql:
+            "icon,moduleID,oldTitle,remark,tiny,title,version,visible,weight", limitArr: ["111111",123,"你好啊","打招呼","你好","你好1","3.4.9",1,3])
         
 //        XLPSqliteManager.shareInstance.insertTable("QuickReply", sql: "INSERT INTO QuickReply (content,knowledge_converted,rich_content,id,group_id,enterprise_id,created_on,title,rank,content_type,last_updated) VALUES ('<DIV class=operatorfont style="MARGIN-LEFT: 5px"><SPAN style='FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 1.0000pt; mso-spacerun: "yes"'><?xml:namespace prefix = "o" ns = "urn:schemas-microsoft-com:office:office" /><o:p><FONT face=微软雅黑 size=3><!--StartFragment -->
 //            <DIV>我们11年以来的地址是在：解放碑纽约纽约大厦3.4.5楼（太平洋百货对面金夫人影楼的楼上）。第一次来咨询的顾客，可以先到3楼接待大厅，我们有专业的导诊为您安排咨询服务。</DIV></FONT></o:p></SPAN><!--EndFragment--></DIV>',1,'',449400,65986,5869,'2016-11-10T07:49:13.643512','医院地址',400000,'text','2016-11-18T10:39:01.191339')", limitArr: nil)
@@ -255,6 +262,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("最终的结果为111",newArr)
         print("最终的结果为222",newArr)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        print(anyToString(123 as AnyObject))
+        print(anyToString(12.345 as AnyObject))
+        print(anyToString(0.123 as AnyObject))
+        print(anyToString("null" as AnyObject))
+        print(anyToString(nil))
+        print(anyToString(NSNumber.init(value: 0.3)))
+        print(anyToString(NSNull.init()))
+        print(anyToString("123" as AnyObject))
+        print(anyToString("你好啊" as AnyObject))
+        
+        print(anyToString0(123 ))
+        print(anyToString0(12.3489))
+        print(anyToString0(0.123))
+        print(anyToString0("null" ))
+        print(anyToString0(nil))
+        print(anyToString0(NSNumber.init(value: 0.3)))
+        print(anyToString0(NSNumber.init(value: 12.3)))
+        print(anyToString0(NSNumber.init(value: 123)))
+        print(anyToString0(NSNull.init()))
+        print(anyToString0("123"))
+        print(anyToString0("你好啊"))
+
+        
+//        var allsteps = climbStairs(mm: 50)
+//        print("=====123",allsteps)
+        
+        
+        print("=====1234",obtainStr(str: "adadssssaaaalllssdasss"))
         return true
     
     }
@@ -525,11 +571,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         xlpSqliteManager.creatTable("titleArr", sqlStr: "icon text,moduleID integer UNIQUE,oldTitle text,remark text,tiny text,title text,version text,visible integer,weight integer")
         MyManager.sharedInstance.SucceedGETFull2(xlpNetGetTitleModel, parameters: [:]) { (json, error) in
             
-            if error == nil{
+            if error == nil,let modules = json?["modules"].array{
                 
-                let modules = json!["modules"].array
                 
-                for dic in modules!{
+                for dic in modules{
                     
                     
                     var newDic = [String:Any]()
@@ -551,7 +596,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }else{
                 
-                print(error!)
+//                print(error ?? NSError.init() as? Error )
             }
             
             
@@ -656,5 +701,91 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
     }
+    
+    
+    //object转string  偶尔会出现转换失败 故最终舍弃掉
+    func anyToString(_ object: AnyObject?) -> String {
+        var s = ""
+        if object != nil {
+            if object is NSNumber {
+                s = "\((object as! NSNumber).int64Value)"
+            }else if object is String {
+                s = object as! String
+            }else if object is NSNull {
+                s = ""
+            }else{
+                s = "\(String(describing: object))"
+            }
+        }else{
+            s = ""
+        }
+        if s == "<null>" || s == "null" {
+            s = ""
+        }
+        return s
+    }
+    func anyToString0(_ object: Any?) -> String {
+        var s = ""
+        if object != nil {
+            if object is Float{
+                s = "\(String(describing: object))"
+                
+            }else if object is Double{
+                s = "\(String(describing: object))"
+            }else if object is Int{
+                s = "\(String(describing: object))"
+            }else if object is NSNumber {
+                s = "\((object as! NSNumber).int64Value)"
+            }else if object is String {
+                s = object as! String
+            }else if object is NSNull {
+                s = ""
+            }else{
+                s = "\(String(describing: object))"
+            }
+        }else{
+            s = ""
+        }
+        if s == "<null>" || s == "null" {
+            s = ""
+        }
+        return s
+    }
+    
+    
 }
 
+extension AppDelegate{
+    
+    
+    
+    func climbStairs(mm:Int) -> Int {
+        
+        if mm == 0 || mm == 1{
+            return 1
+        }
+        return climbStairs(mm:mm-1) + climbStairs(mm:mm-2)
+        
+    }
+    
+    
+    func obtainStr(str:String) -> String {
+     
+        var strArr:[Character] = [Character]()
+        var lastStr:String = ""
+        for (_,mm) in str.enumerated(){
+            if strArr.count > 0{
+                if strArr.first == mm{
+                    strArr.append(mm)
+                }else{
+                    lastStr.append(strArr.first!)
+                    lastStr = lastStr + "\(strArr.count)"
+                    strArr.removeAll()
+                }
+            }else{
+                strArr.append(mm)
+            }
+        }
+        return lastStr
+    }
+}

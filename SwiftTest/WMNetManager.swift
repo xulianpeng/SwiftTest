@@ -13,13 +13,9 @@ import SVProgressHUD
 import MBProgressHUD
 
 
-
-class WMNetManager: NSObject {
+class WMNetManager {
 
     static let sharedInstance = WMNetManager()
-    
-    
-   
     
     let configuration = URLSessionConfiguration.default
     

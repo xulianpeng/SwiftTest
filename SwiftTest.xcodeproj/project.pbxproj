@@ -122,6 +122,7 @@
 		895405E41EE6571600886F4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895405E31EE6571600886F4A /* CollectionCell.swift */; };
 		898402121F0500F600F06920 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402111F0500F600F06920 /* NoDataView.swift */; };
 		898402161F05F2CC00F06920 /* XlpSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898402151F05F2CB00F06920 /* XlpSwitch.swift */; };
+		8994B0AC21E7406400189249 /* XlpNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994B0AB21E7406400189249 /* XlpNetManager.swift */; };
 		89ADDDBE210AF0170073E067 /* webTestVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ADDDBD210AF0170073E067 /* webTestVController.swift */; };
 		89C0D36D1FC70E670052B30C /* XlpAFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C0D36C1FC70E670052B30C /* XlpAFManager.swift */; };
 		89D3412E1FA1B396007AC040 /* OCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3412D1FA1B396007AC040 /* OCTool.m */; };
@@ -453,6 +454,7 @@
 		895405E31EE6571600886F4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		898402111F0500F600F06920 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		898402151F05F2CB00F06920 /* XlpSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XlpSwitch.swift; sourceTree = "<group>"; };
+		8994B0AB21E7406400189249 /* XlpNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlpNetManager.swift; sourceTree = "<group>"; };
 		89ADDDBD210AF0170073E067 /* webTestVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webTestVController.swift; sourceTree = "<group>"; };
 		89C0D36C1FC70E670052B30C /* XlpAFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlpAFManager.swift; sourceTree = "<group>"; };
 		89D3412C1FA1B396007AC040 /* OCTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTool.h; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 				07B232BE1E6FA38F0027D14D /* UIImageView+Extension.swift */,
 				07DB21711EA4BA7500D844DA /* Array+Extension.swift */,
 				07C31F6E1E15062800DCB71D /* WMNetManager.swift */,
+				8994B0AB21E7406400189249 /* XlpNetManager.swift */,
 				89C0D36C1FC70E670052B30C /* XlpAFManager.swift */,
 				89E2DC521F3030AD00F0AFB1 /* XLPFMDBManager.swift */,
 				07F39F051E1C9D4500EE268B /* NoNetView.swift */,
@@ -1410,6 +1413,7 @@
 				07FA9E851E8A2E9900674614 /* YDToolDataManagerController.swift in Sources */,
 				07956E721E6D5CEC00E8D22D /* PopoverAction.m in Sources */,
 				079FE3A51E0A56C7007DF3DE /* ConstFile.swift in Sources */,
+				8994B0AC21E7406400189249 /* XlpNetManager.swift in Sources */,
 				8921ACDC1E03D3E500A20D60 /* XLPClosuresViewController.swift in Sources */,
 				8940B7DA1FD8EC2A006EB63D /* CodeViewController.swift in Sources */,
 				895405E21EE6542D00886F4A /* CollectionViewController.swift in Sources */,
