@@ -301,6 +301,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         print("=====1234",obtainStr(str: "adadssssaaaalllssdasss"))
+        
+        
+        let arr111 = ["123","345","456","567","123","345","456","567"]
+        
+        let lastStr = arr111.reduce(String()) { (string1, str) -> String in
+//                return string1 == "" ? str : string1 + "、" + str
+            if string1 == "" {
+                return str
+            }else{
+                return string1 + "、" + str
+            }
+        }
+        print("数组reduce的最终结果为",lastStr)
+        
+        
+//        let uniArr = arr111.reduce(Set()) { (set0, str) in
+//             set0.insert(str)
+//        }
+//        let uniArr = arr111.reduce(Set<String>()) { (aSet, str) -> Set<String> in
+////            print(aSet,str)
+//            aSet.insert(str)
+//            return Set<String>()
+//        }
+        
+        
+        let uniArr = arr111.reduce(into: Set<String>()) { (aSet, str) in
+            aSet.insert(str)
+            }.map { $0 }
+        //数组去重的应用场景, 先转为 集合set 再通过map函数转为 数组.
+        print("数组reduce的最终结果为",uniArr)
+        
         return true
     
     }
