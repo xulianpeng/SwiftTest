@@ -74,8 +74,8 @@ class BaseUIButton: UIButton {
         bt.backgroundColor = color
         
         superVtew.addSubview(bt)
-        bt.setTitle(title, for: UIControlState.normal)
-        bt.setImage(image, for: UIControlState.normal)
+        bt.setTitle(title, for: UIControl.State.normal)
+        bt.setImage(image, for: UIControl.State.normal)
 //        button.btnHandler = handler
         ///点击
         bt.addTarget(target, action: #selector(btnClick1(btn:)), for: .touchUpInside)

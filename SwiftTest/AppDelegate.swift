@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var dataBase : FMDatabase?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
 //        let url = URL.init(string: "www.baidu.com")
@@ -331,6 +331,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }.map { $0 }
         //数组去重的应用场景, 先转为 集合set 再通过map函数转为 数组.
         print("数组reduce的最终结果为",uniArr)
+         print("=====是否包含呢==",self.testArrcontainEmptyStr())
         
         return true
     
@@ -819,4 +820,11 @@ extension AppDelegate{
         }
         return lastStr
     }
+    
+    
+    func testArrcontainEmptyStr() -> Bool {
+        let arr = ["asdas","asddfgdfg","2134weqwe"]
+        return arr.contains(" ")
+    }
+    
 }

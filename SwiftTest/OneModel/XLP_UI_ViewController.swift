@@ -27,7 +27,7 @@ class XLP_UI_ViewController: UIViewController,UITextViewDelegate {
      var titleLabel2 = UILabel()
      var titleLabel = UILabel()
      var button1 = UIButton.init(type:.custom)
-     var button2 = UIButton.init(type: UIButtonType.custom)
+     var button2 = UIButton.init(type: UIButton.ButtonType.custom)
      
      var text = "akfjskjfksjfkjfkjsdkfjSSJAFDSJFKJ假的就分手就放开手的说的是交房卡萨就放开手的FSDKJFS大姐夫发几十块地方是使肌肤 的设计费水电费是打飞机 ;束带结发;说多了几分;是打飞机;了圣诞节饭;是打飞机;胜多负少;来得及发两款;阿萨德分类的设计费啥的放假洛杉矶的附件为符合你怎么能重新买,  放假;啥的方式;方式;打飞机;"
 

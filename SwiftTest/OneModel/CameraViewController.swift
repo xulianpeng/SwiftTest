@@ -14,7 +14,7 @@ class CameraViewController: XLPBaseViewController,UINavigationControllerDelegate
     
     override func viewDidLoad() {
         
-        bottomImageView.xlpInitImageView(self.view, corner: 150,contentmode:UIViewContentMode.scaleAspectFill) { (make) in
+        bottomImageView.xlpInitImageView(self.view, corner: 150,contentmode:UIView.ContentMode.scaleAspectFill) { (make) in
             make.center.equalTo(self.view)
             make.size.equalTo(300)
         }
@@ -27,7 +27,7 @@ class CameraViewController: XLPBaseViewController,UINavigationControllerDelegate
         }
     }
     
-    func choicePhotoWithType(type: UIImagePickerControllerSourceType) {
+    func choicePhotoWithType(type: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(type) {
             let picker = UIImagePickerController.init()
             picker.delegate = self//代理
@@ -36,7 +36,7 @@ class CameraViewController: XLPBaseViewController,UINavigationControllerDelegate
             self.present(picker, animated: true, completion: nil)
         }else {
             let str: String?
-            if type == UIImagePickerControllerSourceType.camera {
+            if type == UIImagePickerController.SourceType.camera {
                 str = "摄像头不可用"
             }else
             {
@@ -52,10 +52,13 @@ class CameraViewController: XLPBaseViewController,UINavigationControllerDelegate
     
     // 选择完毕后获得照片
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         let image:UIImage = info["UIImagePickerControllerEditedImage"] as! UIImage
         // 拍照
-        if picker.sourceType == UIImagePickerControllerSourceType.camera {
+        if picker.sourceType == UIImagePickerController.SourceType.camera {
             savePhotoToLibrary(image: info["UIImagePickerControllerOriginalImage"] as! UIImage)
         }
         bottomImageView.image = image
@@ -82,4 +85,9 @@ class CameraViewController: XLPBaseViewController,UINavigationControllerDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }

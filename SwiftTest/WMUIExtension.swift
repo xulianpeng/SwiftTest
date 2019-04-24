@@ -518,7 +518,7 @@ extension UITextField {
                        fontSize:CGFloat?,
                        placeholder:String?,
                        delegate:Any,
-                       boderstyle:UITextBorderStyle,
+                       boderstyle:UITextField.BorderStyle,
                        superView:UIView,
                        tag:Int,
                        snpMaker:WMSnapMakerBlock){
@@ -574,7 +574,7 @@ extension UITableView{
         self.backgroundColor = .clear
         self.delegate = delegate as? UITableViewDelegate
         self.dataSource = delegate as? UITableViewDataSource
-        self.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        self.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         //cellClass
         /*
         if cellClass != nil {
@@ -595,7 +595,7 @@ extension UITableView{
         self.backgroundColor = .clear
         self.delegate = delegate as? UITableViewDelegate
         self.dataSource = delegate as? UITableViewDataSource
-        self.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        self.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         //cellClass
         
         if cellClass != nil {
@@ -620,7 +620,7 @@ extension UITableView{
         self.backgroundColor = .clear
         self.delegate = delegate as? UITableViewDelegate
         self.dataSource = delegate as? UITableViewDataSource
-        self.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        self.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         if cellClass != nil {
             
             for cell in cellClass! {

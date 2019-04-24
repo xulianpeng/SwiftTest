@@ -42,7 +42,7 @@ class ZhiHuDetailVController: XLPBaseViewController,UIScrollViewDelegate {
         
         webView.load(request)
         
-        self.view.bringSubview(toFront: wmIndictor)
+        self.view.bringSubviewToFront(wmIndictor)
         wmIndictor.startAnimating()
         
 //        webView.loadRequest(twoRequest)

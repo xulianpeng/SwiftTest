@@ -42,7 +42,7 @@ class zhiHuCell: UITableViewCell {
         self.rightImage?.setImageWith(url, placeholderImage: UIImage.init(named:"defaultCell"))
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutTheSubviews()
     }

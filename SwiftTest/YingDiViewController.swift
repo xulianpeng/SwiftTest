@@ -65,7 +65,7 @@ class YingDiViewController: XLPBaseViewController,UIScrollViewDelegate,TitleArrV
             childVC.view.frame = CGRect(x:kSCREENWIDTH * CGFloat(index),y:0,width:kSCREENWIDTH,height:mainHeight)
             childVC.view.backgroundColor = kRandomColor()
             mainView.addSubview(childVC.view)
-            self.addChildViewController(childVC)
+            self.addChild(childVC)
             
         }
     }

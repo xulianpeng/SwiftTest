@@ -97,9 +97,9 @@ class ATULoginVController: XLPBaseViewController,UITableViewDelegate,UIScrollVie
 //        backScrollview.backgroundColor = kXlpColor(r: 0, g: 243, b: 45, alpha: 0.5)
         backScrollview.backgroundColor = UIColor.clear
         backScrollview.delegate = self as UITableViewDelegate
-        backScrollview.contentInset = UIEdgeInsetsMake(oriImageHeight, 0, 0, 0)
+        backScrollview.contentInset = UIEdgeInsets.init(top: oriImageHeight, left: 0, bottom: 0, right: 0)
         
-        backScrollview.scrollIndicatorInsets = UIEdgeInsetsMake(200, 0, 0, 0)
+        backScrollview.scrollIndicatorInsets = UIEdgeInsets.init(top: 200, left: 0, bottom: 0, right: 0)
         backScrollview.showsVerticalScrollIndicator = false
         backScrollview.alwaysBounceVertical = true
         

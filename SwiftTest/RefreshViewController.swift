@@ -249,8 +249,8 @@ class RefreshViewController: XLPBaseViewController,UITableViewDelegate,UITableVi
             
             let alert =
                 UIAlertController.init(title: "提示", message: "数据库未打开,初始化失败", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
-            let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: nil)
+            let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel, handler: nil)
+            let okAction = UIAlertAction(title: "好的", style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(cancelAction)
             alert.addAction(okAction)
             

@@ -13,12 +13,12 @@ import AVKit
 class videoRootViewController: XLPBaseViewController {
 
     let url = NSURL.init(string: "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4")
-    let videoBt1 = UIButton.init(type: UIButtonType.custom)
-    let videoBt2 = UIButton.init(type: UIButtonType.custom)
-    let videoBt3 = UIButton.init(type: UIButtonType.custom)
-    let videoBt4 = UIButton.init(type: UIButtonType.custom)
+    let videoBt1 = UIButton.init(type: UIButton.ButtonType.custom)
+    let videoBt2 = UIButton.init(type: UIButton.ButtonType.custom)
+    let videoBt3 = UIButton.init(type: UIButton.ButtonType.custom)
+    let videoBt4 = UIButton.init(type: UIButton.ButtonType.custom)
     
-    let videoBt5 = UIButton.init(type: UIButtonType.custom)
+    let videoBt5 = UIButton.init(type: UIButton.ButtonType.custom)
     
     
     
